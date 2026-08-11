@@ -1,0 +1,36 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+
+# --- Downloaded / scratch reference material (never a source) ---
+*.download
+Building AI agents with Claude - Claude.html
+Building AI agents with Claude - Claude_files/
+preview.webp
+preview (*).webp
+preview*.webp
+
+# --- One-off diagnostics / local tooling ---
+resolve_vault.ps1
+claude-code-action/
+
+# --- External reference repos (clone, not integrated — study only) ---
+# Each has its own .git; never part of the root repo.
+closing_edge/
+external/betting-app-skill/
+external/betting-odds-tracker/
+external/design-skills/
+external/football-prediction/Dixon-Coles-Football-Predictor/
+external/football-prediction/MatchOutcomeAI/
+external/football-prediction/penaltyblog/
+external/football-prediction/soccerstan/
+external/low-priority/
+external/nba-patterns/
+external/sports-betting-claude/
+external/sports-skills/
+sports-skills/
+
+# --- OS ---
+Thumbs.db
+Desktop.ini
