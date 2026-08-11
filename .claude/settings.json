@@ -9,6 +9,15 @@
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "auto/best-free",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   },
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:\\\\Users\\\\Motunrayo\\\\omniroute test\\\\olp_xdv_agent\\\\olp_xdv\" && mkdir -p docs/obsidian-vault && cp \"C:\\\\Users\\\\Motunrayo\\\\Documents\\\\OLP_XDV_Vault\"/*.md docs/obsidian-vault/ && echo \"=== copied ===\" && ls docs/obsidian-vault/ && echo \"=== source still intact ===\" && ls \"C:\\\\Users\\\\Motunrayo\\\\Documents\\\\OLP_XDV_Vault\"/*.md)",
+      "Bash(git commit --only docs/obsidian-vault/ -m ' *)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Motunrayo\\Documents\\OLP_XDV_Vault"
+    ]
+  },
   "hooks": {
     "Stop": [
       {
