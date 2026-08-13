@@ -97,7 +97,9 @@
       "Bash(ls -la \"C:/Users/Motunrayo/Downloads/\" 2>/dev/null | head -50)",
       "Read(//c/Users/Motunrayo/Downloads/**)",
       "Bash(find \"C:/Users/Motunrayo/Downloads\" -maxdepth 3 -iname \"*.html\" 2>/dev/null | head -30)",
-      "Bash(ls -la \"C:/Users/Motunrayo/Downloads/\"olp-xdv*.html \"C:/Users/Motunrayo/Downloads/\"OLP_XDV*.html 2>/dev/null)"
+      "Bash(ls -la \"C:/Users/Motunrayo/Downloads/\"olp-xdv*.html \"C:/Users/Motunrayo/Downloads/\"OLP_XDV*.html 2>/dev/null)",
+      "Bash(git commit --only steward/ data/clubelo_source.py data/api_football_plan.py steward.bat setup_steward_task.ps1 -m 'feat\\(steward\\): Data Steward daemon + ClubElo stretch fallback + paid api-football plan probe *)",
+      "Bash(git commit --only engine/league_registry.py engine/leagues.py orchestrator.py pipeline/odds.py tests/steward_test.py tests/clubelo_source_test.py tests/clubelo_fallback_test.py tests/api_football_plan_test.py -m 'feat\\(registry\\): dynamic league registry + SportyBet continental map_team fix *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Motunrayo\\Documents\\OLP_XDV_Vault",
