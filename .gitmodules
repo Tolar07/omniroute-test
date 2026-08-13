@@ -1,0 +1,3 @@
+[submodule "olp_xdv_agent/olp_xdv"]
+	path = olp_xdv_agent/olp_xdv
+	url = https://github.com/Tolar07/framework.git
