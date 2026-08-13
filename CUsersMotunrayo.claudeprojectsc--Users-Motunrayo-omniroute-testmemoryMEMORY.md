@@ -1,1 +1,0 @@
-- [MCP servers installed](mcp-servers-installed.md) — 5 servers + live odds scraper solving ID397/FIX4
