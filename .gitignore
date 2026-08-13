@@ -36,6 +36,23 @@ external/sports-betting-claude/
 external/sports-skills/
 sports-skills/
 
+# --- Node.js ---
+node_modules/
+
+# --- Playwright MCP scratch (local browser automation logs/snapshots) ---
+.playwright-mcp/
+
+# --- Motion One verification screenshots (one-off, not assets) ---
+blended_motion_*.png
+bet365.png
+flashscore.png
+oddschecker*.png
+pinnacle*.png
+test_*.js
+
+# --- Claude memory vault (tracked via its own path, not workspace root) ---
+C\:*UsersMotunrayo.claudeprojectsc--Users-Motunrayo-omniroute-testmemoryMEMORY.md
+
 # --- OS ---
 Thumbs.db
 Desktop.ini
