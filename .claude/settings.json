@@ -116,7 +116,17 @@
       "Bash(PYTHONUTF8=1 python -c ' *)",
       "Bash(PYTHONUTF8=1 python run_scan.py)",
       "Bash(PYTHONUTF8=1 python -m pytest tests/ -x -v)",
-      "Bash(git commit --only booking/bridge.py booking/league_map.py -m 'feat\\(booking\\): add OLP name aliases for SportyBet cache lookup *)"
+      "Bash(git commit --only booking/bridge.py booking/league_map.py -m 'feat\\(booking\\): add OLP name aliases for SportyBet cache lookup *)",
+      "mcp__perplexity__perplexity_search",
+      "Bash(PYTHONUTF8=1 python fixtures_agent.py)",
+      "Bash(ls -la /home/user/omniroute-test)",
+      "Read(//home/user/**)",
+      "mcp__firecrawl__firecrawl_scrape",
+      "mcp__perplexity__perplexity_ask",
+      "Bash(git commit --only fixtures_agent.py .claude/agents/conversation-auditor.md conversation_auditor.py test_conversation.jsonl -m 'fix: fixtures_agent.py UTF-8 crash on Windows; add conversation-auditor agent *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit --only .claude/agents/olp-xdv-01-ingestion.md .claude/agents/olp-xdv-02-listfilter.md .claude/agents/olp-xdv-03-entity-profiling.md .claude/agents/olp-xdv-04-data-verification.md .claude/agents/olp-xdv-05-xdv-core.md .claude/agents/olp-xdv-06-odds-audit.md .claude/agents/olp-xdv-07-compliance.md .claude/agents/olp-xdv-08-execution.md .claude/agents/olp-xdv-09-teamlead.md .claude/agents/olp-xdv-10-ceo.md olp_xdv_pipeline.py -m 'feat\\(pipeline\\): add 10-agent production pipeline definitions + orchestrator *)",
+      "Bash(git status *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Motunrayo\\Documents\\OLP_XDV_Vault",
