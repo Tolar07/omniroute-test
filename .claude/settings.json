@@ -223,7 +223,8 @@
       "Bash(cp -r /tmp/package/* \"C:/Users/Motunrayo/AppData/Roaming/npm/node_modules/omniroute/\" 2>&1; echo \"Done copying\")",
       "Bash(git check-ignore *)",
       "Bash(git commit --amend -m 'fix\\(cache-builder\\): ID408 anti-contamination gate for SportyBet cache *)",
-      "Bash(cd \"C:/Users/Motunrayo/omniroute test/olp_xdv_agent/olp_xdv\" && rm -f data/cache/sportybet/fixtures/Championship.json data/cache/sportybet/fixtures/Premier_League.json data/cache/sportybet/fixtures/EFL_Cup.json && echo \"Deleted 3 more contaminated files\")"
+      "Bash(cd \"C:/Users/Motunrayo/omniroute test/olp_xdv_agent/olp_xdv\" && rm -f data/cache/sportybet/fixtures/Championship.json data/cache/sportybet/fixtures/Premier_League.json data/cache/sportybet/fixtures/EFL_Cup.json && echo \"Deleted 3 more contaminated files\")",
+      "Bash(git commit -m 'test: update multi_market_edge_test for blended EV \\(ID414\\) — other session *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Motunrayo\\Documents\\OLP_XDV_Vault",
