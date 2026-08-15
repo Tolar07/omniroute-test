@@ -220,12 +220,16 @@
       "Bash(cp -r /tmp/package \"C:/Users/Motunrayo/AppData/Roaming/npm/node_modules/omniroute\")",
       "Bash(cmd /c \"taskkill /IM node.exe /F\")",
       "Bash(xcopy /E /I /Y /tmp/package \"C:\\\\Users\\\\Motunrayo\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\omniroute\")",
-      "Bash(cp -r /tmp/package/* \"C:/Users/Motunrayo/AppData/Roaming/npm/node_modules/omniroute/\" 2>&1; echo \"Done copying\")"
+      "Bash(cp -r /tmp/package/* \"C:/Users/Motunrayo/AppData/Roaming/npm/node_modules/omniroute/\" 2>&1; echo \"Done copying\")",
+      "Bash(git check-ignore *)",
+      "Bash(git commit --amend -m 'fix\\(cache-builder\\): ID408 anti-contamination gate for SportyBet cache *)",
+      "Bash(cd \"C:/Users/Motunrayo/omniroute test/olp_xdv_agent/olp_xdv\" && rm -f data/cache/sportybet/fixtures/Championship.json data/cache/sportybet/fixtures/Premier_League.json data/cache/sportybet/fixtures/EFL_Cup.json && echo \"Deleted 3 more contaminated files\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\Motunrayo\\Documents\\OLP_XDV_Vault",
       "C:\\Users\\Motunrayo\\AppData\\Roaming\\Claude",
-      "c:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv"
+      "c:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv",
+      "C:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\\data\\cache\\sportybet\\fixtures"
     ]
   },
   "hooks": {
