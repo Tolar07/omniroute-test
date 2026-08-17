@@ -224,13 +224,36 @@
       "Bash(git check-ignore *)",
       "Bash(git commit --amend -m 'fix\\(cache-builder\\): ID408 anti-contamination gate for SportyBet cache *)",
       "Bash(cd \"C:/Users/Motunrayo/omniroute test/olp_xdv_agent/olp_xdv\" && rm -f data/cache/sportybet/fixtures/Championship.json data/cache/sportybet/fixtures/Premier_League.json data/cache/sportybet/fixtures/EFL_Cup.json && echo \"Deleted 3 more contaminated files\")",
-      "Bash(git commit -m 'test: update multi_market_edge_test for blended EV \\(ID414\\) — other session *)"
+      "Bash(git commit -m 'test: update multi_market_edge_test for blended EV \\(ID414\\) — other session *)",
+      "Bash(cd \"c:/Users/Motunrayo/omniroute test/olp_xdv_agent/olp_xdv\" && rm -f _clear_cache.py verify_codes.py && echo \"removed\" && git status --short 2>&1 | grep -v \"^ M\" )",
+      "Bash(export ODDS_API_KEY=\"test-key\")",
+      "Bash(echo \"exit $?\")",
+      "Bash(python -m pytest tests/booking_codes_test.py tests/bookmaker_engine_test.py tests/leagues_test.py tests/team_alias_test.py -q)",
+      "Bash(PYTHONIOENCODING=utf-8 python tests/booking_codes_test.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python tests/olp_xdv_pipeline.py --help)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c ' *)",
+      "Bash(PYTHONUTF8=1 python tests/booking_codes_test.py)",
+      "Bash(PYTHONUTF8=1 python tests/acca_builder_test.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python tests/fixture_verification_test.py)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(echo \"EXIT=$? \\(2=blocking=good\\)\")",
+      "Bash(PYTHONUTF8=1 python tests/webapp_feed_parity_test.py)",
+      "Bash(cd \"c:/Users/Motunrayo/omniroute test/olp_xdv_agent\" && grep -rln \"nav=False\\\\|rows=0\\\\|nav=True\\\\|-> nav=\" . --include=*.py 2>/dev/null | grep -v \".pyc\" | head; echo \"---search temp/workspace---\"; grep -rln \"rows=0\\\\|nav=False\" /c/Users/Motunrayo/ 2>/dev/null | grep -v \".pyc\" | head)",
+      "Read(//c/Users/Motunrayo//**)",
+      "Bash(export PLAYWRIGHT_BROWSERS_PATH=/c/Users/Motunrayo/AppData/Local/ms-playwright)",
+      "Bash(PYTHONIOENCODING=utf-8 python scripts/_verify_cups_live.py)",
+      "Read(//c/Users/Motunrayo/.claude/projects/c--Users-Motunrayo-omniroute-test/f8f96e89-8a81-49e7-b7b4-a07ce4fdeb25/tasks/**)",
+      "Read(//c/Users/Motunrayo/AppData/Local/Temp/claude/c--Users-Motunrayo-omniroute-test/f8f96e89-8a81-49e7-b7b4-a07ce4fdeb25/tasks/**)",
+      "Bash(rm -f data/cache/api_football/plan.json)",
+      "Bash(export API_FOOTBALL_KEY=\"d5f32605256b79f180368ae5608fd4ec\")",
+      "Bash(del \"c:\\\\Users\\\\Motunrayo\\\\omniroute test\\\\olp_xdv_agent\\\\olp_xdv\\\\tests\\\\fixtures_cache_test.py\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\Motunrayo\\Documents\\OLP_XDV_Vault",
       "C:\\Users\\Motunrayo\\AppData\\Roaming\\Claude",
       "c:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv",
-      "C:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\\data\\cache\\sportybet\\fixtures"
+      "C:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\\data\\cache\\sportybet\\fixtures",
+      "c:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\\.claude\\hooks"
     ]
   },
   "hooks": {
