@@ -246,7 +246,9 @@
       "Read(//c/Users/Motunrayo/AppData/Local/Temp/claude/c--Users-Motunrayo-omniroute-test/f8f96e89-8a81-49e7-b7b4-a07ce4fdeb25/tasks/**)",
       "Bash(rm -f data/cache/api_football/plan.json)",
       "Bash(export API_FOOTBALL_KEY=\"d5f32605256b79f180368ae5608fd4ec\")",
-      "Bash(del \"c:\\\\Users\\\\Motunrayo\\\\omniroute test\\\\olp_xdv_agent\\\\olp_xdv\\\\tests\\\\fixtures_cache_test.py\")"
+      "Bash(del \"c:\\\\Users\\\\Motunrayo\\\\omniroute test\\\\olp_xdv_agent\\\\olp_xdv\\\\tests\\\\fixtures_cache_test.py\")",
+      "mcp__obsidian__search_files",
+      "mcp__obsidian__move_file"
     ],
     "additionalDirectories": [
       "C:\\Users\\Motunrayo\\Documents\\OLP_XDV_Vault",
