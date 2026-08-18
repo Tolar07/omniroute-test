@@ -1,0 +1,9 @@
+docs(vault): migrate mirror-only files to canonical + HR57/HR58/HR59 rules + retire mirror
+
+- Migrate API Keys.md (sanitized), OLP_XDV_Framework_Index.md, Vault-Memory-Index.md from deprecated mirror to canonical vault
+- Add HR57 (Session Memory Compliance), HR58 (Vault-Memory Sync Consistency Gate), HR59 (Canonical Vault Authority) hard rules
+- Remove softness/tier gate rules HR57/HR58/HR59 were previously shelved IDs
+- Create DEPRECATED_NOTICE.md in mirror root marking it read-only reference only
+- Update OLP_XDV_Framework_Index.md to reflect mirror retired status
+
+Co-Authored-By: Claude <noreply@anthropic.com>
