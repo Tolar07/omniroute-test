@@ -1,0 +1,1916 @@
+{
+  "timestamp": "2026-08-20T22:16:11.495Z",
+  "run_type": "hourly-continuous-learning",
+  "runs_analyzed": 35,
+  "executive_summary": {
+    "total_predictions": 315,
+    "overall_hit_rate": "33.3%",
+    "overall_clv": "0.000%",
+    "critical_issues": 35
+  },
+  "engine_performance": {
+    "cross": {
+      "hitRate": "33.3",
+      "avgClv": "0.000",
+      "recommendedWeight": "0.333"
+    },
+    "elo": {
+      "hitRate": "33.3",
+      "avgClv": "0.000",
+      "recommendedWeight": "0.333"
+    }
+  },
+  "market_performance": {
+    "1X2_AWAY": {
+      "hitRate": "0.0",
+      "total": 70,
+      "recommend": "reduce"
+    },
+    "1X2_DRAW": {
+      "hitRate": "0.0",
+      "total": 70,
+      "recommend": "reduce"
+    },
+    "1X2_HOME": {
+      "hitRate": "100.0",
+      "total": 70,
+      "recommend": "keep"
+    },
+    "BTTS_YES": {
+      "hitRate": "0.0",
+      "total": 35,
+      "recommend": "reduce"
+    },
+    "OVER_1_5": {
+      "hitRate": "100.0",
+      "total": 35,
+      "recommend": "keep"
+    },
+    "OVER_2_5": {
+      "hitRate": "0.0",
+      "total": 35,
+      "recommend": "reduce"
+    }
+  },
+  "league_performance": {
+    "Champions League": {
+      "hitRate": "33.3",
+      "total": 315,
+      "recommend": "quarantine"
+    }
+  },
+  "calibration": {
+    "0.1-0.2": {
+      "predictions": 70,
+      "hitRate": "0.0",
+      "avgProb": "15.3",
+      "error": "-15.3"
+    },
+    "0.2-0.3": {
+      "predictions": 70,
+      "hitRate": "0.0",
+      "avgProb": "26.6",
+      "error": "-26.6"
+    },
+    "0.5-0.6": {
+      "predictions": 35,
+      "hitRate": "100.0",
+      "avgProb": "55.7",
+      "error": "44.3"
+    },
+    "0.6-0.7": {
+      "predictions": 70,
+      "hitRate": "100.0",
+      "avgProb": "60.5",
+      "error": "39.5"
+    },
+    "0.3-0.4": {
+      "predictions": 70,
+      "hitRate": "0.0",
+      "avgProb": "34.1",
+      "error": "-34.1"
+    }
+  },
+  "run_details": [
+    {
+      "run_id": "20260805T024255Z-877b",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T024417Z-208f",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T052148Z-d8db",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T055321Z-5ecc",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T060421Z-af42",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T063442Z-5cd4",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T072324Z-46e9",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T094015Z-3b43",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T094603Z-a396",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T094638Z-c2f3",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T170842Z-e6b5",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T171408Z-1068",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T183857Z-52aa",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T183939Z-2166",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T190231Z-23ed",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T190407Z-b405",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T192949Z-f7e4",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T193111Z-c8ad",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T193235Z-b437",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T193334Z-9abc",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T193425Z-4a06",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T193511Z-bb7d",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T193958Z-aec8",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T194026Z-56ef",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T194054Z-4b59",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T194217Z-315f",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T194736Z-1975",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T194821Z-3bb8",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T195112Z-8ea6",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T195140Z-5860",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T195206Z-c36b",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T200546Z-1da5",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T200701Z-52f8",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T200736Z-b7d4",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    },
+    {
+      "run_id": "20260805T200924Z-ee73",
+      "predictions": 9,
+      "engines": {
+        "cross": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        },
+        "elo": {
+          "hit_rate": "33.3",
+          "avg_clv": 0
+        }
+      },
+      "markets": {
+        "1X2_AWAY": {
+          "hit_rate": "0.0"
+        },
+        "1X2_DRAW": {
+          "hit_rate": "0.0"
+        },
+        "1X2_HOME": {
+          "hit_rate": "100.0"
+        },
+        "BTTS_YES": {
+          "hit_rate": "0.0"
+        },
+        "OVER_1_5": {
+          "hit_rate": "100.0"
+        },
+        "OVER_2_5": {
+          "hit_rate": "0.0"
+        }
+      },
+      "leagues": {
+        "Champions League": {
+          "hit_rate": "33.3"
+        }
+      },
+      "clv": {
+        "values": [],
+        "mean": 0,
+        "positive": 0,
+        "positive_rate": 0
+      },
+      "miss_patterns": [
+        {
+          "type": "draw_market",
+          "severity": "high",
+          "detail": "1X2_DRAW hit rate 0.0%"
+        }
+      ]
+    }
+  ]
+}

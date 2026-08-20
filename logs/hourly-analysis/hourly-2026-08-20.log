@@ -20,3 +20,480 @@ operable program or batch file.
 [2026-08-20T22:03:34.873Z] ℹ️  No new settled fixtures — nothing to learn
 [2026-08-20T22:03:34.874Z] ═══════════════════════════════════════════════════════════
 
+[2026-08-20T22:11:57.473Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T22:11:57.485Z] 🧠 HOURLY MATCH ANALYSIS — CONTINUOUS LEARNING
+[2026-08-20T22:11:57.488Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T22:11:57.490Z] 📌 Last processed run_id: none
+[2026-08-20T22:11:57.492Z] 📌 Last run: never
+[2026-08-20T22:11:57.845Z] 🔍 Found 35 newly settled run(s)
+[2026-08-20T22:11:57.861Z] 📋 Loaded 23 settled legs for CLV correlation
+[2026-08-20T22:11:57.870Z] 📋 Loaded 3 match results from full_slate_results
+[2026-08-20T22:11:57.874Z] 
+📋 Analyzing run: 20260805T024255Z-877b
+[2026-08-20T22:11:57.887Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.889Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.890Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.891Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.893Z] 
+📋 Analyzing run: 20260805T024417Z-208f
+[2026-08-20T22:11:57.901Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.903Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.904Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.905Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.906Z] 
+📋 Analyzing run: 20260805T052148Z-d8db
+[2026-08-20T22:11:57.912Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.913Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.915Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.917Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.918Z] 
+📋 Analyzing run: 20260805T055321Z-5ecc
+[2026-08-20T22:11:57.925Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.926Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.927Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.928Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.929Z] 
+📋 Analyzing run: 20260805T060421Z-af42
+[2026-08-20T22:11:57.936Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.937Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.938Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.939Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.940Z] 
+📋 Analyzing run: 20260805T063442Z-5cd4
+[2026-08-20T22:11:57.945Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.946Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.949Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.951Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.953Z] 
+📋 Analyzing run: 20260805T072324Z-46e9
+[2026-08-20T22:11:57.959Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.961Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.961Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.962Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.963Z] 
+📋 Analyzing run: 20260805T094015Z-3b43
+[2026-08-20T22:11:57.969Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.970Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.971Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.972Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.973Z] 
+📋 Analyzing run: 20260805T094603Z-a396
+[2026-08-20T22:11:57.979Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.981Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.983Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.984Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.985Z] 
+📋 Analyzing run: 20260805T094638Z-c2f3
+[2026-08-20T22:11:57.990Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:57.991Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:57.992Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:57.993Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:57.994Z] 
+📋 Analyzing run: 20260805T170842Z-e6b5
+[2026-08-20T22:11:57.999Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.001Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.002Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.003Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.004Z] 
+📋 Analyzing run: 20260805T171408Z-1068
+[2026-08-20T22:11:58.010Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.011Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.012Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.013Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.015Z] 
+📋 Analyzing run: 20260805T183857Z-52aa
+[2026-08-20T22:11:58.023Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.024Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.025Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.027Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.028Z] 
+📋 Analyzing run: 20260805T183939Z-2166
+[2026-08-20T22:11:58.035Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.036Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.037Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.038Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.039Z] 
+📋 Analyzing run: 20260805T190231Z-23ed
+[2026-08-20T22:11:58.045Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.046Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.051Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.052Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.054Z] 
+📋 Analyzing run: 20260805T190407Z-b405
+[2026-08-20T22:11:58.073Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.075Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.104Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.105Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.106Z] 
+📋 Analyzing run: 20260805T192949Z-f7e4
+[2026-08-20T22:11:58.112Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.118Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.119Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.121Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.122Z] 
+📋 Analyzing run: 20260805T193111Z-c8ad
+[2026-08-20T22:11:58.129Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.130Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.133Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.134Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.137Z] 
+📋 Analyzing run: 20260805T193235Z-b437
+[2026-08-20T22:11:58.160Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.161Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.180Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.185Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.188Z] 
+📋 Analyzing run: 20260805T193334Z-9abc
+[2026-08-20T22:11:58.215Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.219Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.221Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.223Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.224Z] 
+📋 Analyzing run: 20260805T193425Z-4a06
+[2026-08-20T22:11:58.245Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.259Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.260Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.261Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.262Z] 
+📋 Analyzing run: 20260805T193511Z-bb7d
+[2026-08-20T22:11:58.367Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.368Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.369Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.370Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.371Z] 
+📋 Analyzing run: 20260805T193958Z-aec8
+[2026-08-20T22:11:58.489Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.490Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.490Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.491Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.492Z] 
+📋 Analyzing run: 20260805T194026Z-56ef
+[2026-08-20T22:11:58.572Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.586Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.639Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.640Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.641Z] 
+📋 Analyzing run: 20260805T194054Z-4b59
+[2026-08-20T22:11:58.657Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.658Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.659Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.660Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.660Z] 
+📋 Analyzing run: 20260805T194217Z-315f
+[2026-08-20T22:11:58.669Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.670Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.671Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.672Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.673Z] 
+📋 Analyzing run: 20260805T194736Z-1975
+[2026-08-20T22:11:58.677Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.679Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.679Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.681Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.682Z] 
+📋 Analyzing run: 20260805T194821Z-3bb8
+[2026-08-20T22:11:58.687Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.688Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.689Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.690Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.691Z] 
+📋 Analyzing run: 20260805T195112Z-8ea6
+[2026-08-20T22:11:58.695Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.696Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.697Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.699Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.700Z] 
+📋 Analyzing run: 20260805T195140Z-5860
+[2026-08-20T22:11:58.704Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.705Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.706Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.707Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.708Z] 
+📋 Analyzing run: 20260805T195206Z-c36b
+[2026-08-20T22:11:58.713Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.714Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.716Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.717Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.718Z] 
+📋 Analyzing run: 20260805T200546Z-1da5
+[2026-08-20T22:11:58.722Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.723Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.724Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.725Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.726Z] 
+📋 Analyzing run: 20260805T200701Z-52f8
+[2026-08-20T22:11:58.732Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.733Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.734Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.735Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.736Z] 
+📋 Analyzing run: 20260805T200736Z-b7d4
+[2026-08-20T22:11:58.747Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.750Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.753Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.755Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.757Z] 
+📋 Analyzing run: 20260805T200924Z-ee73
+[2026-08-20T22:11:58.764Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:11:58.768Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:11:58.770Z]    💰 CLV: mean=0%, positive=undefined%
+[2026-08-20T22:11:58.771Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:11:58.772Z] 
+🧮 Updating learning weights...
+[2026-08-20T22:11:58.777Z] 💾 Learning data saved: c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\learning\learning-2026-08-20.json
+[2026-08-20T22:11:58.779Z] 
+📝 Generating report...
+[2026-08-20T22:11:58.787Z] 📊 Report saved: c:\Users\Motunrayo\omniroute test\logs\hourly-analysis\report-2026-08-20T22-11-58-786Z.json
+[2026-08-20T22:11:58.790Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-20T22:11:58.791Z] ✅ HOURLY ANALYSIS COMPLETE
+[2026-08-20T22:11:58.792Z]    Runs: 35 | Predictions: 315
+[2026-08-20T22:11:58.793Z]    Hit rate: 33.3% | CLV: 0.000%
+[2026-08-20T22:11:58.794Z]    Engine weights updated: 2
+[2026-08-20T22:11:58.795Z]    Market recommendations: 4 to reduce
+[2026-08-20T22:11:58.796Z]    League recommendations: 1 to quarantine
+[2026-08-20T22:11:58.836Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-20T22:15:25.869Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T22:15:25.874Z] 🧠 HOURLY MATCH ANALYSIS — CONTINUOUS LEARNING
+[2026-08-20T22:15:25.875Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T22:15:25.877Z] 📌 Last processed run_id: 20260805T200924Z-ee73
+[2026-08-20T22:15:25.878Z] 📌 Last run: 2026-08-20T22:11:58.788Z
+[2026-08-20T22:15:25.909Z] 🔍 Found 0 newly settled run(s)
+[2026-08-20T22:15:25.911Z] ℹ️  No new settled runs — nothing to learn
+[2026-08-20T22:15:25.912Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-20T22:16:10.325Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T22:16:10.336Z] 🧠 HOURLY MATCH ANALYSIS — CONTINUOUS LEARNING
+[2026-08-20T22:16:10.338Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T22:16:10.341Z] 📌 Last processed run_id: none
+[2026-08-20T22:16:10.344Z] 📌 Last run: never
+[2026-08-20T22:16:10.427Z] 🔍 Found 35 newly settled run(s)
+[2026-08-20T22:16:10.436Z] 📋 Loaded 23 settled legs for CLV correlation
+[2026-08-20T22:16:10.445Z] 📋 Loaded 3 match results from full_slate_results
+[2026-08-20T22:16:10.448Z] 
+📋 Analyzing run: 20260805T024255Z-877b
+[2026-08-20T22:16:10.468Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.470Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.471Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.472Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.475Z] 
+📋 Analyzing run: 20260805T024417Z-208f
+[2026-08-20T22:16:10.551Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.553Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.554Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.556Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.563Z] 
+📋 Analyzing run: 20260805T052148Z-d8db
+[2026-08-20T22:16:10.669Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.671Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.672Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.683Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.687Z] 
+📋 Analyzing run: 20260805T055321Z-5ecc
+[2026-08-20T22:16:10.701Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.702Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.704Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.705Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.717Z] 
+📋 Analyzing run: 20260805T060421Z-af42
+[2026-08-20T22:16:10.723Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.725Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.726Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.728Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.729Z] 
+📋 Analyzing run: 20260805T063442Z-5cd4
+[2026-08-20T22:16:10.735Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.736Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.737Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.738Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.741Z] 
+📋 Analyzing run: 20260805T072324Z-46e9
+[2026-08-20T22:16:10.751Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.752Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.753Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.754Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.755Z] 
+📋 Analyzing run: 20260805T094015Z-3b43
+[2026-08-20T22:16:10.764Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.765Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.766Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.767Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.768Z] 
+📋 Analyzing run: 20260805T094603Z-a396
+[2026-08-20T22:16:10.775Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.777Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.778Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.779Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.788Z] 
+📋 Analyzing run: 20260805T094638Z-c2f3
+[2026-08-20T22:16:10.814Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.815Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.817Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.818Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.819Z] 
+📋 Analyzing run: 20260805T170842Z-e6b5
+[2026-08-20T22:16:10.862Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.870Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.871Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.876Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.881Z] 
+📋 Analyzing run: 20260805T171408Z-1068
+[2026-08-20T22:16:10.896Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.899Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.903Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.904Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.912Z] 
+📋 Analyzing run: 20260805T183857Z-52aa
+[2026-08-20T22:16:10.922Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.926Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.927Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.928Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.929Z] 
+📋 Analyzing run: 20260805T183939Z-2166
+[2026-08-20T22:16:10.934Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.935Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.936Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.937Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.938Z] 
+📋 Analyzing run: 20260805T190231Z-23ed
+[2026-08-20T22:16:10.947Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.948Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.950Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.951Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.952Z] 
+📋 Analyzing run: 20260805T190407Z-b405
+[2026-08-20T22:16:10.963Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.965Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.966Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.967Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.968Z] 
+📋 Analyzing run: 20260805T192949Z-f7e4
+[2026-08-20T22:16:10.976Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:10.983Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:10.987Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:10.996Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:10.997Z] 
+📋 Analyzing run: 20260805T193111Z-c8ad
+[2026-08-20T22:16:11.026Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.029Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.030Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.038Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.054Z] 
+📋 Analyzing run: 20260805T193235Z-b437
+[2026-08-20T22:16:11.069Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.078Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.079Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.106Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.134Z] 
+📋 Analyzing run: 20260805T193334Z-9abc
+[2026-08-20T22:16:11.167Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.169Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.170Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.173Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.177Z] 
+📋 Analyzing run: 20260805T193425Z-4a06
+[2026-08-20T22:16:11.219Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.221Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.242Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.244Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.246Z] 
+📋 Analyzing run: 20260805T193511Z-bb7d
+[2026-08-20T22:16:11.268Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.269Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.270Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.271Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.272Z] 
+📋 Analyzing run: 20260805T193958Z-aec8
+[2026-08-20T22:16:11.280Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.282Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.283Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.284Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.285Z] 
+📋 Analyzing run: 20260805T194026Z-56ef
+[2026-08-20T22:16:11.292Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.293Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.297Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.300Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.303Z] 
+📋 Analyzing run: 20260805T194054Z-4b59
+[2026-08-20T22:16:11.318Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.320Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.321Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.323Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.324Z] 
+📋 Analyzing run: 20260805T194217Z-315f
+[2026-08-20T22:16:11.335Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.336Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.338Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.339Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.340Z] 
+📋 Analyzing run: 20260805T194736Z-1975
+[2026-08-20T22:16:11.351Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.352Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.353Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.354Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.356Z] 
+📋 Analyzing run: 20260805T194821Z-3bb8
+[2026-08-20T22:16:11.367Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.368Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.369Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.370Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.371Z] 
+📋 Analyzing run: 20260805T195112Z-8ea6
+[2026-08-20T22:16:11.381Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.382Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.383Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.387Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.389Z] 
+📋 Analyzing run: 20260805T195140Z-5860
+[2026-08-20T22:16:11.399Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.400Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.401Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.402Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.403Z] 
+📋 Analyzing run: 20260805T195206Z-c36b
+[2026-08-20T22:16:11.415Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.416Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.417Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.418Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.419Z] 
+📋 Analyzing run: 20260805T200546Z-1da5
+[2026-08-20T22:16:11.427Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.428Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.430Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.431Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.432Z] 
+📋 Analyzing run: 20260805T200701Z-52f8
+[2026-08-20T22:16:11.439Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.445Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.450Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.454Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.455Z] 
+📋 Analyzing run: 20260805T200736Z-b7d4
+[2026-08-20T22:16:11.467Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.468Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.472Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.473Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.474Z] 
+📋 Analyzing run: 20260805T200924Z-ee73
+[2026-08-20T22:16:11.481Z]    📊 9 settled predictions | Engines: cross, elo
+[2026-08-20T22:16:11.482Z]    🎯 Hit rates: cross=33.3%, elo=33.3%
+[2026-08-20T22:16:11.483Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-20T22:16:11.484Z]    ⚠️  draw_market: 1X2_DRAW hit rate 0.0%
+[2026-08-20T22:16:11.484Z] 
+🧮 Updating learning weights...
+[2026-08-20T22:16:11.489Z] 💾 Learning data saved: c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\learning\learning-2026-08-20.json
+[2026-08-20T22:16:11.493Z] 
+📝 Generating report...
+[2026-08-20T22:16:11.498Z] 📊 Report saved: c:\Users\Motunrayo\omniroute test\logs\hourly-analysis\report-2026-08-20T22-16-11-496Z.json
+[2026-08-20T22:16:11.500Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-20T22:16:11.501Z] ✅ HOURLY ANALYSIS COMPLETE
+[2026-08-20T22:16:11.502Z]    Runs: 35 | Predictions: 315
+[2026-08-20T22:16:11.503Z]    Hit rate: 33.3% | CLV: 0.000%
+[2026-08-20T22:16:11.504Z]    Engine weights updated: 2
+[2026-08-20T22:16:11.505Z]    Market recommendations: 4 to reduce
+[2026-08-20T22:16:11.506Z]    League recommendations: 1 to quarantine
+[2026-08-20T22:16:11.508Z] ═══════════════════════════════════════════════════════════
+
