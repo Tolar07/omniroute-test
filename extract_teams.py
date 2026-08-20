@@ -1,42 +1,36 @@
-import ast
-
-with open(r'c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\thesportsdb_fixtures.py', 'r', encoding='utf-8') as f:
-    content = f.read()
-
-tree = ast.parse(content)
-
-unique_teams = set()
-
-for node in tree.body:
-    if isinstance(node, ast.Assign):
-        for target in node.targets:
-            if isinstance(target, ast.Name):
-                if target.id == 'TEAM_ALIASES':
-                    if isinstance(node.value, ast.Dict):
-                        for key in node.value.keys:
-                            if isinstance(node.value, ast.Dict):
-                                # TEAM_ALIASES is {league: {tsdb_name: model_key}}
-                                # We need to iterate over the nested dict
-                                pass
-                if target.id == 'KNOWN_NEW_TO_DIVISION_2627':
-                    if isinstance(node.value, ast.Dict):
-                        for value in node.value.values:
-                            if isinstance(value, (ast.Tuple, ast.List)):
-                                for elt in value.elts:
-                                    if isinstance(elt, ast.Constant):
-                                        unique_teams.add(elt.value)
-
-# Actually, this AST approach is too hard for nested dicts.
-# Let's just use a simpler script.
-
 import re
 
+# Read the file content
 with open(r'c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\thesportsdb_fixtures.py', 'r', encoding='utf-8') as f:
     text = f.read()
 
-# TEAM_ALIASES: league: {tsdb_name: model_key}
-# KNOWN_NEW_TO_DIVISION_2627: league: (team_name, team_name)
+all_teams = set()
 
-# This is tricky because of the structure.
-# I'll just print the file content and parse it manually.
-print(text)
+# Extract teams from TEAM_ALIASES - pattern: "Team Name": "Model Key"
+# This matches the key names in the inner dicts
+team_alias_pattern = r'"([^"]+)":\s*"([^"]+)"'
+matches = re.findall(team_alias_pattern, text)
+for tsdb_name, model_key in matches:
+    all_teams.add(tsdb_name)
+
+# Extract teams from KNOWN_NEW_TO_DIVISION_2627 - pattern: ("Team Name", "Team Name")
+known_new_pattern = r'"([^"]+)"\s*,\s*"([^"]+)"'
+matches = re.findall(known_new_pattern, text)
+for t1, t2 in matches:
+    all_teams.add(t1)
+    all_teams.add(t2)
+
+# Also find tuples with single elements
+single_pattern = r'\("([^"]+)",\)'
+matches = re.findall(single_pattern, text)
+for t in matches:
+    all_teams.add(t)
+
+# Filter out things that are clearly not team names
+# Remove league names, country names, etc. by filtering common non-team patterns
+filtered = {t for t in all_teams if len(t) > 1 and not t.isdigit()}
+
+# Sort and print
+for team in sorted(filtered):
+    print(team)
+print(f'\nTotal unique teams: {len(filtered)}')
