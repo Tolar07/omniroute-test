@@ -26,7 +26,7 @@ if (-not (Test-Path $ScriptPath)) {
 
 $TaskName = "OLP_XDV_AutoSyncCommit"
 $Action = New-ScheduledTaskAction -Execute $NodePath -Argument "`"$ScriptPath`""
-$Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration ([TimeSpan]::MaxValue)
+$Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration (New-TimeSpan -Days 3650)
 $Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -Hidden
 
 # Check if task exists
