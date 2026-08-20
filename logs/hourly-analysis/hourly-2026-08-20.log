@@ -10,3 +10,13 @@ operable program or batch file.
 [2026-08-20T21:55:41.530Z] ℹ️  No new settled fixtures — nothing to learn
 [2026-08-20T21:55:41.531Z] ═══════════════════════════════════════════════════════════
 
+[2026-08-20T22:03:34.523Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T22:03:34.625Z] 🧠 HOURLY MATCH ANALYSIS — CONTINUOUS LEARNING
+[2026-08-20T22:03:34.724Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T22:03:34.752Z] 📌 Last processed fixture_id: 0
+[2026-08-20T22:03:34.772Z] 📌 Last run: never
+[2026-08-20T22:03:34.833Z] ❌ Failed to query fixtures: SQLITE_ERROR: no such table: fixtures
+[2026-08-20T22:03:34.870Z] 🔍 Found 0 newly settled fixture(s)
+[2026-08-20T22:03:34.873Z] ℹ️  No new settled fixtures — nothing to learn
+[2026-08-20T22:03:34.874Z] ═══════════════════════════════════════════════════════════
+
