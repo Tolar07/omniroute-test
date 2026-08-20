@@ -1,0 +1,12 @@
+[2026-08-20T21:55:41.457Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T21:55:41.464Z] 🧠 HOURLY MATCH ANALYSIS — CONTINUOUS LEARNING
+[2026-08-20T21:55:41.468Z] ═══════════════════════════════════════════════════════════
+[2026-08-20T21:55:41.470Z] 📌 Last processed fixture_id: 0
+[2026-08-20T21:55:41.472Z] 📌 Last run: never
+[2026-08-20T21:55:41.526Z] ❌ Failed to query fixtures: 'sqlite3' is not recognized as an internal or external command,
+operable program or batch file.
+
+[2026-08-20T21:55:41.528Z] 🔍 Found 0 newly settled fixture(s)
+[2026-08-20T21:55:41.530Z] ℹ️  No new settled fixtures — nothing to learn
+[2026-08-20T21:55:41.531Z] ═══════════════════════════════════════════════════════════
+
