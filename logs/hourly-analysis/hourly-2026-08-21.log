@@ -106,3 +106,42 @@
 [2026-08-21T11:00:01.591Z] ℹ️  No new settled runs — nothing to learn
 [2026-08-21T11:00:01.593Z] ═══════════════════════════════════════════════════════════
 
+[2026-08-21T12:00:01.468Z] ═══════════════════════════════════════════════════════════
+[2026-08-21T12:00:01.481Z] 🧠 HOURLY MATCH ANALYSIS — CONTINUOUS LEARNING
+[2026-08-21T12:00:01.482Z] ═══════════════════════════════════════════════════════════
+[2026-08-21T12:00:01.485Z] 📌 Last processed run_id: 20260805T200924Z-ee73
+[2026-08-21T12:00:01.486Z] 📌 Last run: 2026-08-20T22:16:11.499Z
+[2026-08-21T12:00:01.533Z] 🔍 Found 3 newly settled run(s)
+[2026-08-21T12:00:01.541Z] 📋 Loaded 23 settled legs for CLV correlation
+[2026-08-21T12:00:01.551Z] 📋 Loaded 3 match results from full_slate_results
+[2026-08-21T12:00:01.556Z] 
+📋 Analyzing run: 20260820T214555Z-3f50
+[2026-08-21T12:00:01.565Z]    📊 15 settled predictions | Engines: dc, xg, bookmaker, consensus
+[2026-08-21T12:00:01.568Z]    🎯 Hit rates: dc=33.3%, xg=50.0%, bookmaker=33.3%, consensus=33.3%
+[2026-08-21T12:00:01.570Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-21T12:00:01.571Z] 
+📋 Analyzing run: 20260820T220317Z-553a
+[2026-08-21T12:00:01.577Z]    📊 15 settled predictions | Engines: dc, xg, bookmaker, consensus
+[2026-08-21T12:00:01.583Z]    🎯 Hit rates: dc=33.3%, xg=50.0%, bookmaker=33.3%, consensus=33.3%
+[2026-08-21T12:00:01.584Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-21T12:00:01.586Z] 
+📋 Analyzing run: 20260820T222444Z-c59a
+[2026-08-21T12:00:01.591Z]    📊 15 settled predictions | Engines: dc, xg, bookmaker, consensus
+[2026-08-21T12:00:01.594Z]    🎯 Hit rates: dc=33.3%, xg=50.0%, bookmaker=33.3%, consensus=33.3%
+[2026-08-21T12:00:01.596Z]    💰 CLV: mean=0%, positive=0%
+[2026-08-21T12:00:01.597Z] 
+🧮 Updating learning weights...
+[2026-08-21T12:00:01.601Z] 💾 Learning data saved: c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\learning\learning-2026-08-21.json
+[2026-08-21T12:00:01.605Z] 
+📝 Generating report...
+[2026-08-21T12:00:01.608Z] 📊 Report saved: c:\Users\Motunrayo\omniroute test\logs\hourly-analysis\report-2026-08-21T12-00-01-607Z.json
+[2026-08-21T12:00:01.614Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-21T12:00:01.615Z] ✅ HOURLY ANALYSIS COMPLETE
+[2026-08-21T12:00:01.617Z]    Runs: 3 | Predictions: 45
+[2026-08-21T12:00:01.619Z]    Hit rate: 40.0% | CLV: 0.000%
+[2026-08-21T12:00:01.621Z]    Engine weights updated: 4
+[2026-08-21T12:00:01.624Z]    Market recommendations: 3 to reduce
+[2026-08-21T12:00:01.629Z]    League recommendations: 0 to quarantine
+[2026-08-21T12:00:01.632Z] ═══════════════════════════════════════════════════════════
+
