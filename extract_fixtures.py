@@ -1,7 +1,7 @@
 import json
 import os
 
-fixtures_dir = "/c/Users/Motunrayo/omniroute test/olp_xdv_agent/olp_xdv/data/cache/sportybet/fixtures/"
+fixtures_dir = r"C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\cache\sportybet\fixtures"
 
 for filename in sorted(os.listdir(fixtures_dir)):
     if not filename.endswith('.json'):
