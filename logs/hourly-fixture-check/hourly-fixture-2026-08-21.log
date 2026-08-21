@@ -145,3 +145,263 @@
 [2026-08-21T16:09:00.646Z] ✅ HOURLY FIXTURE CHECK COMPLETE
 [2026-08-21T16:09:00.646Z] ═══════════════════════════════════════════════════════════
 
+[2026-08-21T21:59:57.114Z] ═══════════════════════════════════════════════════════════
+[2026-08-21T21:59:57.120Z] ⏰ HOURLY FIXTURE CHECK — Upcoming matches only
+[2026-08-21T21:59:57.121Z] ═══════════════════════════════════════════════════════════
+[2026-08-21T21:59:57.122Z] 📌 Last run: 2026-08-21T16:09:00.644Z
+[2026-08-21T21:59:57.123Z] 📌 Last board date: 2026-08-21
+[2026-08-21T21:59:57.245Z] 🔍 Found 5232 fixture predictions in DB (hit IS NULL)
+[2026-08-21T21:59:57.276Z] 📅 Upcoming (not kicked off): 5232
+[2026-08-21T21:59:57.278Z] ⚽ Already kicked off: 0
+[2026-08-21T21:59:57.279Z] 
+📋 Upcoming fixtures:
+[2026-08-21T21:59:57.283Z]    Ligue 1: 1299 fixture(s)
+[2026-08-21T21:59:57.284Z]       Marseille v Strasbourg @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.285Z]       Marseille v Strasbourg @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.285Z]       Marseille v Strasbourg @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.286Z]       Marseille v Strasbourg @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.287Z]       Marseille v Strasbourg @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.287Z]       ... and 1294 more
+[2026-08-21T21:59:57.288Z]    Albanian Superliga: 90 fixture(s)
+[2026-08-21T21:59:57.289Z]       Vllaznia Shkodër v Skenderbeu Korce @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.290Z]       Vllaznia Shkodër v Skenderbeu Korce @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.291Z]       Vllaznia Shkodër v Skenderbeu Korce @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.291Z]       Vllaznia Shkodër v Skenderbeu Korce @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.292Z]       Vllaznia Shkodër v Skenderbeu Korce @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.293Z]       ... and 85 more
+[2026-08-21T21:59:57.294Z]    Armenian Premier League: 135 fixture(s)
+[2026-08-21T21:59:57.295Z]       Ararat v Pyunik Yerevan @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.296Z]       Ararat v Pyunik Yerevan @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.297Z]       Ararat v Pyunik Yerevan @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.297Z]       Ararat v Pyunik Yerevan @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.298Z]       Ararat v Pyunik Yerevan @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.299Z]       ... and 130 more
+[2026-08-21T21:59:57.300Z]    Austrian Bundesliga: 60 fixture(s)
+[2026-08-21T21:59:57.300Z]       Ried v Grazer AK @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.301Z]       Ried v Grazer AK @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.302Z]       Ried v Grazer AK @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.303Z]       Ried v Grazer AK @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.305Z]       Ried v Grazer AK @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.306Z]       ... and 55 more
+[2026-08-21T21:59:57.306Z]    Belarusian Premier League: 90 fixture(s)
+[2026-08-21T21:59:57.307Z]       FC Minsk v FC Vitebsk @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.307Z]       FC Minsk v FC Vitebsk @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.308Z]       FC Minsk v FC Vitebsk @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.309Z]       FC Minsk v FC Vitebsk @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.310Z]       FC Minsk v FC Vitebsk @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.311Z]       ... and 85 more
+[2026-08-21T21:59:57.311Z]    Belgian Pro League: 60 fixture(s)
+[2026-08-21T21:59:57.312Z]       Standard v RAAL La Louviere @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.313Z]       Standard v RAAL La Louviere @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.313Z]       Standard v RAAL La Louviere @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.314Z]       Standard v RAAL La Louviere @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.315Z]       Standard v RAAL La Louviere @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.315Z]       ... and 55 more
+[2026-08-21T21:59:57.316Z]    Hungarian NB I: 75 fixture(s)
+[2026-08-21T21:59:57.317Z]       Paks v Ujpest @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.317Z]       Paks v Ujpest @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.319Z]       Paks v Ujpest @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.320Z]       Paks v Ujpest @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.321Z]       Paks v Ujpest @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.321Z]       ... and 70 more
+[2026-08-21T21:59:57.322Z]    La Liga: 228 fixture(s)
+[2026-08-21T21:59:57.324Z]       Betis v Sociedad @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.325Z]       Betis v Sociedad @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.329Z]       Betis v Sociedad @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.331Z]       Betis v Sociedad @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.331Z]       Betis v Sociedad @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.332Z]       ... and 223 more
+[2026-08-21T21:59:57.333Z]    Ligue 2: 84 fixture(s)
+[2026-08-21T21:59:57.334Z]       Boulogne v Red Star @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.335Z]       Boulogne v Red Star @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.336Z]       Boulogne v Red Star @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.336Z]       Boulogne v Red Star @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.337Z]       Boulogne v Red Star @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.337Z]       ... and 79 more
+[2026-08-21T21:59:57.338Z]    Maltese Premier League: 135 fixture(s)
+[2026-08-21T21:59:57.339Z]       Floriana v Sliema Wanderers @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.339Z]       Floriana v Sliema Wanderers @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.340Z]       Floriana v Sliema Wanderers @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.340Z]       Floriana v Sliema Wanderers @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.341Z]       Floriana v Sliema Wanderers @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.342Z]       ... and 130 more
+[2026-08-21T21:59:57.342Z]    Montenegrin First League: 57 fixture(s)
+[2026-08-21T21:59:57.343Z]       Mornar v Buducnost Podgorica @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.344Z]       Mornar v Buducnost Podgorica @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.345Z]       Mornar v Buducnost Podgorica @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.346Z]       Mornar v Buducnost Podgorica @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.347Z]       Mornar v Buducnost Podgorica @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.347Z]       ... and 52 more
+[2026-08-21T21:59:57.348Z]    Romanian Liga I: 21 fixture(s)
+[2026-08-21T21:59:57.349Z]       Petrolul Ploiesti v Rapid Bucuresti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.349Z]       Petrolul Ploiesti v Rapid Bucuresti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.350Z]       Petrolul Ploiesti v Rapid Bucuresti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.350Z]       Petrolul Ploiesti v Rapid Bucuresti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.351Z]       Petrolul Ploiesti v Rapid Bucuresti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.352Z]       ... and 16 more
+[2026-08-21T21:59:57.352Z]    Swedish Allsvenskan: 60 fixture(s)
+[2026-08-21T21:59:57.353Z]       Malmo FF v Hammarby @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.354Z]       Malmo FF v Hammarby @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.354Z]       Malmo FF v Hammarby @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.355Z]       Malmo FF v Hammarby @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.356Z]       Malmo FF v Hammarby @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.356Z]       ... and 55 more
+[2026-08-21T21:59:57.357Z]    Turkish Super Lig: 87 fixture(s)
+[2026-08-21T21:59:57.357Z]       Rizespor v Galatasaray @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.358Z]       Rizespor v Galatasaray @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.359Z]       Rizespor v Galatasaray @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.359Z]       Rizespor v Galatasaray @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.360Z]       Rizespor v Galatasaray @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.361Z]       ... and 82 more
+[2026-08-21T21:59:57.362Z]    Finnish Veikkausliiga: 30 fixture(s)
+[2026-08-21T21:59:57.362Z]       SJK v Lahti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.363Z]       SJK v Lahti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.364Z]       SJK v Lahti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.364Z]       SJK v Lahti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.365Z]       SJK v Lahti @ 2026-08-21  (0.0h)
+[2026-08-21T21:59:57.366Z]       ... and 25 more
+[2026-08-21T21:59:57.366Z]    Premier League: 1191 fixture(s)
+[2026-08-21T21:59:57.367Z]       Everton v Crystal Palace @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.368Z]       Everton v Crystal Palace @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.369Z]       Everton v Crystal Palace @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.370Z]       Everton v Crystal Palace @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.370Z]       Everton v Crystal Palace @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.371Z]       ... and 1186 more
+[2026-08-21T21:59:57.372Z]    Scottish Premiership: 216 fixture(s)
+[2026-08-21T21:59:57.372Z]       Hibernian v Kilmarnock @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.373Z]       Hibernian v Kilmarnock @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.373Z]       Hibernian v Kilmarnock @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.374Z]       Hibernian v Kilmarnock @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.375Z]       Hibernian v Kilmarnock @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.375Z]       ... and 211 more
+[2026-08-21T21:59:57.376Z]    Azerbaijani Premyer Liqa: 24 fixture(s)
+[2026-08-21T21:59:57.377Z]       Qarabag v Kapaz @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.378Z]       Qarabag v Kapaz @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.379Z]       Qarabag v Kapaz @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.379Z]       Qarabag v Kapaz @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.380Z]       Qarabag v Kapaz @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.381Z]       ... and 19 more
+[2026-08-21T21:59:57.382Z]    Bulgarian First League: 24 fixture(s)
+[2026-08-21T21:59:57.382Z]       Ludogorets v Slavia Sofia @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.383Z]       Ludogorets v Slavia Sofia @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.384Z]       Ludogorets v Slavia Sofia @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.384Z]       Ludogorets v Slavia Sofia @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.385Z]       Ludogorets v Slavia Sofia @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.385Z]       ... and 19 more
+[2026-08-21T21:59:57.386Z]    Championship: 117 fixture(s)
+[2026-08-21T21:59:57.386Z]       Birmingham v Bristol City @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.387Z]       Birmingham v Bristol City @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.388Z]       Birmingham v Bristol City @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.388Z]       Birmingham v Bristol City @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.389Z]       Birmingham v Bristol City @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.389Z]       ... and 112 more
+[2026-08-21T21:59:57.390Z]    Czech First League: 3 fixture(s)
+[2026-08-21T21:59:57.391Z]       Mladá Boleslav v Slovácko @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.391Z]       Mladá Boleslav v Slovácko @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.392Z]       Mladá Boleslav v Slovácko @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.392Z]    Ekstraklasa: 30 fixture(s)
+[2026-08-21T21:59:57.393Z]       Korona Kielce v Motor Lublin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.394Z]       Korona Kielce v Motor Lublin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.395Z]       Korona Kielce v Motor Lublin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.396Z]       Korona Kielce v Motor Lublin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.397Z]       Korona Kielce v Motor Lublin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.397Z]       ... and 25 more
+[2026-08-21T21:59:57.398Z]    Eredivisie: 60 fixture(s)
+[2026-08-21T21:59:57.399Z]       For Sittard v AZ Alkmaar @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.399Z]       For Sittard v AZ Alkmaar @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.400Z]       For Sittard v AZ Alkmaar @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.400Z]       For Sittard v AZ Alkmaar @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.401Z]       For Sittard v AZ Alkmaar @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.402Z]       ... and 55 more
+[2026-08-21T21:59:57.402Z]    Georgian Erovnuli Liga: 9 fixture(s)
+[2026-08-21T21:59:57.403Z]       FC Dila Gori v FC Torpedo Kutaisi @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.403Z]       FC Dila Gori v FC Torpedo Kutaisi @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.404Z]       FC Dila Gori v FC Torpedo Kutaisi @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.405Z]       FC Dila Gori v FC Torpedo Kutaisi @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.405Z]       FC Dila Gori v FC Torpedo Kutaisi @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.406Z]       ... and 4 more
+[2026-08-21T21:59:57.406Z]    Greek Super League: 15 fixture(s)
+[2026-08-21T21:59:57.407Z]       Olympiakos Piraeus v Atromitos @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.408Z]       Olympiakos Piraeus v Atromitos @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.408Z]       Olympiakos Piraeus v Atromitos @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.409Z]       Olympiakos Piraeus v Atromitos @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.410Z]       Olympiakos Piraeus v Atromitos @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.411Z]       ... and 10 more
+[2026-08-21T21:59:57.412Z]    HNL: 30 fixture(s)
+[2026-08-21T21:59:57.413Z]       Dinamo Zagreb v NK Varazdin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.413Z]       Dinamo Zagreb v NK Varazdin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.414Z]       Dinamo Zagreb v NK Varazdin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.415Z]       Dinamo Zagreb v NK Varazdin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.415Z]       Dinamo Zagreb v NK Varazdin @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.416Z]       ... and 25 more
+[2026-08-21T21:59:57.416Z]    Israeli Premier League: 36 fixture(s)
+[2026-08-21T21:59:57.417Z]       Maccabi Haifa v Hapoel Katamon @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.418Z]       Maccabi Haifa v Hapoel Katamon @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.418Z]       Maccabi Haifa v Hapoel Katamon @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.419Z]       Maccabi Haifa v Hapoel Katamon @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.419Z]       Maccabi Haifa v Hapoel Katamon @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.420Z]       ... and 31 more
+[2026-08-21T21:59:57.421Z]    Luxembourg National Division: 12 fixture(s)
+[2026-08-21T21:59:57.421Z]       Progres Niederkorn v UNA Strassen @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.422Z]       Progres Niederkorn v UNA Strassen @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.422Z]       Progres Niederkorn v UNA Strassen @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.423Z]       Progres Niederkorn v UNA Strassen @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.424Z]       Progres Niederkorn v UNA Strassen @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.424Z]       ... and 7 more
+[2026-08-21T21:59:57.425Z]    Primeira Liga: 36 fixture(s)
+[2026-08-21T21:59:57.426Z]       Sp Lisbon v Alverca @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.427Z]       Sp Lisbon v Alverca @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.428Z]       Sp Lisbon v Alverca @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.429Z]       Sp Lisbon v Alverca @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.430Z]       Sp Lisbon v Alverca @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.431Z]       ... and 31 more
+[2026-08-21T21:59:57.432Z]    Russian Premier League: 30 fixture(s)
+[2026-08-21T21:59:57.432Z]       CSKA Moscow v Lokomotiv @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.433Z]       CSKA Moscow v Lokomotiv @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.434Z]       CSKA Moscow v Lokomotiv @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.434Z]       CSKA Moscow v Lokomotiv @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.435Z]       CSKA Moscow v Lokomotiv @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.436Z]       ... and 25 more
+[2026-08-21T21:59:57.436Z]    Serbian Super Liga: 12 fixture(s)
+[2026-08-21T21:59:57.437Z]       Radnicki 1923 v IMT Novi Beograd @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.437Z]       Radnicki 1923 v IMT Novi Beograd @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.438Z]       Radnicki 1923 v IMT Novi Beograd @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.439Z]       Radnicki 1923 v IMT Novi Beograd @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.439Z]       Radnicki 1923 v IMT Novi Beograd @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.440Z]       ... and 7 more
+[2026-08-21T21:59:57.440Z]    Slovak Super Liga: 48 fixture(s)
+[2026-08-21T21:59:57.441Z]       Dunajska Streda v Podbrezová @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.442Z]       Dunajska Streda v Podbrezová @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.442Z]       Dunajska Streda v Podbrezová @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.443Z]       Dunajska Streda v Podbrezová @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.444Z]       Dunajska Streda v Podbrezová @ 2026-08-22  (2.0h)
+[2026-08-21T21:59:57.445Z]       ... and 43 more
+[2026-08-21T21:59:57.446Z]    Serie A: 414 fixture(s)
+[2026-08-21T21:59:57.447Z]       Atalanta v Sassuolo @ 2026-08-23  (26.0h)
+[2026-08-21T21:59:57.447Z]       Atalanta v Sassuolo @ 2026-08-23  (26.0h)
+[2026-08-21T21:59:57.448Z]       Atalanta v Sassuolo @ 2026-08-23  (26.0h)
+[2026-08-21T21:59:57.448Z]       Atalanta v Sassuolo @ 2026-08-23  (26.0h)
+[2026-08-21T21:59:57.449Z]       Atalanta v Sassuolo @ 2026-08-23  (26.0h)
+[2026-08-21T21:59:57.449Z]       ... and 409 more
+[2026-08-21T21:59:57.450Z]    Bundesliga: 414 fixture(s)
+[2026-08-21T21:59:57.451Z]       Bayern Munich v Stuttgart @ 2026-08-28  (146.0h)
+[2026-08-21T21:59:57.451Z]       Bayern Munich v Stuttgart @ 2026-08-28  (146.0h)
+[2026-08-21T21:59:57.452Z]       Bayern Munich v Stuttgart @ 2026-08-28  (146.0h)
+[2026-08-21T21:59:57.452Z]       Bayern Munich v Stuttgart @ 2026-08-28  (146.0h)
+[2026-08-21T21:59:57.453Z]       Bayern Munich v Stuttgart @ 2026-08-28  (146.0h)
+[2026-08-21T21:59:57.454Z]       ... and 409 more
+[2026-08-21T21:59:57.458Z] 
+📋 Latest board: board_2026-08-21.json
+[2026-08-21T21:59:57.459Z]    Board date: 2026-08-21
+[2026-08-21T21:59:57.460Z]    Fixtures on board: 0
+[2026-08-21T21:59:57.461Z] 🔄 Running lightweight pipeline (agents 1-4) for upcoming fixtures...
+[2026-08-21T22:00:00.863Z] ⚠️ Lightweight pipeline failed: usage: olp_xdv_pipeline.py [-h] [--season SEASON]
+                           [--fixtures-season FIXTURES_SEASON] [--dry-run]
+                           [--only ONLY] [--json]
+olp_xdv_pipeline.py: error: argument --only: invalid int value: '1-4'
+
+[2026-08-21T22:00:00.865Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-21T22:00:00.865Z] ✅ HOURLY FIXTURE CHECK COMPLETE
+[2026-08-21T22:00:00.866Z] ═══════════════════════════════════════════════════════════
+
