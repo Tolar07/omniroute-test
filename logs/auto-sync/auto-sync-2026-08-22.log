@@ -1350,3 +1350,33 @@
        M logs/auto-sync/auto-sync-2026-08-22.log
 [2026-08-22T03:40:16.472Z] 
 📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-22T03:40:16.953Z]    ✅ Staged all changes
+[2026-08-22T03:40:16.954Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-22T03:40:17.150Z]    Staged files (2): .claude/scheduled_tasks.json, logs/auto-sync/auto-sync-2026-08-22.log
+[2026-08-22T03:40:17.152Z] 
+✍️  Step 5: Committing changes
+[2026-08-22T03:40:17.589Z]    ✅ Committed: [main d600988] chore(auto): vault-memory sync + changes 2026-08-22 03:40:17
+[2026-08-22T03:40:17.592Z] 
+📊 Step 6: Final status
+[2026-08-22T03:40:18.094Z]    Working tree: DIRTY
+[2026-08-22T03:40:18.096Z]    Remaining: M logs/auto-sync/auto-sync-2026-08-22.log
+[2026-08-22T03:40:18.097Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-22T03:40:18.099Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-22T03:40:18.100Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-22T03:45:14.533Z] ═══════════════════════════════════════════════════════════
+[2026-08-22T03:45:14.548Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-22T03:45:14.550Z] ═══════════════════════════════════════════════════════════
+[2026-08-22T03:45:14.551Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-22T03:45:14.901Z]    ✅ Sync complete
+[2026-08-22T03:45:14.903Z]    
+[2026-08-22T03:45:14.904Z] 
+📋 Step 2: Git status check
+[2026-08-22T03:45:15.357Z]    Files changed: 1
+[2026-08-22T03:45:15.360Z]    Changes:
+      M logs/auto-sync/auto-sync-2026-08-22.log
+[2026-08-22T03:45:15.361Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
