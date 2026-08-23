@@ -1,0 +1,10 @@
+[    1119ms] [WARNING] Manifest: property 'theme_color' ignored, '' is not a valid color. @ https://www.flashscore.com/manifest/1/?v=7:0
+[    1121ms] [WARNING] Manifest: property 'background_color' ignored, '' is not a valid color. @ https://www.flashscore.com/manifest/1/?v=7:0
+[    1659ms] [WARNING] A preload for 'https://static.flashscore.com/res/image/data/rN76jpW1-naArgzhi.png' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute. @ https://www.flashscore.com/football/england/premier-league/:948
+[    1891ms] [ERROR] TypeError: Cannot read properties of undefined (reading 'getIdent')
+    at https://www.flashscore.com/football/england/premier-league/:2534:56
+    at https://www.flashscore.com/football/england/premier-league/:2606:2 @ https://www.flashscore.com/football/england/premier-league/:2535
+[    2251ms] [WARNING] Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened. @ https://www.flashscore.com/football/england/premier-league/:448
+[    6382ms] [LOG] SW registered: ServiceWorkerRegistration @ https://www.flashscore.com/football/england/premier-league/:2619
+[    6816ms] [LOG] {module: bookmakers, pos1: Array(5), pos2: Array(10), pos3: Array(4), minBoxCount: 3} {projectId: 2, projectUrl: https://www.flashscore.com, zoneId: 9643, bannerId: 326951, clientType: PC} @ :13
+[   12075ms] [WARNING] The resource https://static.flashscore.com/res/image/data/rN76jpW1-naArgzhi.png was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.flashscore.com/football/england/premier-league/#/CfoA8Dmm/standings/overall/:0
