@@ -1,0 +1,620 @@
+- generic [active] [ref=f28e1]:
+  - heading "Premier League 2026/2027 scores, live results, standings" [level=1] [ref=f28e18]
+  - banner [ref=f28e19]:
+    - link "Skip to main content" [ref=f28e20] [cursor=pointer]:
+      - /url: "#mc"
+    - generic [ref=f28e21]:
+      - link "Go to main page" [ref=f28e22] [cursor=pointer]:
+        - /url: /
+      - navigation "Header" [ref=f28e43]:
+        - link "Scores" [ref=f28e44] [cursor=pointer]:
+          - /url: /
+        - link "News" [ref=f28e47] [cursor=pointer]:
+          - /url: /news/
+      - list [ref=f28e50]:
+        - listitem [ref=f28e51]:
+          - link "TRANS_DETAIL_BOOKMARK_BONUS_OFFERS" [ref=f28e52] [cursor=pointer]:
+            - /url: https://www.flashscore.co.uk/betting/?q=internal_promo_gift&keyword=betting_site_promo_static_content
+        - listitem [ref=f28e55]:
+          - button "Search" [ref=f28e58] [cursor=pointer]
+        - listitem [ref=f28e61]:
+          - button [ref=f28e63] [cursor=pointer]
+        - listitem [ref=f28e66]:
+          - generic [ref=f28e67]:
+            - button "Open menu" [ref=f28e68] [cursor=pointer]
+            - menu
+  - generic [ref=f28e72]:
+    - generic [ref=f28e73]:
+      - link "Favorites 0" [ref=f28e74] [cursor=pointer]:
+        - /url: /favorites/
+        - generic [ref=f28e78]: Favorites
+        - generic [ref=f28e79]: "0"
+      - link "Football" [ref=f28e80] [cursor=pointer]:
+        - /url: /
+      - link "Tennis" [ref=f28e85] [cursor=pointer]:
+        - /url: /tennis/
+      - link "Basketball" [ref=f28e90] [cursor=pointer]:
+        - /url: /basketball/
+      - link "Hockey" [ref=f28e95] [cursor=pointer]:
+        - /url: /hockey/
+      - link "Golf" [ref=f28e100] [cursor=pointer]:
+        - /url: /golf/
+      - link "Formula 1" [ref=f28e105] [cursor=pointer]:
+        - /url: /auto-racing/formula-1/
+      - link "Baseball" [ref=f28e110] [cursor=pointer]:
+        - /url: /baseball/
+      - link "Snooker" [ref=f28e115] [cursor=pointer]:
+        - /url: /snooker/
+    - button "More" [ref=f28e120] [cursor=pointer]
+  - generic [ref=f28e126]:
+    - generic [ref=f28e127]:
+      - main [ref=f28e128]:
+        - generic [ref=f28e133]:
+          - generic [ref=f28e134]:
+            - heading [level=2] [ref=f28e135]:
+              - link "Football" [ref=f28e137] [cursor=pointer]:
+                - /url: /football/
+              - link "England" [ref=f28e140] [cursor=pointer]:
+                - /url: /football/england/
+            - generic [ref=f28e141]:
+              - img "Premier League" [ref=f28e142]
+              - generic [ref=f28e143]:
+                - generic [ref=f28e144]: Premier League
+                - generic "Unpin this league from Pinned Leagues!" [ref=f28e146] [cursor=pointer]
+              - generic [ref=f28e148]: 2026/2027
+              - button "21.08. 30.05." [ref=f28e150]:
+                - generic [ref=f28e151]:
+                  - generic [ref=f28e152]: 21.08.
+                  - generic [ref=f28e153]: 30.05.
+                - button [ref=f28e162] [cursor=pointer]
+          - generic [ref=f28e165]:
+            - generic [ref=f28e167]:
+              - link "Summary":
+                - /url: /football/england/premier-league/
+              - link "Odds" [ref=f28e168] [cursor=pointer]:
+                - /url: /football/england/premier-league/odds/
+              - link "News" [ref=f28e169] [cursor=pointer]:
+                - /url: /football/england/premier-league/news/
+              - link "Results" [ref=f28e170] [cursor=pointer]:
+                - /url: /football/england/premier-league/results/
+              - link "Fixtures" [ref=f28e171] [cursor=pointer]:
+                - /url: /football/england/premier-league/fixtures/
+              - link "Standings" [ref=f28e172] [cursor=pointer]:
+                - /url: /football/england/premier-league/standings
+              - link "Archive" [ref=f28e173] [cursor=pointer]:
+                - /url: /football/england/premier-league/archive/
+            - generic [ref=f28e174]:
+              - generic [ref=f28e175]:
+                - heading "Winner Odds" [level=3] [ref=f28e177]
+                - separator [ref=f28e178]
+                - generic [ref=f28e179]:
+                  - generic [ref=f28e180]:
+                    - generic [ref=f28e181]:
+                      - link [ref=f28e183] [cursor=pointer]:
+                        - /url: https://www.flashscore.com/bookmaker/16/?sport=1&gicc=GB&gisc=ENG&from=outright-odds#t=b16_1786571942415_d91517b9ce6b44c98fc4e8d239d04138
+                        - img "bet365" [ref=f28e184]
+                      - generic [ref=f28e185]:
+                        - button "ARS ARS 2.50" [ref=f28e186] [cursor=pointer]:
+                          - generic [ref=f28e187]:
+                            - img "ARS" [ref=f28e189]
+                            - generic [ref=f28e190]: ARS
+                          - generic [ref=f28e191]: "2.50"
+                        - button "MCI MCI 3.75" [ref=f28e195] [cursor=pointer]:
+                          - generic [ref=f28e196]:
+                            - img "MCI" [ref=f28e198]
+                            - generic [ref=f28e199]: MCI
+                          - generic [ref=f28e200]: "3.75"
+                        - button "LIV LIV 6.00" [ref=f28e204] [cursor=pointer]:
+                          - generic [ref=f28e205]:
+                            - img "LIV" [ref=f28e207]
+                            - generic [ref=f28e208]: LIV
+                          - generic [ref=f28e209]: "6.00"
+                    - separator [ref=f28e213]
+                  - generic [ref=f28e214]:
+                    - generic [ref=f28e215]:
+                      - link [ref=f28e217] [cursor=pointer]:
+                        - /url: https://www.flashscore.com/bookmaker/26/?sport=1&gicc=GB&gisc=ENG&from=outright-odds#t=b26_1786571942416_4d4846a3298641518e5301b1bed1e3ce
+                        - img "Betway" [ref=f28e218]
+                      - generic [ref=f28e219]:
+                        - button "ARS ARS 2.50" [ref=f28e220] [cursor=pointer]:
+                          - generic [ref=f28e221]:
+                            - img "ARS" [ref=f28e223]
+                            - generic [ref=f28e224]: ARS
+                          - generic [ref=f28e225]: "2.50"
+                        - button "MCI MCI 4.00" [ref=f28e232] [cursor=pointer]:
+                          - generic [ref=f28e233]:
+                            - img "MCI" [ref=f28e235]
+                            - generic [ref=f28e236]: MCI
+                          - generic [ref=f28e237]: "4.00"
+                        - button "LIV LIV 7.00" [ref=f28e244] [cursor=pointer]:
+                          - generic [ref=f28e245]:
+                            - img "LIV" [ref=f28e247]
+                            - generic [ref=f28e248]: LIV
+                          - generic [ref=f28e249]: "7.00"
+                    - separator [ref=f28e256]
+                  - generic [ref=f28e257]:
+                    - generic [ref=f28e258]:
+                      - link [ref=f28e260] [cursor=pointer]:
+                        - /url: https://www.flashscore.com/bookmaker/895/?sport=1&gicc=GB&gisc=ENG&from=outright-odds#t=b895_1786571942416_626282bebcfd4676a7b8aa4304e92f28
+                        - img "7BetUK" [ref=f28e261]
+                      - generic [ref=f28e262]:
+                        - button "ARS ARS 2.55" [ref=f28e263] [cursor=pointer]:
+                          - generic [ref=f28e264]:
+                            - img "ARS" [ref=f28e266]
+                            - generic [ref=f28e267]: ARS
+                          - generic [ref=f28e268]: "2.55"
+                        - button "MCI MCI 3.95" [ref=f28e275] [cursor=pointer]:
+                          - generic [ref=f28e276]:
+                            - img "MCI" [ref=f28e278]
+                            - generic [ref=f28e279]: MCI
+                          - generic [ref=f28e280]: "3.95"
+                        - button "LIV LIV 6.00" [ref=f28e287] [cursor=pointer]:
+                          - generic [ref=f28e288]:
+                            - img "LIV" [ref=f28e290]
+                            - generic [ref=f28e291]: LIV
+                          - generic [ref=f28e292]: "6.00"
+                    - separator [ref=f28e299]
+                - button "Show more" [ref=f28e301] [cursor=pointer]
+              - generic [ref=f28e305]:
+                - heading "Scheduled" [level=2] [ref=f28e308]
+                - link "Show more matches" [ref=f28e391] [cursor=pointer]:
+                  - /url: /football/england/premier-league/fixtures/
+              - generic [ref=f28e397]:
+                - heading "The latest news" [level=2] [ref=f28e400]
+                - generic [ref=f28e424]:
+                  - separator [ref=f28e425]
+                  - link "View more news" [ref=f28e426] [cursor=pointer]:
+                    - /url: /football/england/premier-league/news/
+      - complementary [ref=f28e493]:
+        - generic [ref=f28e494]:
+          - generic [ref=f28e496]:
+            - generic [ref=f28e497]: England
+            - link "Premier League" [ref=f28e501] [cursor=pointer]:
+              - /url: /football/england/premier-league/
+            - link "Championship" [ref=f28e503] [cursor=pointer]:
+              - /url: /football/england/championship/
+            - link "League One" [ref=f28e505] [cursor=pointer]:
+              - /url: /football/england/league-one/
+            - link "League Two" [ref=f28e507] [cursor=pointer]:
+              - /url: /football/england/league-two/
+            - link "National League" [ref=f28e509] [cursor=pointer]:
+              - /url: /football/england/national-league/
+            - link "National League North" [ref=f28e511] [cursor=pointer]:
+              - /url: /football/england/national-league-north/
+            - link "National League South" [ref=f28e513] [cursor=pointer]:
+              - /url: /football/england/national-league-south/
+            - link "National League Cup" [ref=f28e515] [cursor=pointer]:
+              - /url: /football/england/national-league-cup/
+            - link "NPL Premier Division" [ref=f28e517] [cursor=pointer]:
+              - /url: /football/england/npl-premier-division/
+            - link "Southern League Premier Central" [ref=f28e519] [cursor=pointer]:
+              - /url: /football/england/southern-league-premier-central/
+            - generic [ref=f28e520] [cursor=pointer]: Show more (19)
+          - generic [ref=f28e525]:
+            - generic [ref=f28e526]: Pinned Leagues
+            - generic [ref=f28e529]:
+              - generic [ref=f28e530]:
+                - 'generic "ENGLAND: Premier League" [ref=f28e531]':
+                  - link "Premier League" [ref=f28e532] [cursor=pointer]:
+                    - /url: /football/england/premier-league/
+                - 'generic "ENGLAND: FA Community Shield" [ref=f28e535]':
+                  - link "FA Community Shield" [ref=f28e536] [cursor=pointer]:
+                    - /url: /football/england/fa-community-shield/
+                - 'generic "FRANCE: Ligue 1" [ref=f28e539]':
+                  - link "Ligue 1" [ref=f28e540] [cursor=pointer]:
+                    - /url: /football/france/ligue-1/
+                - 'generic "GERMANY: Bundesliga" [ref=f28e543]':
+                  - link "Bundesliga" [ref=f28e544] [cursor=pointer]:
+                    - /url: /football/germany/bundesliga/
+                - 'generic "ITALY: Serie A" [ref=f28e547]':
+                  - link "Serie A" [ref=f28e548] [cursor=pointer]:
+                    - /url: /football/italy/serie-a/
+                - 'generic "NETHERLANDS: Eredivisie" [ref=f28e551]':
+                  - link "Eredivisie" [ref=f28e552] [cursor=pointer]:
+                    - /url: /football/netherlands/eredivisie/
+                - 'generic "SPAIN: LaLiga" [ref=f28e555]':
+                  - link "LaLiga" [ref=f28e556] [cursor=pointer]:
+                    - /url: /football/spain/laliga/
+                - 'generic "AFRICA: CECAFA Kagame Cup" [ref=f28e559]':
+                  - link "CECAFA Kagame Cup" [ref=f28e560] [cursor=pointer]:
+                    - /url: /football/africa/cecafa-kagame-cup/
+                - 'generic "AFRICA: Africa Cup of Nations Women" [ref=f28e563]':
+                  - link "Africa Cup of Nations Women" [ref=f28e564] [cursor=pointer]:
+                    - /url: /football/africa/africa-cup-of-nations-women/
+                - 'generic "ASIA: ASEAN Championship" [ref=f28e567]':
+                  - link "ASEAN Championship" [ref=f28e568] [cursor=pointer]:
+                    - /url: /football/asia/asean-championship/
+              - generic [ref=f28e571]:
+                - 'generic "EUROPE: Euro" [ref=f28e572]':
+                  - link "Euro" [ref=f28e573] [cursor=pointer]:
+                    - /url: /football/europe/euro/
+                - 'generic "EUROPE: Champions League" [ref=f28e576]':
+                  - link "Champions League" [ref=f28e577] [cursor=pointer]:
+                    - /url: /football/europe/champions-league/
+                - 'generic "EUROPE: Europa League" [ref=f28e580]':
+                  - link "Europa League" [ref=f28e581] [cursor=pointer]:
+                    - /url: /football/europe/europa-league/
+                - 'generic "EUROPE: Conference League" [ref=f28e584]':
+                  - link "Conference League" [ref=f28e585] [cursor=pointer]:
+                    - /url: /football/europe/conference-league/
+                - 'generic "EUROPE: UEFA Nations League" [ref=f28e588]':
+                  - link "UEFA Nations League" [ref=f28e589] [cursor=pointer]:
+                    - /url: /football/europe/uefa-nations-league/
+                - 'generic "EUROPE: UEFA Super Cup" [ref=f28e592]':
+                  - link "UEFA Super Cup" [ref=f28e593] [cursor=pointer]:
+                    - /url: /football/europe/uefa-super-cup/
+                - 'generic "SOUTH AMERICA: Copa Libertadores" [ref=f28e596]':
+                  - link "Copa Libertadores" [ref=f28e597] [cursor=pointer]:
+                    - /url: /football/south-america/copa-libertadores/
+                - 'generic "WORLD: World Championship" [ref=f28e600]':
+                  - link "World Championship" [ref=f28e601] [cursor=pointer]:
+                    - /url: /football/world/world-championship/
+          - generic [ref=f28e605]:
+            - generic [ref=f28e606]: My Teams
+            - generic [ref=f28e609]: Add the team
+          - generic [ref=f28e614]:
+            - generic [ref=f28e615]: Rankings
+            - generic "FIFA" [ref=f28e618]:
+              - link "FIFA" [ref=f28e619] [cursor=pointer]:
+                - /url: /football/rankings/fifa/
+          - generic [ref=f28e623]:
+            - generic [ref=f28e624]: Countries
+            - link "Albania" [ref=f28e627] [cursor=pointer]:
+              - /url: /football/albania/
+            - link "Algeria" [ref=f28e630] [cursor=pointer]:
+              - /url: /football/algeria/
+            - link "Andorra" [ref=f28e633] [cursor=pointer]:
+              - /url: /football/andorra/
+            - link "Angola" [ref=f28e636] [cursor=pointer]:
+              - /url: /football/angola/
+            - link "Antigua & Barbuda" [ref=f28e639] [cursor=pointer]:
+              - /url: /football/antigua-barbuda/
+            - link "Argentina" [ref=f28e642] [cursor=pointer]:
+              - /url: /football/argentina/
+            - link "Armenia" [ref=f28e645] [cursor=pointer]:
+              - /url: /football/armenia/
+            - link "Aruba" [ref=f28e648] [cursor=pointer]:
+              - /url: /football/aruba/
+            - link "Australia" [ref=f28e651] [cursor=pointer]:
+              - /url: /football/australia/
+            - link "Austria" [ref=f28e654] [cursor=pointer]:
+              - /url: /football/austria/
+            - link "Azerbaijan" [ref=f28e657] [cursor=pointer]:
+              - /url: /football/azerbaijan/
+            - link "Bahrain" [ref=f28e660] [cursor=pointer]:
+              - /url: /football/bahrain/
+            - link "Bangladesh" [ref=f28e663] [cursor=pointer]:
+              - /url: /football/bangladesh/
+            - link "Barbados" [ref=f28e666] [cursor=pointer]:
+              - /url: /football/barbados/
+            - link "Belarus" [ref=f28e669] [cursor=pointer]:
+              - /url: /football/belarus/
+            - link "Belgium" [ref=f28e672] [cursor=pointer]:
+              - /url: /football/belgium/
+            - link "Benin" [ref=f28e675] [cursor=pointer]:
+              - /url: /football/benin/
+            - link "Bermuda" [ref=f28e678] [cursor=pointer]:
+              - /url: /football/bermuda/
+            - link "Bhutan" [ref=f28e681] [cursor=pointer]:
+              - /url: /football/bhutan/
+            - link "Bolivia" [ref=f28e684] [cursor=pointer]:
+              - /url: /football/bolivia/
+            - link "Bosnia and Herzegovina" [ref=f28e687] [cursor=pointer]:
+              - /url: /football/bosnia-and-herzegovina/
+            - link "Botswana" [ref=f28e690] [cursor=pointer]:
+              - /url: /football/botswana/
+            - generic [ref=f28e692] [cursor=pointer]: Show more
+    - complementary [ref=f28e695]:
+      - generic [ref=f28e697]:
+        - text: You are on
+        - strong [ref=f28e698]: Premier League 2026/2027 live scores
+        - text: page in
+        - strong [ref=f28e699]: Football/England
+        - text: section. Flashscore.com offers Premier League 2026/2027 livescore, final and partial results, Premier League 2026/2027 standings and match details (goal scorers, red cards, odds comparison, …). Besides Premier League scores you can follow 1000+ football competitions from 90+ countries around the world on Flashscore.com. Just click on the country name in the left menu and select your competition (league results, national cup livescore, other competition). Premier League 2026/2027 scores service is real-time, updating live.
+        - generic [ref=f28e700]:
+          - text: 21.08.
+          - link "Arsenal - Coventry" [ref=f28e701] [cursor=pointer]:
+            - /url: /match/football/arsenal-hA1Zm19f/coventry-GOvB22xg/
+          - text: ", 22.08."
+          - link "Hull - Manchester Utd" [ref=f28e702] [cursor=pointer]:
+            - /url: /match/football/hull-city-S66R0t75/manchester-united-ppjDR086/
+          - text: ","
+          - link "Everton - Crystal Palace" [ref=f28e703] [cursor=pointer]:
+            - /url: /match/football/crystal-palace-AovF1Mia/everton-KluSTr9s/
+          - text: ","
+          - link "Ipswich - Sunderland" [ref=f28e704] [cursor=pointer]:
+            - /url: /match/football/ipswich-thqhB2MB/sunderland-WSzc94ws/
+          - text: ","
+          - link "Nottingham Forest - Leeds" [ref=f28e705] [cursor=pointer]:
+            - /url: /match/football/leeds-tUxUbLR2/nottingham-UsushcZr/
+          - text: ","
+          - link "Brentford - Tottenham Hotspur" [ref=f28e706] [cursor=pointer]:
+            - /url: /match/football/brentford-xYe7DwID/tottenham-UDg08Ohm/
+          - text: ", 23.08."
+          - link "Brighton - Aston Villa" [ref=f28e707] [cursor=pointer]:
+            - /url: /match/football/aston-villa-W00wmLO0/brighton-2XrRecc3/
+          - text: ","
+          - link "Manchester City - Bournemouth" [ref=f28e708] [cursor=pointer]:
+            - /url: /match/football/bournemouth-OtpNdwrc/manchester-city-Wtn9Stg0/
+          - text: ","
+          - link "Newcastle - Liverpool" [ref=f28e709] [cursor=pointer]:
+            - /url: /match/football/liverpool-lId4TMwf/newcastle-utd-p6ahwuwJ/
+          - text: ", 24.08."
+          - link "Fulham - Chelsea" [ref=f28e710] [cursor=pointer]:
+            - /url: /match/football/chelsea-4fGZN2oK/fulham-69ZiU2Om/
+        - text: . Follow Premier League 2026/2027 live scores,
+        - link "results" [ref=f28e711] [cursor=pointer]:
+          - /url: results/
+        - text: ","
+        - link "fixtures" [ref=f28e712] [cursor=pointer]:
+          - /url: fixtures/
+        - text: and
+        - link "Premier League standings" [ref=f28e713] [cursor=pointer]:
+          - /url: standings/
+        - text: "!"
+  - contentinfo [ref=f28e714]:
+    - generic [ref=f28e715]:
+      - generic [ref=f28e718]:
+        - generic [ref=f28e719]:
+          - link "FOOTBALL" [ref=f28e721] [cursor=pointer]:
+            - /url: https://www.flashscore.com/
+          - list [ref=f28e722]:
+            - listitem [ref=f28e723]:
+              - link "Football News" [ref=f28e724] [cursor=pointer]:
+                - /url: https://www.flashscore.com/news/football/
+            - listitem [ref=f28e725]:
+              - link "Champions League 2026/27" [ref=f28e726] [cursor=pointer]:
+                - /url: /football/europe/champions-league/
+            - listitem [ref=f28e727]:
+              - link "Europa League" [ref=f28e728] [cursor=pointer]:
+                - /url: /football/europe/europa-league/
+            - listitem [ref=f28e729]:
+              - link "Conference League" [ref=f28e730] [cursor=pointer]:
+                - /url: /football/europe/conference-league/
+            - listitem [ref=f28e731]:
+              - link "Premier League 2026/27" [ref=f28e732] [cursor=pointer]:
+                - /url: /football/england/premier-league/
+            - listitem [ref=f28e733]:
+              - link "Championship" [ref=f28e734] [cursor=pointer]:
+                - /url: /football/england/championship/
+            - listitem [ref=f28e735]:
+              - link "LaLiga EA Sports 2026/27" [ref=f28e736] [cursor=pointer]:
+                - /url: /football/spain/laliga/
+            - listitem [ref=f28e737]:
+              - link "Serie A 2026/27" [ref=f28e738] [cursor=pointer]:
+                - /url: /football/italy/serie-a/
+            - listitem [ref=f28e739]:
+              - link "Bundesliga" [ref=f28e740] [cursor=pointer]:
+                - /url: /football/germany/bundesliga/
+            - listitem [ref=f28e741]:
+              - link "Ligue 1" [ref=f28e742] [cursor=pointer]:
+                - /url: /football/france/ligue-1/
+        - generic [ref=f28e743]:
+          - generic [ref=f28e744]: OTHER Sports
+          - list [ref=f28e745]:
+            - listitem [ref=f28e746]:
+              - link "ATP Montreal 2026" [ref=f28e747] [cursor=pointer]:
+                - /url: /tennis/atp-singles/montreal/
+            - listitem [ref=f28e748]:
+              - link "WTA Toronto 2026" [ref=f28e749] [cursor=pointer]:
+                - /url: /tennis/wta-singles/toronto/
+            - listitem [ref=f28e750]:
+              - link "ATP Cincinnati" [ref=f28e751] [cursor=pointer]:
+                - /url: /tennis/atp-singles/cincinnati/
+            - listitem [ref=f28e752]:
+              - link "MLB 2026" [ref=f28e753] [cursor=pointer]:
+                - /url: /baseball/usa/mlb/
+            - listitem [ref=f28e754]:
+              - link "FIBA Women's World Cup 2026" [ref=f28e755] [cursor=pointer]:
+                - /url: /basketball/world/world-cup-women/
+            - listitem [ref=f28e756]:
+              - link "World Cup Women U20 2026" [ref=f28e757] [cursor=pointer]:
+                - /url: /football/world/world-cup-women-u20/
+            - listitem [ref=f28e758]:
+              - link "World Series of Darts Finals 2026" [ref=f28e759] [cursor=pointer]:
+                - /url: /darts/world/world-series-finals/
+            - listitem [ref=f28e760]:
+              - link "Malawi Super League" [ref=f28e761] [cursor=pointer]:
+                - /url: /football/malawi/super-league/
+            - listitem [ref=f28e762]:
+              - link "Ligi Kuu Bara" [ref=f28e763] [cursor=pointer]:
+                - /url: /football/tanzania/ligi-kuu-bara/
+            - listitem [ref=f28e764]:
+              - link "Ligue Professionnelle 1" [ref=f28e765] [cursor=pointer]:
+                - /url: /football/tunisia/ligue-professionnelle-1/
+        - generic [ref=f28e766]:
+          - link "Match results" [ref=f28e768] [cursor=pointer]:
+            - /url: https://www.flashscore.com/
+          - list [ref=f28e769]:
+            - listitem [ref=f28e770]:
+              - link "Chelsea - Real Sociedad" [ref=f28e771] [cursor=pointer]:
+                - /url: /match/football/chelsea-4fGZN2oK/real-sociedad-jNvak2f3/
+            - listitem [ref=f28e772]:
+              - link "Manchester Utd - AC Milan" [ref=f28e773] [cursor=pointer]:
+                - /url: /match/football/ac-milan-8Sa8HInO/manchester-united-ppjDR086/
+            - listitem [ref=f28e774]:
+              - link "Liverpool - Como" [ref=f28e775] [cursor=pointer]:
+                - /url: /match/football/como-ttyLthOA/liverpool-lId4TMwf/
+            - listitem [ref=f28e776]:
+              - link "Arsenal - Manchester City" [ref=f28e777] [cursor=pointer]:
+                - /url: /match/football/arsenal-hA1Zm19f/manchester-city-Wtn9Stg0/
+            - listitem [ref=f28e778]:
+              - link "Arsenal - Coventry" [ref=f28e779] [cursor=pointer]:
+                - /url: /match/football/arsenal-hA1Zm19f/coventry-GOvB22xg/
+            - listitem [ref=f28e780]:
+              - link "Hull - Manchester Utd" [ref=f28e781] [cursor=pointer]:
+                - /url: /match/football/hull-city-S66R0t75/manchester-united-ppjDR086/
+            - listitem [ref=f28e782]:
+              - link "Inter Miami - Club Leon" [ref=f28e783] [cursor=pointer]:
+                - /url: /match/football/club-leon-l0iuHPBQ/inter-miami-0AheRyBg/
+            - listitem [ref=f28e784]:
+              - link "Freiburg - Crystal Palace" [ref=f28e785] [cursor=pointer]:
+                - /url: /match/football/crystal-palace-AovF1Mia/freiburg-fiEQZ7C7/
+            - listitem [ref=f28e786]:
+              - link "B. Monchengladbach - Aston Villa" [ref=f28e787] [cursor=pointer]:
+                - /url: /match/football/aston-villa-W00wmLO0/b-monchengladbach-88HSzjDr/
+            - listitem [ref=f28e788]:
+              - link "Newcastle - Bayer Leverkusen" [ref=f28e789] [cursor=pointer]:
+                - /url: /match/football/bayer-leverkusen-4jcj2zMd/newcastle-utd-p6ahwuwJ/
+        - generic [ref=f28e790]:
+          - link "LIVE SCORES" [ref=f28e792] [cursor=pointer]:
+            - /url: https://www.flashscore.com/
+          - list [ref=f28e793]:
+            - listitem [ref=f28e794]:
+              - link "Basel - Barcelona" [ref=f28e795] [cursor=pointer]:
+                - /url: /match/football/barcelona-SKbpVP5K/basel-S8MBgwuo/
+            - listitem [ref=f28e796]:
+              - link "Schalke - Real Madrid" [ref=f28e797] [cursor=pointer]:
+                - /url: /match/football/real-madrid-W8mj7MDD/schalke-0Ija0Ej9/
+            - listitem [ref=f28e798]:
+              - link "Barcelona - Al Ahly" [ref=f28e799] [cursor=pointer]:
+                - /url: /match/football/al-ahly-EPsYDm4A/barcelona-SKbpVP5K/
+            - listitem [ref=f28e800]:
+              - link "Espanyol - Real Madrid" [ref=f28e801] [cursor=pointer]:
+                - /url: /match/football/espanyol-QFfPdh1J/real-madrid-W8mj7MDD/
+            - listitem [ref=f28e802]:
+              - link "Marseille - Atletico Madrid" [ref=f28e803] [cursor=pointer]:
+                - /url: /match/football/atl-madrid-jaarqpLQ/marseille-SblU3Hee/
+            - listitem [ref=f28e804]:
+              - link "Bayern Munich - RB Leipzig" [ref=f28e805] [cursor=pointer]:
+                - /url: /match/football/bayern-munich-nVp0wiqd/rb-leipzig-KbS1suSm/
+            - listitem [ref=f28e806]:
+              - link "Dortmund - AS Roma" [ref=f28e807] [cursor=pointer]:
+                - /url: /match/football/as-roma-zVqqL0ma/dortmund-nP1i5US1/
+            - listitem [ref=f28e808]:
+              - link "Lens - PSG" [ref=f28e809] [cursor=pointer]:
+                - /url: /match/football/lens-IBmris38/psg-CjhkPw0k/
+            - listitem [ref=f28e810]:
+              - link "Heidenheim - Bayern Munich" [ref=f28e811] [cursor=pointer]:
+                - /url: /match/football/bayern-munich-nVp0wiqd/heidenheim-KWixEVWi/
+            - listitem [ref=f28e812]:
+              - link "Atletico Madrid - Malaga" [ref=f28e813] [cursor=pointer]:
+                - /url: /match/football/atl-madrid-jaarqpLQ/malaga-25tIqYiJ/
+        - generic [ref=f28e814]:
+          - generic [ref=f28e815]: LIVESCORE
+          - list [ref=f28e816]:
+            - listitem [ref=f28e817]:
+              - link "Hearts - Benfica" [ref=f28e818] [cursor=pointer]:
+                - /url: /match/football/benfica-zBkyuyRI/hearts-0rGrwwNc/
+            - listitem [ref=f28e819]:
+              - link "Sporting CP - Vitoria Guimaraes" [ref=f28e820] [cursor=pointer]:
+                - /url: /match/football/sporting-cp-tljXuHBC/vitoria-guimaraes-pQYVZyD2/
+            - listitem [ref=f28e821]:
+              - link "Manchester Utd - AC Milan" [ref=f28e822] [cursor=pointer]:
+                - /url: /match/football/ac-milan-8Sa8HInO/manchester-united-ppjDR086/
+            - listitem [ref=f28e823]:
+              - link "Dortmund - AS Roma" [ref=f28e824] [cursor=pointer]:
+                - /url: /match/football/as-roma-zVqqL0ma/dortmund-nP1i5US1/
+            - listitem [ref=f28e825]:
+              - link "Inter - Betis" [ref=f28e826] [cursor=pointer]:
+                - /url: /match/football/betis-vJbTeCGP/inter-Iw7eKK25/
+            - listitem [ref=f28e827]:
+              - link "Rio Ave - FC Porto" [ref=f28e828] [cursor=pointer]:
+                - /url: /match/football/fc-porto-S2NmScGp/rio-ave-jPzXLi4l/
+            - listitem [ref=f28e829]:
+              - link "Casa Pia - Benfica" [ref=f28e830] [cursor=pointer]:
+                - /url: /match/football/benfica-zBkyuyRI/casa-pia-QFHt9Zgs/
+            - listitem [ref=f28e831]:
+              - link "Inter - Monza" [ref=f28e832] [cursor=pointer]:
+                - /url: /match/football/inter-Iw7eKK25/monza-4YSMlwj7/
+            - listitem [ref=f28e833]:
+              - link "Genoa - Napoli" [ref=f28e834] [cursor=pointer]:
+                - /url: /match/football/genoa-d0PJxeie/napoli-69Dxbc61/
+            - listitem [ref=f28e835]:
+              - link "Sporting CP - Alverca" [ref=f28e836] [cursor=pointer]:
+                - /url: /match/football/alverca-roaMksQg/sporting-cp-tljXuHBC/
+      - generic [ref=f28e838]:
+        - generic [ref=f28e839]:
+          - generic [ref=f28e840]: Flashscore.com
+          - list [ref=f28e842]:
+            - listitem [ref=f28e843]:
+              - link "Terms of Use" [ref=f28e844] [cursor=pointer]:
+                - /url: /terms-of-use/
+            - listitem [ref=f28e845]:
+              - link "Privacy Policy" [ref=f28e846] [cursor=pointer]:
+                - /url: /privacy-policy/
+            - listitem [ref=f28e847]:
+              - link "GDPR and Journalism" [ref=f28e848] [cursor=pointer]:
+                - /url: /gdpr/
+            - listitem [ref=f28e849]:
+              - link "Impressum" [ref=f28e850] [cursor=pointer]:
+                - /url: /impressum/
+            - listitem [ref=f28e851]:
+              - link "Advertise" [ref=f28e852] [cursor=pointer]:
+                - /url: /advertise/
+            - listitem [ref=f28e853]:
+              - link "Contact" [ref=f28e854] [cursor=pointer]:
+                - /url: /contact/
+            - listitem [ref=f28e855]:
+              - link "Mobile" [ref=f28e856] [cursor=pointer]:
+                - /url: /mobile/
+            - listitem [ref=f28e857]:
+              - link "Live Scores" [ref=f28e858] [cursor=pointer]:
+                - /url: /live-scores/
+            - listitem [ref=f28e859]:
+              - link "Recommended Sites" [ref=f28e860] [cursor=pointer]:
+                - /url: /recommended/
+            - listitem [ref=f28e861]:
+              - link "FAQ" [ref=f28e862] [cursor=pointer]:
+                - /url: /faq/
+            - listitem [ref=f28e863]:
+              - link "Audio" [ref=f28e864] [cursor=pointer]:
+                - /url: /audio/
+        - generic [ref=f28e865]:
+          - generic [ref=f28e866]: Follow us
+          - list [ref=f28e868]:
+            - listitem [ref=f28e869]:
+              - link "Facebook" [ref=f28e870] [cursor=pointer]:
+                - /url: https://www.facebook.com/Flashscorecom
+            - listitem [ref=f28e873]:
+              - link "X" [ref=f28e874] [cursor=pointer]:
+                - /url: https://twitter.com/flashscorecom
+            - listitem [ref=f28e877]:
+              - link "Instagram" [ref=f28e878] [cursor=pointer]:
+                - /url: https://instagram.com/flashscoreofficial
+            - listitem [ref=f28e881]:
+              - link "TikTok" [ref=f28e882] [cursor=pointer]:
+                - /url: https://tiktok.com/@flashscorecom
+        - generic [ref=f28e885]:
+          - generic [ref=f28e886]:
+            - generic [ref=f28e887]: Mobile applications
+            - generic [ref=f28e888]: Our mobile app is optimized for your phone. Download it for free!
+          - generic [ref=f28e889]:
+            - link "App Store":
+              - /url: https://flashscore.onelink.me/BvSv/aidepbi1
+              - img "App Store"
+            - link "Google Play":
+              - /url: https://flashscore.onelink.me/BvSv/aidepbi1
+              - img "Google Play"
+      - generic [ref=f28e891]:
+        - link "Lite version" [ref=f28e893] [cursor=pointer]:
+          - /url: http://www.flashscore.mobi/
+        - generic [ref=f28e895]:
+          - link [ref=f28e897] [cursor=pointer]:
+            - /url: https://www.gambleaware.org/
+          - generic [ref=f28e898]:
+            - text: Gamble Responsibly.
+            - link "Gambling Therapy" [ref=f28e899] [cursor=pointer]:
+              - /url: http://www.gamblingtherapy.org/
+            - text: . 18+
+        - generic [ref=f28e900]:
+          - generic [ref=f28e901]: Copyright © 2006-26 Flashscore.com
+          - button "Set privacy" [ref=f28e903] [cursor=pointer]
+  - dialog "We Care About Your Privacy" [ref=f28e905]:
+    - generic [ref=f28e907]:
+      - generic [ref=f28e909]:
+        - heading "We Care About Your Privacy" [level=2] [ref=f28e910]
+        - generic [ref=f28e911]:
+          - text: We and our 1003 partners store and access personal data, like browsing data or unique identifiers, on your device. Selecting I Accept enables tracking technologies to support the purposes shown under we and our partners process data to provide. Selecting Reject All or withdrawing your consent will disable them. If trackers are disabled, some content and ads you see may not be as relevant to you. You can resurface this menu to change your choices or withdraw consent at any time by clicking the Manage Preferences link on the bottom of the webpage [or the floating icon on the bottom-left of the webpage, if applicable]. Your choices will have effect within our Website. For more details, refer to our Privacy Policy.
+          - link "Data on third parties, opens in a new tab" [ref=f28e912] [cursor=pointer]:
+            - /url: https://www.flashscore.com/third-parties/
+            - text: Third parties
+        - generic [ref=f28e913]:
+          - heading "We and our partners process data to provide:" [level=3] [ref=f28e914]
+          - paragraph [ref=f28e916]:
+            - text: Use precise geolocation data. Actively scan device characteristics for identification. Store and/or access information on a device. Personalised advertising and content, advertising and content measurement, audience research and services development.
+            - button "List of Partners (vendors)" [ref=f28e917] [cursor=pointer]
+      - generic [ref=f28e919]:
+        - button "I Accept" [ref=f28e920] [cursor=pointer]
+        - button "Reject All" [ref=f28e921] [cursor=pointer]
+        - button "Manage Preferences, Opens the preference center dialog" [ref=f28e922] [cursor=pointer]: Manage Preferences
