@@ -23,6 +23,21 @@
 - Agent memory: `.claude/projects/C--Users-Motunrayo-omniroute-test/memory/`
 - Vault-memory sync active via `vault-memory-sync.js` with SessionStart/SessionEnd hooks.
 
+## 2026-08-23 Pipeline Retrospective (Summary)
+
+- **Accas produced:** 7 (A–G) | **Legs:** 35 total, 8 settled, 27 pending
+- **Settled W/L:** 6W / 2L = 75.0% (0 full accas settled — all have ≥3 pending legs)
+- **T1 (football-data.co.uk) failure:** All season files empty/headers-only (schema change)
+- **T2 (ESPN API) coverage:** 29/35 fixtures matched — works but incomplete for lower tiers
+- **CLV capture:** 0 entries Aug 10–23 (gap persists — `clv/closing_capture.py` not running in production)
+
+**Bugs fixed this session:**
+1. `build_cache` keyword-argument dispatch (ESPN.php:253 ValueError)
+2. `_extract_closing_odds` NoneGuard bug — ESPN returns `odds=[None]`
+3. Import error: `LEAGUE_MAP` → `SLUGS` in `data/espn_results.py`
+
+**Full retrospective:** `olp_xdv_agent/olp_xdv/docs/obsidian-vault/STATE.md`
+
 ## Submodule Status
 
 - `olp_xdv_agent/olp_xdv`: Modified (staged + unstaged changes)
