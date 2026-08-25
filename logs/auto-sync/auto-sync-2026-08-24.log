@@ -1,0 +1,1426 @@
+[2026-08-24T21:25:17.081Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:25:17.132Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T21:25:17.283Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:25:17.284Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T21:25:19.058Z]    ✅ Sync complete
+[2026-08-24T21:25:19.059Z]    
+[2026-08-24T21:25:19.060Z] 
+📋 Step 2: Git status check
+[2026-08-24T21:25:21.686Z]    Files changed: 6
+[2026-08-24T21:25:21.688Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T21:25:21.694Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T21:25:22.142Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:25:22.144Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T21:25:22.442Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T21:25:22.448Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T21:25:22.673Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:25:22.679Z] 
+📊 Step 6: Final status
+[2026-08-24T21:25:31.067Z]    Working tree: DIRTY
+[2026-08-24T21:25:31.068Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T21:25:31.076Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T21:25:31.080Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T21:25:31.082Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T21:30:15.632Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:30:15.646Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T21:30:15.648Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:30:15.652Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T21:30:16.072Z]    ✅ Sync complete
+[2026-08-24T21:30:16.073Z]    
+[2026-08-24T21:30:16.073Z] 
+📋 Step 2: Git status check
+[2026-08-24T21:30:24.610Z]    Files changed: 6
+[2026-08-24T21:30:24.614Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T21:30:24.616Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T21:30:24.968Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:30:24.972Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T21:30:25.412Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T21:30:25.414Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T21:30:25.577Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:30:25.578Z] 
+📊 Step 6: Final status
+[2026-08-24T21:30:29.641Z]    Working tree: DIRTY
+[2026-08-24T21:30:29.641Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T21:30:29.643Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T21:30:29.646Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T21:30:29.648Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T21:35:16.649Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:35:16.660Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T21:35:16.663Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:35:16.665Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T21:35:17.338Z]    ✅ Sync complete
+[2026-08-24T21:35:17.340Z]    
+[2026-08-24T21:35:17.341Z] 
+📋 Step 2: Git status check
+[2026-08-24T21:35:47.918Z]    Files changed: 6
+[2026-08-24T21:35:47.922Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T21:35:47.927Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T21:35:48.648Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:35:48.660Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T21:35:49.040Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T21:35:49.042Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T21:36:09.467Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:36:09.476Z] 
+📊 Step 6: Final status
+[2026-08-24T21:36:19.719Z]    Working tree: DIRTY
+[2026-08-24T21:36:19.730Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T21:36:19.734Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T21:36:19.736Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T21:36:19.741Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T21:40:19.860Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:40:19.872Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T21:40:19.873Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:40:19.875Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T21:40:20.178Z]    ✅ Sync complete
+[2026-08-24T21:40:20.179Z]    
+[2026-08-24T21:40:20.179Z] 
+📋 Step 2: Git status check
+[2026-08-24T21:40:37.110Z]    Files changed: 6
+[2026-08-24T21:40:37.113Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T21:40:37.128Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T21:40:37.430Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:40:37.431Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T21:40:37.615Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T21:40:37.616Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T21:40:37.731Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:40:37.732Z] 
+📊 Step 6: Final status
+[2026-08-24T21:40:55.450Z]    Working tree: DIRTY
+[2026-08-24T21:40:55.452Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T21:40:55.458Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T21:40:55.468Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T21:40:55.471Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T21:45:28.721Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:45:28.733Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T21:45:28.735Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:45:28.736Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T21:45:29.255Z]    ✅ Sync complete
+[2026-08-24T21:45:29.257Z]    
+[2026-08-24T21:45:29.258Z] 
+📋 Step 2: Git status check
+[2026-08-24T21:45:54.287Z]    Files changed: 6
+[2026-08-24T21:45:54.289Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T21:45:54.290Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T21:45:54.407Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:45:54.408Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T21:45:56.058Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T21:45:56.069Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T21:46:09.103Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:46:09.169Z] 
+📊 Step 6: Final status
+[2026-08-24T21:46:49.550Z]    Working tree: DIRTY
+[2026-08-24T21:46:49.552Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T21:46:49.555Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T21:46:49.557Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T21:46:49.562Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T21:50:22.039Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:50:22.184Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T21:50:22.185Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:50:22.187Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T21:50:22.887Z]    ✅ Sync complete
+[2026-08-24T21:50:22.897Z]    
+[2026-08-24T21:50:22.903Z] 
+📋 Step 2: Git status check
+[2026-08-24T21:50:51.917Z]    Files changed: 6
+[2026-08-24T21:50:51.919Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T21:50:51.923Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T21:50:52.598Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:50:52.601Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T21:50:52.840Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T21:50:52.851Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T21:50:53.573Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:50:53.583Z] 
+📊 Step 6: Final status
+[2026-08-24T21:51:04.004Z]    Working tree: DIRTY
+[2026-08-24T21:51:04.009Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T21:51:04.025Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T21:51:04.039Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T21:51:04.042Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T21:55:24.431Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:55:24.440Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T21:55:24.441Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T21:55:24.489Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T21:55:25.133Z]    ✅ Sync complete
+[2026-08-24T21:55:25.135Z]    
+[2026-08-24T21:55:25.138Z] 
+📋 Step 2: Git status check
+[2026-08-24T21:55:45.073Z]    Files changed: 6
+[2026-08-24T21:55:45.075Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T21:55:45.082Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T21:55:45.442Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:55:45.447Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T21:55:45.675Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T21:55:45.683Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T21:55:46.701Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T21:55:46.704Z] 
+📊 Step 6: Final status
+[2026-08-24T21:55:54.991Z]    Working tree: DIRTY
+[2026-08-24T21:55:54.992Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T21:55:55.000Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T21:55:55.002Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T21:55:55.004Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:00:19.163Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:00:19.256Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:00:19.260Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:00:19.261Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:00:20.762Z]    ✅ Sync complete
+[2026-08-24T22:00:20.764Z]    
+[2026-08-24T22:00:20.780Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:00:35.195Z]    Files changed: 6
+[2026-08-24T22:00:35.205Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:00:35.216Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:00:35.697Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:00:35.702Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:00:36.179Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:00:36.184Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:00:38.745Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:00:38.746Z] 
+📊 Step 6: Final status
+[2026-08-24T22:01:01.816Z]    Working tree: DIRTY
+[2026-08-24T22:01:01.817Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:01:01.821Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:01:01.825Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:01:01.828Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:05:25.072Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:05:25.086Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:05:25.088Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:05:25.090Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:05:25.337Z]    ✅ Sync complete
+[2026-08-24T22:05:25.340Z]    
+[2026-08-24T22:05:25.343Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:05:54.470Z]    Files changed: 6
+[2026-08-24T22:05:54.472Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:05:54.474Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:05:54.807Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:05:54.809Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:05:55.688Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:05:55.695Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:06:21.709Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:06:21.714Z] 
+📊 Step 6: Final status
+[2026-08-24T22:06:44.714Z]    Working tree: DIRTY
+[2026-08-24T22:06:44.717Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:06:44.825Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:06:44.838Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:06:44.841Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:10:15.666Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:10:15.677Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:10:15.678Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:10:15.679Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:10:16.183Z]    ✅ Sync complete
+[2026-08-24T22:10:16.184Z]    
+[2026-08-24T22:10:16.192Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:10:17.916Z]    Files changed: 6
+[2026-08-24T22:10:17.927Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:10:17.932Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:10:18.261Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:10:18.262Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:10:18.360Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:10:18.361Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:10:18.504Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:10:18.505Z] 
+📊 Step 6: Final status
+[2026-08-24T22:10:20.632Z]    Working tree: DIRTY
+[2026-08-24T22:10:20.635Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:10:20.638Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:10:20.639Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:10:20.640Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:15:15.512Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:15:15.521Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:15:15.521Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:15:15.522Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:15:15.821Z]    ✅ Sync complete
+[2026-08-24T22:15:15.822Z]    
+[2026-08-24T22:15:15.824Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:15:17.469Z]    Files changed: 6
+[2026-08-24T22:15:17.470Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:15:17.471Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:15:17.561Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:15:17.562Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:15:17.650Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:15:17.651Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:15:17.761Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:15:17.763Z] 
+📊 Step 6: Final status
+[2026-08-24T22:15:18.885Z]    Working tree: DIRTY
+[2026-08-24T22:15:18.886Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:15:18.888Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:15:18.891Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:15:18.892Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:20:15.197Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:20:15.203Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:20:15.204Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:20:15.205Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:20:15.355Z]    ✅ Sync complete
+[2026-08-24T22:20:15.356Z]    
+[2026-08-24T22:20:15.356Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:20:16.360Z]    Files changed: 6
+[2026-08-24T22:20:16.361Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:20:16.362Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:20:16.458Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:20:16.460Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:20:16.547Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:20:16.548Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:20:16.634Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:20:16.635Z] 
+📊 Step 6: Final status
+[2026-08-24T22:20:17.728Z]    Working tree: DIRTY
+[2026-08-24T22:20:17.729Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:20:17.731Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:20:17.734Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:20:17.734Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:25:15.562Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:25:15.568Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:25:15.568Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:25:15.569Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:25:15.713Z]    ✅ Sync complete
+[2026-08-24T22:25:15.714Z]    
+[2026-08-24T22:25:15.714Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:25:16.718Z]    Files changed: 6
+[2026-08-24T22:25:16.719Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:25:16.720Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:25:16.794Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:25:16.795Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:25:16.871Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:25:16.871Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:25:16.955Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:25:16.955Z] 
+📊 Step 6: Final status
+[2026-08-24T22:25:17.889Z]    Working tree: DIRTY
+[2026-08-24T22:25:17.889Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:25:17.890Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:25:17.891Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:25:17.895Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:30:15.144Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:30:15.151Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:30:15.153Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:30:15.156Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:30:15.308Z]    ✅ Sync complete
+[2026-08-24T22:30:15.309Z]    
+[2026-08-24T22:30:15.310Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:30:16.201Z]    Files changed: 6
+[2026-08-24T22:30:16.202Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:30:16.203Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:30:16.273Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:30:16.275Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:30:16.354Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:30:16.354Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:30:16.555Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:30:16.560Z] 
+📊 Step 6: Final status
+[2026-08-24T22:30:17.489Z]    Working tree: DIRTY
+[2026-08-24T22:30:17.490Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:30:17.492Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:30:17.494Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:30:17.495Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:35:15.407Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:35:15.413Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:35:15.414Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:35:15.415Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:35:15.564Z]    ✅ Sync complete
+[2026-08-24T22:35:15.565Z]    
+[2026-08-24T22:35:15.566Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:35:16.517Z]    Files changed: 6
+[2026-08-24T22:35:16.519Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:35:16.520Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:35:16.593Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:35:16.594Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:35:16.679Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:35:16.680Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:35:16.764Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:35:16.765Z] 
+📊 Step 6: Final status
+[2026-08-24T22:35:17.701Z]    Working tree: DIRTY
+[2026-08-24T22:35:17.702Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:35:17.704Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:35:17.707Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:35:17.708Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:40:15.214Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:40:15.223Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:40:15.224Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:40:15.225Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:40:15.422Z]    ✅ Sync complete
+[2026-08-24T22:40:15.423Z]    
+[2026-08-24T22:40:15.424Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:40:16.703Z]    Files changed: 6
+[2026-08-24T22:40:16.703Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:40:16.704Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:40:16.838Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:40:16.841Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:40:16.967Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:40:16.968Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:40:18.320Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:40:18.322Z] 
+📊 Step 6: Final status
+[2026-08-24T22:40:21.702Z]    Working tree: DIRTY
+[2026-08-24T22:40:21.702Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:40:21.704Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:40:21.707Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:40:21.708Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:45:15.182Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:45:15.190Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:45:15.190Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:45:15.191Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:45:15.353Z]    ✅ Sync complete
+[2026-08-24T22:45:15.354Z]    
+[2026-08-24T22:45:15.354Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:45:16.263Z]    Files changed: 6
+[2026-08-24T22:45:16.264Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:45:16.265Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:45:16.337Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:45:16.338Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:45:16.419Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:45:16.420Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:45:16.510Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:45:16.510Z] 
+📊 Step 6: Final status
+[2026-08-24T22:45:17.373Z]    Working tree: DIRTY
+[2026-08-24T22:45:17.374Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:45:17.376Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:45:17.378Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:45:17.379Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:50:15.177Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:50:15.186Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:50:15.186Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:50:15.187Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:50:15.347Z]    ✅ Sync complete
+[2026-08-24T22:50:15.348Z]    
+[2026-08-24T22:50:15.349Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:50:16.293Z]    Files changed: 6
+[2026-08-24T22:50:16.294Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:50:16.297Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:50:16.370Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:50:16.371Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:50:16.447Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:50:16.448Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:50:16.524Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:50:16.525Z] 
+📊 Step 6: Final status
+[2026-08-24T22:50:17.536Z]    Working tree: DIRTY
+[2026-08-24T22:50:17.536Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:50:17.541Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:50:17.543Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:50:17.545Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T22:55:15.228Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:55:15.236Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T22:55:15.237Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T22:55:15.238Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T22:55:15.418Z]    ✅ Sync complete
+[2026-08-24T22:55:15.419Z]    
+[2026-08-24T22:55:15.420Z] 
+📋 Step 2: Git status check
+[2026-08-24T22:55:16.341Z]    Files changed: 6
+[2026-08-24T22:55:16.342Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T22:55:16.345Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T22:55:16.441Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:55:16.442Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T22:55:16.524Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T22:55:16.525Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T22:55:16.599Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T22:55:16.600Z] 
+📊 Step 6: Final status
+[2026-08-24T22:55:17.539Z]    Working tree: DIRTY
+[2026-08-24T22:55:17.539Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T22:55:17.541Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T22:55:17.542Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T22:55:17.545Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:00:15.285Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:00:15.295Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:00:15.296Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:00:15.296Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:00:15.476Z]    ✅ Sync complete
+[2026-08-24T23:00:15.477Z]    
+[2026-08-24T23:00:15.478Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:00:16.651Z]    Files changed: 6
+[2026-08-24T23:00:16.652Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:00:16.653Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:00:16.721Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:00:16.722Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:00:16.794Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:00:16.795Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:00:16.869Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:00:16.870Z] 
+📊 Step 6: Final status
+[2026-08-24T23:00:17.741Z]    Working tree: DIRTY
+[2026-08-24T23:00:17.742Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:00:17.744Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:00:17.747Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:00:17.747Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:05:15.468Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:05:15.482Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:05:15.483Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:05:15.484Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:05:15.659Z]    ✅ Sync complete
+[2026-08-24T23:05:15.660Z]    
+[2026-08-24T23:05:15.661Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:05:16.914Z]    Files changed: 6
+[2026-08-24T23:05:16.914Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:05:16.915Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:05:16.990Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:05:16.991Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:05:17.064Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:05:17.065Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:05:17.170Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:05:17.170Z] 
+📊 Step 6: Final status
+[2026-08-24T23:05:18.101Z]    Working tree: DIRTY
+[2026-08-24T23:05:18.102Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:05:18.105Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:05:18.106Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:05:18.107Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:10:15.237Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:10:15.247Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:10:15.248Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:10:15.248Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:10:15.408Z]    ✅ Sync complete
+[2026-08-24T23:10:15.409Z]    
+[2026-08-24T23:10:15.409Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:10:16.372Z]    Files changed: 6
+[2026-08-24T23:10:16.373Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:10:16.374Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:10:16.443Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:10:16.444Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:10:16.525Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:10:16.526Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:10:16.601Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:10:16.602Z] 
+📊 Step 6: Final status
+[2026-08-24T23:10:17.553Z]    Working tree: DIRTY
+[2026-08-24T23:10:17.554Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:10:17.556Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:10:17.558Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:10:17.560Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:15:15.291Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:15:15.298Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:15:15.301Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:15:15.303Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:15:15.469Z]    ✅ Sync complete
+[2026-08-24T23:15:15.469Z]    
+[2026-08-24T23:15:15.470Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:15:16.340Z]    Files changed: 6
+[2026-08-24T23:15:16.341Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:15:16.342Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:15:16.418Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:15:16.419Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:15:16.489Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:15:16.490Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:15:16.560Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:15:16.561Z] 
+📊 Step 6: Final status
+[2026-08-24T23:15:17.526Z]    Working tree: DIRTY
+[2026-08-24T23:15:17.527Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:15:17.529Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:15:17.537Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:15:17.538Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:20:15.272Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:20:15.285Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:20:15.290Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:20:15.293Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:20:15.639Z]    ✅ Sync complete
+[2026-08-24T23:20:15.640Z]    
+[2026-08-24T23:20:15.641Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:20:16.696Z]    Files changed: 6
+[2026-08-24T23:20:16.698Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:20:16.700Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:20:16.790Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:20:16.791Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:20:16.868Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:20:16.870Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:20:16.972Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:20:16.973Z] 
+📊 Step 6: Final status
+[2026-08-24T23:20:17.916Z]    Working tree: DIRTY
+[2026-08-24T23:20:17.917Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:20:17.918Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:20:17.921Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:20:17.923Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:25:15.219Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:25:15.226Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:25:15.227Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:25:15.228Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:25:15.387Z]    ✅ Sync complete
+[2026-08-24T23:25:15.388Z]    
+[2026-08-24T23:25:15.388Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:25:16.310Z]    Files changed: 6
+[2026-08-24T23:25:16.310Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:25:16.311Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:25:16.382Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:25:16.382Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:25:16.460Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:25:16.461Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:25:16.539Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:25:16.540Z] 
+📊 Step 6: Final status
+[2026-08-24T23:25:18.151Z]    Working tree: DIRTY
+[2026-08-24T23:25:18.151Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:25:18.154Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:25:18.157Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:25:18.158Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:30:15.324Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:30:15.333Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:30:15.334Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:30:15.335Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:30:15.511Z]    ✅ Sync complete
+[2026-08-24T23:30:15.512Z]    
+[2026-08-24T23:30:15.513Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:30:16.793Z]    Files changed: 6
+[2026-08-24T23:30:16.794Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:30:16.795Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:30:16.863Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:30:16.864Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:30:16.933Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:30:16.933Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:30:17.005Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:30:17.006Z] 
+📊 Step 6: Final status
+[2026-08-24T23:30:17.866Z]    Working tree: DIRTY
+[2026-08-24T23:30:17.866Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:30:17.868Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:30:17.871Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:30:17.872Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:35:14.411Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:35:14.418Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:35:14.419Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:35:14.420Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:35:14.575Z]    ✅ Sync complete
+[2026-08-24T23:35:14.575Z]    
+[2026-08-24T23:35:14.576Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:35:15.476Z]    Files changed: 6
+[2026-08-24T23:35:15.477Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:35:15.478Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:35:15.547Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:35:15.548Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:35:15.619Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:35:15.620Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:35:15.697Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:35:15.698Z] 
+📊 Step 6: Final status
+[2026-08-24T23:35:16.547Z]    Working tree: DIRTY
+[2026-08-24T23:35:16.548Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:35:16.549Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:35:16.552Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:35:16.553Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:40:14.306Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:40:14.311Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:40:14.312Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:40:14.313Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:40:14.463Z]    ✅ Sync complete
+[2026-08-24T23:40:14.464Z]    
+[2026-08-24T23:40:14.465Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:40:15.336Z]    Files changed: 6
+[2026-08-24T23:40:15.337Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:40:15.338Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:40:15.414Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:40:15.415Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:40:15.487Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:40:15.488Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:40:15.568Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:40:15.569Z] 
+📊 Step 6: Final status
+[2026-08-24T23:40:16.422Z]    Working tree: DIRTY
+[2026-08-24T23:40:16.423Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:40:16.425Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:40:16.427Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:40:16.429Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:45:14.463Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:45:14.472Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:45:14.473Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:45:14.474Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:45:14.635Z]    ✅ Sync complete
+[2026-08-24T23:45:14.636Z]    
+[2026-08-24T23:45:14.637Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:45:15.572Z]    Files changed: 6
+[2026-08-24T23:45:15.573Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:45:15.574Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:45:15.645Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:45:15.646Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:45:15.721Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:45:15.722Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:45:15.800Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:45:15.801Z] 
+📊 Step 6: Final status
+[2026-08-24T23:45:16.750Z]    Working tree: DIRTY
+[2026-08-24T23:45:16.751Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:45:16.753Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:45:16.756Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:45:16.756Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:50:14.281Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:50:14.290Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:50:14.291Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:50:14.291Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:50:14.452Z]    ✅ Sync complete
+[2026-08-24T23:50:14.453Z]    
+[2026-08-24T23:50:14.453Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:50:15.460Z]    Files changed: 6
+[2026-08-24T23:50:15.461Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:50:15.462Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:50:15.542Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:50:15.543Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:50:15.613Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:50:15.614Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:50:15.683Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:50:15.684Z] 
+📊 Step 6: Final status
+[2026-08-24T23:50:16.519Z]    Working tree: DIRTY
+[2026-08-24T23:50:16.519Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:50:16.521Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:50:16.524Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:50:16.525Z] ═══════════════════════════════════════════════════════════
+
+[2026-08-24T23:55:14.303Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:55:14.313Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-08-24T23:55:14.315Z] ═══════════════════════════════════════════════════════════
+[2026-08-24T23:55:14.316Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-24T23:55:14.588Z]    ✅ Sync complete
+[2026-08-24T23:55:14.589Z]    
+[2026-08-24T23:55:14.589Z] 
+📋 Step 2: Git status check
+[2026-08-24T23:55:15.484Z]    Files changed: 6
+[2026-08-24T23:55:15.484Z]    Changes:
+      m automaton
+       m external/nba-patterns/nba-prediction
+      MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+      MM olp_xdv_agent/olp_xdv
+      ?? logs/auto-sync/auto-sync-2026-08-24.log
+      ?? prod_0825.log
+[2026-08-24T23:55:15.485Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-08-24T23:55:15.552Z]    ⚠️  Add failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:55:15.553Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-08-24T23:55:15.625Z]    Staged files (2): logs/pre-commit-sync/pre-commit-2026-08-24.log, olp_xdv_agent/olp_xdv
+[2026-08-24T23:55:15.626Z] 
+✍️  Step 5: Committing changes
+[2026-08-24T23:55:15.697Z]    ⚠️  Commit failed: fatal: Unable to create 'C:/Users/Motunrayo/omniroute test/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+[2026-08-24T23:55:15.698Z] 
+📊 Step 6: Final status
+[2026-08-24T23:55:16.541Z]    Working tree: DIRTY
+[2026-08-24T23:55:16.541Z]    Remaining: m automaton
+ m external/nba-patterns/nba-prediction
+MM logs/pre-commit-sync/pre-commit-2026-08-24.log
+MM olp_xdv_agent/olp_xdv
+?? logs/auto-sync/auto-sync-2026-08-24.log
+?? prod_0825.log
+[2026-08-24T23:55:16.543Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-24T23:55:16.546Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-08-24T23:55:16.547Z] ═══════════════════════════════════════════════════════════
+
