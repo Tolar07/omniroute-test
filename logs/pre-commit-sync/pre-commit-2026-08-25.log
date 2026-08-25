@@ -86,3 +86,30 @@ Another git process seems to be running in this repository, or the lock file may
 
 Another git process seems to be running in this repository, or the lock file may be stale
 
+[2026-08-25T19:38:21.204Z] ═══════════════════════════════════════════════════════════
+[2026-08-25T19:38:21.206Z] 🔄 PRE-COMMIT AUTO-SYNC STARTED
+[2026-08-25T19:38:21.207Z] ═══════════════════════════════════════════════════════════
+[2026-08-25T19:38:21.207Z] 
+🔍 Checking for other sessions' pending work...
+[2026-08-25T19:38:22.936Z]    ⚠️  Working tree has uncommitted changes:
+[2026-08-25T19:38:22.937Z]       M automaton
+[2026-08-25T19:38:22.938Z]        M external/nba-patterns/nba-prediction
+[2026-08-25T19:38:22.939Z]        M logs/auto-sync/auto-sync-2026-08-25.log
+[2026-08-25T19:38:22.940Z]        M logs/pre-commit-sync/pre-commit-2026-08-25.log
+[2026-08-25T19:38:22.940Z]        M olp_xdv_agent/olp_xdv
+[2026-08-25T19:38:23.056Z]    ⬆️  Local commits not pushed: 1
+[2026-08-25T19:38:23.083Z]    ⬇️  Remote commits not pulled: 1
+[2026-08-25T19:38:23.084Z]       Run: git pull --rebase
+[2026-08-25T19:38:23.085Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-25T19:38:23.286Z]    ✅ Sync complete
+[2026-08-25T19:38:23.287Z] 
+📥 Step 2: Git add -A (sweeps other sessions' staged files)
+[2026-08-25T19:38:25.128Z]    ✅ Staged all changes
+[2026-08-25T19:38:25.189Z] 
+✅ Ready to commit 2 file(s)
+[2026-08-25T19:38:25.189Z] 
+═══════════════════════════════════════════════════════════
+[2026-08-25T19:38:25.190Z] ✅ PRE-COMMIT AUTO-SYNC COMPLETE — Proceeding with commit
+[2026-08-25T19:38:25.191Z] ═══════════════════════════════════════════════════════════
+
