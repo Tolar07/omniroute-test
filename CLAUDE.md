@@ -74,6 +74,14 @@ All notes are interconnected via `[[wikilinks]]`. Start with `[[OLP XDV.md]]` ev
 
 ---
 
+## Task Observer (Active)
+
+**Skill:** `.claude/skills/task-observer/` (rebelytics/one-skill-to-rule-them-all)
+- **Scope:** Project-level only — staging-only, never auto-applies.
+- **Behavior:** Logs observations to `skill-observations/log.md`; stages updates to `skill-updates/`; **never modifies live files directly.**
+- **Activation:** Session-start — read `skill-observations/log.md` and `skill-observations/last-review-date.txt` before starting substantive work; log findings as observations during sessions.
+- **Active-participation mode (2026-08-26):** The skill may receive explicit commands to propose, implement, or review staged updates. Before any auto-apply (to non-protected files only), the user must review and approve.
+
 ## Retired Mirror (Deprecated 2026-08-18)
 
 **Location:** `Documents/OLP_XDV_Vault/` — **NOT authoritative, non-git, READ-ONLY**
