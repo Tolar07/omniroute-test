@@ -176,6 +176,23 @@ cd olp_xdv_agent/olp_xdv && pytest
 
 ---
 
+## Installed Skills (Project-Scoped)
+
+**Task Observer** (`rebelytics/one-skill-to-rule-them-all`) — installed at `.claude/skills/task-observer/`
+- **Scope:** Project-level only (not global/user-level)
+- **Behavior:** Staging-only — writes observations to `skill-observations/` and staged skill updates to `skill-updates/`; **never auto-applies** or modifies live files directly.
+- **Activation:** Manual invocation at task start (not auto-chained).
+
+**Protected-file review requirement:** Any staged update from Task Observer touching:
+- `olp_xdv_agent/olp_xdv/bets/booking_tracker.py`
+- `olp_xdv_agent/olp_xdv/variant_selection.py`
+- The odds tolerance check (in `booking/verify_external_code.py` and `Rules.md`)
+- The constitution/bright-lines file (`automaton/constitution.md`)
+
+...requires **manual line-by-line review before approval** — same bar as any other change to those files.
+
+---
+
 ## Quick Links
 
 | Target | Path |
