@@ -5,7 +5,7 @@
       "cron": "7 4 * * *",
       "prompt": "Run the daily OLP XDV pipeline scan and verification: cd \"c:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\" && python run_daily.py --verify-only --no-sportybet --no-booking-codes --no-web --no-whatsapp --no-email",
       "createdAt": 1787269073638,
-      "lastFiredAt": 1787715420487,
+      "lastFiredAt": 1787801820901,
       "recurring": true,
       "createdBySessionId": "1dbafa40-7545-4915-997e-80cce9467602",
       "createdByPid": 14776,
