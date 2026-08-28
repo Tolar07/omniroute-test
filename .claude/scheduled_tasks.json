@@ -27,7 +27,7 @@
       "cron": "0 3 * * *",
       "prompt": "Run FlashScore scraper daily at 3 AM for 2-day advance fixture data: cd \"C:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\" && python scripts/scrape_live_odds_v3.py",
       "createdAt": 1787385404788,
-      "lastFiredAt": 1787797800200,
+      "lastFiredAt": 1787884200047,
       "recurring": true,
       "createdBySessionId": "5f77193f-534f-4e87-8f51-faa8b5f642da",
       "createdByPid": 24832,
