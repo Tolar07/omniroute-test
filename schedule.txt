@@ -1,0 +1,5 @@
+{
+  "status": false,
+  "data": null,
+  "message": "'charmap' codec can't encode character '\\u014d' in position 14583: character maps to <undefined>"
+}
