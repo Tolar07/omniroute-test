@@ -1,17 +1,6 @@
 {
   "tasks": [
     {
-      "id": "175e2463",
-      "cron": "7 4 * * *",
-      "prompt": "Run the daily OLP XDV pipeline scan and verification: cd \"c:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\" && python run_daily.py --verify-only --no-sportybet --no-booking-codes --no-web --no-whatsapp --no-email",
-      "createdAt": 1787269073638,
-      "lastFiredAt": 1787801820901,
-      "recurring": true,
-      "createdBySessionId": "1dbafa40-7545-4915-997e-80cce9467602",
-      "createdByPid": 14776,
-      "createdByProcStart": "134318809935400166"
-    },
-    {
       "id": "17c940b2",
       "cron": "0 2,14 * * *",
       "prompt": "Run daily fixture scrape: cd \"C:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\" && python scripts/scrape_live_odds_v3.py",
