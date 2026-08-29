@@ -106,3 +106,22 @@
 [2026-08-29T20:31:53.789Z] ✅ PRE-COMMIT AUTO-SYNC COMPLETE — Proceeding with commit
 [2026-08-29T20:31:53.790Z] ═══════════════════════════════════════════════════════════
 
+[2026-08-29T21:21:59.916Z] ═══════════════════════════════════════════════════════════
+[2026-08-29T21:21:59.919Z] 🔄 PRE-COMMIT AUTO-SYNC STARTED
+[2026-08-29T21:21:59.920Z] ═══════════════════════════════════════════════════════════
+[2026-08-29T21:21:59.921Z] 
+🔍 Checking for other sessions' pending work...
+[2026-08-29T21:22:04.610Z]    ⚠️  Working tree has uncommitted changes:
+[2026-08-29T21:22:04.614Z]       M automaton
+[2026-08-29T21:22:04.615Z]        M external/nba-patterns/nba-prediction
+[2026-08-29T21:22:04.616Z]        M logs/auto-sync/auto-sync-2026-08-29.log
+[2026-08-29T21:22:04.617Z]        M logs/pre-commit-sync/pre-commit-2026-08-29.log
+[2026-08-29T21:22:04.618Z]        M olp_xdv_agent/olp_xdv
+[2026-08-29T21:22:04.883Z]    ⬆️  Local commits not pushed: 1
+[2026-08-29T21:22:04.954Z]    ⬇️  Remote commits not pulled: 1
+[2026-08-29T21:22:04.955Z]       Run: git pull --rebase
+[2026-08-29T21:22:04.956Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-08-29T21:22:05.500Z]    ✅ Sync complete
+[2026-08-29T21:22:05.501Z] 
+📥 Step 2: Git add -A (sweeps other sessions' staged files)
