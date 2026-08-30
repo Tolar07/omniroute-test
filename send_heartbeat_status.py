@@ -44,7 +44,7 @@ if not token or not chat_id:
 
 ok, notes = send_telegram(message, token=token, chat_id=chat_id)
 if ok:
-    print("✅ Heartbeat status sent to Telegram")
+    print("[OK] Heartbeat status sent to Telegram")
 else:
-    print("❌ Failed to send:", notes)
+    print("[FAIL] Failed to send:", notes)
     sys.exit(1)
