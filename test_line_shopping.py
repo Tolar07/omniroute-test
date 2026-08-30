@@ -3,7 +3,8 @@
 
 import os
 import sys
-sys.path.insert(0, 'olp_xdv_agent/olp_xdv')
+sys.path.insert(0, '.')  # Add current directory to path
+sys.path.insert(0, './pipeline')  # Add pipeline directory to path
 
 from pipeline.odds import fetch_odds
 
