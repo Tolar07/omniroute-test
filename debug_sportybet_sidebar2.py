@@ -3,6 +3,8 @@ Standalone debug script - deeper exploration of SportyBet's filter modal and cou
 """
 import asyncio
 import json
+from pathlib import Path
+
 from playwright.async_api import async_playwright
 
 
@@ -163,7 +165,7 @@ async def main():
                 pass
 
         # --- 8. Screenshot ---
-        screenshot_path = r"C:\Users\Motunrayo\omniroute test\debug_sportybet_sidebar2.png"
+        screenshot_path = str(Path(__file__).resolve().parent / "debug_sportybet_sidebar2.png")
         await page.screenshot(path=screenshot_path, full_page=True)
         print(f"\nFull page screenshot saved to: {screenshot_path}")
 

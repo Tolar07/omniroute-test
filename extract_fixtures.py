@@ -1,7 +1,9 @@
 import json
 import os
+from pathlib import Path
 
-fixtures_dir = r"C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\cache\sportybet\fixtures"
+REPO_ROOT = Path(__file__).resolve().parent
+fixtures_dir = str(REPO_ROOT / "olp_xdv_agent" / "olp_xdv" / "data" / "cache" / "sportybet" / "fixtures")
 
 for filename in sorted(os.listdir(fixtures_dir)):
     if not filename.endswith('.json'):

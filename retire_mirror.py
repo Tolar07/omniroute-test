@@ -8,9 +8,14 @@ import shutil
 import hashlib
 from pathlib import Path
 
-# Use raw Windows paths
-PROJECT_DOCS = Path(r'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault')
-VAULT_ROOT = Path(r'C:\Users\Motunrayo\Documents\OLP_XDV_Vault')
+REPO_ROOT = Path(__file__).resolve().parent
+PROJECT_DOCS = REPO_ROOT / 'olp_xdv_agent' / 'olp_xdv' / 'docs' / 'obsidian-vault'
+# Deprecated mirror lives outside the repo. Override with RETIRED_VAULT_ROOT
+# to point at wherever the retired vault sits on this machine.
+VAULT_ROOT = Path(
+    os.environ.get('RETIRED_VAULT_ROOT')
+    or (Path.home() / 'Documents' / 'OLP_XDV_Vault')
+)
 
 SYNC_FILES = [
     'Agents.md',

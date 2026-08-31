@@ -33,6 +33,19 @@ venv/
 # Scratch
 tests/tmp_*.json
 *.tmp
+# Ad-hoc scratch scripts at the repo root — never a source of truth
+/tmp_*.js
+/tmp_*.mjs
+/tmp_*.py
+/tmp_*.ts
+# Windows commands that redirect to `C:\tmp\...` on a Git Bash shell that
+# interprets the colon oddly leave behind files whose names start with
+# `C\uF03Atmp...`. Ignore that pattern so the mistake stops re-landing.
+/C*tmp*.txt
+/C*tmp*.csv
+/C*tmp*.json
+# Local Python traceback / error dumps captured at the repo root
+/fx_out.txt
 # Rendered-output scratch captures (manual test artifacts, e.g. lean_reply.txt)
 *_reply.txt
 

@@ -79,7 +79,7 @@ def build_message(
     return msg
 
 
-def send(msg: EmailMessage) -> dict:
+def send(msg: EmailMessage, bcc: str | None = None) -> dict:
     """Send the message via SMTP. Returns dict with status."""
     user = os.environ.get("OUTLOOK_SMTP_USER", "")
     password = os.environ.get("OUTLOOK_SMTP_PASSWORD", "")
@@ -92,7 +92,8 @@ def send(msg: EmailMessage) -> dict:
             "error": "Missing OUTLOOK_SMTP_USER or OUTLOOK_SMTP_PASSWORD in .env",
         }
 
-    # Collect all recipients (To + Cc + Bcc)
+    # Collect all recipients (To + Cc + Bcc). Bcc is intentionally kept off
+    # the message headers and threaded in only at SMTP RCPT TO time.
     all_recipients: list[str] = []
     if msg["To"]:
         all_recipients.extend(r.strip() for r in msg["To"].split(","))
@@ -189,7 +190,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"\nAttachments: {attachments}")
         return 0
 
-    result = send(msg)
+    result = send(msg, bcc=ns.bcc)
 
     if result["success"]:
         print(f"OK — email sent to {result.get('to', ns.to)}")
