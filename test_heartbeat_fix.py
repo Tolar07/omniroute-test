@@ -29,12 +29,12 @@ def test_heartbeat_selection():
     print("\n" + "="*50 + "\n")
 
     # Verify it contains the highest EV pick (Osasuna v Getafe BTTS_NO at +0.0611 EV)
-    if "Osasuna v Getafe" in result and "BTTS No" in result and "EV: +6.1%" in result:
-        print("✅ SUCCESS: Heartbeat correctly shows highest EV pick (Osasuna v Getafe BTTS_NO)")
+    if "Osasuna v Getafe" in result and "Both teams to score — no" in result and "EV: 6.1%" in result:
+        print("SUCCESS: Heartbeat correctly shows highest EV pick (Osasuna v Getafe BTTS_No)")
         return True
     else:
-        print("❌ FAILURE: Heartbeat does not show highest EV pick")
-        print("Looking for: Osasuna v Getafe, BTTS No, EV: +6.1%")
+        print("FAILURE: Heartbeat does not show highest EV pick")
+        print("Looking for: Osasuna v Getafe, Both teams to score — no, EV: 6.1%")
         return False
 
 if __name__ == "__main__":
