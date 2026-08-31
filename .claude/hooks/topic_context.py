@@ -105,7 +105,8 @@ def main() -> int:
         text = entry["path"].read_text(encoding="utf-8", errors="ignore")
         truncated = len(text) > MAX_CHARS_PER_FILE
         text = text[:MAX_CHARS_PER_FILE]
-        out.append(f"\n## {entry['name']}.md (read just now from disk)\n{text}")
+        safe_text = text.encode('ascii', 'replace').decode('ascii')
+    out.append(f"\n## {entry['name']}.md (read just now from disk)\n{safe_text}")
         if truncated:
             out.append(f"\n[...truncated; full file at {entry['path']}]")
     out.append("\n--- end fresh read ---")
