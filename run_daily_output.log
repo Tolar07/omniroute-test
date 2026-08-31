@@ -1,0 +1,778 @@
+historical_results: football_data FAILED after 2 attempts: 404 Client Error: Not Found for url: https://www.football-data.co.uk/mmz4281/2526/BL2.csv
+historical_results: football_data FAILED after 2 attempts: 'KNVB Beker' is not covered by football-data.co.uk — this source has no continental competitions and doesn't include Croatia. Needs a different T1 source before it can be scanned with real historical data (NOT a guess — genuinely unavailable here).
+fixtures: thesportsdb FAILED after 2 attempts: object of type 'NoneType' has no len()
+fixtures: thesportsdb FAILED after 2 attempts: object of type 'NoneType' has no len()
+Circuit breaker OPENED for thesportsdb after 3 consecutive failures
+fixtures: thesportsdb FAILED after 2 attempts: object of type 'NoneType' has no len()
+fixtures: espn FAILED after 2 attempts: object of type 'int' has no len()
+fixtures: espn FAILED after 2 attempts: object of type 'int' has no len()
+Circuit breaker OPENED for espn after 3 consecutive failures
+fixtures: espn FAILED after 2 attempts: object of type 'int' has no len()
+OLP XDV daily run — 2026-08-30 — Phase 3 — live capital (Architect-deployed)
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x click nav error attempt=2: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar nav error attempt=2: Page.goto: net::ERR_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x could not reach Netherlands/Eredivisie
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x click nav error attempt=2: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar nav error attempt=2: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x could not reach Denmark/Danish Superliga
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Belgian Pro League' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Belgium/Belgian Pro League
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Scottish Premiership' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Scotland/Scottish Premiership
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Ekstraklasa' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Poland/Ekstraklasa
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'HNL' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar: country not found: 'Croatia'
+  x could not reach Croatia/HNL
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Championship' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar: country not found: 'England'
+  x could not reach England/Championship
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:30/sr:tournament:35?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:30/sr:tournament:35?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:30/sr:tournament:35?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:30/sr:tournament:35?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Serie A' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Italy'
+  x could not reach Italy/Serie A
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:30/sr:tournament:36?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:30/sr:tournament:36?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:30/sr:tournament:36?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:30/sr:tournament:36?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Serie B' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Italy/Serie B
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:7/sr:tournament:34?source=sport_menu&sort=2
+  [OK] Direct navigation succeeded: Germany/Bundesliga
+  [OK] Germany/Bundesliga: 12 fixtures cached
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:7/sr:tournament:35?source=sport_menu&sort=2
+  [OK] Direct navigation succeeded: France/Ligue 1
+  [SKIP] cross-league validation failed for France/Ligue 1: team-set 100% matches cached 'Bundesliga' — likely the same wrong page under two names — kept prior 18 fixtures
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:7/sr:tournament:36?source=sport_menu&sort=2
+  [FAIL] PAGE VERIFICATION FAILED: expected France/Ligue 2 — falling back to sidebar
+  x league link not found in popular-list: 'Ligue 2' — falling back to sidebar
+  x sidebar: country not found: 'France'
+  x could not reach France/Ligue 2
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:679?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:679?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:679?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:679?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Europa League' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'International Clubs'
+  x could not reach International Clubs/Europa League
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:34480?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:34480?source=sport_menu&sort=2
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:34480?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:34480?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:34480?source=sport_menu&sort=2
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:34480?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Conference League' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach International Clubs/Conference League
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Primeira Liga' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar: country not found: 'Portugal'
+  x could not reach Portugal/Primeira Liga
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2
+  [FAIL] PAGE VERIFICATION FAILED: expected Portugal/Liga Portugal — falling back to sidebar
+  x league link not found in popular-list: 'Liga Portugal' — falling back to sidebar
+  x sidebar: country not found: 'Portugal'
+  x could not reach Portugal/Liga Portugal
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Premier League' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach England/Premier League
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'La Liga' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Spain/La Liga
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:23?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'LaLiga' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Spain/LaLiga
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:9?source=sport_menu&sort=2
+  x direct nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:9?source=sport_menu&sort=2", waiting until "networkidle"
+
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:9?source=sport_menu&sort=2
+  x direct nav error attempt=2: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football/sr:category:31/sr:tournament:9?source=sport_menu&sort=2", waiting until "networkidle"
+
+  x click nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'La Liga 2' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Spain'
+  x could not reach Spain/La Liga 2
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:393/sr:tournament:7?source=sport_menu&sort=2
+  [FAIL] PAGE VERIFICATION FAILED: expected International Clubs/Champions League — falling back to sidebar
+  x league link not found in popular-list: 'Champions League' — falling back to sidebar
+  x sidebar: country not found: 'International Clubs'
+  x could not reach International Clubs/Champions League
+  x league link not found in popular-list: 'Austrian Bundesliga' — falling back to sidebar
+  x sidebar: country not found: 'Austria'
+  x could not reach Austria/Austrian Bundesliga
+  -> Direct URL: https://www.sportybet.com.ng/ng/sport/football/sr:category:1/sr:tournament:18?source=sport_menu&sort=2
+  [FAIL] PAGE VERIFICATION FAILED: expected England/EFL Cup — falling back to sidebar
+  x league link not found in popular-list: 'EFL Cup' — falling back to sidebar
+  x sidebar: country not found: 'England'
+  x could not reach England/EFL Cup
+  x league link not found in popular-list: 'Russian Premier League' — falling back to sidebar
+  x sidebar: country not found: 'Russia'
+  x could not reach Russia/Russian Premier League
+  x league link not found in popular-list: 'Swiss Super League' — falling back to sidebar
+  x sidebar: country not found: 'Switzerland'
+  x could not reach Switzerland/Swiss Super League
+  x league link not found in popular-list: 'Super League' — falling back to sidebar
+  x sidebar: country not found: 'Switzerland'
+  x could not reach Switzerland/Super League
+  x league link not found in popular-list: 'Turkish Super Lig' — falling back to sidebar
+  x sidebar: country not found: 'Turkiye'
+  x could not reach Turkiye/Turkish Super Lig
+  x league link not found in popular-list: 'FA Cup' — falling back to sidebar
+  x sidebar: country not found: 'England'
+  x could not reach England/FA Cup
+  x league link not found in popular-list: 'Community Shield' — falling back to sidebar
+  x sidebar: country not found: 'England'
+  x could not reach England/Community Shield
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'EFL Trophy' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach England/EFL Trophy
+  x league link not found in popular-list: 'Copa del Rey' — falling back to sidebar
+  x sidebar: country not found: 'Spain'
+  x could not reach Spain/Copa del Rey
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Coppa Italia' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Italy/Coppa Italia
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'DFB Pokal' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Germany/DFB Pokal
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'German Super Cup' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Germany/German Super Cup
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Coupe de France' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach France/Coupe de France
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'KNVB Beker' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Netherlands/KNVB Beker
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'OFB Cup' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Austria/OFB Cup
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Scottish League Cup' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.wait_for_timeout: Target page, context or browser has been closed
+  x sidebar nav error attempt=2: Locator.count: Target page, context or browser has been closed
+  x could not reach Scotland/Scottish League Cup
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Süper Lig' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Turkiye/Süper Lig
+  x click nav error attempt=1: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x click nav error attempt=2: Page.goto: Target page, context or browser has been closed
+  x sidebar nav error attempt=1: Page.goto: Target page, context or browser has been closed
+  x sidebar nav error attempt=2: Page.goto: Target page, context or browser has been closed
+  x could not reach Greece/Super League Greece
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Eliteserien' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Norway/Eliteserien
+  x click nav error attempt=1: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x click nav error attempt=2: Page.goto: Target page, context or browser has been closed
+  x sidebar nav error attempt=1: Page.goto: Target page, context or browser has been closed
+  x sidebar nav error attempt=2: Page.goto: Target page, context or browser has been closed
+  x could not reach Sweden/Allsvenskan
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Czech First League' — falling back to sidebar
+  x sidebar: country not found: 'Czech Republic'
+  x could not reach Czech Republic/Czech First League
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Norwegian Eliteserien' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Norway/Norwegian Eliteserien
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Greek Super League' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Greece/Greek Super League
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Swedish Allsvenskan' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Sweden/Swedish Allsvenskan
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Pro League' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Belgium/Pro League
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Albanian Superliga' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar: country not found: 'Albania'
+  x could not reach Albania/Albanian Superliga
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Andorran Primera Divisió' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Andorra'
+  x could not reach Andorra/Andorran Primera Divisió
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Armenian Premier League' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar: country not found: 'Armenia'
+  x could not reach Armenia/Armenian Premier League
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x click nav error attempt=2: Page.goto: Target page, context or browser has been closed
+  x sidebar nav error attempt=1: Page.goto: Target page, context or browser has been closed
+  x sidebar nav error attempt=2: Page.goto: Target page, context or browser has been closed
+  x could not reach Azerbaijan/Azerbaijani Premyer Liqa
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Belarusian Premier League' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Belarus'
+  x could not reach Belarus/Belarusian Premier League
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Bosnian Premier League' — falling back to sidebar
+  x sidebar: country not found: 'Bosnia'
+  x could not reach Bosnia/Bosnian Premier League
+  x league link not found in popular-list: 'Bulgarian First League' — falling back to sidebar
+  x sidebar: country not found: 'Bulgaria'
+  x could not reach Bulgaria/Bulgarian First League
+  x league link not found in popular-list: 'Cypriot First Division' — falling back to sidebar
+  x sidebar: country not found: 'Cyprus'
+  x could not reach Cyprus/Cypriot First Division
+  x league link not found in popular-list: 'Estonian Meistriliiga' — falling back to sidebar
+  x sidebar: country not found: 'Estonia'
+  x could not reach Estonia/Estonian Meistriliiga
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Faroe Islands Premier League' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Faroe Islands/Faroe Islands Premier League
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Finnish Veikkausliiga' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Finland/Finnish Veikkausliiga
+  x league link not found in popular-list: 'Georgian Erovnuli Liga' — falling back to sidebar
+  x sidebar: country not found: 'Georgia'
+  x could not reach Georgia/Georgian Erovnuli Liga
+  x league link not found in popular-list: 'Gibraltarian National League' — falling back to sidebar
+  x sidebar: country not found: 'Gibraltar'
+  x could not reach Gibraltar/Gibraltarian National League
+  x league link not found in popular-list: 'Hungarian NB I' — falling back to sidebar
+  x sidebar: country not found: 'Hungary'
+  x could not reach Hungary/Hungarian NB I
+  x league link not found in popular-list: 'Icelandic Urvalsdeild' — falling back to sidebar
+  x sidebar: country not found: 'Iceland'
+  x could not reach Iceland/Icelandic Urvalsdeild
+  x league link not found in popular-list: 'Israeli Premier League' — falling back to sidebar
+  x sidebar: country not found: 'Israel'
+  x could not reach Israel/Israeli Premier League
+  x league link not found in popular-list: 'Kazakhstani Premier League' — falling back to sidebar
+  x sidebar: country not found: 'Kazakhstan'
+  x could not reach Kazakhstan/Kazakhstani Premier League
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Kosovan Superliga' — falling back to sidebar
+  x sidebar: country not found: 'Kosovo'
+  x could not reach Kosovo/Kosovan Superliga
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Latvian Virsliga' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Latvia/Latvian Virsliga
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Liechtensteiner Cup' — falling back to sidebar
+  x sidebar: country not found: 'Liechtenstein'
+  x could not reach Liechtenstein/Liechtensteiner Cup
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Lithuanian A Lyga' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Lithuania/Lithuanian A Lyga
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Luxembourg National Division' — falling back to sidebar
+  x sidebar: country not found: 'Luxembourg'
+  x could not reach Luxembourg/Luxembourg National Division
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Maltese Premier League' — falling back to sidebar
+  x sidebar: country not found: 'Malta'
+  x could not reach Malta/Maltese Premier League
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Moldovan Super Liga' — falling back to sidebar
+  x sidebar: country not found: 'Moldova'
+  x could not reach Moldova/Moldovan Super Liga
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Montenegrin First League' — falling back to sidebar
+  x sidebar: country not found: 'Montenegro'
+  x could not reach Montenegro/Montenegrin First League
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'North Macedonian First League' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar: country not found: 'North Macedonia'
+  x could not reach North Macedonia/North Macedonian First League
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Northern Irish Premiership' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Northern Ireland'
+  x could not reach Northern Ireland/Northern Irish Premiership
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Republic of Ireland Premier Division' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Republic of Ireland'
+  x could not reach Republic of Ireland/Republic of Ireland Premier Division
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Romanian Liga I' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Romania'
+  x could not reach Romania/Romanian Liga I
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Sanmarinese Campionato' — falling back to sidebar
+  x sidebar: country not found: 'San Marino'
+  x could not reach San Marino/Sanmarinese Campionato
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Serbian Super Liga' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Serbia'
+  x could not reach Serbia/Serbian Super Liga
+  x click nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Slovak Super Liga' — falling back to sidebar
+  x sidebar nav error attempt=1: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.sportybet.com.ng/ng/sport/football
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x sidebar: country not found: 'Slovakia'
+  x could not reach Slovakia/Slovak Super Liga
+  x league link not found in popular-list: 'Slovenian PrvaLiga' — falling back to sidebar
+  x sidebar: country not found: 'Slovenia'
+  x could not reach Slovenia/Slovenian PrvaLiga
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'UEFA Super Cup' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach International Clubs/UEFA Super Cup
+  x click nav error attempt=1: Page.goto: Timeout 20000ms exceeded.
+Call log:
+  - navigating to "https://www.sportybet.com.ng/ng/sport/football", waiting until "domcontentloaded"
+
+  x league link not found in popular-list: 'Welsh Premier League' — falling back to sidebar
+  x sidebar nav error attempt=1: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x sidebar nav error attempt=2: 'charmap' codec can't encode character '\u2192' in position 2: character maps to <undefined>
+  x could not reach Wales/Welsh Premier League
+  delivered 1 part(s) to Telegram
+  delivered 1 part(s) to Telegram
+  delivered 1 part(s) to Telegram
+  delivered 1 part(s) to Telegram
+  EMAIL_USER, EMAIL_APP_PASSWORD, EMAIL_TO not set — email delivery skipped
+
+##########OLP XDV#########
+==================================
+
+?  Mon 31 Aug 2026   (PICK · win %  ·  alt markets)
+
+??????????????????????????????????
+TABLE 1 · LAYER 2 — FULL MARKET GRID + AI PICK
+??????????????????????????????????
+? La Liga (Spain)
+   ??:??   Osasuna v Getafe
+       O1.5 49%  ·  O2.5 23%  ·  O3.5 9%  ·  BTTS 31%
+       AI pick = Both teams to score — no 69%
+   ??:??   Barcelona v Rayo Vallecano
+       AI pick = Barcelona or Draw (double chance) 96%
+? Premier League (England)
+   ??:??   Aston Villa v Arsenal
+       O1.5 70%  ·  O2.5 42%  ·  O3.5 21%  ·  BTTS 46%
+       AI pick = Both teams to score — no 54%
+? Primeira Liga (Portugal)
+   ??:??   Benfica v Estoril
+       O1.5 89%  ·  O2.5 73%  ·  O3.5 53%  ·  BTTS 53%
+       AI pick = Over 2.5 goals 73%
+? Serie A (Italy)
+   ??:??   Lecce v AS Roma
+       O1.5 61%  ·  O2.5 34%  ·  O3.5 16%  ·  BTTS 32%
+       AI pick = AS Roma to win 62%
+
+Board code: NO DATA — PENDING (booking-code read postponed — technical issue,
+tracked internally, not blocking pipeline output)
+
+??????????????????????????????????
+TABLE 2 · LAYER 1 — DEPLOY-ELIGIBLE SINGLES
+(fixtures that clear the deploy threshold, one row each, own code)
+??????????????????????????????????
+? Osasuna v Getafe — Both teams to score — no — 69%
+    Code: NO DATA — PENDING
+? Barcelona v Rayo Vallecano — Barcelona or Draw (double chance) — 96%
+    Code: NO DATA — PENDING
+? Aston Villa v Arsenal — Both teams to score — no — 54%
+    Code: NO DATA — PENDING
+? Benfica v Estoril — Over 2.5 goals — 73%
+    Code: NO DATA — PENDING
+? Lecce v AS Roma — AS Roma to win — 62%
+    Code: NO DATA — PENDING
+
+??????????????????????????????????
+TABLE 3 · ACCA ROUTE
+(capital-eligible grouped accumulators, own code per acca)
+??????????????????????????????????
+No capital-eligible accas generated.
+??????????????????????????????????
+TABLE 4 · THE PICK
+(primary single + Acca A recommendation)
+??????????????????????????????????
+? Primary single: Benfica v Estoril (Primeira Liga)
+  Market: Over 2.5 goals
+  Price: 1.40 (Bet365)
+  Model Prob: 73%
+  MES EV: +7.10%
+  Verification: ?
+  Code: NO DATA — PENDING
+
+==================================
+Honest edge: not a demonstrated edge · Capital: Architect only.
+Booking codes: PENDING pipeline-wide — technical issue under repair,
+tracking resumes once read_betslip_combined_odds is fixed.
+==================================
+
+============================================================
+
+VERIFY RESULTS
+Fixture | FT | 1X2/DC | O1.5/O2.5 | BTTS | Hit
