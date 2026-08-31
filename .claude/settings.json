@@ -259,6 +259,13 @@
     ]
   },
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/time_context.py\"" }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Edit|Write|MultiEdit|NotebookEdit",
@@ -276,6 +283,7 @@
     "UserPromptSubmit": [
       {
         "hooks": [
+          { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/time_context.py\"" },
           { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/topic_context.py\"" }
         ]
       }
