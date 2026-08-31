@@ -25,7 +25,8 @@ def test_heartbeat_selection():
     result = generate_compact_heartbeat(board_data, "2026-08-31")
 
     print("Generated heartbeat:")
-    print(result)
+    # Print as ASCII to avoid encoding issues
+    print(result.encode('ascii', errors='replace').decode('ascii'))
     print("\n" + "="*50 + "\n")
 
     # Verify it contains the highest EV pick (Osasuna v Getafe BTTS_NO at +0.0611 EV)
