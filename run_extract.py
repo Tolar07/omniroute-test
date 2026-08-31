@@ -1,7 +1,9 @@
 import subprocess
 import sys
+from pathlib import Path
 
-result = subprocess.run([sys.executable, r'c:\Users\Motunrayo\omniroute test\extract_teams.py'],
+TARGET = Path(__file__).resolve().parent / "extract_teams.py"
+result = subprocess.run([sys.executable, str(TARGET)],
                        capture_output=True, text=True)
 print("STDOUT:")
 print(result.stdout)

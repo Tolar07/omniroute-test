@@ -1,6 +1,11 @@
 import re
+from pathlib import Path
 
-with open(r'c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\thesportsdb_fixtures.py', 'r', encoding='utf-8') as f:
+REPO_ROOT = Path(__file__).resolve().parent
+SOURCE = REPO_ROOT / "olp_xdv_agent" / "olp_xdv" / "data" / "thesportsdb_fixtures.py"
+OUTPUT = REPO_ROOT / "team_output.txt"
+
+with open(SOURCE, "r", encoding="utf-8") as f:
     text = f.read()
 
 all_teams = set()
@@ -23,7 +28,7 @@ for t in matches:
 
 filtered = {t for t in all_teams if len(t) > 1 and not t.isdigit()}
 
-with open(r'c:\Users\Motunrayo\omniroute test\team_output.txt', 'w', encoding='utf-8') as out:
+with open(OUTPUT, 'w', encoding='utf-8') as out:
     for team in sorted(filtered):
         out.write(team + '\n')
     out.write(f'\nTotal unique teams: {len(filtered)}')

@@ -1,7 +1,10 @@
 import re
+from pathlib import Path
 
-# Read the file content
-with open(r'c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\thesportsdb_fixtures.py', 'r', encoding='utf-8') as f:
+REPO_ROOT = Path(__file__).resolve().parent
+SOURCE = REPO_ROOT / "olp_xdv_agent" / "olp_xdv" / "data" / "thesportsdb_fixtures.py"
+
+with open(SOURCE, "r", encoding="utf-8") as f:
     text = f.read()
 
 all_teams = set()

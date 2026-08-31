@@ -1,8 +1,11 @@
+import os
 import sys
-sys.path.insert(0, r'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv')
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(REPO_ROOT / "olp_xdv_agent" / "olp_xdv"))
 
 from output.notify import send_telegram
-import os
 
 message = """
 📡 OLP XDV Heartbeat Status — 2026-08-30
