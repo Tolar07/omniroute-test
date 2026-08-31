@@ -3,6 +3,8 @@ Standalone debug script - deep dive into the country/league structure and filter
 """
 import asyncio
 import json
+from pathlib import Path
+
 from playwright.async_api import async_playwright
 
 
@@ -169,7 +171,7 @@ async def main():
         print(f"Fixture rows found: {fixtures}")
 
         # Screenshot
-        screenshot_path = r"C:\Users\Motunrayo\omniroute test\debug_sportybet_direct_league.png"
+        screenshot_path = str(Path(__file__).resolve().parent / "debug_sportybet_direct_league.png")
         await page.screenshot(path=screenshot_path, full_page=False)
         print(f"Screenshot saved to: {screenshot_path}")
 

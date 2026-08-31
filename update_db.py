@@ -1,5 +1,9 @@
+import os
 import sqlite3
-conn = sqlite3.connect(r'C:\Users\Motunrayo\.omniroute\storage.sqlite')
+from pathlib import Path
+
+db_path = os.environ.get("OMNIROUTE_DB_PATH") or str(Path.home() / ".omniroute" / "storage.sqlite")
+conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 cursor.execute("UPDATE provider_connections SET test_status = 'deactivated' WHERE provider IN ('nvidia', 'opencode')")
 conn.commit()

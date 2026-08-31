@@ -13,7 +13,10 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const REPO_ROOT = 'c:/Users/Motunrayo/omniroute test';
+// Resolve the repo root as the parent of this scripts/ directory so the same
+// job runs on any checkout, on Windows or otherwise. Override with
+// OMNIROUTE_REPO_ROOT when the script has to be invoked from elsewhere.
+const REPO_ROOT = process.env.OMNIROUTE_REPO_ROOT || path.resolve(__dirname, '..');
 const SYNC_SCRIPT = path.join(REPO_ROOT, 'olp_xdv_agent', 'olp_xdv', '.claude', 'scripts', 'hooks', 'vault-memory-sync.js');
 const LOG_DIR = path.join(REPO_ROOT, 'logs', 'auto-sync');
 const LOG_FILE = path.join(LOG_DIR, `auto-sync-${new Date().toISOString().split('T')[0]}.log`);
