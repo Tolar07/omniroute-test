@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "d4e5f6a7",
-      "cron": "7 7 * * *",
+      "cron": "7 22 * * *",
       "prompt": "Run the daily OLP XDV PRODUCTION pipeline (scan + rate + issue survival fixtures): cd \"c:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\" && python run_daily.py --no-web --no-whatsapp --no-email",
       "createdAt": 1787583722637,
       "lastFiredAt": 1788073517025,
