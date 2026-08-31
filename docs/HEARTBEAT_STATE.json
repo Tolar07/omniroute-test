@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "last_outcome": "UNKNOWN",
+  "last_outcome_date": null,
+  "last_outcome_pnl_units": 0.0,
+  "current_lineage_id": null,
+  "current_lineage_step": 0,
+  "previous_stake_units": null,
+  "next_intended_stake_units": null,
+  "next_intended_selection_key": null,
+  "updated_by_session_id": "seed",
+  "updated_at_utc": "2026-08-31T00:00:00Z",
+  "history": [],
+  "notes": "Initial state stub. Every field except schema_version is placeholder and should be overwritten by scripts/heartbeat_supervisor.py record on the next real outcome. Do not edit by hand — use the supervisor CLI so history is appended and STATE.md gets its log line."
+}
