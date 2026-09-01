@@ -64,7 +64,12 @@ def dirty_files(repo_dir: Path) -> list[str]:
     files = []
     for line in out.splitlines():
         # porcelain format: "XY path" — path starts at column 3
-        files.append(line[3:].strip())
+        f = line[3:].strip()
+        # Only add files that actually exist (skip directories, worktrees, etc.)
+        if (repo_dir / f).exists():
+            files.append(f)
+        else:
+            print(f"  (skipping non-existent: {f})")
     return files
 
 
@@ -178,9 +183,9 @@ def main() -> int:
     all_ok = sync_one_repo(repo_root, args.message) and all_ok
 
     if all_ok:
-        print("\n✓✓ Everything synced — submodule(s) and parent repo both match GitHub.")
+        print("\n[OK] Everything synced — submodule(s) and parent repo both match GitHub.")
     else:
-        print("\n✗ Sync incomplete — see errors above before trusting the remote state.")
+        print("\n[FAIL] Sync incomplete — see errors above before trusting the remote state.")
     return 0 if all_ok else 1
 
 
