@@ -1,15 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": "d4e5f6a7",
-      "cron": "7 7 * * *",
-      "prompt": "Run the daily OLP XDV PRODUCTION pipeline (scan + rate + issue survival fixtures): cd \"c:\\Users\\Motunrayo\\omniroute test\\olp_xdv_agent\\olp_xdv\" && python run_daily.py --no-web --no-whatsapp --no-email",
-      "createdAt": 1787583722637,
-      "lastFiredAt": 1788158220719,
-      "recurring": true,
-      "createdBySessionId": "assistant-prod-2026-08-24",
-      "createdByPid": 0,
-      "createdByProcStart": "0"
-    }
-  ]
+  "tasks": []
 }
