@@ -11,6 +11,7 @@
   },
   "permissions": {
     "allow": [
+      "Bash(*)",
       "Bash(cd \"C:\\\\Users\\\\Motunrayo\\\\omniroute test\\\\olp_xdv_agent\\\\olp_xdv\" && mkdir -p docs/obsidian-vault && cp \"C:\\\\Users\\\\Motunrayo\\\\Documents\\\\OLP_XDV_Vault\"/*.md docs/obsidian-vault/ && echo \"=== copied ===\" && ls docs/obsidian-vault/ && echo \"=== source still intact ===\" && ls \"C:\\\\Users\\\\Motunrayo\\\\Documents\\\\OLP_XDV_Vault\"/*.md)",
       "Bash(git commit --only docs/obsidian-vault/ -m ' *)",
       "Bash(py -3.12 -c \"from data.api_football_plan import is_paid_plan; print\\('Paid plan:', is_paid_plan\\(\\)\\)\")",
