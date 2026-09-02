@@ -116,11 +116,11 @@ def test_espn(target: str) -> None:
                 f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard",
                 params={"dates": ymd}, timeout=15)
             events = r.json().get("events", [])
-            print(f"  {name:<16} ({slug}): {len(events)} fixture(s)")
+            safe_print(f"  {name:<16} ({slug}): {len(events)} fixture(s)")
             for e in events[:3]:
-                print(f"       {e.get('name')} @ {e.get('date')}")
+                safe_print(f"       {e.get('name')} @ {e.get('date')}")
         except Exception as exc:
-            print(f"  {name}: failed — {exc}")
+            safe_print(f"  {name}: failed — {exc}")
 
 
 def test_thesportsdb(target: str) -> None:
@@ -139,9 +139,9 @@ def test_thesportsdb(target: str) -> None:
                              params=params, timeout=15)
             events = r.json().get("events")
             count = len(events) if events else 0
-            print(f"  {label}: {count} event(s)")
+            safe_print(f"  {label}: {count} event(s)")
         except Exception as exc:
-            print(f"  {label}: failed — {exc}")
+            safe_print(f"  {label}: failed — {exc}")
 
 
 def test_football_data_org(target: str) -> None:
