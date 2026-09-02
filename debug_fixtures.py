@@ -23,7 +23,10 @@ logger = logging.getLogger("debug_fixtures")
 
 def fetch_fixtures_for_date(target_date_str):
     """Fetch fixtures using the same logic as agent_1_ingest but without date gate"""
-    target_date = date.fromisoformat(target_date_str)
+    if target_date_str:
+        target_date = date.fromisoformat(target_date_str)
+    else:
+        target_date = date.today()
     print(f"Fetching fixtures for target date: {target_date.isoformat()}")
 
     fixtures = []
