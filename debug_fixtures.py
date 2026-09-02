@@ -109,8 +109,9 @@ def fetch_fixtures_for_date(target_date_str):
     return fixtures, data_flags
 
 def main():
-    # Fetch fixtures (this will use whatever date the underlying APIs consider "today")
-    fixtures, data_flags = fetch_fixtures_for_date(None)
+    # Fetch fixtures for tomorrow (2026-09-03)
+    target_date = "2026-09-03"
+    fixtures, data_flags = fetch_fixtures_for_date(target_date)
 
     print(f"\nFetched {len(fixtures)} raw fixtures:")
     print("=" * 80)
