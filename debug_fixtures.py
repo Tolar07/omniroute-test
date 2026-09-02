@@ -29,6 +29,13 @@ def fetch_fixtures_for_date(target_date_str):
         target_date = date.today()
     print(f"Fetching fixtures for target date: {target_date.isoformat()}")
 
+    # Calculate days_ahead from today to target_date
+    today = date.today()
+    days_ahead = (target_date - today).days
+    if days_ahead < 0:
+        days_ahead = 0
+    print(f"  days_ahead parameter: {days_ahead}")
+
     fixtures = []
     data_flags = []
 
@@ -39,7 +46,7 @@ def fetch_fixtures_for_date(target_date_str):
         src = "?"
 
         try:
-            fx = get_fixtures(league, "2627", days_ahead=0, api_football_season=None)
+            fx = get_fixtures(league, "2627", days_ahead=days_ahead, api_football_season=None)
             raw_fixtures = fx.get("fixtures") or []
             upcoming_fixtures = [(map_team(league, h), map_team(league, a))
                                  for h, a in raw_fixtures]
