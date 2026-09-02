@@ -205,7 +205,17 @@ def main():
     for fx in fixtures:
         if fx.get("kickoff_utc"):
             try:
-                kickoff_dt = datetime.fromisoformat(fx["kickoff_utc"].replace("Z", "+00:00"))
+                kickoff_str = fx["kickoff_utc"]
+                # Clean up weird formats like "19:30\xa0\xa0\nID"
+                kickoff_str = kickoff_str.strip()
+                if "\n" in kickoff_str:
+                    kickoff_str = kickoff_str.split("\n")[0]
+                # Try to parse as date only first
+                if "T" not in kickoff_str and "-" in kickoff_str and len(kickoff_str) == 10:
+                    # It's just a date like "2026-09-02"
+                    kickoff_dt = datetime.fromisoformat(kickoff_str)
+                else:
+                    kickoff_dt = datetime.fromisoformat(kickoff_str.replace("Z", "+00:00"))
                 dated_fixtures.append(DatedFixture(
                     fixture_id=fx["match_id"],
                     home=fx["home_team"],
@@ -214,7 +224,7 @@ def main():
                     kickoff_utc=kickoff_dt
                 ))
             except (ValueError, AttributeError) as e:
-                print(f"  Warning: Could not parse kickoff for {fx['match_id']}: {e}")
+                print(f"  Warning: Could not parse kickoff for {fx['match_id']}: {e} (value: {fx['kickoff_utc']})")
                 # Skip invalid fixtures for gate validation
         else:
             print(f"  Warning: Missing kickoff for {fx['match_id']}")
