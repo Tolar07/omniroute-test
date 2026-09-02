@@ -52,8 +52,10 @@ except ImportError:
 
 
 def run(cmd: list[str], cwd: Path) -> tuple[int, str]:
-    result = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
-    output = (result.stdout + result.stderr).strip()
+    result = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, encoding='utf-8', errors='replace')
+    stdout = result.stdout or ""
+    stderr = result.stderr or ""
+    output = (stdout + stderr).strip()
     return result.returncode, output
 
 
@@ -66,10 +68,10 @@ def dirty_files(repo_dir: Path) -> list[str]:
         # porcelain format: "XY path" — path starts at column 3
         f = line[3:].strip()
         # Only add files that actually exist (skip directories, worktrees, etc.)
-        if (repo_dir / f).exists():
+        if (repo_dir / f).exists() and not (repo_dir / f).is_dir():
             files.append(f)
         else:
-            print(f"  (skipping non-existent: {f})")
+            print(f"  (skipping non-existent or directory: {f})")
     return files
 
 
@@ -138,7 +140,7 @@ def sync_one_repo(repo_dir: Path, message: str) -> bool:
             print(f"PUSH FAILED:\n{out}")
             return False
 
-        print(f"✓ {repo_dir} is synced — local and remote match.")
+        print(f"[OK] {repo_dir} is synced - local and remote match.")
         return True
     finally:
         release_mutex(repo_dir)
