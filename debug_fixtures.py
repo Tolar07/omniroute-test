@@ -9,6 +9,7 @@ from pathlib import Path
 # Add repo root to sys.path
 REPO_ROOT = Path(__file__).parent
 sys.path.insert(0, str(REPO_ROOT))
+sys.path.insert(0, str(REPO_ROOT / "olp_xdv_agent" / "olp_xdv"))
 
 from data.multi_source_concrete import get_fixtures
 from engine.leagues import WHITELISTED_LEAGUES
