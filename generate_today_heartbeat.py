@@ -30,7 +30,7 @@ def load_board_data(board_path):
         print(f"Error loading board: {e}")
         return None
 
-def generate_heartbeat = generate_heartbeat_for_date(target_date)
+def generate_heartbeat_for_date(target_date):
     # Encode output for Windows console compatibility
     if sys.platform == "win32":
         # Replace emojis with ASCII equivalents for Windows console
