@@ -30,6 +30,20 @@ def hr(title: str) -> None:
     print(f"\n{'=' * 60}\n{title}\n{'=' * 60}")
 
 
+def safe_print(text: str) -> None:
+    """Print with Unicode fallback for Windows."""
+    try:
+        print(text)
+    except UnicodeEncodeError:
+        # Replace common emoji with ASCII
+        text = (text
+                .replace('❌', '[FAIL]')
+                .replace('✅', '[OK]')
+                .replace('⚠', '[WARN]')
+                .replace('❓', '[?]'))
+        print(text)
+
+
 def test_api_football(target: str) -> None:
     hr("1. API-FOOTBALL (primary, paid)")
     if not API_FOOTBALL_KEY:
