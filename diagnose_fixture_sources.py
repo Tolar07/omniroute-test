@@ -47,13 +47,13 @@ def safe_print(text: str) -> None:
 def test_api_football(target: str) -> None:
     hr("1. API-FOOTBALL (primary, paid)")
     if not API_FOOTBALL_KEY:
-        print("❌ API_FOOTBALL_KEY not set in environment.")
-        print("   This alone produces '0 fixtures' with no other symptom.")
+        safe_print("[FAIL] API_FOOTBALL_KEY not set in environment.")
+        safe_print("   This alone produces '0 fixtures' with no other symptom.")
         return
 
-    print(f"Key present: {API_FOOTBALL_KEY[:6]}...{API_FOOTBALL_KEY[-4:]}")
+    safe_print(f"[OK] Key present: {API_FOOTBALL_KEY[:6]}...{API_FOOTBALL_KEY[-4:]}")
 
-    # Check account status first — a quota-exhausted key looks like an outage.
+    # Check account status first - a quota-exhausted key looks like an outage.
     try:
         r = requests.get("https://v3.football.api-sports.io/status",
                          headers={"x-apisports-key": API_FOOTBALL_KEY}, timeout=15)
@@ -61,12 +61,12 @@ def test_api_football(target: str) -> None:
         resp = data.get("response", {})
         sub = resp.get("subscription", {})
         req = resp.get("requests", {})
-        print(f"  Account: plan={sub.get('plan')} active={sub.get('active')} ends={sub.get('end')}")
-        print(f"  Quota:   {req.get('current')}/{req.get('limit_day')} used today")
+        safe_print(f"  Account: plan={sub.get('plan')} active={sub.get('active')} ends={sub.get('end')}")
+        safe_print(f"  Quota:   {req.get('current')}/{req.get('limit_day')} used today")
         if data.get("errors"):
-            print(f"  ⚠ errors: {data['errors']}")
+            safe_print(f"  [WARN] errors: {data['errors']}")
     except Exception as exc:
-        print(f"❌ /status call failed: {exc}")
+        safe_print(f"[FAIL] /status call failed: {exc}")
         return
 
     # THE KEY TEST: date-only query (no season needed).
@@ -76,19 +76,19 @@ def test_api_football(target: str) -> None:
                          params={"date": target}, timeout=20)
         data = r.json()
         n = len(data.get("response", []))
-        print(f"\n  ✅ date-only query (?date={target}): {n} fixture(s)")
+        safe_print(f"\n  [OK] date-only query (?date={target}): {n} fixture(s)")
         if data.get("errors"):
-            print(f"     errors: {data['errors']}")
+            safe_print(f"     errors: {data['errors']}")
         if n:
             for fx in data["response"][:5]:
                 lg = fx["league"]["name"]
                 t = fx["teams"]
-                print(f"       {lg}: {t['home']['name']} v {t['away']['name']} @ {fx['fixture']['date']}")
+                safe_print(f"       {lg}: {t['home']['name']} v {t['away']['name']} @ {fx['fixture']['date']}")
     except Exception as exc:
-        print(f"❌ date query failed: {exc}")
+        safe_print(f"[FAIL] date query failed: {exc}")
 
     # Demonstrate the wrong-season bug explicitly.
-    print("\n  --- season parameter comparison (Bundesliga, league=78) ---")
+    safe_print("\n  --- season parameter comparison (Bundesliga, league=78) ---")
     for season_label, season_value in (("WRONG (framework format)", "2627"),
                                         ("CORRECT (4-digit start year)", "2026")):
         try:
@@ -99,13 +99,13 @@ def test_api_football(target: str) -> None:
             data = r.json()
             n = len(data.get("response", []))
             errs = data.get("errors")
-            print(f"  season={season_value:<6} [{season_label}]: {n} fixture(s), errors={errs or 'none'}")
+            safe_print(f"  season={season_value:<6} [{season_label}]: {n} fixture(s), errors={errs or 'none'}")
         except Exception as exc:
-            print(f"  season={season_value}: request failed — {exc}")
+            safe_print(f"  season={season_value}: request failed - {exc}")
 
 
 def test_espn(target: str) -> None:
-    hr("2. ESPN (free, no key — good fallback)")
+    hr("2. ESPN (free, no key - good fallback)")
     # Undocumented/unofficial endpoint. Reliable in practice but can change
     # without notice — treat as a fallback, never the sole source.
     ymd = target.replace("-", "")
@@ -145,7 +145,7 @@ def test_thesportsdb(target: str) -> None:
 
 
 def test_football_data_org(target: str) -> None:
-    hr("4. FOOTBALL-DATA.ORG (free tier — recommended addition)")
+    hr("4. FOOTBALL-DATA.ORG (free tier - recommended addition)")
     if not FOOTBALL_DATA_KEY:
         print("  FOOTBALL_DATA_ORG_KEY not set.")
         print("  Free tier covers the major European leagues, ~10 calls/min.")
@@ -157,7 +157,7 @@ def test_football_data_org(target: str) -> None:
                          headers={"X-Auth-Token": FOOTBALL_DATA_KEY},
                          params={"dateFrom": target, "dateTo": target}, timeout=20)
         matches = r.json().get("matches", [])
-        print(f"  ✅ {len(matches)} match(es) on {target}")
+        safe_print(f"  [OK] {len(matches)} match(es) on {target}")
         for m in matches[:5]:
             print(f"     {m['competition']['name']}: {m['homeTeam']['name']} v "
                   f"{m['awayTeam']['name']} @ {m['utcDate']}")
@@ -166,16 +166,16 @@ def test_football_data_org(target: str) -> None:
 
 
 def test_openligadb(target: str) -> None:
-    hr("5. OPENLIGADB (free, no key — German football only)")
+    hr("5. OPENLIGADB (free, no key - German football only)")
     try:
         r = requests.get("https://api.openligadb.de/getmatchdata/bl1/2026", timeout=20)
         matches = r.json()
         on_date = [m for m in matches if m.get("matchDateTime", "").startswith(target)]
-        print(f"  Bundesliga 2026-27: {len(matches)} total fixtures, {len(on_date)} on {target}")
+        safe_print(f"  Bundesliga 2026-27: {len(matches)} total fixtures, {len(on_date)} on {target}")
         for m in on_date[:5]:
-            print(f"     {m['team1']['teamName']} v {m['team2']['teamName']} @ {m['matchDateTime']}")
+            safe_print(f"     {m['team1']['teamName']} v {m['team2']['teamName']} @ {m['matchDateTime']}")
     except Exception as exc:
-        print(f"  ❌ failed — {exc}")
+        safe_print(f"  [FAIL] failed — {exc}")
 
 
 def main() -> None:
