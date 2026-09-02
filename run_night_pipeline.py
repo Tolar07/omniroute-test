@@ -46,6 +46,14 @@ INCIDENTS_MD = Path(os.environ.get("INCIDENTS_MD", "INCIDENTS.md"))
 MARKER_DIR = Path(os.environ.get("PIPELINE_MARKER_DIR", "run_markers"))
 # -------------------------
 
+# Import the actual pipeline function
+sys.path.insert(0, str(Path(__file__).parent / "olp_xdv_agent" / "olp_xdv"))
+try:
+    from olp_xdv_pipeline import run_pipeline
+except ImportError as e:
+    logging.error(f"Failed to import olp_xdv_pipeline: {e}")
+    run_pipeline = None
+
 
 @dataclass
 class Stage:
@@ -181,23 +189,24 @@ def send_summary(results: list[StageResult]) -> None:
 def main() -> int:
     log_path = setup_logging()
 
-    # ---- FILL IN YOUR ACTUAL STAGES HERE ----
-    # Import your real functions and list them in run order. Mark a stage
-    # critical=False if the rest of the pipeline can meaningfully continue
-    # without it (e.g. an optional intel enrichment step); leave the core
-    # engine/produce_bet/notify stages critical=True.
+    # Check if pipeline import succeeded
+    if run_pipeline is None:
+        logging.error("Failed to import olp_xdv_pipeline. Cannot run pipeline.")
+        return 1
+
+    # Define our single stage: the full OLP XDV pipeline
+    def run_full_pipeline():
+        """Run the complete OLP XDV pipeline for today's date"""
+        today = today_str()
+        logging.info(f"Running OLP XDV pipeline for date: {today}")
+        # Run the pipeline with today's date
+        result = run_pipeline(date_str=today, dry_run=False)
+        logging.info("Pipeline completed successfully")
+        return result
+
     stages: list[Stage] = [
-        # Stage("heartbeat_check", heartbeat_module.run, critical=True),
-        # Stage("fetch_fixtures", fetch_module.run, critical=True),
-        # Stage("fetch_odds", odds_module.run_with_fallback, critical=True),
-        # Stage("engine", engine_module.run, critical=True),
-        # Stage("verify_yesterday_results", lambda: os.system(
-        #     "python verify_results.py --input yesterdays_fixtures.json --output verify_output.json"
-        # ), critical=False),
-        # Stage("produce_bet", produce_bet_module.run, critical=True),
-        # Stage("notify_telegram", notify_module.send_board, critical=True),
+        Stage("olp_xdv_pipeline", run_full_pipeline, critical=True),
     ]
-    # ------------------------------------------
 
     if not stages:
         logging.error("No stages configured — edit the STAGES list in this file.")
