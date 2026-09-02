@@ -183,8 +183,8 @@ def main() -> None:
     parser.add_argument("--date", default=date.today().isoformat())
     args = parser.parse_args()
 
-    print(f"Diagnosing fixture sources for {args.date}")
-    print(f"(run at {datetime.now().isoformat(timespec='seconds')})")
+    safe_print(f"Diagnosing fixture sources for {args.date}")
+    safe_print(f"(run at {datetime.now().isoformat(timespec='seconds')})")
 
     test_api_football(args.date)
     test_espn(args.date)
@@ -193,7 +193,7 @@ def main() -> None:
     test_openligadb(args.date)
 
     hr("READ THE RESULTS THIS WAY")
-    print("""
+    safe_print("""
 - If API-Football's date-only query returns fixtures but the
   season=2627 query returns 0: THAT is your bug. Fix the season format
   (or drop the season param entirely and query by date).
