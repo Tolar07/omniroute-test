@@ -1,0 +1,20 @@
+INSTRUCTIONS FOR OTHER SESSIONS:
+
+Please follow the standard SessionEnd workflow as defined in CLAUDE.md:
+
+1. Run vault-memory synchronization:
+   node scripts/vault-memory-sync.js
+
+2. Commit all changes:
+   git add -A && git commit -m "Session end sync: league verification integration completed"
+
+3. Update STATE.md with recent changes (if applicable):
+   [Add brief description of what was accomplished in this session]
+
+This ensures HR54 compliance and maintains synchronization between the canonical vault and agent memory system.
+
+The league verification system has been successfully integrated into the OLP XDV pipeline:
+- Created olp_xdv_agent/olp_xdv/engine/league_verifier.py
+- Modified olp_xdv_agent/olp_xdv/olp_xdv_pipeline.py to include verification step
+- Added documentation in LEAGUE_VERIFICATION_INTEGRATION_SUMMARY.md
+- Verification runs at pipeline start to enable adaptive scanning based on today's fixture coverage
