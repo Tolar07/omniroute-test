@@ -70,19 +70,31 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
 - **Benefits:** Machine-readable logs, better observability, ELK stack compatibility
 - **Note:** Baseline implementation completed in Phase 0.1
 
-### 1.3 Dependency Injection Container
-**Objective:** Reduce tight coupling and improve testability
+### 1.3 Dependency Injection Container + Testing Infrastructure Foundation
+**Objective:** Reduce tight coupling, improve testability, and establish testing foundation early
 - **Actions:**
   - Implement a simple DI container using `dependency-injector` or similar
   - Refactor manual `sys.path.insert()` and imports
   - Convert singleton services to injectable dependencies
   - Add interface definitions for key components (Brain, Orchestrator, etc.)
+  - **NEW:** Establish testing infrastructure foundation:
+    - Set up pytest configuration with fixtures/factories
+    - Add property-based testing for CLV calculations (using `hypothesis`)
+    - Create contract test framework for external API integrations
+    - Implement test coverage enforcement (minimum 80% for modified code)
+    - Add mutation testing baseline for critical paths (CLV gate, capital deployment)
+  - **CRITICAL:** All tests must pass with zero warnings on current codebase before any refactoring
 - **Files to modify:**
   - Create `olp_xdv_agent/olp_xdv/di/` directory
   - Update `orchestrator.py`, `webapp/render_v2.py`, `brain/store.py`
   - Create interfaces for external services (SportyBet, Odds APIs)
-- **Dependencies:** Add `dependency-injector`
-- **Benefits:** Improved testability, loose coupling, clearer architecture
+  - **NEW:** Create `olp_xdv_agent/tests/` directory structure:
+    - `unit/`, `integration/`, `contract/`, `property/`
+    - `fixtures/`, `factories/`
+  - **NEW:** Update `pyproject.toml` for test configuration
+- **Dependencies:** Add `dependency-injector`, `pytest`, `pytest-mock`, `hypothesis`, `factory-boy`, `pytest-cov`, `mutmut`
+- **Benefits:** Improved testability, loose coupling, clearer architecture, testing safety net before refactoring
+- **Gate:** All existing tests pass + new testing infrastructure validates CLV calculation parity
 
 ## Phase 2: API & Interface Improvements (Weeks 5-8)
 
@@ -194,11 +206,18 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
   - Integrate with existing logging for correlation
   - Add custom metrics for domain-specific KPIs (honest edge, gate status)
   - Create Grafana dashboard templates
+  - **CRITICAL:** Add metrics for all 5 Knowledge Persistence integrations:
+    - Brain sync success/failure rate
+    - Pipeline stage knowledge capture rate
+    - SportyBet bridge cache performance metrics
+    - CLV gate evaluation timestamps and results
+    - Health monitor probe status
+  - **CRITICAL:** Add vault-memory sync health metric (HR54 compliance)
 - **Files to create:**
   - `olp_xdv_agent/olp_xdv/monitoring/` directory:
     - `metrics.py` (Prometheus collector)
     - `exporter.py` (HTTP endpoint)
-    - `collectors/` (pipeline, api, brain, etc.)
+    - `collectors/` (pipeline, api, brain, knowledge, vault_sync)
 - **Dependencies:** Add `prometheus-client`
 - **Benefits:** Production observability, alerting, capacity planning
 
@@ -306,6 +325,8 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
 - ✅ Zero downtime during deployment cycles
 - ✅ Structured logs parseable by ELK stack
 - ✅ Prometheus metrics endpoint with <5% overhead
+- ✅ All 5 Knowledge Persistence integrations functional with <1% failure rate
+- ✅ Vault-memory sync (HR54) health check passes 100% of checks
 
 ### Business Metrics
 - ✅ Maintain or improve CLV accuracy (>0% mean CLV)
@@ -387,10 +408,10 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
 4. **Pipeline Compatibility Test** — Daily pipeline (07:00) executes successfully with new changes
 5. **Telegram Bot Delivery Test** — Board output format unchanged
 6. **Knowledge Persistence Integrity** — All 5 knowledge integrations functional
-6. **Health Monitor Pass** — All probes green including new vault-memory sync probe
+7. **Health Monitor Pass** — All probes green including new vault-memory sync probe
 
 ## Conclusion
 
 This modernization plan preserves OLP XDV's core domain-specific advantages—particularly the CLV feedback loop, protected constants system, and vault-memory knowledge synchronization—while incorporating proven patterns from modern web frameworks to improve maintainability, observability, and developer experience.
 
-The phased approach minimizes risk by allowing rollback between phases and ensuring each deliverable provides immediate value. By the end of this 20-week initiative, OLP XDV will retain its specialized betting calibration strengths while gaining the operational maturity and ecosystem benefits of modern framework-based systems.
+The phased approach minimizes risk by allowing rollback between phases and ensuring each deliverable provides immediate value. By the end of this 24-week (7-month) initiative, OLP XDV will retain its specialized betting calibration strengths while gaining the operational maturity and ecosystem benefits of modern framework-based systems.
