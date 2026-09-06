@@ -1,11 +1,11 @@
 """
-Trigger Pipeline - Market selection and trigger logic.
+TRIGGER Pipeline: Market Selection → Trigger Logic
 
-This module implements the TRIGGER phase of the OLP XDV pipeline:
-1. Evaluates engine consensus from scan phase
-2. Applies triggering logic (value betting, Kelly criterion, etc.)
-3. Creates CLV legs for approved bets
-4. Prepares data for publish phase
+This module implements the TRIGGER pipeline from OLP XDV:
+1. Take EngineConsensus from SCAN pipeline
+2. Apply trigger logic (value betting, Kelly criterion, etc.)
+3. Generate betting recommendations that pass initial filters
+4. Output to PUBLISH pipeline (after CLV gate validation)
 """
 
 from __future__ import annotations
@@ -15,514 +15,498 @@ from typing import List, Optional, Dict, Any, Tuple
 from decimal import Decimal
 from datetime import datetime, timedelta
 
-from ...domain.models import (
-    Fixture, Odds, EngineConsensus, CLVLeg, MarketType, BetResult,
-    FixtureRepository, OddsRepository, CLVLegRepository
-)
+from ...domain.models import Fixture, Odds, MarketType, EngineConsensus, BetResult
+from ...domain.clv_calculator import CLVCalculator, CLVGateResult
 from ...domain.protected_constants import (
-    get_current_phase, is_paper_only, is_client_publish_enabled,
-    get_max_kelly_fraction, get_min_mes_floor, get_whitelisted_leagues,
-    all_fixtures_eligible, is_fabrication_detection_enabled
+    get_current_phase,
+    get_clv_min_legs,
+    get_clv_mean_threshold,
+    get_max_kelly_fraction,
+    get_max_daily_exposure,
+    get_max_single_bet_exposure,
+    get_min_edge_for_publish,
+    is_client_publish_enabled,
+    is_paper_only,
+    ProtectedConstants
 )
-from ...domain.clv_calculator import CLVCalculator
-from ...domain.fabrication_detector import FabricationDetector
-from ...domain.knowledge_persistence import KnowledgeItem, KnowledgeRepository
+from ...domain.knowledge_persistence import KnowledgePersistenceService
 from ...config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 
 
+class TriggerResult:
+    """Result of trigger pipeline processing."""
+
+    def __init__(
+        self,
+        consensus: EngineConsensus,
+        recommended_stake: Decimal = Decimal('0'),
+        kelly_fraction: Decimal = Decimal('0'),
+        expected_value: Decimal = Decimal('0'),
+        edge: Decimal = Decimal('0'),
+        trigger_passed: bool = False,
+        trigger_reason: str = "",
+        clv_gate_result: Optional[CLVGateResult] = None
+    ):
+        self.consensus = consensus
+        self.recommended_stake = recommended_stake
+        self.kelly_fraction = kelly_fraction
+        self.expected_value = expected_value
+        self.edge = edge
+        self.trigger_passed = trigger_passed
+        self.trigger_reason = trigger_reason
+        self.clv_gate_result = clv_gate_result
+
+
 class TriggerPipeline:
     """
-    Implements the TRIGGER phase: market selection and trigger logic.
+    TRIGGER Pipeline: Apply betting logic to engine consensus.
 
-    Responsibilities:
-    - Evaluate engine consensus for betting opportunities
-    - Apply value betting and Kelly criterion logic
-    - Perform fabrication detection on data
-    - Create CLV legs for approved bets (paper or live)
-    - Apply risk management and position sizing
+    Pipeline Steps:
+    1. Input Validation: Validate EngineConsensus objects
+    2. Value Betting: Calculate expected value and edge
+    3. Kelly Criterion: Calculate optimal stake sizing
+    4. Risk Management: Apply exposure limits and portfolio constraints
+    5. Preliminary Filters: Apply minimum edge, stake limits, etc.
+    6. CLV Gate Pre-check: Evaluate if bet would help CLV gate (optional)
+    7. Output: TriggerResult objects for PUBLISH pipeline
     """
 
     def __init__(
         self,
-        fixture_repo: FixtureRepository,
-        odds_repo: OddsRepository,
-        clv_leg_repo: CLVLegRepository,
-        knowledge_repo: Optional[KnowledgeRepository] = None
+        clv_calculator: Optional[CLVCalculator] = None,
+        knowledge_service: Optional[KnowledgePersistenceService] = None
     ):
-        self.fixture_repo = fixture_repo
-        self.odds_repo = odds_repo
-        self.clv_leg_repo = clv_leg_repo
-        self.knowledge_repo = knowledge_repo
-        self.clv_calculator = CLVCalculator()
-        self.fabrication_detector = FabricationDetector()
         self.settings = get_settings()
         self.logger = logging.getLogger(self.__class__.__name__)
 
+        # Initialize components
+        self.clv_calculator = clv_calculator or CLVCalculator()
+        self.knowledge_service = knowledge_service or KnowledgePersistenceService()
+
+        # Pipeline state (would be persisted in production)
+        self.daily_exposure = Decimal('0')
+        self.reset_daily_exposure()
+
+    def reset_daily_exposure(self):
+        """Reset daily exposure tracking (would be called at midnight)."""
+        self.daily_exposure = Decimal('0')
+        self.last_reset = datetime.utcnow().date()
+
     async def run_trigger_cycle(
         self,
-        consensus_list: List[EngineConsensus]
-    ) -> Dict[str, Any]:
+        consensus_list: List[EngineConsensus],
+        clv_legs: Optional[List] = None  # For CLV gate feedback
+    ) -> List[TriggerResult]:
         """
-        Execute a complete trigger cycle.
+        Execute a full TRIGGER pipeline cycle.
 
         Args:
-            consensus_list: List of engine consensus from scan phase
+            consensus_list: EngineConsensus objects from SCAN pipeline
+            clv_legs: Current CLV legs for gate evaluation (optional)
 
         Returns:
-            Dictionary with trigger results and metadata
+            List of TriggerResult objects that passed trigger logic
         """
-        trigger_start = datetime.utcnow()
-        self.logger.info(f"Starting trigger cycle with {len(consensus_list)} consensus items")
+        self.logger.info(f"Starting TRIGGER pipeline cycle with {len(consensus_list)} consensus objects")
+        start_time = datetime.utcnow()
 
         try:
-            # Step 1: Filter consensus by eligibility and phase
-            eligible_consensus = await self._filter_eligible_consensus(consensus_list)
-            self.logger.info(f"After eligibility filtering: {len(eligible_consensus)} consensus items")
+            # Reset daily exposure if needed (new day)
+            self._check_daily_reset()
 
-            # Step 2: Apply fabrication detection
-            clean_consensus = await self._apply_fabrication_detection(eligible_consensus)
-            self.logger.info(f"After fabrication detection: {len(clean_consensus)} consensus items")
+            # Step 1: Input Validation
+            validated_consensus = await self._validate_consensus(consensus_list)
 
-            # Step 3: Calculate betting recommendations
-            betting_recommendations = await self._calculate_betting_recommendations(clean_consensus)
-            self.logger.info(f"Generated {len(betting_recommendations)} betting recommendations")
+            # Step 2: Value Betting Analysis
+            value_analyzed = await self._analyze_value_betting(validated_consensus)
 
-            # Step 4: Apply risk management and position sizing
-            risk_adjusted_recommendations = await self._apply_risk_management(betting_recommendations)
-            self.logger.info(f"After risk management: {len(risk_adjusted_recommendations)} recommendations")
+            # Step 3: Kelly Criterion & Stake Sizing
+            stake_sized = await self._calculate_kelly_stakes(value_analyzed)
 
-            # Step 5: Create CLV legs for approved bets
-            created_legs = await self._create_clv_legs(risk_adjusted_recommendations)
-            self.logger.info(f"Created {len(created_legs)} CLV legs")
+            # Step 4: Risk Management & Exposure Limits
+            risk_managed = await self._apply_risk_management(stake_sized)
 
-            # Step 6: Generate knowledge items for audit
-            if self.knowledge_repo:
-                await self._generate_trigger_knowledge(
-                    consensus_list, eligible_consensus, clean_consensus,
-                    betting_recommendations, risk_adjusted_recommendations,
-                    created_legs, trigger_start
-                )
+            # Step 5: Preliminary Filters (min edge, stake limits, etc.)
+            filtered = await self._apply_preliminary_filters(risk_managed)
 
-            trigger_end = datetime.utcnow()
-            duration = (trigger_end - trigger_start).total_seconds()
+            # Step 6: CLV Gate Feedback (optional, for informational purposes)
+            if clv_legs is not None:
+                enhanced_with_clv = await self._enhance_with_clv_feedback(filtered, clv_legs)
+            else:
+                enhanced_with_clv = filtered
 
-            result = {
-                "status": "success",
-                "input_consensus": len(consensus_list),
-                "eligible_consensus": len(eligible_consensus),
-                "clean_consensus": len(clean_consensus),
-                "betting_recommendations": len(betting_recommendations),
-                "risk_adjusted": len(risk_adjusted_recommendations),
-                "clv_legs_created": len(created_legs),
-                "duration_seconds": duration,
-                "timestamp": trigger_end.isoformat(),
-                "phase": self.settings.framework.current_phase
-            }
+            # Step 7: Final Preparation
+            final_results = await self._prepare_final_output(enhanced_with_clv)
 
-            self.logger.info(f"Trigger cycle completed in {duration:.2f}s: {result}")
-            return result
+            elapsed_time = (datetime.utcnow() - start_time).total_seconds()
+            passed_count = sum(1 for r in final_results if r.trigger_passed)
+
+            self.logger.info(
+                f"TRIGGER pipeline completed in {elapsed_time:.2f}s: "
+                f"{passed_count}/{len(final_results)} triggers passed"
+            )
+
+            return final_results
 
         except Exception as e:
-            self.logger.error(f"Trigger cycle failed: {e}", exc_info=True)
-            return {
-                "status": "error",
-                "error": str(e),
-                "timestamp": datetime.utcnow().isoformat()
-            }
+            self.logger.error(f"Error in TRIGGER pipeline: {e}")
+            return []
 
-    async def _filter_eligible_consensus(
+    def _check_daily_reset(self):
+        """Check if we need to reset daily exposure (new day)."""
+        today = datetime.utcnow().date()
+        if today != self.last_reset:
+            self.reset_daily_exposure()
+
+    async def _validate_consensus(
         self,
         consensus_list: List[EngineConsensus]
     ) -> List[EngineConsensus]:
         """
-        Filter consensus items based on eligibility criteria.
+        Validate EngineConsensus objects for basic validity.
         """
-        eligible = []
+        validated = []
 
         for consensus in consensus_list:
             try:
-                # Get fixture to check eligibility
-                fixture = await self.fixture_repo.get_by_id(consensus.fixture_id)
-                if not fixture:
-                    self.logger.warning(f"Fixture not found for consensus {consensus.fixture_id}")
+                # Basic validation
+                if not consensus.fixture_id:
+                    self.logger.warning("Consensus missing fixture_id")
                     continue
 
-                # Check fixture eligibility (similar to scan pipeline)
-                if not self._is_fixture_eligible(fixture):
+                if consensus.probability < Decimal('0') or consensus.probability > Decimal('1'):
+                    self.logger.warning(f"Consensus probability out of range: {consensus.probability}")
                     continue
 
-                # Check phase eligibility
-                current_phase = get_current_phase()
-                if current_phase < 1:  # Phase 0 doesn't exist
+                if consensus.confidence < Decimal('0') or consensus.confidence > Decimal('1'):
+                    self.logger.warning(f"Consensus confidence out of range: {consensus.confidence}")
                     continue
 
-                # Check probability thresholds
-                if consensus.probability < Decimal('0.1') or consensus.probability > Decimal('0.9'):
-                    # Too extreme probabilities might indicate data issues
-                    continue
+                if consensus.expected_value < Decimal('-1'):  # Allow small negative for noise
+                    self.logger.warning(f"Consensus expected value suspiciously low: {consensus.expected_value}")
+                    # Don't reject outright, but note it
 
-                # Check confidence threshold
-                if consensus.confidence < Decimal('0.5'):
-                    continue
-
-                eligible.append(consensus)
+                validated.append(consensus)
 
             except Exception as e:
-                self.logger.error(f"Error filtering consensus {consensus.fixture_id}: {e}")
+                self.logger.warning(f"Error validating consensus: {e}")
                 continue
 
-        return eligible
+        return validated
 
-    def _is_fixture_eligible(self, fixture: Fixture) -> bool:
-        """Check if a fixture is eligible for triggering (same logic as scan)."""
-        # League eligibility
-        if not all_fixtures_eligible():
-            whitelisted = set(get_whitelisted_leagues())
-            if fixture.league not in whitelisted:
-                return False
-
-        # Date eligibility
-        now = datetime.utcnow()
-        if fixture.match_date < now - timedelta(days=1):
-            return False
-        if fixture.match_date > now + timedelta(days=30):
-            return False
-
-        # Status eligibility
-        if fixture.status not in [FixtureStatus.SCHEDULED, FixtureStatus.LIVE]:
-            return False
-
-        return True
-
-    async def _apply_fabrication_detection(
+    async def _analyze_value_betting(
         self,
         consensus_list: List[EngineConsensus]
-    ) -> List[EngineConsensus]:
+    ) -> List[Tuple[EngineConsensus, Decimal, Decimal]]:
         """
-        Apply fabrication detection to filter out potentially fabricated data.
-        """
-        if not is_fabrication_detection_enabled():
-            return consensus_list
+        Analyze consensus for value betting opportunities.
 
-        clean_consensus = []
+        Returns:
+            List of tuples (consensus, expected_value, edge)
+        """
+        analyzed = []
 
         for consensus in consensus_list:
             try:
-                # Get fixture and odds for analysis
-                fixture = await self.fixture_repo.get_by_id(consensus.fixture_id)
-                if not fixture:
-                    continue
+                # Expected value is already calculated in consensus
+                expected_value = consensus.expected_value
 
-                odds_list = await self.odds_repo.get_by_fixture_and_market(
-                    consensus.fixture_id, consensus.market_type
-                )
-
-                # Check for fabrication patterns
-                is_fabricated, reason = await self.fabrication_detector.detect_fabrication(
-                    fixture, odds_list, consensus
-                )
-
-                if not is_fabricated:
-                    clean_consensus.append(consensus)
+                # Edge calculation: for unit stake, EV = edge
+                # In general: edge = (probability * decimal_odds - 1)
+                # We need to back-calculate the implied odds from EV and probability
+                if consensus.probability > Decimal('0'):
+                    implied_odds = (expected_value + Decimal('1')) / consensus.probability
+                    edge = expected_value  # For unit stake, EV equals edge
                 else:
-                    self.logger.warning(
-                        f"Filtered fabricated consensus {consensus.fixture_id}: {reason}"
-                    )
+                    edge = Decimal('0')
 
-                    # Generate knowledge item for fabrication detection
-                    if self.knowledge_repo:
-                        await self._log_fabrication_event(
-                            fixture, consensus, reason
-                        )
+                analyzed.append((consensus, expected_value, edge))
 
             except Exception as e:
-                self.logger.error(f"Error in fabrication detection for {consensus.fixture_id}: {e}")
-                # In case of error, err on the side of caution and exclude
-                continue
+                self.logger.warning(f"Error analyzing value betting for consensus: {e}")
+                # Still include with zero values
+                analyzed.append((consensus, Decimal('0'), Decimal('0')))
 
-        return clean_consensus
+        return analyzed
 
-    async def _calculate_betting_recommendations(
+    async def _calculate_kelly_stakes(
         self,
-        consensus_list: List[EngineConsensus]
-    ) -> List[Dict[str, Any]]:
+        value_analyzed: List[Tuple[EngineConsensus, Decimal, Decimal]]
+    ) -> List[Tuple[EngineConsensus, Decimal, Decimal, Decimal, Decimal]]:
         """
-        Calculate betting recommendations from clean consensus.
-        """
-        recommendations = []
+        Calculate Kelly criterion stakes for value bets.
 
-        for consensus in consensus_list:
+        Returns:
+            List of tuples (consensus, expected_value, edge, kelly_fraction, recommended_stake)
+        """
+        staked = []
+
+        for consensus, expected_value, edge in value_analyzed:
             try:
-                # Get latest odds for this consensus
-                odds_list = await self.odds_repo.get_latest(
-                    consensus.fixture_id, consensus.market_type
-                )
-
-                if not odds_list:
-                    self.logger.warning(f"No odds found for {consensus.fixture_id} {consensus.market_type}")
-                    continue
-
-                # Use the best available odds (highest for positive EV)
-                best_odds = max(odds_list, key=lambda o: o.decimal_odds)
-
-                # Calculate expected value
-                expected_value = self.clv_calculator.calculate_expected_value(
-                    consensus.probability, best_odds.decimal_odds
-                )
-
-                # Only consider positive EV bets
-                if expected_value <= Decimal('0'):
-                    continue
-
-                # Check minimum edge requirement
-                min_edge = get_min_mes_floor()
-                edge = float(expected_value)  # For unit stake, EV = edge
-                if edge < float(min_edge):
+                # Skip if no edge or negative expected value
+                if edge <= Decimal('0') or expected_value <= Decimal('0'):
+                    staked.append((consensus, expected_value, edge, Decimal('0'), Decimal('0')))
                     continue
 
                 # Calculate Kelly fraction
-                kelly_fraction = self.clv_calculator.calculate_kelly_fraction(
-                    consensus.probability, best_odds.decimal_odds
-                )
+                # We need the decimal odds to calculate Kelly properly
+                # From edge and probability: edge = probability * decimal_odds - 1
+                # So: decimal_odds = (edge + 1) / probability
+                if consensus.probability > Decimal('0'):
+                    decimal_odds = (edge + Decimal('1')) / consensus.probability
+                    kelly_fraction = self._calculate_kelly_fraction(
+                        consensus.probability,
+                        decimal_odds
+                    )
+                else:
+                    kelly_fraction = Decimal('0')
 
-                # Calculate recommended stake (assuming unit bankroll for now)
-                # In practice, bankroll would come from portfolio management
-                recommended_stake = self.clv_calculator.calculate_recommended_stake(
-                    consensus.probability, best_odds.decimal_odds,
-                    bankroll=Decimal('1000.0'),  # Placeholder bankroll
-                    use_kelly=True
-                )
+                # Apply maximum Kelly fraction from protected constants
+                max_kelly = get_max_kelly_fraction()
+                kelly_fraction = min(kelly_fraction, max_kelly)
 
-                recommendation = {
-                    "consensus": consensus,
-                    "fixture_id": consensus.fixture_id,
-                    "market_type": consensus.market_type,
-                    "selection": consensus.selection,
-                    "probability": consensus.probability,
-                    "confidence": consensus.confidence,
-                    "decimal_odds": best_odds.decimal_odds,
-                    "expected_value": expected_value,
-                    "edge": Decimal(str(edge)),
-                    "kelly_fraction": kelly_fraction,
-                    "recommended_stake": recommended_stake,
-                    "odds_id": best_odds.id,
-                    "timestamp": datetime.utcnow()
-                }
+                # For now, we'll calculate stake based on a unit bankroll
+                # In practice, this would come from configuration/bankroll management
+                bankroll = Decimal('1000')  # Example bankroll
+                recommended_stake = bankroll * kelly_fraction
 
-                recommendations.append(recommendation)
+                # Apply maximum single bet exposure
+                max_single_bet = get_max_single_bet_exposure()
+                recommended_stake = min(recommended_stake, max_single_bet)
+
+                staked.append((consensus, expected_value, edge, kelly_fraction, recommended_stake))
 
             except Exception as e:
-                self.logger.error(f"Error calculating recommendation for {consensus.fixture_id}: {e}")
-                continue
+                self.logger.warning(f"Error calculating Kelly stake: {e}")
+                staked.append((consensus, expected_value, edge, Decimal('0'), Decimal('0')))
 
-        # Sort by expected value descending
-        recommendations.sort(key=lambda x: x["expected_value"], reverse=True)
+        return staked
 
-        return recommendations
+    def _calculate_kelly_fraction(
+        self,
+        probability: Decimal,
+        decimal_odds: Decimal
+    ) -> Decimal:
+        """
+        Calculate Kelly Criterion for optimal bet sizing.
+
+        f* = (bp - q) / b
+        where:
+          b = decimal_odds - 1 (net odds)
+          p = probability of winning
+          q = probability of losing = 1 - p
+          f* = fraction of bankroll to bet
+        """
+        if probability < Decimal('0') or probability > Decimal('1'):
+            return Decimal('0')
+        if decimal_odds <= Decimal('1'):
+            return Decimal('0')
+
+        b = decimal_odds - Decimal('1')
+        p = probability
+        q = Decimal('1') - probability
+
+        kelly = (b * p - q) / b if b != Decimal('0') else Decimal('0')
+
+        # Ensure non-negative (no bet if negative EV)
+        kelly = max(Decimal('0'), kelly)
+
+        return kelly
 
     async def _apply_risk_management(
         self,
-        recommendations: List[Dict[str, Any]]
-    ) -> List[Dict[str, Any]]:
+        staked: List[Tuple[EngineConsensus, Decimal, Decimal, Decimal, Decimal]]
+    ) -> List[Tuple[EngineConsensus, Decimal, Decimal, Decimal, Decimal, Decimal]]:
         """
-        Apply risk management rules to betting recommendations.
+        Apply risk management rules including daily exposure limits.
+
+        Returns:
+            List of tuples (consensus, ev, edge, kelly, stake, adjusted_stake)
         """
-        if not recommendations:
-            return recommendations
+        risk_managed = []
 
-        risk_adjusted = []
-        daily_exposure = Decimal('0')
-        max_daily_exposure = get_max_kelly_fraction() * Decimal('1000.0')  # Assuming 1000 unit bankroll
-
-        for rec in recommendations:
+        for consensus, expected_value, edge, kelly_fraction, recommended_stake in staked:
             try:
                 # Check daily exposure limit
-                if daily_exposure >= max_daily_exposure:
-                    self.logger.warning(f"Daily exposure limit reached: {daily_exposure}")
-                    break
+                max_daily = get_max_daily_exposure()
+                remaining_daily = max_daily - self.daily_exposure
 
-                stake = rec["recommended_stake"]
+                if remaining_daily <= Decimal('0'):
+                    self.logger.info("Daily exposure limit reached")
+                    adjusted_stake = Decimal('0')
+                else:
+                    # Stake cannot exceed remaining daily exposure
+                    adjusted_stake = min(recommended_stake, remaining_daily)
 
-                # Check single bet exposure limit
-                max_single_bet = get_max_kelly_fraction() * Decimal('1000.0')  # Simplified
-                if stake > max_single_bet:
-                    stake = max_single_bet
-                    rec["recommended_stake"] = stake
-                    rec["note"] = f"Stake capped to max single bet: {max_single_bet}"
+                # Update daily exposure tracking (optimistic - assumes bet will be placed)
+                self.daily_exposure += adjusted_stake
 
-                # Check if adding this bet would exceed daily limit
-                if daily_exposure + stake > max_daily_exposure:
-                    # Scale down stake to fit remaining daily exposure
-                    remaining = max_daily_exposure - daily_exposure
-                    if remaining > Decimal('0'):
-                        stake = remaining
-                        rec["recommended_stake"] = stake
-                        rec["note"] = f"Stake scaled to fit daily limit: {stake}"
-                    else:
-                        continue  # No room left
-
-                daily_exposure += stake
-                risk_adjusted.append(rec)
+                risk_managed.append((
+                    consensus,
+                    expected_value,
+                    edge,
+                    kelly_fraction,
+                    recommended_stake,
+                    adjusted_stake
+                ))
 
             except Exception as e:
-                self.logger.error(f"Error applying risk management: {e}")
-                continue
+                self.logger.warning(f"Error applying risk management: {e}")
+                risk_managed.append((
+                    consensus,
+                    expected_value,
+                    edge,
+                    kelly_fraction,
+                    recommended_stake,
+                    Decimal('0')
+                ))
 
-        return risk_adjusted
+        return risk_managed
 
-    async def _create_clv_legs(
+    async def _apply_preliminary_filters(
         self,
-        recommendations: List[Dict[str, Any]]
-    ) -> List[CLVLeg]:
+        risk_managed: List[Tuple[EngineConsensus, Decimal, Decimal, Decimal, Decimal, Decimal]]
+    ) -> List[TriggerResult]:
         """
-        Create CLV legs for approved betting recommendations.
-        """
-        created_legs = []
+        Apply preliminary filters: minimum edge, stake limits, phase restrictions, etc.
 
-        for rec in recommendations:
+        Returns:
+            List of TriggerResult objects
+        """
+        trigger_results = []
+
+        for consensus, expected_value, edge, kelly_fraction, recommended_stake, adjusted_stake in risk_managed:
             try:
-                # Only create legs if we're in a phase that allows betting
-                current_phase = get_current_phase()
-                if current_phase < 1:  # Phase 0 doesn't exist
-                    continue
+                trigger_passed = False
+                trigger_reason = ""
 
-                # In paper-only mode, we still create legs for tracking
-                # In live phases, we might actually place bets (but this framework focuses on paper tracking)
-                is_paper = is_paper_only()
+                # Check if client publishing is enabled (for live betting)
+                if not is_client_publish_enabled():
+                    trigger_reason = "Client publishing disabled"
+                # Check phase restrictions
+                elif get_current_phase() < 3:  # Phase 3 is live publishing
+                    trigger_reason = f"Phase {get_current_phase()} does not allow live publishing"
+                # Check minimum edge requirement
+                elif edge < get_min_edge_for_publish():
+                    trigger_reason = f"Edge {edge:.4f} below minimum {get_min_edge_for_publish():.4f}"
+                # Check for zero or negative stake
+                elif adjusted_stake <= Decimal('0'):
+                    trigger_reason = "Adjusted stake is zero or negative"
+                # All checks passed
+                else:
+                    trigger_passed = True
+                    trigger_reason = "All trigger criteria passed"
 
-                # Create CLV leg
-                leg = self.clv_calculator.log_clv_leg(
-                    fixture_id=rec["fixture_id"],
-                    market_type=rec["market_type"],
-                    selection=rec["selection"],
-                    opening_odds=rec["decimal_odds"],
-                    stake=rec["recommended_stake"]
+                trigger_result = TriggerResult(
+                    consensus=consensus,
+                    recommended_stake=adjusted_stake,
+                    kelly_fraction=kelly_fraction,
+                    expected_value=expected_value,
+                    edge=edge,
+                    trigger_passed=trigger_passed,
+                    trigger_reason=trigger_reason
                 )
 
-                # Additional metadata could be stored in leg extensions or separate tables
-                # For now, we'll log the recommendation details
-
-                self.logger.info(
-                    f"Created CLV leg {leg.id}: {rec['fixture_id']} {rec['market_type'].value} "
-                    f"{rec['selection']} @ {rec['decimal_odds']} (stake: {rec['recommended_stake']}, "
-                    f"EV: {rec['expected_value']:.4f})"
-                )
-
-                created_legs.append(leg)
-
-                # Persist the leg to repository
-                await self.clv_leg_repo.save(leg)
+                trigger_results.append(trigger_result)
 
             except Exception as e:
-                self.logger.error(f"Error creating CLV leg for {rec.get('fixture_id', 'unknown')}: {e}")
-                continue
+                self.logger.warning(f"Error applying preliminary filters: {e}")
+                trigger_results.append(TriggerResult(
+                    consensus=consensus,
+                    trigger_passed=False,
+                    trigger_reason=f"Filter error: {e}"
+                ))
 
-        return created_legs
+        return trigger_results
 
-    async def _generate_trigger_knowledge(
+    async def _enhance_with_clv_feedback(
         self,
-        input_consensus: List[EngineConsensus],
-        eligible_consensus: List[EngineConsensus],
-        clean_consensus: List[EngineConsensus],
-        betting_recommendations: List[Dict[str, Any]],
-        risk_adjusted: List[Dict[str, Any]],
-        created_legs: List[CLVLeg],
-        trigger_start: datetime
-    ) -> None:
-        """Generate knowledge items for trigger cycle audit trail."""
-        if not self.knowledge_repo:
-            return
+        trigger_results: List[TriggerResult],
+        clv_legs: List
+    ) -> List[TriggerResult]:
+        """
+        Enhance trigger results with CLV gate feedback (informational).
 
-        try:
-            # Create summary knowledge item
-            summary_content = f"""Trigger Cycle Completed:
-- Timestamp: {trigger_start.isoformat()}
-- Input consensus: {len(input_consensus)}
-- Eligible consensus: {len(eligible_consensus)}
-- After fabrication detection: {len(clean_consensus)}
-- Betting recommendations: {len(betting_recommendations)}
-- After risk management: {len(risk_adjusted)}
-- CLV legs created: {len(created_legs)}
-- Current phase: {get_current_phase()}
-- Paper only mode: {is_paper_only()}
-- Client publishing enabled: {is_client_publish_enabled()}
-"""
+        This doesn't affect pass/fail but provides context for decision making.
+        """
+        enhanced = []
 
-            # Add details of top recommendations
-            if betting_recommendations:
-                summary_content += "\nTop 5 Recommendations:\n"
-                for i, rec in enumerate(betting_recommendations[:5]):
-                    summary_content += (
-                        f"{i+1}. {rec['fixture_id']} {rec['market_type'].value} {rec['selection']} "
-                        f"@ {rec['decimal_odds']} (P={rec['probability']:.3f}, "
-                        f"EV={rec['expected_value']:.4f}, stake={rec['recommended_stake']})\n"
-                    )
+        for result in trigger_results:
+            try:
+                # We could calculate what the CLV impact would be if this bet won/lost
+                # For now, we'll just add CLV gate status as information
+                if result.trigger_passed:
+                    # Get current CLV gate status
+                    clv_status = self.clv_calculator.get_clv_gate_status()
+                    # In a full implementation, we might add this to the result object
+                    pass
 
-            knowledge_item = KnowledgeItem(
-                id=f"trigger-{trigger_start.strftime('%Y%m%d-%H%M%S')}",
-                title=f"Trigger Cycle - {trigger_start.strftime('%Y-%m-%d %H:%M:%S')}",
-                content=summary_content,
-                knowledge_type="process",
-                source="trigger_pipeline",
-                tags=["trigger", "pipeline", "betting", "recommendations"],
-                relevance_score=Decimal('0.85'),
-                confidence=Decimal('0.95'),
-                created_at=trigger_start,
-                updated_at=trigger_start
+                enhanced.append(result)
+
+            except Exception as e:
+                self.logger.warning(f"Error enhancing with CLV feedback: {e}")
+                enhanced.append(result)
+
+        return enhanced
+
+    async def _prepare_final_output(
+        self,
+        trigger_results: List[TriggerResult]
+    ) -> List[TriggerResult]:
+        """
+        Prepare final output for the PUBLISH pipeline.
+        """
+        # Sort by edge (descending) then by confidence (descending)
+        def sort_key(result: TriggerResult) -> tuple:
+            return (-result.edge, -result.consensus.confidence)
+
+        sorted_results = sorted(trigger_results, key=sort_key)
+
+        # Log summary statistics
+        passed = [r for r in sorted_results if r.trigger_passed]
+        self.logger.info(
+            f"TRIGGER pipeline output: {len(passed)} passed, {len(sorted_results) - len(passed)} failed"
+        )
+
+        for result in passed:
+            self.logger.debug(
+                f"Trigger passed: {result.consensus.fixture_id} "
+                f"{result.consensus.market_type.value} {result.consensus.selection} "
+                f"EV={result.expected_value:.4f}, Edge={result.edge:.4f}, "
+                f"Stake={result.recommended_stake:.2f}"
             )
 
-            await self.knowledge_repo.save(knowledge_item)
-            self.logger.debug("Saved trigger cycle knowledge item")
+        return sorted_results
 
-        except Exception as e:
-            self.logger.error(f"Failed to generate trigger knowledge: {e}")
+    async def get_pipeline_status(self) -> Dict[str, Any]:
+        """
+        Get current status of the TRIGGER pipeline components.
+        """
+        self._check_daily_reset()
 
-    async def _log_fabrication_event(
-        self,
-        fixture: Fixture,
-        consensus: EngineConsensus,
-        reason: str
-    ) -> None:
-        """Log a fabrication detection event as knowledge."""
-        if not self.knowledge_repo:
-            return
+        status = {
+            "pipeline": "TRIGGER",
+            "timestamp": datetime.utcnow().isoformat(),
+            "configuration": {
+                "current_phase": get_current_phase(),
+                "paper_only": is_paper_only(),
+                "client_publish_enabled": is_client_publish_enabled(),
+                "max_kelly_fraction": float(get_max_kelly_fraction()),
+                "max_daily_exposure": float(get_max_daily_exposure()),
+                "max_single_bet_exposure": float(get_max_single_bet_exposure()),
+                "min_edge_for_publish": float(get_min_edge_for_publish())
+            },
+            "state": {
+                "daily_exposure": float(self.daily_exposure),
+                "daily_exposure_remaining": float(get_max_daily_exposure() - self.daily_exposure),
+                "last_reset": self.last_reset.isoformat() if hasattr(self, 'last_reset') else None
+            },
+            "components": {
+                "clv_calculator": self.clv_calculator.__class__.__name__,
+                "knowledge_service": self.knowledge_service.__class__.__name__
+            }
+        }
 
-        try:
-            knowledge_item = KnowledgeItem(
-                id=f"fabrication-{fixture.id}-{consensus.market_type.value}-{int(datetime.utcnow().timestamp())}",
-                title=f"Fabrication Detection: {fixture.id}",
-                content=f"""Fabrication Detection Triggered:
-- Fixture: {fixture.id} ({fixture.home_team.name} vs {fixture.away_team.name})
-- Market: {consensus.market_type.value}
-- Selection: {consensus.selection}
-- Probability: {consensus.probability}
-- Reason: {reason}
-- Timestamp: {datetime.utcnow().isoformat()}
-""",
-                knowledge_type="observation",
-                source="fabrication_detector",
-                tags=["fabrication", "detection", "data-quality"],
-                relevance_score=Decimal('0.9'),
-                confidence=Decimal('0.9'),
-                created_at=datetime.utcnow(),
-                updated_at=datetime.utcnow()
-            )
-
-            await self.knowledge_repo.save(knowledge_item)
-            self.logger.debug("Saved fabrication detection knowledge item")
-
-        except Exception as e:
-            self.logger.error(f"Failed to log fabrication event: {e}")
-
-
-# Factory function for easy instantiation
-def create_trigger_pipeline(
-    fixture_repo: FixtureRepository,
-    odds_repo: OddsRepository,
-    clv_leg_repo: CLVLegRepository,
-    knowledge_repo: Optional[KnowledgeRepository] = None
-) -> TriggerPipeline:
-    """Factory function to create a TriggerPipeline instance."""
-    return TriggerPipeline(fixture_repo, odds_repo, clv_leg_repo, knowledge_repo)
+        return status
