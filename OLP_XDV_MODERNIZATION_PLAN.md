@@ -19,8 +19,9 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
 - Add Prometheus metrics for: pipeline duration, CLV accuracy, API latency, error rates, gate status
 - Create Grafana dashboard with current system baseline metrics
 - Implement automated drift detection for knowledge vault
+- **CRITICAL:** Add Prometheus metric for vault-memory sync status (HR54 compliance)
 - **Dependencies:** `structlog`, `prometheus-client`, `grafana`
-- **Success Criteria:** 100% of current pipeline execution captured with structured logs
+- **Success Criteria:** 100% of current pipeline execution captured with structured logs AND vault-memory sync health probe implemented
 
 ### 0.2 Team Technology Onboarding
 - 2-week targeted training: FastAPI, SQLAlchemy 2.0, React/Vue, Docker, Kubernetes
@@ -106,65 +107,82 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
 - **Dependencies:** Add `fastapi`, `uvicorn`, `python-multipart`
 - **Benefits:** Standard interface, auto-docs, better integration capabilities, zero-downtime migration
 
-### 2.2 Frontend Modernization
-**Objective:** Replace Jinja2 templates with modern SPA consuming internal API
+### 2.2 Frontend Modernization (Incremental Strangler Pattern)
+**Objective:** Replace Jinja2 templates with modern SPA consuming internal API without breaking existing Telegram delivery
 - **Actions:**
-  - Create React/Vue frontend application
-  - Consume OLP XDV API for data display
+  - Create React/Vue frontend application consuming OLP XDV API
   - Implement real-time updates via WebSocket/SSE
-  - Maintain parity with existing Telegram board format
+  - Maintain parity with existing Telegram board format (critical - bot must not break)
   - Add responsive design and accessibility features
+  - **CRITICAL:** Run new frontend in parallel with existing Jinja2 templates for 2+ weeks
+  - **CRITICAL:** Implement feature flag to switch between old/new frontend per user/channel
+  - **CRITICAL:** Automated visual regression testing against Telegram board screenshots
 - **Files to create:**
-  - `olp_xdv_agent/olp_xdv/webapp/` -> `olp_xdv_agent/olp_xdv/frontend/` (new)
+  - `olp_xdv_agent/olp_xdv/frontend/` (new, alongside existing `webapp/`)
   - Create `package.json`, `src/`, `public/` structure
   - Implement components for board display, CLV metrics, pipeline status
-- **Dependencies:** Node.js, React/Vue, build tools
-- **Benefits:** Better UX, separation of concerns, modern dev experience
+  - Create `olp_xdv_agent/olp_xdv/frontend/compat/` for Telegram output parity
+- **Dependencies:** Node.js 20+, React 18+ or Vue 3+, build tools (Vite)
+- **Benefits:** Better UX, separation of concerns, modern dev experience, zero-downtime migration
+- **Gate:** Must pass visual regression tests AND CLV loop integration test before cutover
 
 ### 2.3 Standardized Health Checks
 **Objective:** Implement industry-standard health check endpoints
 - **Actions:**
   - Add `/health/live` and `/health/ready` endpoints
   - Implement liveness (process running) and readiness (dependencies ok) checks
-  - Include checks for: DB connectivity, API quotas, cache freshness, pipeline status
+  - Include checks for: DB connectivity, API quotas, cache freshness, pipeline status, **vault-memory sync status (HR54)**, **CLV gate status**
   - Return standard JSON format with status codes
+  - **CRITICAL:** Health checks must not trigger side effects (no DB writes, no API calls that mutate state)
 - **Files to modify:**
   - Add to API service or create dedicated health monitor endpoint
   - Update existing health monitor to support programmatic checks
+  - **Add vault-memory sync health probe to `scripts/vault-memory-sync.js`**
 - **Benefits:** K8s/Docker orchestration compatibility, automated monitoring
 
 ## Phase 3: Data & Storage Improvements (Weeks 9-12)
 
 ### 3.1 ORM/Data Access Layer
-**Objective:** Replace raw SQL/file handling with type-safe ORM
+**Objective:** Replace raw SQL/file handling with type-safe ORM while preserving Protected Constants and CLV data integrity
 - **Actions:**
   - Migrate `brain/store.py` to use SQLAlchemy ORM
   - Implement migrations using Alembic
   - Add connection pooling and transaction management
   - Create repository patterns for data access
+  - **CRITICAL:** Preserve Protected Constants invariants in schema - `ARCHITECT_SIGNOFF`, CLV gate thresholds, capital deployment logic must be isolated from ORM changes
+  - **CRITICAL:** Add immutable knowledge snapshots before any schema migration (store in vault)
+  - **CRITICAL:** Vault-memory sync (HR54/HR58) must continue to function during migration
+  - **CRITICAL:** CLV ledger data (closing_edge/) must have zero data loss
   - Maintain backward compatibility during transition
 - **Files to modify:**
   - `olp_xdv_agent/olp_xdv/brain/` directory:
     - Replace raw SQL with SQLAlchemy models
     - Add migration scripts
     - Implement repository interfaces
+    - Create `protected_constants.py` migration that does NOT modify values
   - Update all consumers of Brain storage
+  - Add migration tests that verify CLV calculations produce identical results pre/post migration
 - **Dependencies:** Add `sqlalchemy`, `alembic`, `psycopg2-binary` (for PostgreSQL option)
 - **Benefits:** Type safety, migrations, better performance, DB portability
+- **Gate:** Must pass CLV calculation parity test (100% identical results) AND vault-memory sync verification
 
 ### 3.2 Enhanced Knowledge Persistence
-**Objective:** Improve knowledge system with web framework-inspired patterns
+**Objective:** Improve knowledge system with web framework-inspired patterns while preserving all 5 existing knowledge integrations
 - **Actions:**
   - Add automatic knowledge extraction from code comments/docstrings
   - Implement knowledge versioning and change tracking
   - Add graph visualization capabilities (building on graphify/)
   - Implement knowledge expiration and cleanup policies
   - Add REST API for knowledge querying and management
+  - **CRITICAL:** Preserve all 5 existing knowledge integrations (Brain sync, Pipeline auto-capture, SportyBet bridge, CLV gate, Health monitor)
+  - **CRITICAL:** Immutable knowledge snapshots before any schema changes
+  - **CRITICAL:** Vault-memory bidirectional sync (HR54/HR58) must continue without interruption
 - **Files to modify:**
   - `olp_xdv_agent/olp_xdv/knowledge_persistence.py`
   - Add knowledge API endpoints
   - Create knowledge visualization tools
 - **Benefits:** Better knowledge management, automated discovery, governance
+- **Gate:** All 5 knowledge integrations must pass integration tests post-changes
 
 ## Phase 4: Observability & DevOps (Weeks 13-16)
 
@@ -302,40 +320,54 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
 - ✅ Monitoring alerts actionable within 5 minutes
 - ✅ Knowledge search returns relevant results in <3 queries
 
-## Timeline & Milestones
+## Timeline & Milestones (EXTENDED TO 24 WEEKS)
 
 ### Month 1: Foundation
-- Week 1-2: Configuration management and logging
-- Week 3-4: Dependency injection and basic refactoring
+- Week 1-2: **Phase 0 - Foundation Sprint** (Baseline observability, team onboarding, dependency mapping)
+- Week 3-4: **Phase 1.1** Configuration Management Overhaul
+- Week 5-6: **Phase 1.2** Structured Logging Implementation (baseline done in Phase 0.1)
+- Week 7-8: **Phase 1.3** Dependency Injection Container + **Testing Infrastructure** (MOVED EARLIER)
 
 ### Month 2: API & Interface
-- Week 5-6: RESTful API layer with FastAPI
-- Week 7-8: Frontend modernization and health checks
+- Week 9-10: **Phase 2.1** RESTful API Layer (Strangler Fig Pattern)
+- Week 11-12: **Phase 2.2** Frontend Modernization (Incremental Strangler Pattern)
+- Week 13-14: **Phase 2.3** Standardized Health Checks
 
 ### Month 3: Data & Storage
-- Week 9-10: ORM implementation and migrations
-- Week 11-12: Enhanced knowledge persistence
+- Week 15-16: **Phase 3.1** ORM/Data Access Layer
+- Week 17-18: **Phase 3.2** Enhanced Knowledge Persistence
 
 ### Month 4: Observability & DevOps
-- Week 13-14: Metrics, monitoring, and containerization
-- Week 15-16: Testing infrastructure and CI/CD
+- Week 19-20: **Phase 4.1** Metrics & Monitoring
+- Week 21-22: **Phase 4.2** Containerization & Orchestration
+- Week 23-24: **Phase 4.3** Testing Infrastructure (REINFORCEMENT) + **Phase 5** Advanced Features Integration
 
-### Month 5: Advanced Features
-- Week 17-18: Plugin architecture and caching
-- Week 19-20: Workflow enhancements and polishing
+### Month 5: Advanced Features & Refinement
+- Week 25: **Phase 5.1** Plugin Architecture Formalization
+- Week 26: **Phase 5.2** Advanced Caching Strategy
+- Week 27: **Phase 5.3** Workflow Engine Enhancement
+- Week 28: **Integration Sprint** - Cross-system testing, performance tuning, documentation
 
-## Resource Requirements
+## Resource Requirements (UPDATED PER REVIEW)
 
 ### Team Composition
-- 1 Tech Lead (architecture and oversight)
-- 2 Backend Engineers (API, storage, orchestration)
-- 1 Frontend Engineer (webapp modernization)
-- 1 DevOps Engineer (containerization, monitoring)
-- 1 QA Engineer (testing strategy and automation)
+- 1 Tech Lead (architecture and oversight) — **must understand Protected Constants, HR54-59, CLV loop**
+- 2 Backend Engineers (API, storage, orchestration) — **one dedicated to CLV feedback loop guardianship**
+- 1 Frontend Engineer (webapp modernization) — **Telegram bot parity specialist**
+- 1 DevOps Engineer (containerization, monitoring) — **vault-memory sync preservation**
+- 1 QA Engineer (testing strategy and automation) — **property-based testing for CLV calculations**
+- 1 Domain Expert (part-time) — **OLP XDV betting calibration knowledge for review gates**
 
 ### Estimated Effort
-- Total: ~800 person-hours across 5 months
-- Breakdown: 20% planning/design, 60% implementation, 20% testing/refinement
+- Total: **~2,400-3,200 person-hours across 7 months (24 weeks)**
+- Breakdown: 20% planning/design, 50% implementation, 20% testing/refinement, 10% integration sprints
+- **Phase 0 (Foundation):** 320-400 hrs (2 weeks, 4 engineers)
+- **Phase 1 (Foundation Improvements):** 560-720 hrs (4 weeks, 4 engineers)
+- **Phase 2 (API & Interface):** 560-720 hrs (4 weeks, 4 engineers)
+- **Phase 3 (Data & Storage):** 480-640 hrs (4 weeks, 3 engineers)
+- **Phase 4 (Observability & DevOps):** 480-640 hrs (4 weeks, 3 engineers)
+- **Phase 5 (Advanced Features):** 320-480 hrs (3 weeks, 3 engineers)
+- **Integration Sprint:** 160-240 hrs (1 week, full team)
 
 ### External Dependencies
 - Pydantic v2+ for configuration
@@ -344,6 +376,18 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
 - React 18+ or Vue 3+ for frontend
 - Prometheus client for metrics
 - Docker and Kubernetes for deployment
+- **Redis** for advanced caching (Phase 5.2)
+- **Alembic** for migrations (Phase 3.1)
+
+### Phase Gates with CLV Feedback Loop Guardianship
+**Each phase must pass these gates before proceeding:**
+1. **CLV Calculation Parity Test** — 100% identical results pre/post change
+2. **Vault-Memory Sync Verification** — HR54/HR58 compliance confirmed
+3. **Protected Constants Integrity Check** — ARCHITECT_SIGNOFF, CLV gate, capital deployment unchanged
+4. **Pipeline Compatibility Test** — Daily pipeline (07:00) executes successfully with new changes
+5. **Telegram Bot Delivery Test** — Board output format unchanged
+6. **Knowledge Persistence Integrity** — All 5 knowledge integrations functional
+6. **Health Monitor Pass** — All probes green including new vault-memory sync probe
 
 ## Conclusion
 
