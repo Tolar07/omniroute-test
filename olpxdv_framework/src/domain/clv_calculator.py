@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 from decimal import Decimal
 from typing import List, Optional, Tuple
 import statistics
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from .models import CLVLeg, CLVMetrics, Fixture, Odds, MarketType
 from .protected_constants import (

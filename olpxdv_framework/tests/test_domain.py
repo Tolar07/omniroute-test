@@ -23,7 +23,7 @@ from olpxdv_framework.src.domain.models import (
 from olpxdv_framework.src.domain.clv_calculator import CLVCalculator
 from olpxdv_framework.src.domain.protected_constants import (
     ProtectedConstants, get_current_phase,
-    ProtectedConstantsProtectionLevel
+    ConstantProtectionLevel
 )
 from olpxdv_framework.src.domain.fabrication_detector import FabricationDetector
 
