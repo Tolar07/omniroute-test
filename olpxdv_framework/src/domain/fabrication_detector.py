@@ -14,7 +14,7 @@ from typing import List, Optional, Tuple
 from decimal import Decimal
 from datetime import datetime, timedelta
 import statistics
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from olpxdv_framework.src.domain.models import Fixture, Odds, MarketType, EngineConsensus
 from olpxdv_framework.src.domain.protected_constants import is_fabrication_detection_enabled, get_fabrication_threshold
@@ -31,8 +31,8 @@ class FabricationAlert:
     alert_type: str  # FAB-001, FAB-002, FAB-003, FAB-004
     confidence: Decimal  # 0-1
     description: str
-    timestamp: datetime = dataclass.field(default_factory=datetime.utcnow)
-    evidence: dict = dataclass.field(default_factory=dict)
+    timestamp: datetime = field(default_factory=datetime.utcnow)
+    evidence: dict = field(default_factory=dict)
 
 
 class FabricationDetector:

@@ -495,3 +495,8 @@ def all_fixtures_eligible() -> bool:
 def is_fabrication_detection_enabled() -> bool:
     """Check if fabrication detection is enabled"""
     return ProtectedConstants.get("FABRICATION_DETECTION_ENABLED")
+
+
+def get_fabrication_threshold() -> Decimal:
+    """Get fabrication detection confidence threshold"""
+    return Decimal(str(ProtectedConstants.get("FABRICATION_THRESHOLD")))
