@@ -32,43 +32,59 @@ class TestDomainModels(unittest.TestCase):
 
     def test_team_model_creation(self):
         """Test Team model creation and validation."""
-        team = Team(name="Test Team", sport="Football")
+        team = Team(id="1", name="Test Team", short_name="TT")
+        self.assertEqual(team.id, "1")
         self.assertEqual(team.name, "Test Team")
-        self.assertEqual(team.sport, "Football")
-        self.assertFalse(team.is_active)  # Default state
+        self.assertEqual(team.short_name, "TT")
 
     def test_fixture_model_creation(self):
         """Test Fixture model creation."""
-        home_team = Team(name="Home Team")
-        away_team = Team(name="Away Team")
+        home_team = Team(id="1", name="Home Team", short_name="HT")
+        away_team = Team(id="2", name="Away Team", short_name="AT")
         fixture = Fixture(
+            id="FIXTURE_1",
             home_team=home_team,
             away_team=away_team,
-            date=datetime(2026, 9, 15, 15, 0),
-            status="upcoming"
+            league="Premier League",
+            league_tier=LeagueTier.TIER_A,
+            match_date=datetime(2026, 9, 15, 15, 0),
+            status=FixtureStatus.SCHEDULED
         )
+        self.assertEqual(fixture.id, "FIXTURE_1")
         self.assertEqual(fixture.home_team.name, "Home Team")
         self.assertEqual(fixture.away_team.name, "Away Team")
-        self.assertEqual(fixture.date, datetime(2026, 9, 15, 15, 0))
-        self.assertEqual(fixture.status, "upcoming")
+        self.assertEqual(fixture.league, "Premier League")
+        self.assertEqual(fixture.league_tier, LeagueTier.TIER_A)
+        self.assertEqual(fixture.match_date, datetime(2026, 9, 15, 15, 0))
+        self.assertEqual(fixture.status, FixtureStatus.SCHEDULED)
 
     def test_odds_model_creation(self):
         """Test Odds model creation."""
         fixture = Fixture(
-            home_team=Team(name="Home"),
-            away_team=Team(name="Away"),
-            date=datetime.now()
+            id="FIXTURE_1",
+            home_team=Team(id="1", name="Home Team", short_name="HT"),
+            away_team=Team(id="2", name="Away Team", short_name="AT"),
+            league="Premier League",
+            league_tier=LeagueTier.TIER_A,
+            match_date=datetime(2026, 9, 15, 15, 0),
+            status=FixtureStatus.SCHEDULED
         )
         odds = Odds(
+            id="ODDS_1",
             fixture_id=fixture.id,
             market_type=MarketType.MATCH_ODDS,
             selection="Home",
-            decimal_odds=2.5,
-            timestamp=datetime.now()
+            decimal_odds=Decimal('2.5'),
+            timestamp=datetime(2026, 9, 10, 12, 0),
+            bookmaker="TestBook"
         )
+        self.assertEqual(odds.id, "ODDS_1")
+        self.assertEqual(odds.fixture_id, "FIXTURE_1")
         self.assertEqual(odds.market_type, MarketType.MATCH_ODDS)
         self.assertEqual(odds.selection, "Home")
         self.assertEqual(odds.decimal_odds, Decimal('2.5'))
+        self.assertEqual(odds.timestamp, datetime(2026, 9, 10, 12, 0))
+        self.assertEqual(odds.bookmaker, "TestBook")
 
 class TestCLVCalculator(unittest.TestCase):
     """Test CLV (Closing Line Value) calculator functionality."""
@@ -91,17 +107,19 @@ class TestCLVCalculator(unittest.TestCase):
             fixture_id="TEST_FIXTURE",
             market_type=MarketType.MATCH_ODDS,
             selection="Home",
-            opening_probability=Decimal('0.5'),
             opening_odds=Decimal('2.0'),
-            closing_probability=Decimal('0.6'),
             closing_odds=Decimal('1.8'),
-            timestamp=datetime.now()
+            stake=Decimal('1.0')
         )
 
-        clv = self.calculator.calculate_clv_for_leg(clv_leg)
-        self.assertIsInstance(clv, Decimal)
+        clv_abs, clv_pct = self.calculator.calculate_clv_for_leg(
+            clv_leg.opening_odds,
+            clv_leg.closing_odds,
+            clv_leg.stake
+        )
+        self.assertIsInstance(clv_abs, Decimal)
         # CLV should be positive when closing odds are lower than opening odds
-        self.assertGreater(clv, Decimal('0'))
+        self.assertGreater(clv_abs, Decimal('0'))
 
     def test_calculate_clv_for_leg_no_change(self):
         """Test CLV calculation when opening and closing are the same."""
@@ -109,15 +127,17 @@ class TestCLVCalculator(unittest.TestCase):
             fixture_id="TEST_FIXTURE",
             market_type=MarketType.MATCH_ODDS,
             selection="Home",
-            opening_probability=Decimal('0.5'),
             opening_odds=Decimal('2.0'),
-            closing_probability=Decimal('0.5'),
             closing_odds=Decimal('2.0'),
-            timestamp=datetime.now()
+            stake=Decimal('1.0')
         )
 
-        clv = self.calculator.calculate_clv_for_leg(clv_leg)
-        self.assertEqual(clv, Decimal('0'))  # No change means zero CLV
+        clv_abs, clv_pct = self.calculator.calculate_clv_for_leg(
+            clv_leg.opening_odds,
+            clv_leg.closing_odds,
+            clv_leg.stake
+        )
+        self.assertEqual(clv_abs, Decimal('0'))  # No change means zero CLV
 
     def test_calculate_expected_value_positive(self):
         """Test expected value calculation for positive outcomes."""
