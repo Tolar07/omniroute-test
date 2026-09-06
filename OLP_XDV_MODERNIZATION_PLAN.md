@@ -4,35 +4,70 @@
 
 This plan outlines a phased approach to modernize the OLP XDV framework by incorporating proven patterns from established web frameworks while preserving its domain-specific strengths. The goal is to improve maintainability, developer experience, observability, and scalability without compromising the core CLV-driven betting calibration engine and safety systems.
 
-## Phase 1: Foundation Improvements (Weeks 1-4)
+**Critical Design Principles (from Architecture Review):**
+- Protected Constants (`ARCHITECT_SIGNOFF`, CLV gate, capital deployment) are **inviolable** - must remain unchanged
+- Vault-Memory Bidirectional Sync (HR54/HR58) is the **single source of truth** - all changes must preserve this
+- Hard Rules (HR54-59) compliance is **mandatory** - SessionStart/SessionEnd hooks must continue to function
+- CLV Feedback Loop is the **core value driver** - must maintain >0% mean CLV throughout modernization
+- Daily Pipeline (07:00) is **business-critical** - zero tolerance for degradation
+
+## Phase 0: Foundation Sprint (Weeks 1-2) — ADDED
+**Objective:** Establish baseline observability and team readiness before any refactoring
+
+### 0.1 Baseline Observability Implementation
+- Implement comprehensive structured logging (JSON format) across all components
+- Add Prometheus metrics for: pipeline duration, CLV accuracy, API latency, error rates, gate status
+- Create Grafana dashboard with current system baseline metrics
+- Implement automated drift detection for knowledge vault
+- **Dependencies:** `structlog`, `prometheus-client`, `grafana`
+- **Success Criteria:** 100% of current pipeline execution captured with structured logs
+
+### 0.2 Team Technology Onboarding
+- 2-week targeted training: FastAPI, SQLAlchemy 2.0, React/Vue, Docker, Kubernetes
+- Create shared development environment with Docker Compose
+- Document code review standards for modernization changes
+- **Deliverable:** Team confidence assessment and environment readiness checklist
+
+### 0.3 Dependency Mapping & Adapter Layer Design
+- Map all external integrations: The Odds API, TheSportsDB, API-Football, SportyBet, Telegram
+- Design adapter interfaces that preserve existing contracts
+- Document data flow dependencies for each integration
+- **Deliverable:** Dependency registry with interface specifications
+
+## Phase 1: Foundation Improvements (Weeks 3-8) — EXTENDED
 
 ### 1.1 Configuration Management Overhaul
 **Objective:** Replace manual config parsing with type-safe, validated configuration
 - **Actions:**
-  - Migrate `config.py` to use Pydantic Settings
+  - Migrate `config.py` to use Pydantic Settings v2+
   - Add environment variable support with validation
   - Implement configuration profiles (dev/staging/prod)
   - Add automatic documentation of config options
+  - **CRITICAL:** Create protected constants wrapper that isolates `ARCHITECT_SIGNOFF`, CLV gate thresholds, and capital deployment logic from any config changes
+  - Add feature flag system (LaunchDarkly-style) for gradual rollout
 - **Files to modify:**
   - `olp_xdv_agent/olp_xdv/config.py`
   - `olp_xdv_agent/olp_xdv/.env.example`
   - Create `olp_xdv_agent/olp_xdv/config/` directory with schema files
+  - Create `olp_xdv_agent/olp_xdv/config/protected_constants.py` (NEW)
 - **Dependencies:** Add `pydantic`, `dynaconf` to requirements
-- **Benefits:** Type safety, automatic validation, better DX, env var support
+- **Benefits:** Type safety, automatic validation, better DX, env var support, protected constants preservation
 
-### 1.2 Structured Logging Implementation
+### 1.2 Structured Logging Implementation (Moved from Phase 0.1)
 **Objective:** Replace ad-hoc logging with structured, configurable logging
 - **Actions:**
-  - Implement structured JSON logging using `structlog` or similar
+  - Implement structured JSON logging using `structlog`
   - Add log levels, formatters, and handlers configuration
   - Integrate with existing audit/conversation logging systems
   - Add log sampling and rate limiting for production
+  - Add correlation IDs for request tracing across pipeline stages
 - **Files to modify:**
   - `olp_xdv_agent/olp_xdv/logging_config.py` (new)
   - Update all modules to use new logger
   - Update `orchestrator.py`, `webapp/`, `brain/`, etc.
-- **Dependencies:** Add `structlog`, `loguru` or similar
+- **Dependencies:** Add `structlog`
 - **Benefits:** Machine-readable logs, better observability, ELK stack compatibility
+- **Note:** Baseline implementation completed in Phase 0.1
 
 ### 1.3 Dependency Injection Container
 **Objective:** Reduce tight coupling and improve testability
@@ -50,14 +85,16 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
 
 ## Phase 2: API & Interface Improvements (Weeks 5-8)
 
-### 2.1 RESTful API Layer
-**Objective:** Expose core functionality via modern API for integration and frontend
+### 2.1 RESTful API Layer (Strangler Fig Pattern)
+**Objective:** Expose core functionality via modern API while preserving existing endpoints
 - **Actions:**
-  - Create FastAPI-based API service
+  - Create FastAPI-based API service running alongside existing endpoints
   - Expose endpoints for: board state, CLV metrics, pipeline status, health checks
   - Implement OpenAPI/Swagger documentation auto-generation
   - Add authentication and rate limiting
   - Create WebSocket endpoints for real-time updates
+  - **CRITICAL:** Implement API compatibility layer that maintains existing Telegram board output format
+  - Add API versioning from day one (/api/v1/)
 - **Files to create:**
   - `olp_xdv_agent/olp_xdv/api/` directory with:
     - `main.py` (FastAPI app)
@@ -65,8 +102,9 @@ This plan outlines a phased approach to modernize the OLP XDV framework by incor
     - `models/` (Pydantic models)
     - `dependencies/` (DI integration)
     - `middleware/` (auth, logging, metrics)
+    - `compat/` (compatibility layer for existing consumers)
 - **Dependencies:** Add `fastapi`, `uvicorn`, `python-multipart`
-- **Benefits:** Standard interface, auto-docs, better integration capabilities
+- **Benefits:** Standard interface, auto-docs, better integration capabilities, zero-downtime migration
 
 ### 2.2 Frontend Modernization
 **Objective:** Replace Jinja2 templates with modern SPA consuming internal API
