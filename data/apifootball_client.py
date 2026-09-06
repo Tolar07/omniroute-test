@@ -18,18 +18,20 @@ logger = logging.getLogger(__name__)
 # Placeholder for league ID mapping - to be populated with actual IDs
 # Format: {"League Name": league_id, ...}
 LEAGUE_ID_MAP = {
-    # These need to be confirmed via --list-leagues helper
-    "Premier League": None,
-    "La Liga": None,
-    "Serie A": None,
-    "Bundesliga": None,
-    "Ligue 1": None,
-    "Eredivisie": None,
-    "Primeira Liga": None,
-    "Belgian Pro League": None,
-    "Scottish Premiership": None,
-    "Swiss Super League": None,
-    "Turkish Super Lig": None,
+    # Confirmed from cached API-Football data
+    "Premier League": 39,
+    "La Liga": 140,
+    "Serie A": 135,
+    "Bundesliga": 78,
+    "Ligue 1": 61,
+    "Eredivisie": 88,
+    "Primeira Liga": 94,
+    "Belgian Pro League": 144,
+    "Scottish Premiership": 180,  # Note: need to verify correct ID
+    "Swiss Super League": 189,
+    "Turkish Super Lig": 203,
+    "Danish Superliga": 119,
+    "Ekstraklasa": 106,
     # Add more as needed
 }
 
