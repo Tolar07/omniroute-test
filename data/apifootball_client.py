@@ -325,6 +325,7 @@ class APIFootballClient:
 def fetch_fixtures_for_date(date_str: str) -> List[Dict]:
     """
     Convenience function to get fixtures for a date using default client.
+    Fetches all fixtures for the date (no league filter).
 
     Args:
         date_str: Date in YYYY-MM-DD format
@@ -334,15 +335,13 @@ def fetch_fixtures_for_date(date_str: str) -> List[Dict]:
     """
     client = APIFootballClient()
     try:
-        # Get fixtures for all known leagues
-        all_fixtures = []
-        for league_name, league_id in LEAGUE_ID_MAP.items():
-            if league_id is not None:
-                fixtures = client.get_fixtures(date_str, league_id=league_id)
-                all_fixtures.extend(fixtures)
-        return all_fixtures
-    finally:
+        # Fetch all fixtures for the date without filtering by league
+        fixtures = client.get_fixtures(date_str)
         client.close()
+        return fixtures
+    except Exception as e:
+        logger.error(f"Error fetching fixtures: {e}")
+        return []
 
 
 def fetch_odds_for_fixture(fixture_id: str) -> List[Dict]:
