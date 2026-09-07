@@ -217,7 +217,10 @@ class KnowledgePersistenceService:
     """
 
     def __init__(self, knowledge_repo: Optional[KnowledgeRepository] = None):
-        self.knowledge_repo = knowledge_repo or InMemoryKnowledgeRepository()
+        if knowledge_repo is not None:
+            self.knowledge_repo = knowledge_repo
+        else:
+            self.knowledge_repo = InMemoryKnowledgeRepository()
         self.logger = logging.getLogger(self.__class__.__name__)
 
     async def add_knowledge(
