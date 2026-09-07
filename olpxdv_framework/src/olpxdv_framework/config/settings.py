@@ -104,6 +104,7 @@ class FrameworkSettings(BaseSettings):
     # Booking
     booking_code_expiry_minutes: int = Field(default=60, ge=5, le=1440, description="Booking code expiry")
     sportybet_max_odds: Decimal = Field(default=Decimal('50.0'), ge=1, description="Max odds SportyBet accepts")
+    sportybet_bridge_timeout: int = Field(default=30, ge=1, le=300, description="SportyBet bridge timeout in seconds")
 
     # Fabrication Detection
     fabrication_detection_enabled: bool = Field(default=True, description="Enable fabrication detection")
