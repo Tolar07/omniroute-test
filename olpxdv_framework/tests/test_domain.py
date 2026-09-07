@@ -143,15 +143,18 @@ class TestCLVCalculator(unittest.TestCase):
         """Test expected value calculation for positive outcomes."""
         # Expected value = probability * (odds - 1) - (1 - probability) * 1
         # For 50% probability and 2.0 odds: 0.5 * (2.0 - 1) - 0.5 * 1 = 0
+        # Actually, for positive EV we need probability * (odds - 1) > (1 - probability)
+        # For 0.6 probability and 2.0 odds: 0.6 * (2.0 - 1) - 0.4 * 1 = 0.6 - 0.4 = 0.2
         consensus = EngineConsensus(
             fixture_id="TEST_FIXTURE",
             market_type=MarketType.MATCH_ODDS,
             selection="Home",
-            probability=Decimal('0.5'),
-            expected_value=Decimal('0.5'),
+            probability=Decimal('0.6'),
+            expected_value=Decimal('0.2'),  # Positive EV
             confidence=Decimal('0.8'),
+            kelly_fraction=Decimal('0.1'),
             engines_used=["Engine1", "Engine2"],
-            timestamp=datetime.now()
+            timestamp=datetime(2026, 9, 10, 12, 0)
         )
 
         # In this case, EV should be positive
@@ -159,31 +162,33 @@ class TestCLVCalculator(unittest.TestCase):
 
     def test_calculate_kelly_fraction_valid(self):
         """Test Kelly fraction calculation."""
-        # High probability, favorable odds
-        consensus = EngineConsensus(
-            fixture_id="TEST_FIXTURE",
-            market_type=MarketType.MATCH_ODDS,
-            selection="Home",
-            probability=Decimal('0.6'),
-            expected_value=Decimal('0.1'),
-            confidence=Decimal('0.8'),
-            engines_used=["Engine1"],
-            timestamp=datetime.now()
+        # Test with 0.6 probability and 2.0 odds
+        # b = 2.0 - 1 = 1
+        # p = 0.6, q = 0.4
+        # f* = (1 * 0.6 - 0.4) / 1 = 0.2
+        kelly = self.calculator.calculate_kelly_fraction(
+            Decimal('0.6'),
+            Decimal('2.0')
         )
+        self.assertIsInstance(kelly, Decimal)
+        self.assertEqual(kelly, Decimal('0.2'))
 
-        # We need to mock the odds calculation since it's not directly accessible
-        # But we can test that the method doesn't crash with valid inputs
-        try:
-            kelly = self.calculator.calculate_kelly_fraction(
-                consensus.probability,
-                consensus.expected_value + Decimal('1')  # Simplified for test
-            )
-            self.assertIsInstance(kelly, Decimal)
-            self.assertGreaterEqual(kelly, Decimal('0'))
-            self.assertLessEqual(kelly, Decimal('1'))
-        except Exception:
-            # If calculation fails due to missing odds, that's OK for this test
-            pass
+        # Test with fraction (half-Kelly)
+        kelly_half = self.calculator.calculate_kelly_fraction(
+            Decimal('0.6'),
+            Decimal('2.0'),
+            Decimal('0.5')
+        )
+        self.assertEqual(kelly_half, Decimal('0.1'))
+
+        # Test with high odds and low probability (should be low)
+        kelly_low = self.calculator.calculate_kelly_fraction(
+            Decimal('0.1'),
+            Decimal('10.0')
+        )
+        # b = 9, p = 0.1, q = 0.9
+        # f* = (9 * 0.1 - 0.9) / 9 = (0.9 - 0.9) / 9 = 0
+        self.assertEqual(kelly_low, Decimal('0'))
 
     def test_get_clv_gate_status(self):
         """Test CLV gate status functionality."""

@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: olpxdv-framework
+Version: 0.1.0
+Summary: OLP XDV-inspired Sports Betting Calibration Framework
+Author-email: OLP XDV Team <team@olpxdv.com>
+License: MIT
+Project-URL: Homepage, https://github.com/olpxdv/olpxdv-framework
+Project-URL: Repository, https://github.com/olpxdv/olpxdv-framework
+Project-URL: Issues, https://github.com/olpxdv/olpxdv-framework/issues
+Project-URL: Documentation, https://olpxdv-framework.readthedocs.io
+Keywords: sports-betting,calibration,clv,closing-line-value,kelly-criterion,telegram-bot,fastapi
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.104.0
+Requires-Dist: uvicorn[standard]>=0.24.0
+Requires-Dist: pydantic>=2.5.0
+Requires-Dist: pydantic-settings>=2.1.0
+Requires-Dist: httpx>=0.25.0
+Requires-Dist: sqlalchemy>=2.0.0
+Requires-Dist: alembic>=1.12.0
+Requires-Dist: aiosqlite>=0.19.0
+Requires-Dist: python-jose[cryptography]>=3.3.0
+Requires-Dist: passlib[bcrypt]>=1.7.4
+Requires-Dist: loguru>=0.7.2
+Requires-Dist: prometheus-client>=0.19.0
+Requires-Dist: apscheduler>=3.10.0
+Requires-Dist: playwright>=1.40.0
+Requires-Dist: beautifulsoup4>=4.12.0
+Requires-Dist: lxml>=4.9.0
+Requires-Dist: pandas>=2.1.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: pyyaml>=6.0.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.1.0; extra == "dev"
+Requires-Dist: pytest-mock>=3.12.0; extra == "dev"
+Requires-Dist: black>=23.10.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: mypy>=1.7.0; extra == "dev"
+Requires-Dist: pre-commit>=3.5.0; extra == "dev"
+Provides-Extra: desktop
+Requires-Dist: pyinstaller>=6.1.0; extra == "desktop"
+Requires-Dist: cx-freeze>=7.0.0; extra == "desktop"
