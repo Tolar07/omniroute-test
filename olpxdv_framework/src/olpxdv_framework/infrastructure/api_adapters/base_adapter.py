@@ -10,7 +10,7 @@ import logging
 from typing import List, Optional
 from datetime import datetime, timedelta
 
-from ...domain.models import Fixture, Odds, MarketType
+from olpxdv_framework.domain.models import Fixture, Odds, MarketType
 
 
 class BaseAPIAdapter(abc.ABC):

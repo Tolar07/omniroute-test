@@ -446,6 +446,15 @@ def register_olpxdv_constants() -> None:
         validation_rules={"type": int, "min": 30, "max": 1000}
     )
 
+    # Whitelisted leagues (optional filter)
+    ProtectedConstants.register_constant(
+        name="WHITELISTED_LEAGUES",
+        default_value=[],
+        protection_level=ConstantProtectionLevel.PROTECTED,
+        description="Optional list of whitelisted league names for filtering",
+        validation_rules={"type": list}
+    )
+
 
 # Initialize constants on module load
 register_olpxdv_constants()
