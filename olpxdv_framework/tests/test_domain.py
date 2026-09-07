@@ -93,12 +93,16 @@ class TestCLVCalculator(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures."""
         self.calculator = CLVCalculator()
+        home_team = Team(id="1", name="Home Team", short_name="HT")
+        away_team = Team(id="2", name="Away Team", short_name="AT")
         self.fixture = Fixture(
             id="TEST_FIXTURE",
-            home_team=Team(name="Home Team"),
-            away_team=Team(name="Away Team"),
-            date=datetime(2026, 9, 15, 15, 0),
-            status="upcoming"
+            home_team=home_team,
+            away_team=away_team,
+            league="Premier League",
+            league_tier=LeagueTier.TIER_A,
+            match_date=datetime(2026, 9, 15, 15, 0),
+            status=FixtureStatus.SCHEDULED
         )
 
     def test_calculate_clv_for_leg_normal_case(self):
