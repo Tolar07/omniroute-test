@@ -1,3 +1,14 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "id": "11e49215",
+      "cron": "0 22 * * *",
+      "prompt": "cd olp_xdv_agent/olp_xdv && python run_daily.py",
+      "createdAt": 1788819130527,
+      "recurring": true,
+      "createdBySessionId": "c45a51f7-cda1-4ee1-a81d-b0e2d766dd51",
+      "createdByPid": 19904,
+      "createdByProcStart": "134332918932188549"
+    }
+  ]
 }
