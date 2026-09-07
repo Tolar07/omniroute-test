@@ -90,3 +90,19 @@
 - [2026-09-07T01:42:33.436Z] Memory → vault sync completed: 0 files synchronized
 - [2026-09-07T01:42:33.436Z] Bidirectional sync completed in 0.03s: 0 vault→memory, 0 memory→vault
 - [2026-09-07T01:42:33.437Z] Synchronization finished: {"vaultToMemory":0,"memoryToVault":0,"duration":0.03}
+- [2026-09-07T01:53:36.884Z] Starting synchronization: bidirectional
+- [2026-09-07T01:53:37.045Z] Warning: Vault has uncommitted changes
+- [2026-09-07T01:53:37.046Z] Warning: Vault has uncommitted changes. Proceeding with caution.
+- [2026-09-07T01:53:37.047Z] Starting bidirectional vault-memory synchronization
+- [2026-09-07T01:53:37.048Z] Starting vault → memory synchronization
+- [2026-09-07T01:53:37.059Z] Vault → memory sync completed: 0 files synchronized
+- [2026-09-07T01:53:37.060Z] Starting memory → vault synchronization
+- [2026-09-07T01:53:37.063Z] Error reading file C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\api-football-integration.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\api-football-integration.md'
+- [2026-09-07T01:53:37.064Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\api-football-integration.md'
+- [2026-09-07T01:53:37.069Z] Error reading file C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\MEMORY.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\MEMORY.md'
+- [2026-09-07T01:53:37.069Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\MEMORY.md'
+- [2026-09-07T01:53:37.075Z] Error reading file C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md'
+- [2026-09-07T01:53:37.076Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md'
+- [2026-09-07T01:53:37.078Z] Memory → vault sync completed: 0 files synchronized
+- [2026-09-07T01:53:37.078Z] Bidirectional sync completed in 0.03s: 0 vault→memory, 0 memory→vault
+- [2026-09-07T01:53:37.079Z] Synchronization finished: {"vaultToMemory":0,"memoryToVault":0,"duration":0.03}
