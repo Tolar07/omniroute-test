@@ -53,10 +53,10 @@ class TestFullPipelineIntegration(unittest.TestCase):
             status=FixtureStatus.SCHEDULED
         )
 
-    def test_knowledge_persistence_basic(self):
+    async def test_knowledge_persistence_basic(self):
         """Test basic knowledge persistence functionality."""
         # Add knowledge item
-        knowledge_item = self.knowledge_service.add_knowledge(
+        knowledge_item = await self.knowledge_service.add_knowledge(
             title="Test Knowledge About Team Performance",
             content="Test knowledge about team performance",
             knowledge_type="fact",
@@ -66,17 +66,17 @@ class TestFullPipelineIntegration(unittest.TestCase):
         )
 
         # Search for knowledge
-        results = self.knowledge_service.search_by_content("team performance", limit=5)
+        results = await self.knowledge_service.search_knowledge(query="team performance", limit=5)
         self.assertGreaterEqual(len(results), 1)
         self.assertEqual(results[0].content, "Test knowledge about team performance")
 
         # Search by tags
-        tag_results = self.knowledge_service.search_by_tags(["football"], limit=5)
+        tag_results = await self.knowledge_service.search_by_tags(["football"], limit=5)
         self.assertGreaterEqual(len(tag_results), 1)
 
         # Apply relevance decay
         initial_score = knowledge_item.relevance_score
-        self.knowledge_service.apply_relevance_decay()
+        await self.knowledge_service.apply_relevance_decay()
         # Score should remain the same for non-expired items in this test
         # (in real implementation with time passage, it would decay)
 

@@ -34,7 +34,7 @@ class APISettings(BaseSettings):
 
     # API-Football
     api_football_key: str = Field(default="", description="API-Football key")
-    api_football_base_url: str = Field(default="https://v3.football.api-sports.io", description="API-Football base URL")
+    api_football_base_url: str = Field(default="https://v3.football-api-sports.io", description="API-Football base URL")
     api_football_timeout: int = Field(default=30, description="Request timeout in seconds")
     api_football_rate_limit: int = Field(default=100, description="Max requests per minute")
 
@@ -45,6 +45,11 @@ class APISettings(BaseSettings):
     # Telegram Bot
     telegram_bot_token: str = Field(default="", description="Telegram Bot API token")
     telegram_chat_id: str = Field(default="", description="Telegram chat ID for notifications")
+    telegram_board_delivery_enabled: bool = Field(default=False, description="Enable daily Telegram board delivery")
+
+    # MCP Server API Keys
+    perplexity_api_key: str = Field(default="", description="Perplexity API key for MCP server")
+    firecrawl_api_key: str = Field(default="", description="Firecrawl API key for MCP server")
 
     model_config = SettingsConfigDict(env_prefix="API_")
 
