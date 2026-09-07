@@ -108,12 +108,13 @@ class TestCLVCalculator(unittest.TestCase):
     def test_calculate_clv_for_leg_normal_case(self):
         """Test CLV calculation for normal scenario."""
         # Create a CLVLeg with known values
+        # If you bet at opening odds of 1.8 and closing is 2.0, you have positive CLV
         clv_leg = CLVLeg(
             fixture_id="TEST_FIXTURE",
             market_type=MarketType.MATCH_ODDS,
             selection="Home",
-            opening_odds=Decimal('2.0'),
-            closing_odds=Decimal('1.8'),
+            opening_odds=Decimal('1.8'),
+            closing_odds=Decimal('2.0'),
             stake=Decimal('1.0')
         )
 
@@ -123,7 +124,7 @@ class TestCLVCalculator(unittest.TestCase):
             clv_leg.stake
         )
         self.assertIsInstance(clv_abs, Decimal)
-        # CLV should be positive when closing odds are lower than opening odds
+        # CLV should be positive when closing odds are HIGHER than opening odds
         self.assertGreater(clv_abs, Decimal('0'))
 
     def test_calculate_clv_for_leg_no_change(self):
