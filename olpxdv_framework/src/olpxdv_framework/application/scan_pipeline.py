@@ -28,7 +28,7 @@ from olpxdv_framework.infrastructure.api_adapters.base_adapter import BaseAPIAda
 from olpxdv_framework.infrastructure.api_adapters.the_odds_api import TheOddsAPIAdapter
 from olpxdv_framework.infrastructure.api_adapters.api_football import APIFootballAdapter
 from olpxdv_framework.infrastructure.api_adapters.the_sports_db import TheSportsDBAdapter
-from ...config.settings import get_settings
+from olpxdv_framework.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 

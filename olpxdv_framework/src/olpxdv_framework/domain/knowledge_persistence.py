@@ -16,8 +16,8 @@ from datetime import datetime, timedelta
 import hashlib
 from dataclasses import dataclass, field
 
-from ...domain.models import KnowledgeItem, KnowledgeRepository
-from ...domain.protected_constants import (
+from olpxdv_framework.domain.models import KnowledgeItem, KnowledgeRepository
+from olpxdv_framework.domain.protected_constants import (
     get_knowledge_relevance_half_life_days,
     get_vault_memory_sync_interval_minutes
 )

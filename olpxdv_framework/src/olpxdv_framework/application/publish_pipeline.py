@@ -38,9 +38,9 @@ from olpxdv_framework.domain.protected_constants import (
     ProtectedConstants
 )
 from olpxdv_framework.infrastructure.sportybet_bridge import SportybetBridge
-from ...infrastructure.telegram_adapter import TelegramAdapter
-from ...infrastructure.web_dashboard import WebDashboard
-from ...config.settings import get_settings
+from olpxdv_framework.infrastructure.telegram_adapter import TelegramAdapter
+from olpxdv_framework.infrastructure.web_dashboard import WebDashboard
+from olpxdv_framework.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 

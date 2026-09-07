@@ -11,9 +11,9 @@ from datetime import datetime, timedelta
 
 import httpx
 
-from .base_adapter import BaseAPIAdapter, APIError, RateLimitError, AuthenticationError, DataNotFoundError
-from ...domain.models import Fixture, Odds, MarketType, Team, LeagueTier, FixtureStatus
-from ...config.settings import get_settings
+from olpxdv_framework.infrastructure.api_adapters.base_adapter import BaseAPIAdapter, APIError, RateLimitError, AuthenticationError, DataNotFoundError
+from olpxdv_framework.domain.models import Fixture, Odds, MarketType, Team, LeagueTier, FixtureStatus
+from olpxdv_framework.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 
