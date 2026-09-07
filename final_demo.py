@@ -99,7 +99,7 @@ def demonstrate_framework():
 
         # Test 5: Knowledge Persistence
         logger.info("\n=== Testing Knowledge Persistence ===")
-        knowledge_item = knowledge_service.add_knowledge(
+        knowledge_item = await knowledge_service.add_knowledge(
             title="Arsenal Strong Home Form",
             content="Arsenal has won 4 of their last 5 home games against London rivals",
             knowledge_type="fact",
@@ -110,7 +110,7 @@ def demonstrate_framework():
         logger.info(f"✓ Added knowledge item: {knowledge_item.id}")
 
         # Search for knowledge
-        results = knowledge_service.search_by_content("Arsenal home", limit=3)
+        results = await knowledge_service.search_by_content("Arsenal home", limit=3)
         logger.info(f"✓ Found {len(results)} knowledge items matching 'Arsenal home'")
 
         # Test 6: Engine Consensus (using actual model)
