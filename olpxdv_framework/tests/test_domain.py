@@ -18,7 +18,8 @@ from pathlib import Path
 # Import domain components
 from olpxdv_framework.domain.models import (
     Team, Fixture, Odds, MarketType,
-    CLVLeg, CLVMetrics, KnowledgeItem, EngineConsensus
+    CLVLeg, CLVMetrics, KnowledgeItem, EngineConsensus,
+    LeagueTier, FixtureStatus
 )
 from olpxdv_framework.domain.clv_calculator import CLVCalculator
 from olpxdv_framework.domain.protected_constants import (
