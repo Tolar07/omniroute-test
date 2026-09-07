@@ -80,18 +80,26 @@ class InMemoryKnowledgeRepository(KnowledgeRepository):
 
     async def save(self, item: KnowledgeItem) -> KnowledgeItem:
         """Save a knowledge item."""
-        # Update the updated_at timestamp
-        item.updated_at = datetime.utcnow()
-
-        # Calculate expiration if not set
-        if item.expires_at is None:
-            item.expires_at = self._calculate_expiration_date(item.created_at)
-
-        # Store the item
-        self._knowledge_items[item.id] = item
-
+        # Create a new instance with updated timestamp
+        updated_item = KnowledgeItem(
+            id=item.id,
+            title=item.title,
+            content=item.content,
+            knowledge_type=item.knowledge_type,
+            source=item.source,
+            tags=item.tags,
+            related_ids=item.related_ids,
+            relevance_score=item.relevance_score,
+            confidence=item.confidence,
+            created_at=item.created_at,
+            updated_at=datetime.utcnow(),  # New timestamp
+            expires_at=item.expires_at,
+        )
+        
+        # Store the new item
+        self._knowledge_items[item.id] = updated_item
         self._logger.debug(f"Saved knowledge item: {item.id}")
-        return item
+        return updated_item
 
     async def update_relevance(self, item_id: str,
                              new_score: Decimal) -> KnowledgeItem:

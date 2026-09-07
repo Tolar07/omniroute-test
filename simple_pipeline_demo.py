@@ -19,7 +19,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def demonstrate_components():
+async def demonstrate_components():
     """Demonstrate that all pipeline components work together."""
     try:
         logger.info("Starting OLP XDV Component Demonstration")
@@ -163,7 +163,7 @@ def demonstrate_components():
 
         # Demonstrate knowledge persistence
         logger.info("Demonstrating knowledge persistence...")
-        knowledge_item = knowledge_service.add_knowledge(
+        knowledge_item = await knowledge_service.add_knowledge(
             title="Home Team Strong Defensive Record",
             content="The home team has conceded less than 1 goal per game in their last 5 matches",
             knowledge_type="fact",
@@ -175,7 +175,7 @@ def demonstrate_components():
         logger.info(f"Added knowledge item: {knowledge_item.id}")
 
         # Search for knowledge
-        search_results = knowledge_service.search_by_content("defensive record", limit=5)
+        search_results = await knowledge_service.search_by_content("defensive record", limit=5)
         logger.info(f"Found {len(search_results)} knowledge items matching 'defensive record'")
 
         logger.info("=" * 60)
@@ -201,7 +201,7 @@ def demonstrate_components():
 
 if __name__ == "__main__":
     # Run the demonstration
-    success = demonstrate_components()
+    asyncio.run(demonstrate_components())
     if success:
         print("\n🎉 OLP XDV Framework demonstration completed successfully!")
         print("Check logs/pipeline_demo.log for detailed output.")
