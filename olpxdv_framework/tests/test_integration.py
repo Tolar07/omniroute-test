@@ -46,8 +46,10 @@ class TestFullPipelineIntegration(unittest.TestCase):
         self.fixture = Fixture(
             home_team=self.home_team,
             away_team=self.away_team,
-            date=datetime(2026, 9, 15, 15, 0),
-            status="upcoming"
+            league="Premier League",
+            league_tier=LeagueTier.TIER_A,
+            match_date=datetime(2026, 9, 15, 15, 0),
+            status=FixtureStatus.SCHEDULED
         )
         self.fixture.id = "TEST_FIXTURE_001"
 
