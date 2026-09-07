@@ -13,7 +13,7 @@ from olpxdv_framework.application.scan_pipeline import ScanPipeline
 from olpxdv_framework.application.trigger_pipeline import TriggerPipeline
 from olpxdv_framework.application.publish_pipeline import PublishPipeline
 from olpxdv_framework.domain.clv_calculator import CLVCalculator
-from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService
+from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService, InMemoryKnowledgeRepository
 from olpxdv_framework.domain.models import EngineConsensus, MarketType, Fixture, Team
 from olpxdv_framework.domain.fabrication_detector import FabricationDetector
 from olpxdv_framework.domain.knowledge_persistence import KnowledgeItem
@@ -26,7 +26,8 @@ class TestFullPipelineIntegration(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures."""
         self.clv_calculator = CLVCalculator()
-        self.knowledge_service = KnowledgePersistenceService()
+        knowledge_repo = InMemoryKnowledgeRepository()
+        self.knowledge_service = KnowledgePersistenceService(knowledge_repo)
 
         # Initialize pipelines
         self.scan_pipeline = ScanPipeline()

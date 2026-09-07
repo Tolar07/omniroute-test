@@ -22,6 +22,25 @@ class TheSportsDBAdapter(BaseAPIAdapter):
     Adapter for TheSportsDB (https://www.thesportsdb.com/)
     """
 
+    async def health_check(self) -> bool:
+        """
+        Check if TheSportsDB API is accessible and healthy.
+
+        Returns:
+            True if healthy, False otherwise
+        """
+        try:
+            # Try a simple request to check connectivity
+            # We'll use a simple endpoint that should always work
+            data = await self._make_request("search_leagues.php", {"l": "Premier%20League"})
+            return "leagues" in data
+        except Exception as e:
+            self.logger.warning(f"TheSportsDB health check failed: {e}")
+            return False
+    """
+    Adapter for TheSportsDB (https://www.thesportsdb.com/)
+    """
+
     def __init__(self):
         super().__init__()
         self.settings = get_settings()
