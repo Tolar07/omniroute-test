@@ -500,3 +500,43 @@ def is_fabrication_detection_enabled() -> bool:
 def get_fabrication_threshold() -> Decimal:
     """Get fabrication detection confidence threshold"""
     return Decimal(str(ProtectedConstants.get("FABRICATION_THRESHOLD")))
+
+
+def get_knowledge_relevance_half_life_days() -> int:
+    """Get knowledge relevance half-life in days"""
+    return ProtectedConstants.get("KNOWLEDGE_RELEVANCE_HALF_LIFE_DAYS")
+
+
+def get_vault_memory_sync_interval_minutes() -> int:
+    """Get vault-memory sync interval in minutes"""
+    return ProtectedConstants.get("VAULT_MEMORY_SYNC_INTERVAL_MINUTES")
+
+
+def get_booking_code_expiry_minutes() -> int:
+    """Get booking code expiry in minutes"""
+    return ProtectedConstants.get("BOOKING_CODE_EXPIRY_MINUTES")
+
+
+def get_sportybet_max_odds() -> Decimal:
+    """Get SportyBet maximum odds"""
+    return Decimal(str(ProtectedConstants.get("SPORTYBET_MAX_ODDS")))
+
+
+def get_whitelisted_leagues() -> list:
+    """Get whitelisted leagues"""
+    return ProtectedConstants.get("WHITELISTED_LEAGUES", [])
+
+
+def id405_allow_away_wins() -> bool:
+    """Check if ID405 away wins gate is active"""
+    return ProtectedConstants.get("ID405_ALLOW_AWAY_WINS")
+
+
+def get_max_drawdown_percentage() -> Decimal:
+    """Get maximum drawdown percentage"""
+    return Decimal(str(ProtectedConstants.get("MAX_DRAWDOWN_PERCENTAGE")))
+
+
+def get_min_sample_size_for_clv() -> int:
+    """Get minimum sample size for CLV statistical significance"""
+    return ProtectedConstants.get("MIN_SAMPLE_SIZE_FOR_CLV")
