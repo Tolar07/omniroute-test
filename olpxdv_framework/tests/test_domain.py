@@ -20,12 +20,12 @@ from olpxdv_framework.domain.models import (
     Team, Fixture, Odds, MarketType,
     CLVLeg, CLVMetrics, KnowledgeItem, EngineConsensus
 )
-from olpxdv_framework.src.domain.clv_calculator import CLVCalculator
-from olpxdv_framework.src.domain.protected_constants import (
+from olpxdv_framework.domain.clv_calculator import CLVCalculator
+from olpxdv_framework.domain.protected_constants import (
     ProtectedConstants, get_current_phase,
     ConstantProtectionLevel
 )
-from olpxdv_framework.src.domain.fabrication_detector import FabricationDetector
+from olpxdv_framework.domain.fabrication_detector import FabricationDetector
 
 class TestDomainModels(unittest.TestCase):
     """Test core domain models for validity and behavior."""

@@ -1,0 +1,68 @@
+# Vault-Memory Sync Log
+
+- [2026-09-07T00:32:48.203Z] Starting synchronization: bidirectional
+- [2026-09-07T00:32:48.365Z] Warning: Vault has uncommitted changes
+- [2026-09-07T00:32:48.366Z] Warning: Vault has uncommitted changes. Proceeding with caution.
+- [2026-09-07T00:32:48.367Z] Starting bidirectional vault-memory synchronization
+- [2026-09-07T00:32:48.368Z] Starting vault → memory synchronization
+- [2026-09-07T00:32:48.370Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Agents.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Agents.md'
+- [2026-09-07T00:32:48.371Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Agents.md'
+- [2026-09-07T00:32:48.373Z] Synced Agents.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.375Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\API Keys.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\API Keys.md'
+- [2026-09-07T00:32:48.376Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\API Keys.md'
+- [2026-09-07T00:32:48.377Z] Synced API Keys.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.378Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Architecture.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Architecture.md'
+- [2026-09-07T00:32:48.379Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Architecture.md'
+- [2026-09-07T00:32:48.380Z] Synced Architecture.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.381Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Audit Reports.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Audit Reports.md'
+- [2026-09-07T00:32:48.382Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Audit Reports.md'
+- [2026-09-07T00:32:48.384Z] Synced Audit Reports.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.385Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Betting-Market-Study-Guide.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Betting-Market-Study-Guide.md'
+- [2026-09-07T00:32:48.386Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Betting-Market-Study-Guide.md'
+- [2026-09-07T00:32:48.387Z] Synced Betting-Market-Study-Guide.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.388Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Decisions Log.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Decisions Log.md'
+- [2026-09-07T00:32:48.389Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Decisions Log.md'
+- [2026-09-07T00:32:48.391Z] Synced Decisions Log.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.392Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Knowledge-Persistence.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Knowledge-Persistence.md'
+- [2026-09-07T00:32:48.394Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Knowledge-Persistence.md'
+- [2026-09-07T00:32:48.395Z] Synced Knowledge-Persistence.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.396Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Loops.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Loops.md'
+- [2026-09-07T00:32:48.397Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Loops.md'
+- [2026-09-07T00:32:48.399Z] Synced Loops.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.400Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\OLP XDV.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\OLP XDV.md'
+- [2026-09-07T00:32:48.401Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\OLP XDV.md'
+- [2026-09-07T00:32:48.402Z] Synced OLP XDV.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.403Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\OLP_XDV_Framework_Index.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\OLP_XDV_Framework_Index.md'
+- [2026-09-07T00:32:48.404Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\OLP_XDV_Framework_Index.md'
+- [2026-09-07T00:32:48.405Z] Synced OLP_XDV_Framework_Index.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.406Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Open Questions.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Open Questions.md'
+- [2026-09-07T00:32:48.407Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Open Questions.md'
+- [2026-09-07T00:32:48.408Z] Synced Open Questions.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.410Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Protected Constants.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Protected Constants.md'
+- [2026-09-07T00:32:48.410Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Protected Constants.md'
+- [2026-09-07T00:32:48.412Z] Synced Protected Constants.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.413Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\README.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\README.md'
+- [2026-09-07T00:32:48.414Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\README.md'
+- [2026-09-07T00:32:48.415Z] Synced README.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.416Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Rules.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Rules.md'
+- [2026-09-07T00:32:48.417Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Rules.md'
+- [2026-09-07T00:32:48.418Z] Synced Rules.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.419Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Sports_Betting_Study_Guide.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Sports_Betting_Study_Guide.md'
+- [2026-09-07T00:32:48.420Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Sports_Betting_Study_Guide.md'
+- [2026-09-07T00:32:48.421Z] Synced Sports_Betting_Study_Guide.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.423Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\STATE.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\STATE.md'
+- [2026-09-07T00:32:48.424Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\STATE.md'
+- [2026-09-07T00:32:48.425Z] Synced STATE.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.426Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Vault-Memory-Index.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Vault-Memory-Index.md'
+- [2026-09-07T00:32:48.427Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Vault-Memory-Index.md'
+- [2026-09-07T00:32:48.428Z] Synced Vault-Memory-Index.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.430Z] Error reading file C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Viking Match Analysis 2026-08-18.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Viking Match Analysis 2026-08-18.md'
+- [2026-09-07T00:32:48.430Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\.claude\projects\c--Users-Motunrayo-omniroute-test\memory\Viking Match Analysis 2026-08-18.md'
+- [2026-09-07T00:32:48.432Z] Synced Viking Match Analysis 2026-08-18.md: vault-to-memory (fallback)
+- [2026-09-07T00:32:48.432Z] Vault → memory sync completed: 18 files synchronized
+- [2026-09-07T00:32:48.433Z] Starting memory → vault synchronization
+- [2026-09-07T00:32:48.455Z] Error reading file C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md'
+- [2026-09-07T00:32:48.456Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md'
+- [2026-09-07T00:32:48.459Z] Memory → vault sync completed: 0 files synchronized
+- [2026-09-07T00:32:48.459Z] Bidirectional sync completed in 0.09s: 18 vault→memory, 0 memory→vault
+- [2026-09-07T00:32:48.460Z] Synchronization finished: {"vaultToMemory":18,"memoryToVault":0,"duration":0.09}
