@@ -16,7 +16,7 @@ from datetime import datetime
 from pathlib import Path
 
 # Import domain components
-from olpxdv_framework.src.domain.models import (
+from olpxdv_framework.domain.models import (
     Team, Fixture, Odds, MarketType,
     CLVLeg, CLVMetrics, KnowledgeItem, EngineConsensus
 )
