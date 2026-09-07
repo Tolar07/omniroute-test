@@ -222,12 +222,43 @@ class TestProtectedConstants(unittest.TestCase):
 
     def test_clv_gate_enforcement(self):
         """Test CLV gate functionality."""
-        # Test that CLV gate can be evaluated
-        result = self.calculator.evaluate_clv_gate(
+        # Test that CLV gate can be evaluated with proper CLVLeg objects
+        from olpxdv_framework.domain.models import Team, Fixture
+
+        # Create test teams and fixture
+        home_team = Team(id="1", name="Home Team", short_name="HT")
+        away_team = Team(id="2", name="Away Team", short_name="AT")
+        fixture = Fixture(
+            id="TEST_FIXTURE",
+            home_team=home_team,
+            away_team=away_team,
+            league="Premier League",
+            league_tier=LeagueTier.TIER_A,
+            match_date=datetime(2026, 9, 15, 15, 0),
+            status=FixtureStatus.SCHEDULED
+        )
+
+        # Create test CLV legs
+        clv_leg1 = CLVLeg(
             fixture_id="TEST_FIXTURE",
             market_type=MarketType.MATCH_ODDS,
-            selection="Home"
+            selection="Home",
+            opening_odds=Decimal('2.0'),
+            closing_odds=Decimal('2.2'),  # Positive CLV
+            stake=Decimal('1.0')
         )
+
+        clv_leg2 = CLVLeg(
+            fixture_id="TEST_FIXTURE",
+            market_type=MarketType.MATCH_ODDS,
+            selection="Draw",
+            opening_odds=Decimal('3.0'),
+            closing_odds=Decimal('3.1'),  # Positive CLV
+            stake=Decimal('1.0')
+        )
+
+        # Test that CLV gate can be evaluated
+        result = self.calculator.evaluate_clv_gate([clv_leg1, clv_leg2])
         # Should return a CLVGateResult object
         self.assertIsNotNone(result)
         self.assertTrue(hasattr(result, 'passed'))
