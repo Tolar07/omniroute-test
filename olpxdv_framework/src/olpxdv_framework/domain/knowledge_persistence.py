@@ -216,8 +216,8 @@ class KnowledgePersistenceService:
     Provides higher-level operations for managing knowledge.
     """
 
-    def __init__(self, knowledge_repo: KnowledgeRepository):
-        self.knowledge_repo = knowledge_repo
+    def __init__(self, knowledge_repo: Optional[KnowledgeRepository] = None):
+        self.knowledge_repo = knowledge_repo or InMemoryKnowledgeRepository()
         self.logger = logging.getLogger(self.__class__.__name__)
 
     async def add_knowledge(

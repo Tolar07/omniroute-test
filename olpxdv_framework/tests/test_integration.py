@@ -41,8 +41,8 @@ class TestFullPipelineIntegration(unittest.TestCase):
         )
 
         # Create test fixtures
-        self.home_team = Team(name="Home Team", sport="Football")
-        self.away_team = Team(name="Away Team", sport="Football")
+        self.home_team = Team(id="home_team_001", name="Home Team")
+        self.away_team = Team(id="away_team_001", name="Away Team")
         self.fixture = Fixture(
             home_team=self.home_team,
             away_team=self.away_team,

@@ -17,7 +17,7 @@ from datetime import datetime, timedelta
 from olpxdv_framework.domain.models import Fixture, Odds, MarketType, EngineConsensus, Team
 from olpxdv_framework.domain.engine_suite import EngineSuite
 from olpxdv_framework.domain.fabrication_detector import FabricationDetector, FabricationAlert
-from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService
+from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService, InMemoryKnowledgeRepository
 from olpxdv_framework.domain.protected_constants import (
     get_current_phase,
     is_paper_only,
@@ -79,7 +79,7 @@ class ScanPipeline:
         # Initialize core components
         self.engine_suite = engine_suite or EngineSuite()
         self.fabrication_detector = fabrication_detector or FabricationDetector()
-        self.knowledge_service = knowledge_service or KnowledgePersistenceService()
+        self.knowledge_service = knowledge_service or KnowledgePersistenceService(InMemoryKnowledgeRepository())
 
         # Pipeline configuration
         self.max_fixtures_per_batch = 50
