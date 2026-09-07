@@ -14,7 +14,7 @@ from olpxdv_framework.application.trigger_pipeline import TriggerPipeline
 from olpxdv_framework.application.publish_pipeline import PublishPipeline
 from olpxdv_framework.domain.clv_calculator import CLVCalculator
 from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService, InMemoryKnowledgeRepository
-from olpxdv_framework.domain.models import EngineConsensus, MarketType, Fixture, Team, LeagueTier, FixtureStatus
+from olpxdv_framework.domain.models import EngineConsensus, MarketType, Fixture, Team, LeagueTier, FixtureStatus, BetResult
 from olpxdv_framework.domain.fabrication_detector import FabricationDetector
 from olpxdv_framework.domain.knowledge_persistence import KnowledgeItem
 from olpxdv_framework.infrastructure.vault_memory_sync import VaultMemorySync
