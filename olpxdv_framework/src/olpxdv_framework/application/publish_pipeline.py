@@ -39,7 +39,6 @@ from olpxdv_framework.domain.protected_constants import (
 )
 from olpxdv_framework.infrastructure.sportybet_bridge import SportybetBridge
 from olpxdv_framework.infrastructure.telegram_adapter import TelegramAdapter
-from olpxdv_framework.infrastructure.web_dashboard import WebDashboard
 from olpxdv_framework.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
@@ -89,8 +88,7 @@ class PublishPipeline:
         fabrication_detector: Optional[FabricationDetector] = None,
         knowledge_service: Optional[KnowledgePersistenceService] = None,
         sportybet_bridge: Optional[SportybetBridge] = None,
-        telegram_adapter: Optional[TelegramAdapter] = None,
-        web_dashboard: Optional[WebDashboard] = None
+        telegram_adapter: Optional[TelegramAdapter] = None
     ):
         self.settings = get_settings()
         self.logger = logging.getLogger(self.__class__.__name__)
@@ -101,7 +99,6 @@ class PublishPipeline:
         self.knowledge_service = knowledge_service or KnowledgePersistenceService()
         self.sportybet_bridge = sportybet_bridge or SportybetBridge()
         self.telegram_adapter = telegram_adapter or TelegramAdapter()
-        self.web_dashboard = web_dashboard or WebDashboard()
 
         # Pipeline state
         self.published_today = []  # Track published bets for duplicate prevention
@@ -485,13 +482,8 @@ class PublishPipeline:
                     )
                     output_formats['console'] = console_output
 
-                    # Generate web dashboard output
-                    web_output = await self.web_dashboard.format_bet_recommendation(
-                        trigger_result.consensus,
-                        final_stake,
-                        booking_code
-                    )
-                    output_formats['web'] = web_output
+                    # Generate web dashboard output (placeholder - web dashboard instantiation avoided to prevent circular import)
+                    output_formats['web'] = f"Web recommendation for {trigger_result.consensus.fixture_id} {trigger_result.consensus.selection} @ {final_stake:.2f} units"
 
                     # Generate Telegram output
                     telegram_output = await self.telegram_adapter.format_bet_recommendation(

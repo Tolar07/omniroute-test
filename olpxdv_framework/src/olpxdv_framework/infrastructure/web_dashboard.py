@@ -19,19 +19,19 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
 import uvicorn
 
-from ...domain.models import EngineConsensus, MarketType
-from ...domain.clv_calculator import CLVCalculator
-from ...domain.protected_constants import (
+from olpxdv_framework.domain.models import EngineConsensus, MarketType
+from olpxdv_framework.domain.clv_calculator import CLVCalculator
+from olpxdv_framework.domain.protected_constants import (
     get_current_phase,
     is_client_publish_enabled,
     is_paper_only,
     ProtectedConstants
 )
-from ...domain.knowledge_persistence import KnowledgePersistenceService
-from ...application.scan_pipeline import ScanPipeline
-from ...application.trigger_pipeline import TriggerPipeline
-from ...application.publish_pipeline import PublishPipeline
-from ...config.settings import get_settings
+from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService
+from olpxdv_framework.application.scan_pipeline import ScanPipeline
+from olpxdv_framework.application.trigger_pipeline import TriggerPipeline
+from olpxdv_framework.application.publish_pipeline import PublishPipeline
+from olpxdv_framework.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -56,7 +56,8 @@ clv_calculator = CLVCalculator()
 knowledge_service = KnowledgePersistenceService()
 scan_pipeline = ScanPipeline()
 trigger_pipeline = TriggerPipeline(clv_calculator=clv_calculator, knowledge_service=knowledge_service)
-publish_pipeline = PublishPipeline(clv_calculator=clv_calculator, knowledge_service=knowledge_service)
+# Note: PublishPipeline is not instantiated here to avoid circular import
+# It will be created when needed by the application
 
 
 # Pydantic models for API responses
