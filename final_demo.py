@@ -19,7 +19,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def demonstrate_framework():
+async def demonstrate_framework():
     """Demonstrate that all framework components work correctly."""
     try:
         logger.info("Starting OLP XDV Framework Final Demonstration")
@@ -180,7 +180,7 @@ def demonstrate_framework():
 
 if __name__ == "__main__":
     # Run the demonstration
-    success = demonstrate_framework()
+    success = asyncio.run(demonstrate_framework())
     if success:
         print("\n🎉 OLP XDV Framework final demonstration completed successfully!")
         print("Check logs/final_demo.log for detailed output.")

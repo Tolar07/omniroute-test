@@ -256,7 +256,7 @@ class KnowledgePersistenceService:
             existing_item.updated_at = datetime.utcnow()
 
             # Recalculate expiration
-            existing_item.expires_at = self._calculate_expiration_date(existing_item.created_at)
+            existing_item.expires_at = self.knowledge_repo._calculate_expiration_date(existing_item.created_at)
 
             await self.knowledge_repo.save(existing_item)
             self.logger.info(f"Updated knowledge item: {item_id}")
@@ -275,7 +275,7 @@ class KnowledgePersistenceService:
             confidence=confidence,
             created_at=datetime.utcnow(),
             updated_at=datetime.utcnow(),
-            expires_at=self._calculate_expiration_date(datetime.utcnow())
+            expires_at=self.knowledge_repo._calculate_expiration_date(datetime.utcnow())
         )
 
         await self.knowledge_repo.save(item)
