@@ -12,8 +12,8 @@ from typing import Dict, Any, Optional, List
 from decimal import Decimal
 from datetime import datetime
 
-from ...domain.models import EngineConsensus, MarketType
-from ...config.settings import get_settings
+from olpxdv_framework.domain.models import EngineConsensus, MarketType
+from olpxdv_framework.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 

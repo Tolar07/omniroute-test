@@ -78,3 +78,15 @@
 - [2026-09-07T01:30:02.924Z] Memory → vault sync completed: 0 files synchronized
 - [2026-09-07T01:30:02.924Z] Bidirectional sync completed in 0.03s: 0 vault→memory, 0 memory→vault
 - [2026-09-07T01:30:02.925Z] Synchronization finished: {"vaultToMemory":0,"memoryToVault":0,"duration":0.03}
+- [2026-09-07T01:42:33.261Z] Starting synchronization: bidirectional
+- [2026-09-07T01:42:33.405Z] Warning: Vault has uncommitted changes
+- [2026-09-07T01:42:33.406Z] Warning: Vault has uncommitted changes. Proceeding with caution.
+- [2026-09-07T01:42:33.407Z] Starting bidirectional vault-memory synchronization
+- [2026-09-07T01:42:33.408Z] Starting vault → memory synchronization
+- [2026-09-07T01:42:33.420Z] Vault → memory sync completed: 0 files synchronized
+- [2026-09-07T01:42:33.421Z] Starting memory → vault synchronization
+- [2026-09-07T01:42:33.433Z] Error reading file C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md: ENOENT: no such file or directory, open 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md'
+- [2026-09-07T01:42:33.434Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md'
+- [2026-09-07T01:42:33.436Z] Memory → vault sync completed: 0 files synchronized
+- [2026-09-07T01:42:33.436Z] Bidirectional sync completed in 0.03s: 0 vault→memory, 0 memory→vault
+- [2026-09-07T01:42:33.437Z] Synchronization finished: {"vaultToMemory":0,"memoryToVault":0,"duration":0.03}
