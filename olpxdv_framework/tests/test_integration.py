@@ -14,7 +14,7 @@ from olpxdv_framework.application.trigger_pipeline import TriggerPipeline
 from olpxdv_framework.application.publish_pipeline import PublishPipeline
 from olpxdv_framework.domain.clv_calculator import CLVCalculator
 from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService, InMemoryKnowledgeRepository
-from olpxdv_framework.domain.models import EngineConsensus, MarketType, Fixture, Team, LeagueTier
+from olpxdv_framework.domain.models import EngineConsensus, MarketType, Fixture, Team, LeagueTier, FixtureStatus
 from olpxdv_framework.domain.fabrication_detector import FabricationDetector
 from olpxdv_framework.domain.knowledge_persistence import KnowledgeItem
 from olpxdv_framework.infrastructure.vault_memory_sync import VaultMemorySync
@@ -44,6 +44,7 @@ class TestFullPipelineIntegration(unittest.TestCase):
         self.home_team = Team(id="home_team_001", name="Home Team")
         self.away_team = Team(id="away_team_001", name="Away Team")
         self.fixture = Fixture(
+            id="TEST_FIXTURE_001",
             home_team=self.home_team,
             away_team=self.away_team,
             league="Premier League",
@@ -51,22 +52,18 @@ class TestFullPipelineIntegration(unittest.TestCase):
             match_date=datetime(2026, 9, 15, 15, 0),
             status=FixtureStatus.SCHEDULED
         )
-        self.fixture.id = "TEST_FIXTURE_001"
 
     def test_knowledge_persistence_basic(self):
         """Test basic knowledge persistence functionality."""
         # Add knowledge item
-        knowledge_item = KnowledgeItem(
-            id="TEST_KNOWLEDGE_001",
+        knowledge_item = self.knowledge_service.add_knowledge(
+            title="Test Knowledge About Team Performance",
             content="Test knowledge about team performance",
+            knowledge_type="fact",
+            source="test",
             tags=["football", "premier-league", "team-news"],
-            relevance_score=Decimal('0.8'),
-            created_at=datetime.now(),
-            expires_at=None
+            relevance_score=Decimal('0.8')
         )
-
-        # Add to knowledge service
-        self.knowledge_service.add_knowledge(knowledge_item)
 
         # Search for knowledge
         results = self.knowledge_service.search_by_content("team performance", limit=5)
@@ -127,72 +124,49 @@ class TestFullPipelineIntegration(unittest.TestCase):
 
     def test_clv_calculator_integration(self):
         """Test CLV calculator with full workflow."""
-        # Create a CLV leg
-        clv_leg = self.clv_calculator.open_clv_leg(
+        # Create a CLV leg using log_clv_leg method
+        clv_leg = self.clv_calculator.log_clv_leg(
             fixture_id=self.fixture.id,
             market_type=MarketType.MATCH_ODDS,
             selection="Home",
-            opening_probability=Decimal('0.45'),
             opening_odds=Decimal('2.2')
         )
 
         self.assertIsNotNone(clv_leg)
         self.assertEqual(clv_leg.fixture_id, self.fixture.id)
         self.assertEqual(clv_leg.selection, "Home")
-        self.assertEqual(clv_leg.opening_probability, Decimal('0.45'))
         self.assertEqual(clv_leg.opening_odds, Decimal('2.2'))
 
         # Close the CLV leg
-        closing_result = self.clv_calculator.close_clv_leg(
-            clv_leg_id=clv_leg.id,
-            closing_probability=Decimal('0.5'),
+        closed_leg = self.clv_calculator.close_clv_leg(
+            leg=clv_leg,
             closing_odds=Decimal('2.0'),
-            actual_outcome="Home"
+            actual_result=BetResult.WIN
         )
 
-        self.assertIsNotNone(closing_result)
-        self.assertEqual(closing_result.clv_leg_id, clv_leg.id)
+        self.assertIsNotNone(closed_leg)
+        self.assertEqual(closed_leg.id, clv_leg.id)
+        self.assertEqual(closed_leg.closing_odds, Decimal('2.0'))
+        self.assertEqual(closed_leg.result, BetResult.WIN)
 
         # Check CLV was calculated
-        self.assertIsInstance(closing_result.clv_value, Decimal)
+        self.assertIsInstance(closed_leg.clv_value, Decimal)
 
         # Get performance summary
-        summary = self.clv_calculator.get_clv_performance_summary()
+        summary = self.clv_calculator.get_clv_performance_summary([clv_leg])
         self.assertIsInstance(summary, dict)
         self.assertIn('total_legs', summary)
-        self.assertIn('open_legs', summary)
-        self.assertIn('closed_legs', summary)
+        self.assertIn('valid_legs', summary)
+        self.assertIn('winning_legs', summary)
 
-    @patch('olpxdv_framework.src.application.scan_pipeline.ScanPipeline._fetch_upcoming_fixtures')
-    @patch('olpxdv_framework.src.application.scan_pipeline.ScanPipeline._fetch_odds_for_fixtures')
-    @patch('olpxdv_framework.src.application.scan_pipeline.ScanPipeline._generate_engine_consensus')
-    @patch('olpxdv_framework.src.application.scan_pipeline.ScanPipeline._generate_scan_knowledge')
-    def test_scan_pipeline_integration(self, mock_knowledge, mock_consensus, mock_odds, mock_fixtures):
-        """Test SCAN pipeline with mocked external dependencies."""
-        # Mock return values
-        mock_fixtures.return_value = [self.fixture]
-        mock_odds.return_value = [
-            # Mock odds data would go here
-        ]
-        mock_consensus.return_value = [
-            EngineConsensus(
-                fixture_id=self.fixture.id,
-                market_type=MarketType.MATCH_ODDS,
-                selection="Home",
-                probability=Decimal('0.55'),
-                expected_value=Decimal('0.1'),
-                confidence=Decimal('0.8'),
-                engines_used=["DixonColes", "Elo"],
-                timestamp=datetime.now()
-            )
-        ]
-        mock_knowledge.return_value = []
-
-        # Execute scan cycle
-        # Note: This is a simplified test - in reality we'd need to mock async properly
-        # For now, we're testing that the pipeline can be instantiated and methods exist
+    def test_scan_pipeline_integration(self):
+        """Test SCAN pipeline integration."""
+        # Test that pipeline exists and has expected methods
         self.assertIsNotNone(self.scan_pipeline)
         self.assertTrue(hasattr(self.scan_pipeline, 'run_scan_cycle'))
+        self.assertTrue(hasattr(self.scan_pipeline, '_ingest_data'))
+        self.assertTrue(hasattr(self.scan_pipeline, '_validate_and_enhance_data'))
+        self.assertTrue(hasattr(self.scan_pipeline, '_process_engines'))
 
     def test_trigger_pipeline_with_mock_data(self):
         """Test TRIGGER pipeline with mock consensus data."""
@@ -205,6 +179,7 @@ class TestFullPipelineIntegration(unittest.TestCase):
                 probability=Decimal('0.6'),
                 expected_value=Decimal('0.15'),
                 confidence=Decimal('0.85'),
+                kelly_fraction=Decimal('0.1'),
                 engines_used=["Engine1", "Engine2", "Engine3"],
                 timestamp=datetime.now()
             ),
@@ -215,6 +190,7 @@ class TestFullPipelineIntegration(unittest.TestCase):
                 probability=Decimal('0.55'),
                 expected_value=Decimal('0.05'),
                 confidence=Decimal('0.7'),
+                kelly_fraction=Decimal('0.05'),
                 engines_used=["Engine1"],
                 timestamp=datetime.now()
             )
