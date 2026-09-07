@@ -15,9 +15,9 @@ from typing import List, Optional, Dict, Any, Tuple
 from decimal import Decimal
 from datetime import datetime, timedelta
 
-from ...domain.models import Fixture, Odds, MarketType, EngineConsensus, BetResult
-from ...domain.clv_calculator import CLVCalculator, CLVGateResult
-from ...domain.protected_constants import (
+from olpxdv_framework.domain.models import Fixture, Odds, MarketType, EngineConsensus, BetResult
+from olpxdv_framework.domain.clv_calculator import CLVCalculator, CLVGateResult
+from olpxdv_framework.domain.protected_constants import (
     get_current_phase,
     get_clv_min_legs,
     get_clv_mean_threshold,
@@ -29,8 +29,8 @@ from ...domain.protected_constants import (
     is_paper_only,
     ProtectedConstants
 )
-from ...domain.knowledge_persistence import KnowledgePersistenceService
-from ...config.settings import get_settings
+from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService
+from olpxdv_framework.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 

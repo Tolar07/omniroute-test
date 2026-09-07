@@ -17,11 +17,11 @@ from typing import List, Optional, Dict, Any, Tuple
 from decimal import Decimal
 from datetime import datetime, timedelta
 
-from ...domain.models import Fixture, Odds, MarketType, EngineConsensus, BetResult
-from ...domain.clv_calculator import CLVCalculator, CLVGateResult, CLVLeg
-from ...domain.fabrication_detector import FabricationDetector, FabricationAlert
-from ...domain.knowledge_persistence import KnowledgePersistenceService
-from ...domain.protected_constants import (
+from olpxdv_framework.domain.models import Fixture, Odds, MarketType, EngineConsensus, BetResult
+from olpxdv_framework.domain.clv_calculator import CLVCalculator, CLVGateResult, CLVLeg
+from olpxdv_framework.domain.fabrication_detector import FabricationDetector, FabricationAlert
+from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService
+from olpxdv_framework.domain.protected_constants import (
     get_current_phase,
     get_clv_min_legs,
     get_clv_mean_threshold,
@@ -37,7 +37,7 @@ from ...domain.protected_constants import (
     id405_allow_away_wins,
     ProtectedConstants
 )
-from ...infrastructure.sportybet_bridge import SportybetBridge
+from olpxdv_framework.infrastructure.sportybet_bridge import SportybetBridge
 from ...infrastructure.telegram_adapter import TelegramAdapter
 from ...infrastructure.web_dashboard import WebDashboard
 from ...config.settings import get_settings

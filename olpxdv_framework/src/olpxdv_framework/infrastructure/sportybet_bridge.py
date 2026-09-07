@@ -13,12 +13,12 @@ from decimal import Decimal
 from datetime import datetime
 import uuid
 
-from ...domain.models import MarketType
-from ...domain.protected_constants import (
+from olpxdv_framework.domain.models import MarketType
+from olpxdv_framework.domain.protected_constants import (
     get_booking_code_expiry_minutes,
     get_sportybet_max_odds
 )
-from ...config.settings import get_settings
+from olpxdv_framework.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 
