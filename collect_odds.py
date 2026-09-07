@@ -9,7 +9,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 
 # Add parent to path so we can import OLP XDV modules
 sys.path.insert(0, str(Path(__file__).parent))
@@ -52,35 +52,37 @@ def main():
         for odds_record in odds_data:
             try:
                 # Extract relevant fields
-                fixture_key = (
-                    normalize_team_name(odds_record.get('home_team', '')),
-                    normalize_team_name(odds_record.get('away_team', '')),
-                    odds_record.get('match_date', today)
-                )
+                home_team = normalize_team_name(odds_record.get('home_team', ''))
+                away_team = normalize_team_name(odds_record.get('away_team', ''))
+                match_date = odds_record.get('match_date', today)
+
+                fixture_key: Tuple[str, str, str] = (home_team, away_team, match_date)
 
                 market_type = odds_record.get('market_type', '1X2')  # Default to 1X2
                 bookmaker = odds_record.get('bookmaker', 'API-Football')
                 odds_value = odds_record.get('odds_value')
+                odds_type = odds_record.get('odds_type', 'decimal')
 
                 # Skip if essential data is missing
-                if not all([fixture_key[0], fixture_key[1], odds_value]):
+                if not all([home_team, away_team, odds_value is not None]):
                     continue
 
                 # Store in Brain
-                # We'll store this in a way that can be accessed by pipeline agents
-                # For now, we'll use a simple approach - in practice would extend Brain schema
                 brain.store_odds_snapshot(
                     fixture_key=fixture_key,
                     market_type=market_type,
                     bookmaker=bookmaker,
-                    odds_value=odds_value,
-                    odds_type=odds_record.get('odds_type', 'decimal'),
+                    odds_value=float(odds_value),
+                    odds_type=odds_type,
                     source='API-Football',
                     timestamp=datetime.now(timezone.utc).isoformat()
                 )
 
                 stored_count += 1
 
+            except (ValueError, TypeError) as e:
+                print(f"[odds-collector] Error processing odds record (data issue): {e}")
+                continue
             except Exception as e:
                 print(f"[odds-collector] Error processing odds record: {e}")
                 continue
@@ -95,6 +97,9 @@ def main():
         print(f"[odds-collector] Error in odds collection: {e}")
         import traceback
         traceback.print_exc()
+
+    finally:
+        brain.close()
 
     print(f"[odds-collector] Odds collection completed at {datetime.now(timezone.utc).isoformat()}")
 

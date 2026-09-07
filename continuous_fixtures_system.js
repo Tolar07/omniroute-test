@@ -117,8 +117,9 @@ async function runEnhancementFeaturesLoop() {
       // - Alert generation
       // - Report generation
       // - Health checks
+      // - Odds collection (continuous)
 
-      const result = await agent('python enhance_fixtures_features.py', {
+      const result = await agent('python collect_odds.py', {
         phase: 'Enhancement Features Monitoring',
         model: 'claude-sonnet-5',
         effort: 'medium'
@@ -129,8 +130,8 @@ async function runEnhancementFeaturesLoop() {
 
       // Process enhancement results
 
-      // Wait 10 minutes before next enhancement cycle
-      await new Promise(resolve => setTimeout(resolve, 600000));
+      // Wait 5 minutes before next enhancement cycle (more frequent for odds)
+      await new Promise(resolve => setTimeout(resolve, 300000));
     } catch (error) {
       consecutiveErrors++;
 
