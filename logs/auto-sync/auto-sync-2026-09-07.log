@@ -3540,3 +3540,35 @@ fatal: adding files failed
        M olp_xdv_agent/olp_xdv
 [2026-09-07T20:30:16.378Z] 
 📥 Step 3: Git add -A (sweeps other session's staged files)
+[2026-09-07T20:30:17.347Z]    ✅ Staged all changes
+[2026-09-07T20:30:17.348Z] 
+💾 Step 4: Check for staged changes to commit
+[2026-09-07T20:30:17.434Z]    Staged files (3): logs/auto-sync/auto-sync-2026-09-07.log, logs/pre-commit-sync/pre-commit-2026-09-07.log, olp_xdv_agent/olp_xdv
+[2026-09-07T20:30:17.435Z] 
+✍️  Step 5: Committing changes
+[2026-09-07T20:30:17.685Z]    ✅ Committed: [main 2149cffc] chore(auto): vault-memory sync + changes 2026-09-07 20:30:17
+[2026-09-07T20:30:17.685Z] 
+📊 Step 6: Final status
+[2026-09-07T20:30:18.575Z]    Working tree: DIRTY
+[2026-09-07T20:30:18.576Z]    Remaining: M logs/auto-sync/auto-sync-2026-09-07.log
+ m olp_xdv_agent/olp_xdv
+[2026-09-07T20:30:18.577Z] 
+═══════════════════════════════════════════════════════════
+[2026-09-07T20:30:18.578Z] ✅ AUTO SYNC + COMMIT COMPLETE
+[2026-09-07T20:30:18.579Z] ═══════════════════════════════════════════════════════════
+
+[2026-09-07T20:35:15.265Z] ═══════════════════════════════════════════════════════════
+[2026-09-07T20:35:15.276Z] 🔄 AUTO SYNC + COMMIT STARTED
+[2026-09-07T20:35:15.277Z] ═══════════════════════════════════════════════════════════
+[2026-09-07T20:35:15.278Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-09-07T20:35:15.458Z]    ✅ Sync complete
+[2026-09-07T20:35:15.459Z]    
+[2026-09-07T20:35:15.460Z] 
+📋 Step 2: Git status check
+[2026-09-07T20:35:16.399Z]    Files changed: 2
+[2026-09-07T20:35:16.400Z]    Changes:
+      M logs/auto-sync/auto-sync-2026-09-07.log
+       m olp_xdv_agent/olp_xdv
+[2026-09-07T20:35:16.401Z] 
+📥 Step 3: Git add -A (sweeps other session's staged files)
