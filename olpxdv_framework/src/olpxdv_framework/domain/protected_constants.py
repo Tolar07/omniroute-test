@@ -549,3 +549,18 @@ def get_max_drawdown_percentage() -> Decimal:
 def get_min_sample_size_for_clv() -> int:
     """Get minimum sample size for CLV statistical significance"""
     return ProtectedConstants.get("MIN_SAMPLE_SIZE_FOR_CLV")
+
+
+def get_max_daily_exposure() -> Decimal:
+    """Get maximum daily exposure"""
+    return Decimal(str(ProtectedConstants.get("MAX_DAILY_EXPOSURE")))
+
+
+def get_max_single_bet_exposure() -> Decimal:
+    """Get maximum single bet exposure"""
+    return Decimal(str(ProtectedConstants.get("MAX_SINGLE_BET_EXPOSURE")))
+
+
+def get_min_edge_for_publish() -> Decimal:
+    """Get minimum edge for publish"""
+    return Decimal(str(ProtectedConstants.get("MIN_EDGE_FOR_PUBLISH")))

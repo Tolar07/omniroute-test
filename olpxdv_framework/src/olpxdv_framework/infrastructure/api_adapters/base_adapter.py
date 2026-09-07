@@ -13,6 +13,26 @@ from datetime import datetime, timedelta
 from olpxdv_framework.domain.models import Fixture, Odds, MarketType
 
 
+class APIError(Exception):
+    """Base exception for API errors"""
+    pass
+
+
+class RateLimitError(APIError):
+    """Raised when API rate limit is exceeded"""
+    pass
+
+
+class AuthenticationError(APIError):
+    """Raised when API authentication fails"""
+    pass
+
+
+class DataNotFoundError(APIError):
+    """Raised when requested data is not found"""
+    pass
+
+
 class BaseAPIAdapter(abc.ABC):
     """
     Abstract base class for all API adapters.
