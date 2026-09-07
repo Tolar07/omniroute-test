@@ -34,7 +34,7 @@ class APISettings(BaseSettings):
 
     # API-Football
     api_football_key: str = Field(default="", description="API-Football key")
-    api_football_base_url: str = Field(default="https://v3.football-api-sports.io", description="API-Football base URL")
+    api_football_base_url: str = Field(default="https://v3.football.api-sports.io", description="API-Football base URL")
     api_football_timeout: int = Field(default=30, description="Request timeout in seconds")
     api_football_rate_limit: int = Field(default=100, description="Max requests per minute")
 
