@@ -9,15 +9,15 @@ from decimal import Decimal
 from datetime import datetime
 from unittest.mock import Mock, patch
 
-from olpxdv_framework.src.application.scan_pipeline import ScanPipeline
-from olpxdv_framework.src.application.trigger_pipeline import TriggerPipeline
-from olpxdv_framework.src.application.publish_pipeline import PublishPipeline
-from olpxdv_framework.src.domain.clv_calculator import CLVCalculator
-from olpxdv_framework.src.domain.knowledge_persistence import KnowledgePersistenceService
-from olpxdv_framework.src.domain.models import EngineConsensus, MarketType, Fixture, Team
-from olpxdv_framework.src.domain.fabrication_detector import FabricationDetector
-from olpxdv_framework.src.domain.knowledge_persistence import KnowledgeItem
-from olpxdv_framework.src.infrastructure.vault_memory_sync import VaultMemorySync
+from olpxdv_framework.application.scan_pipeline import ScanPipeline
+from olpxdv_framework.application.trigger_pipeline import TriggerPipeline
+from olpxdv_framework.application.publish_pipeline import PublishPipeline
+from olpxdv_framework.domain.clv_calculator import CLVCalculator
+from olpxdv_framework.domain.knowledge_persistence import KnowledgePersistenceService
+from olpxdv_framework.domain.models import EngineConsensus, MarketType, Fixture, Team
+from olpxdv_framework.domain.fabrication_detector import FabricationDetector
+from olpxdv_framework.domain.knowledge_persistence import KnowledgeItem
+from olpxdv_framework.infrastructure.vault_memory_sync import VaultMemorySync
 
 
 class TestFullPipelineIntegration(unittest.TestCase):
