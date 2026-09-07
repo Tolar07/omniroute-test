@@ -208,13 +208,17 @@ class TestCLVCalculator(unittest.TestCase):
 class TestProtectedConstants(unittest.TestCase):
     """Test protected constants enforcement."""
 
+    def setUp(self):
+        """Set up test fixtures."""
+        self.calculator = CLVCalculator()
+
     def test_architect_signoff_required(self):
         """Test that ARCHITECT_SIGNOFF requires explicit approval."""
-        # This would be tested in a real implementation where the constant
-        # has special handling requiring Architect signoff
-        # For now, we test that the constant exists and is accessible
-        self.assertTrue(hasattr(ProtectedConstants, 'ARCHITECT_SIGNOFF'))
-        self.assertEqual(ProtectedConstants.ARCHITECT_SIGNOFF.value, "ARCHITECT_ONLY")
+        # ARCHITECT_SIGNOFF is stored in the _CONSTANTS registry, not as a class attribute
+        self.assertIn("ARCHITECT_SIGNOFF", ProtectedConstants._CONSTANTS)
+        constant_def = ProtectedConstants._CONSTANTS["ARCHITECT_SIGNOFF"]
+        self.assertEqual(constant_def.protection_level, ConstantProtectionLevel.ARCHITECT_ONLY)
+        self.assertEqual(constant_def.default_value, False)
 
     def test_clv_gate_enforcement(self):
         """Test CLV gate functionality."""

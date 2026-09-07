@@ -16,7 +16,8 @@ from dataclasses import dataclass, field
 from .models import CLVLeg, CLVMetrics, Fixture, Odds, MarketType
 from .protected_constants import (
     get_clv_min_legs, get_clv_mean_threshold, get_current_phase,
-    is_paper_only, is_client_publish_enabled, ProtectedConstants
+    is_paper_only, is_client_publish_enabled, ProtectedConstants,
+    get_max_kelly_fraction
 )
 
 logger = logging.getLogger(__name__)
