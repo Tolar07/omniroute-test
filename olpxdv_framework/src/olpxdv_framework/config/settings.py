@@ -140,7 +140,7 @@ class FrameworkSettings(BaseSettings):
     # Default MES floor
     min_mes_floor: Decimal = Field(default=Decimal('0.03'), ge=0, le=1, description="Minimum MES floor")
 
-    model_config = SettingsConfigDict(env_prefix="FRAMEWORK_", env_file=".env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(env_prefix="FRAMEWORK_")
 
 
 class ObservabilitySettings(BaseSettings):
