@@ -39,7 +39,8 @@ def main():
 
         # Fetch odds data from API-Football (primary source)
         print("[odds-collector] Fetching odds from API-Football...")
-        odds_data = api_client.get_odds_for_date(today)
+        # Limit to first 5 fixtures to avoid rate limits
+        odds_data = api_client.get_odds_for_date(today, limit=5)
 
         if not odds_data:
             print("[odds-collector] No odds data received from API-Football")
