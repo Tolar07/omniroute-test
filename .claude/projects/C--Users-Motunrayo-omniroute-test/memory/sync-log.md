@@ -275,3 +275,17 @@
 - [2026-09-08T20:07:15.427Z] Memory → vault sync completed: 0 files synchronized
 - [2026-09-08T20:07:15.428Z] Bidirectional sync completed in 0.07s: 0 vault→memory, 0 memory→vault
 - [2026-09-08T20:07:15.428Z] Synchronization finished: {"vaultToMemory":0,"memoryToVault":0,"duration":0.07}
+- [2026-09-08T20:31:56.141Z] Starting synchronization: bidirectional
+- [2026-09-08T20:31:56.384Z] Warning: Vault has uncommitted changes
+- [2026-09-08T20:31:56.386Z] Warning: Vault has uncommitted changes. Proceeding with caution.
+- [2026-09-08T20:31:56.387Z] Starting bidirectional vault-memory synchronization
+- [2026-09-08T20:31:56.388Z] Starting vault → memory synchronization
+- [2026-09-08T20:31:56.431Z] Vault → memory sync completed: 0 files synchronized
+- [2026-09-08T20:31:56.432Z] Starting memory → vault synchronization
+- [2026-09-08T20:31:56.456Z] Error reading file c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\MEMORY.md: ENOENT: no such file or directory, open 'c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\MEMORY.md'
+- [2026-09-08T20:31:56.457Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\MEMORY.md'
+- [2026-09-08T20:31:56.473Z] Error reading file c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md: ENOENT: no such file or directory, open 'c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md'
+- [2026-09-08T20:31:56.475Z] Error checking file timestamps: ENOENT: no such file or directory, stat 'c:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\docs\obsidian-vault\sync-log.md'
+- [2026-09-08T20:31:56.479Z] Memory → vault sync completed: 0 files synchronized
+- [2026-09-08T20:31:56.479Z] Bidirectional sync completed in 0.09s: 0 vault→memory, 0 memory→vault
+- [2026-09-08T20:31:56.480Z] Synchronization finished: {"vaultToMemory":0,"memoryToVault":0,"duration":0.09}
