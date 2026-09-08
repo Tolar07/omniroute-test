@@ -69,6 +69,7 @@ def main():
                     continue
 
                 # Store in Brain
+                print(f"[odds-collector] Storing odds for {home_team} vs {away_team} on {match_date}")
                 brain.store_odds_snapshot(
                     fixture_key=fixture_key,
                     market_type=market_type,
@@ -78,6 +79,7 @@ def main():
                     source='API-Football',
                     timestamp=datetime.now(timezone.utc).isoformat()
                 )
+                print(f"[odds-collector] Stored odds for {home_team} vs {away_team}")
 
                 stored_count += 1
 
