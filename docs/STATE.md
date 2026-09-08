@@ -22,6 +22,20 @@
 - Retired mirror: `Documents/OLP_XDV_Vault/` (deprecated 2026-08-18, read-only).
 - Agent memory: `.claude/projects/C--Users-Motunrayo-omniroute-test/memory/`
 - Vault-memory sync active via `vault-memory-sync.js` with SessionStart/SessionEnd hooks.
+- **Heartbeat coordination**: `docs/HEARTBEAT_POLICY.md` (rules) +
+  `docs/HEARTBEAT_STATE.json` (current lineage) + `scripts/heartbeat_supervisor.py`
+  (gate). Every session MUST read these on start and gate every publish through
+  the supervisor. Agent charter: `.claude/agents/olp-xdv-supervisor.md`.
+
+## Heartbeat Coordination
+
+- 2026-08-31 Session disconnect observed: yesterday's win did not compound
+  into today's stake, and today's pick was not the highest EV. Root cause:
+  the compound rule lived in one session's chat context only; the other
+  session started from the code's baseline. Scaffolding added this
+  commit (supervisor agent + HEARTBEAT_POLICY.md + HEARTBEAT_STATE.json +
+  scripts/heartbeat_supervisor.py). Architect must fill in the numbers in
+  HEARTBEAT_POLICY.md before the supervisor will approve any heartbeat.
 
 ## 2026-08-23 Pipeline Retrospective (Summary)
 
