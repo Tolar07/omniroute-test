@@ -1,0 +1,1 @@
+- [CLV gate fix](memory/clv-gate-fix.md) — Fixed CLV gate in OLP XDV pipeline to require 12+ legs with CLV while observing (not requiring) positive mean CLV

@@ -16,7 +16,7 @@
       "cron": "0 22 * * *",
       "prompt": "cd /c:/Users/Motunrayo/omniroute test/scripts && ./daily_olp_xdv_runner.sh",
       "createdAt": 1788820066593,
-      "lastFiredAt": 1788988434107,
+      "lastFiredAt": 1789074858995,
       "recurring": true,
       "createdBySessionId": "c45a51f7-cda1-4ee1-a81d-b0e2d766dd51",
       "createdByPid": 1396,
