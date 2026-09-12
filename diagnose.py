@@ -56,7 +56,12 @@ GROUND_TRUTH = {
             ("Manchester City", "Arsenal"),
             ("Manchester United", "Manchester City"),  # this is 09-13
         ],
-    }
+    },
+    "2026-09-13": {
+        "premier_league_count": 2,
+        "must_contain": [("Man Utd", "Man City"), ("Levante", "Barcelona")],
+        "must_not_contain": [("Manchester City", "Arsenal")],
+    },
 }
 
 
