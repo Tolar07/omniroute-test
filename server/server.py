@@ -11,7 +11,7 @@ current_run_log_path = None
 
 # Directory paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-BOARDS_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'olp_xdv_agent', 'olp_xdv', 'output', 'boards'))
+BOARDS_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'olp_xdv_agent', 'olp_xdv', 'output', 'boards'))
 LOGS_DIR = os.path.join(BASE_DIR, 'logs')
 os.makedirs(LOGS_DIR, exist_ok=True)
 
