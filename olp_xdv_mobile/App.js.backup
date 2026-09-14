@@ -161,6 +161,7 @@ export default function App() {
       ) : (
         <View style={styles.container}>
           <Text style={styles.title}>OLP XDV Mobile</Text>
+
           {/* Run Pipeline Button */}
           <View style={styles.buttonContainer}>
             <Button
