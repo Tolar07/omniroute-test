@@ -56,7 +56,7 @@ def run():
     try:
         # Run the script and capture output
         with open(log_path, 'w') as log_file:
-            process = subprocess.run(['python', os.path.join(BASE_DIR, '..', '..', 'run_daily.py')],
+            process = subprocess.run(['python', os.path.join(BASE_DIR, '..', 'olp_xdv_agent', 'olp_xdv', 'run_daily.py')],
                                      stdout=log_file, stderr=subprocess.STDOUT)
         current_run_log_path = log_path
     finally:
