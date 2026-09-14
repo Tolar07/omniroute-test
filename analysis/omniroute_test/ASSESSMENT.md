@@ -2,16 +2,15 @@
 
 ## Executive Summary
 
-The OLP XDV Agent is a football-betting calibration framework implemented as a Telegram bot/daemon for sports data collection, odds processing, and automated publishing with a CLV (Closing Line Value) feedback loop. The system comprises approximately 16,267 lines of code across Python, JavaScript, and configuration files, organized into 6 core functional domains. The system shows moderate technical debt with opportunities for improvement in error handling, configuration management, and code duplication. Security scanning was incomplete due to agent failures, but the system follows good practices for credential management (using .env files). The recommended modernization pattern is **Refactor-in-place** to improve maintainability while preserving the existing architecture and business logic.
+The OLP XDV Agent is a football-betting calibration framework implemented as a Telegram bot/daemon for sports data collection, odds processing, and automated publishing with a CLV (Closing Line Value) feedback loop. The system comprises approximately 202,239 lines of code across Python, JavaScript, and configuration files, organized into 6 core functional domains. The system shows moderate technical debt with opportunities for improvement in error handling, configuration management, and code duplication. Security scanning was incomplete due to agent failures, but the system follows good practices for credential management (using .env files). The recommended modernization pattern is **Refactor-in-place** to improve maintainability while preserving the existing architecture and business logic.
 
 ## System Inventory
 
 ### Language and File Breakdown
 - **Python**: 1,359 files (~116,501 lines)
-- **JavaScript/TypeScript**: Significant presence (~112,921 lines JS)
-- **Markdown/Docs**: Extensive documentation in vault
-- **Configuration**: JSON, YAML, environment files
-- **Total assessed source lines**: ~16,267 lines (from sampled subset)
+- **JavaScript/TypeScript**: Significant presence (~112,921 lines)
+- **Total source lines**: 202,239 lines
+- **Total assessed source lines**: 202,239 lines
 
 ### Technology Fingerprint
 - **Primary Language**: Python 3.11+ (evidenced by .venv references in CLAUDE.md)
@@ -43,19 +42,24 @@ The OLP XDV Agent is a football-betting calibration framework implemented as a T
 
 Based on structural analysis of the `olp_xdv_agent/olp_xdv` directory, the system comprises 6 major functional domains:
 
-| # | Functional Domain | Core Purpose | Key Source Files | Primary Dependencies |
-|---|-------------------|--------------|------------------|----------------------|
-| 1 | **Data Ingestion** | Pulls live fixture data from external sources and caches it. | `fixtures_agent.py`, `data/espn_source.py`, `data/api_football_*.py`, `data/live_odds/flashscore_odds_*.jsonl`, `data/cache/*.csv` | Consumes raw feeds → passes to Validation and Verification |
-| 2 | **Validation & Whitelist** | Filters fixtures by deploy‑eligible whitelist and league calendar. | `config/leagues.json`, `fixtures_agent.py` (load_whitelist, check_league_calendar, verify_league_fixture) | Supplies validated fixture list to Verification and Logic Core |
-| 3 | **Verification & Enrichment** | Marks fixtures as verified (≥1 source) and enriches them with provenance. | `fixtures_agent.py` (_apply_verification), `data/validation.py`, `engine/consensus.py`, `engine/elo.py` | Provides verified, enriched fixtures to Logic Core |
-| 4 | **Logic Core (Red/Blue & Leg Generation)** | Calculates Red/Blue scores, builds accumulator & single bet legs. | `olp_xdv_pipeline.py` (agent_5_ceo), `engine/consensus.py`, `engine/dixon_coles.py`, `engine/elo.py`, `engine/league_registry.py`, `engine/recalibration.py` | Consumes verified fixtures → outputs legs to Odds & Compliance |
-| 5 | **Odds & Compliance** | Audits odds, checks compliance, enforces the CLV gate. | `clv/closing_capture.py`, `engine/consensus.py`, `engine/elo.py`, `data/api_football_odds.py`, `booking/bridge.py`, `brain/gate.json` (GATE_FILE) | Receives legs from Logic Core, validates compliance, may reject based on CLV gate |
-| 6 | **Execution & Orchestration** | Generates betting codes, runs the full pipeline, and produces output. | `bets/produced_bet.py`, `booking/bridge.py`, `engine/consensus.py`, `olp_xdv_pipeline.py` (main runner), `agent_cli.py`, `output/telegram_webhook.py`, `output/email_deliver.py`, `output/whatsapp_deliver.py`, `render_board_from_pipeline` | Consumes compliant legs from Odds & Compliance, creates bet codes, triggers publishing, renders daily board |
+| # | Functional Domain | Core Purpose | Key Source Files (repo‑relative) | Primary Dependencies |
+|---|-------------------|--------------|----------------------------------|----------------------|
+| 1 | **Data Ingestion** | Pulls live fixture data from external sources and caches it. | `olp_xdv_agent/olp_xdv/fixtures_agent.py`<br> `olp_xdv_agent/olp_xdv/data/espn_source.py`<br> `olp_xdv_agent/olp_xdv/data/api_football_*.py`<br> `olp_xdv_agent/olp_xdv/data/live_odds/flashscore_odds_*.jsonl`<br> `olp_xdv_agent/olp_xdv/data/cache/*.csv` | Consumes raw feeds → passes to **Validation** (Domain2) and **Verification** (Domain3). |
+| 2 | **Validation & Whitelist** | Filters fixtures by deploy‑eligible whitelist and league calendar. | `olp_xdv_agent/olp_xdv/config/leagues.json`<br> `olp_xdv_agent/olp_xdv/fixtures_agent.py` (load_whitelist, check_league_calendar, verify_league_fixture) | Supplies validated fixture list to **Verification** (Domain3) and **Logic Core** (Domain4). |
+| 3 | **Verification & Enrichment** | Marks fixtures as verified (≥1 source) and enriches them with provenance. | `olp_xdv_agent/olp_xdv/fixtures_agent.py` (_apply_verification)<br> `olp_xdv_agent/olp_xdv/data/validation.py` (if any)<br> `olp_xdv_agent/olp_xdv/engine/consensus.py`<br> `olp_xdv_agent/olp_xdv/engine/elo.py` | Provides verified, enriched fixtures to **Logic Core** (Domain4). |
+| 4 | **Logic Core (Red/Blue & Leg Generation)** | Calculates Red/Blue scores, builds accumulator & single bet legs. | `olp_xdv_agent/olp_xdv/olp_xdv_pipeline.py` (agent_5_ceo)<br> `olp_xdv_agent/olp_xdv/engine/consensus.py` <br> `olp_xdv_agent/olp_xdv/engine/dixon_coles.py`<br> `olp_xdv_agent/olp_xdv/engine/elo.py`<br> `olp_xdv_agent/olp_xdv/engine/league_registry.py`<br> `olp_xdv_agent/olp_xdv/engine/recalibration.py` | Consumes verified fixtures & entity profiles → outputs legs to **Odds & Compliance** (Domain5). |
+| 5 | **Odds & Compliance** | Audits odds, checks compliance, enforces the CLV gate. | `olp_xdv_agent/olp_xdv/clv/closing_capture.py`<br> `olp_xdv_agent/olp_xdv/engine/consensus.py`<br> `olp_xdv_agent/olp_xdv/engine/elo.py`<br> `olp_xdv_agent/olp_xdv/data/api_football_odds.py`<br> `olp_xdv_agent/olp_xdv/booking/bridge.py`<br> `olp_xdv_agent/olp_xdv/brain/gate.json` (GATE_FILE) | Receives legs from **Logic Core**, updates odds, validates compliance, and may reject based on the CLV gate (Domain6). |
+| 6 | **Execution & Orchestration** | Generates betting codes, runs the full pipeline, and produces output. | `olp_xdv_agent/olp_xdv/bets/produced_bet.py`<br> `olp_xdv_agent/olp_xdv/booking/bridge.py`<br> `olp_xdv_agent/olp_xdv/engine/consensus.py`<br> `olp_xdv_agent/olp_xdv/olp_xdv_pipeline.py` (main runner)<br> `olp_xdv_agent/olp_xdv/agent_cli.py`<br> `olp_xdv_agent/olp_xdv/output/telegram_webhook.py`<br> `olp_xdv_agent/olp_xdv/output/email_deliver.py`<br> `olp_xdv_agent/olp_xdv/output/whatsapp_deliver.py` <br> `olp_xdv_agent/olp_xdv/output/render_board_from_pipeline` (inline) | Consumes compliant legs from **Odds & Compliance**, creates bet codes, triggers publishing, and renders the daily board. |
 
-### Dependency Graph
-```mermaid
-graph TD
-    subgraph Data_Ingestion [Domain1: Data Ingestion]
+### Dangling / Unresolved References
+- **`agent_3_ceo` & `agent_4_ceo`** – placeholders in `olp_xdv_agent/olp_xdv/olp_xdv_pipeline.py` with no visible implementation; they are invoked in the pipeline loop but their bodies are empty in the provided source.
+- **`GATE_FILE` (`brain/gate.json`)** – referenced in `agent_10_ceo`; the file may be absent or malformed, which could cause a `None` gate record and unexpected `CEO_REJECT` decisions.
+- **Hard‑coded positive‑EV selections** in `agent_5_ceo` (the list of market/probability/odds tuples) – these appear to be illustrative rather than derived from actual model outputs, raising questions about the realism of the generated legs.
+- **`_apply_verification` logic** – the comment states verification requires *≥2* distinct sources, yet the implementation checks for *≥1* source; this discrepancy may be a bug but does not reference a missing file.
+
+### Mermaid Dependency Graph
+
+```mermaidgraph TD subgraph Data_Ingestion [Domain1: Data Ingestion]
         A1[fixtures_agent.py] --> A2[data/espn_source.py]
         A1 --> A3[data/api_football_*.py]
         A1 --> A4[data/live_odds/flashscore_odds_*.jsonl]
@@ -107,12 +111,6 @@ graph TD
     F5 --> E1
     F5 --> F1
 ```
-
-### Dangling / Unresolved References
-- `agent_3_ceo` & `agent_4_ceo` – placeholders in `olp_xdv_pipeline.py` with no visible implementation; invoked in pipeline loop but bodies are empty
-- `GATE_FILE` (`brain/gate.json`) – referenced in `agent_10_ceo`; file may be absent or malformed, potentially causing `None` gate record and unexpected `CEO_REJECT` decisions
-- Hard-coded positive-EV selections in `agent_5_ceo` – illustrative tuples not derived from actual model outputs
-- `_apply_verification` logic – comment states verification requires ≥2 distinct sources, but implementation checks for ≥1 source (potential bug)
 
 ## Production Runtime Profile
 
@@ -214,10 +212,9 @@ Based on code review and comparison with available documentation:
 ## Relative Scale
 
 **COCOMO-II Index**: 2.94 × (KSLOC)^1.10
-- Estimated KSLOC: ~16 (based on sampled 16,267 lines)
-- COCOMO-II Index: 2.94 × (16)^1.10 ≈ 2.94 × 22.6 ≈ 66.4
-
-**Note**: This is a relative complexity/scale index only, not an estimate of schedule, cost, or effort. The COCOMO model assumes traditional human-team productivity, which does not apply to agentic-assisted modernization efforts. This index should be used only for comparing relative size/complexity across similar systems.
+- Estimated KSLOC: 202.239 (based on 202,239 total source lines)
+- COCOMO-II index: 2.94 × (202.239)^1.10 ≈ 1011
+- **Note**: This is a relative complexity/scale index only, not an estimate of schedule, cost, or effort. The COCOMO model assumes traditional human-team productivity, which does not apply to agentic transformation efforts. This index should be used only for comparing relative size/complexity across similar systems.
 
 ## Recommended Modernization Pattern
 
