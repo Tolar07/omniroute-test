@@ -32,7 +32,7 @@ def get_board_files():
 @app.route('/boards', methods=['GET'])
 def get_boards():
     board_files = get_board_files()
-    dates = [file[0].strftime('%Y-%m-%d') for date, file in board_files]
+    dates = [date.strftime('%Y-%m-%d') for date, file in board_files]
     return jsonify({'boards': dates})
 
 @app.route('/boards/<date>', methods=['GET'])
