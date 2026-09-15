@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 // Configuration
-const SERVER_IP = '192.168.68.105'; // Replace with actual IP from ipconfig
+const SERVER_IP = '192.168.11.141'; // Replace with actual IP from ipconfig
 const SERVER_PORT = 5000;
 const BASE_URL = `http://${SERVER_IP}:${SERVER_PORT}`;
 
