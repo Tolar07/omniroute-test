@@ -151,43 +151,51 @@ export default function App() {
   return (
     <View style={styles.container}>
       {selectedBoard ? (
-        <View style={styles.boardView}>
-          <Text style={styles.header}>OLP XDV Board - {selectedBoard.split('\n')[0] || 'Today'}</Text>
-          <Button title="← Back to Boards" onPress={() => setSelectedBoard(null)} />
-          <ScrollView style={styles.scrollView}>
-            <Text style={styles.boardText}>{selectedBoard}</Text>
-          </ScrollView>
-        </View>
-      ) : (
-        <View style={styles.container}>
-          <Text style={styles.title}>OLP XDV Mobile</Text>
-          {/* Run Pipeline Button */}
-          <View style={styles.buttonContainer}>
-            <Button
-              title="Run Today's Pipeline"
-              onPress={startRun}
-              disabled={runStatus.inProgress || runStatus.isFetching}
-            />
-            {runStatus.isFetching && (
-              <Text style={styles.statusText}>Checking server...</Text>
-            )}
-            {runStatus.inProgress && (
-              <Text style={styles.statusText}>Pipeline running...</Text>
-            )}
+        <>
+          <View style={styles.boardView}>
+            <Text style={styles.header}>OLP XDV Board - {selectedBoard.split('\n')[0] || 'Today'}</Text>
+            <Button title="← Back to Boards" onPress={() => setSelectedBoard(null)} />
+            <ScrollView style={styles.scrollView}>
+              <Text style={styles.boardText}>{selectedBoard}</Text>
+            </ScrollView>
           </View>
-
-          {/* Run Status Log */}
-          {runStatus.log && runStatus.log !== 'Checking status...' && runStatus.log !== 'Pipeline running...' && (
-            <View style={styles.logContainer}>
-              <Text style={styles.logHeader}>Pipeline Log:</Text>
-              <ScrollView style={styles.logScroll}>
-                <Text style={styles.logText}>{runStatus.log}</Text>
-              </ScrollView>
+        </>
+      ) : (
+        <>
+          <View style={styles.container}>
+            <Text style={styles.title}>OLP XDV Mobile</Text>
+            {/* Run Pipeline Button */}
+            <View style={styles.buttonContainer}>
+              <Button
+                title="Run Today's Pipeline"
+                onPress={startRun}
+                disabled={runStatus.inProgress || runStatus.isFetching}
+              />
+              {runStatus.isFetching && (
+                <Text style={styles.statusText}>Checking server...</Text>
+              )}
+              {runStatus.inProgress && (
+                <Text style={styles.statusText}>Pipeline running...</Text>
+              )}
             </View>
-          )}
 
-          {/* Boards List */}
-          <Text style={styles.sectionTitle}>Recent Boards (Last 14 Days)</Text>
+            {/* Run Status Log */}
+            {runStatus.log && runStatus.log !== 'Checking status...' && runStatus.log !== 'Pipeline running...' && (
+              <View style={styles.logContainer}>
+                <Text style={styles.logHeader}>Pipeline Log:</Text>
+                <ScrollView style={styles.logScroll}>
+                  <Text style={styles.logText}>{runStatus.log}</Text>
+                </ScrollView>
+              </View>
+            )}
+
+            {/* Boards List */}
+            <Text style={styles.sectionTitle}>Recent Boards (Last 14 Days)</Text>
+          </View>
+        </>
+      )}
+    </View>
+  );
           {boards.length === 0 ? (
             <Text style={styles.emptyText}>No boards available</Text>
           ) : (
