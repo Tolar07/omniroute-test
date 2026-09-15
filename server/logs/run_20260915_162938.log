@@ -1,0 +1,1792 @@
+Launch args: ['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--ignore-certificate-errors', '--ignore-ssl-errors', '--allow-running-insecure-content', '--host-resolver-rules=MAP sportybet.com:443 18.245.253.15,MAP sportybet.com:443 18.245.253.74,MAP sportybet.com:443 18.245.253.40,MAP sportybet.com:443 18.245.253.69,MAP www.sportybet.com:443 13.226.144.103,MAP www.sportybet.com:443 13.226.144.47,MAP www.sportybet.com:443 13.226.144.101,MAP www.sportybet.com:443 13.226.144.41']
+  [RETRY] Trying popular-list navigation for Belgian Pro League
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Belgian Pro League: not found in popular-list, trying sidebar expand
+  [RETRY] Trying sidebar expand navigation for Belgian Pro League
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'Belgium' in element with selector '[class*="item"]'
+  Looking for league 'Belgian Pro League' under expanded country 'Belgium'...
+  Trying direct text search for league: Belgian Pro League
+  League 'Belgian Pro League' not found via direct text search
+  ERROR: Could not find league 'Belgian Pro League' after expanding country 'Belgium'
+  [WARN] Belgian Pro League: no fixtures available (scraping failed and no fallback)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:7/sr:tournament:34?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-13.226.144.41): https://13.226.144.41/ng/sport/football/sr:category:7/sr:tournament:34?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-13.226.144.41): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://13.226.144.41/ng/sport/football/sr:cat
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:7/sr:tournament:34?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:7/sr:tournament:34?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for Bundesliga
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Redirect/interrupt error detected, trying base domain for Bundesliga
+  -> Trying base domain: https://www.sportybet.com
+  [ERROR] popular-list nav error: 'NoneType' object is not callable
+  [RETRY] Trying sidebar expand navigation for Bundesliga
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'Germany' in element with selector '[class*="item"]'
+  Looking for league 'Bundesliga' under expanded country 'Germany'...
+  Found league 'Bundesliga' in element with selector '[class*="item"]'
+  Found 71 match rows after sidebar navigation
+  Sample teams: ['Brentford v Chelsea', 'Tottenham v Aston Villa', 'Brighton v Arsenal']
+  [OK] Bundesliga: sidebar expand worked, extracted 71 fixtures
+  → wrote Bundesliga.json (71 fixtures)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-13.226.144.41): https://13.226.144.41/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-13.226.144.41): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://13.226.144.41/ng/sport/football/sr:cat
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:1/sr:tournament:17?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for Championship
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Championship: not found in popular-list, trying sidebar expand
+  [RETRY] Trying sidebar expand navigation for Championship
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'England' in element with selector '[class*="item"]'
+  Looking for league 'Championship' under expanded country 'England'...
+  Found league 'Championship' in element with selector '[class*="item"]'
+  Found 75 match rows after sidebar navigation
+  Sample teams: ['Brentford v Chelsea', 'Tottenham v Aston Villa', 'Brighton v Arsenal']
+  [OK] Championship: sidebar expand worked, extracted 75 fixtures
+  → wrote Championship.json (75 fixtures)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:31/sr:tournament:9?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-13.226.144.103): https://13.226.144.103/ng/sport/football/sr:category:31/sr:tournament:9?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-13.226.144.103): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://13.226.144.103/ng/sport/football/sr:ca
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:31/sr:tournament:9?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:31/sr:tournament:9?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for La Liga 2
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Redirect/interrupt error detected, trying base domain for La Liga 2
+  -> Trying base domain: https://www.sportybet.com
+  [WARN] Base domain also had redirect/interrupt error for La Liga 2, skipping
+  [WARN] La Liga 2: no fixtures available (scraping failed and no fallback)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:7/sr:tournament:35?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-13.226.144.103): https://13.226.144.103/ng/sport/football/sr:category:7/sr:tournament:35?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-13.226.144.103): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://13.226.144.103/ng/sport/football/sr:ca
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:7/sr:tournament:35?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:7/sr:tournament:35?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for Ligue 1
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Redirect/interrupt error detected, trying base domain for Ligue 1
+  -> Trying base domain: https://www.sportybet.com
+  [ERROR] popular-list nav error: 'NoneType' object is not callable
+  [RETRY] Trying sidebar expand navigation for Ligue 1
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'France' in element with selector '[class*="item"]'
+  Looking for league 'Ligue 1' under expanded country 'France'...
+  Found league 'Ligue 1' in element with selector '[class*="item"]'
+  Found 71 match rows after sidebar navigation
+  Sample teams: ['Brentford v Chelsea', 'Tottenham v Aston Villa', 'Brighton v Arsenal']
+  [OK] Ligue 1: sidebar expand worked, extracted 71 fixtures
+  → wrote Ligue_1.json (71 fixtures)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:7/sr:tournament:36?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-13.226.144.103): https://13.226.144.103/ng/sport/football/sr:category:7/sr:tournament:36?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-13.226.144.103): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://13.226.144.103/ng/sport/football/sr:ca
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:7/sr:tournament:36?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:7/sr:tournament:36?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for Ligue 2
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Redirect/interrupt error detected, trying base domain for Ligue 2
+  -> Trying base domain: https://www.sportybet.com
+  [WARN] Base domain also had redirect/interrupt error for Ligue 2, skipping
+  [WARN] Ligue 2: no fixtures available (scraping failed and no fallback)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-13.226.144.103): https://13.226.144.103/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-13.226.144.103): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://13.226.144.103/ng/sport/football/sr:ca
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:32/sr:tournament:8?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for Premier League
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Redirect/interrupt error detected, trying base domain for Premier League
+  -> Trying base domain: https://www.sportybet.com
+  [ERROR] popular-list nav error: 'NoneType' object is not callable
+  [RETRY] Trying sidebar expand navigation for Premier League
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'England' in element with selector '[class*="item"]'
+  Looking for league 'Premier League' under expanded country 'England'...
+  Found league 'Premier League' in element with selector '[class*="item"]'
+  Found 67 match rows after sidebar navigation
+  Sample teams: ['Tottenham v Aston Villa', 'Brighton v Arsenal', 'Everton v Ipswich Town']
+  [OK] Premier League: sidebar expand worked, extracted 67 fixtures
+  → wrote Premier_League.json (67 fixtures)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-13.226.144.103): https://13.226.144.103/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-13.226.144.103): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://13.226.144.103/ng/sport/football/sr:ca
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:32/sr:tournament:9?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for Primeira Liga
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Primeira Liga: not found in popular-list, trying sidebar expand
+  [RETRY] Trying sidebar expand navigation for Primeira Liga
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'Portugal' in element with selector '[class*="item"]'
+  Looking for league 'Primeira Liga' under expanded country 'Portugal'...
+  Trying direct text search for league: Primeira Liga
+  League 'Primeira Liga' not found via direct text search
+  ERROR: Could not find league 'Primeira Liga' after expanding country 'Portugal'
+  [WARN] Primeira Liga: no fixtures available (scraping failed and no fallback)
+  [RETRY] Trying popular-list navigation for Russian Premier League
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Russian Premier League: not found in popular-list, trying sidebar expand
+  [RETRY] Trying sidebar expand navigation for Russian Premier League
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'Russia' in element with selector '[class*="item"]'
+  Looking for league 'Russian Premier League' under expanded country 'Russia'...
+  Trying direct text search for league: Russian Premier League
+  League 'Russian Premier League' not found via direct text search
+  ERROR: Could not find league 'Russian Premier League' after expanding country 'Russia'
+  [WARN] Russian Premier League: no fixtures available (scraping failed and no fallback)
+  [RETRY] Trying popular-list navigation for Scottish Premiership
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Scottish Premiership: not found in popular-list, trying sidebar expand
+  [RETRY] Trying sidebar expand navigation for Scottish Premiership
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'Scotland' in element with selector '[class*="item"]'
+  Looking for league 'Scottish Premiership' under expanded country 'Scotland'...
+  Trying direct text search for league: Scottish Premiership
+  League 'Scottish Premiership' not found via direct text search
+  ERROR: Could not find league 'Scottish Premiership' after expanding country 'Scotland'
+  [WARN] Scottish Premiership: no fixtures available (scraping failed and no fallback)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:30/sr:tournament:35?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-18.245.253.74): https://18.245.253.74/ng/sport/football/sr:category:30/sr:tournament:35?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-18.245.253.74): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://18.245.253.74/ng/sport/football/sr:cat
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:30/sr:tournament:35?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:30/sr:tournament:35?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for Serie A
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Redirect/interrupt error detected, trying base domain for Serie A
+  -> Trying base domain: https://www.sportybet.com
+  [ERROR] popular-list nav error: 'NoneType' object is not callable
+  [RETRY] Trying sidebar expand navigation for Serie A
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'Italy' in element with selector '[class*="item"]'
+  Looking for league 'Serie A' under expanded country 'Italy'...
+  Found league 'Serie A' in element with selector '[class*="item"]'
+  Found 71 match rows after sidebar navigation
+  Sample teams: ['Brentford v Chelsea', 'Tottenham v Aston Villa', 'Brighton v Arsenal']
+  [OK] Serie A: sidebar expand worked, extracted 71 fixtures
+  → wrote Serie_A.json (71 fixtures)
+  -> Direct URL (domain): https://www.sportybet.com/ng/sport/football/sr:category:30/sr:tournament:36?source=sport_menu&sort=2
+  [ERROR] direct nav error (domain): 'NoneType' object is not callable
+  -> Direct URL (ip-resolved-18.245.253.74): https://18.245.253.74/ng/sport/football/sr:category:30/sr:tournament:36?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-resolved-18.245.253.74): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://18.245.253.74/ng/sport/football/sr:cat
+  -> Direct URL (ip-104.21.10.148): https://104.21.10.148/ng/sport/football/sr:category:30/sr:tournament:36?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-104.21.10.148): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://104.21.10.148/ng/sport/football/sr:cat
+  -> Direct URL (ip-172.67.163.154): https://172.67.163.154/ng/sport/football/sr:category:30/sr:tournament:36?source=sport_menu&sort=2
+  [ERROR] direct nav error (ip-172.67.163.154): Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://172.67.163.154/ng/sport/football/sr:ca
+  [RETRY] Trying popular-list navigation for Serie B
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Redirect/interrupt error detected, trying base domain for Serie B
+  -> Trying base domain: https://www.sportybet.com
+  [WARN] Base domain also had redirect/interrupt error for Serie B, skipping
+  [WARN] Serie B: no fixtures available (scraping failed and no fallback)
+  [RETRY] Trying popular-list navigation for Swiss Super League
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Swiss Super League: not found in popular-list, trying sidebar expand
+  [RETRY] Trying sidebar expand navigation for Swiss Super League
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'Switzerland' in element with selector '[class*="item"]'
+  Looking for league 'Swiss Super League' under expanded country 'Switzerland'...
+  Trying direct text search for league: Swiss Super League
+  League 'Swiss Super League' not found via direct text search
+  ERROR: Could not find league 'Swiss Super League' after expanding country 'Switzerland'
+  [WARN] Swiss Super League: no fixtures available (scraping failed and no fallback)
+  [RETRY] Trying popular-list navigation for Turkish Super Lig
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  [INFO] Turkish Super Lig: not found in popular-list, trying sidebar expand
+  [RETRY] Trying sidebar expand navigation for Turkish Super Lig
+  -> Fallback to homepage: https://www.sportybet.com/ng/sport/football
+  Found country 'Turkiye' in element with selector '[class*="item"]'
+  Looking for league 'Turkish Super Lig' under expanded country 'Turkiye'...
+  Trying direct text search for league: Turkish Super Lig
+  League 'Turkish Super Lig' not found via direct text search
+  ERROR: Could not find league 'Turkish Super Lig' after expanding country 'Turkiye'
+  [WARN] Turkish Super Lig: no fixtures available (scraping failed and no fallback)
+
+=== DONE: 355 total fixtures cached ===
+[DEBUG] Agent 1: Target date: 2026-09-15
+[DEBUG] Found flashscore feed at C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\live_odds
+[DEBUG] Agent 1: FlashScore: 38 rows
+[DEBUG] Agent 1: LiveScore: 0 rows
+[DEBUG] Agent 1: Sporting Life: 0 rows
+[DEBUG] Agent 1: BBC: 64 rows
+[DEBUG] Agent 1: SportyBet cache: 355 rows
+[DEBUG] Agent 1: Total rows before verification: 393
+[DEBUG] Agent 1: Total rows after verification: 393
+[DEBUG] Agent 1: Verified rows: 21
+[DEBUG] Agent 1: Target date: 2026-09-15
+[DEBUG] Found flashscore feed at C:\Users\Motunrayo\omniroute test\olp_xdv_agent\olp_xdv\data\live_odds
+[DEBUG] Agent 1: FlashScore: 38 rows
+[DEBUG] Agent 1: LiveScore: 0 rows
+[DEBUG] Agent 1: Sporting Life: 0 rows
+[DEBUG] Agent 1: BBC: 64 rows
+[DEBUG] Agent 1: SportyBet cache: 355 rows
+[DEBUG] Agent 1: Total rows before verification: 393
+[DEBUG] Agent 1: Total rows after verification: 393
+[DEBUG] Agent 1: Verified rows: 21
+[DEBUG] Agent 2: Whitelist size: 29, leagues: ['EFL Cup', 'FA Cup', 'Bundesliga', 'Championship', 'Swiss Super League']...
+[DEBUG] Agent 2: Target date: 2026-09-15
+[DEBUG] Agent 2: Processing fixture 0: league='La Liga'
+[DEBUG] Agent 2: League 'La Liga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Rayo Vallecano v Espanyol
+[DEBUG] Agent 2: Processing fixture 1: league='La Liga'
+[DEBUG] Agent 2: League 'La Liga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Alaves v Valencia
+[DEBUG] Agent 2: Processing fixture 2: league='La Liga'
+[DEBUG] Agent 2: League 'La Liga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Elche v Real Madrid
+[DEBUG] Agent 2: Processing fixture 3: league='Scottish Premiership'
+[DEBUG] Agent 2: League 'Scottish Premiership' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Falkirk v Hearts
+[DEBUG] Agent 2: Processing fixture 4: league='Scottish Premiership'
+[DEBUG] Agent 2: League 'Scottish Premiership' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Hibernian v Kilmarnock
+[DEBUG] Agent 2: Processing fixture 5: league='Scottish Premiership'
+[DEBUG] Agent 2: League 'Scottish Premiership' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Motherwell v Aberdeen
+[DEBUG] Agent 2: Processing fixture 6: league='Eredivisie'
+[DEBUG] Agent 2: League 'Eredivisie' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Ajax v Willem II
+[DEBUG] Agent 2: Processing fixture 7: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Bristol City v Lincoln
+[DEBUG] Agent 2: Processing fixture 8: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Middlesbrough v Millwall
+[DEBUG] Agent 2: Processing fixture 9: league='Ekstraklasa'
+[DEBUG] Agent 2: League 'Ekstraklasa' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 10: league='Ekstraklasa'
+[DEBUG] Agent 2: League 'Ekstraklasa' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 11: league='EFL Cup'
+[DEBUG] Agent 2: League 'EFL Cup' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Peterborough v Barnsley
+[DEBUG] Agent 2: Processing fixture 12: league='EFL Cup'
+[DEBUG] Agent 2: League 'EFL Cup' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture West Ham v Fulham
+[DEBUG] Agent 2: Processing fixture 13: league='EFL Cup'
+[DEBUG] Agent 2: League 'EFL Cup' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Ipswich v Arsenal
+[DEBUG] Agent 2: Processing fixture 14: league='EFL Cup'
+[DEBUG] Agent 2: League 'EFL Cup' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Liverpool v Tottenham
+[DEBUG] Agent 2: Processing fixture 15: league='EFL Cup'
+[DEBUG] Agent 2: League 'EFL Cup' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Reading v Brentford
+[DEBUG] Agent 2: Processing fixture 16: league='Swiss Super League'
+[DEBUG] Agent 2: League 'Swiss Super League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Grasshoppers v Sion
+[DEBUG] Agent 2: Processing fixture 17: league='Israeli Premier League'
+[DEBUG] Agent 2: League 'Israeli Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 18: league='Israeli Premier League'
+[DEBUG] Agent 2: League 'Israeli Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 19: league='Latvian Virsliga'
+[DEBUG] Agent 2: League 'Latvian Virsliga' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 20: league='Montenegrin First League'
+[DEBUG] Agent 2: League 'Montenegrin First League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 21: league='Northern Irish Premiership'
+[DEBUG] Agent 2: League 'Northern Irish Premiership' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 22: league='Northern Irish Premiership'
+[DEBUG] Agent 2: League 'Northern Irish Premiership' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 23: league='Northern Irish Premiership'
+[DEBUG] Agent 2: League 'Northern Irish Premiership' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 24: league='Northern Irish Premiership'
+[DEBUG] Agent 2: League 'Northern Irish Premiership' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 25: league='Northern Irish Premiership'
+[DEBUG] Agent 2: League 'Northern Irish Premiership' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 26: league='Northern Irish Premiership'
+[DEBUG] Agent 2: League 'Northern Irish Premiership' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 27: league='Welsh Premier League'
+[DEBUG] Agent 2: League 'Welsh Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 28: league='Welsh Premier League'
+[DEBUG] Agent 2: League 'Welsh Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 29: league='Welsh Premier League'
+[DEBUG] Agent 2: League 'Welsh Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 30: league='Welsh Premier League'
+[DEBUG] Agent 2: League 'Welsh Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 31: league='Welsh Premier League'
+[DEBUG] Agent 2: League 'Welsh Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 32: league='Welsh Premier League'
+[DEBUG] Agent 2: League 'Welsh Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 33: league='Welsh Premier League'
+[DEBUG] Agent 2: League 'Welsh Premier League' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 34: league='Icelandic Urvalsdeild'
+[DEBUG] Agent 2: League 'Icelandic Urvalsdeild' not in whitelist, skipping
+[DEBUG] Agent 2: Processing fixture 35: league='Coppa Italia'
+[DEBUG] Agent 2: League 'Coppa Italia' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Genoa v Sudtirol
+[DEBUG] Agent 2: Processing fixture 36: league='Coppa Italia'
+[DEBUG] Agent 2: League 'Coppa Italia' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Fiorentina v Pisa
+[DEBUG] Agent 2: Processing fixture 37: league='FA Cup'
+[DEBUG] Agent 2: League 'FA Cup' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Added fixture Jersey Bulls v Burgess Hill
+[DEBUG] Agent 2: Processing fixture 38: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 39: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 40: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 41: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 42: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 43: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 44: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 45: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 46: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 47: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 48: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 49: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 50: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 51: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 52: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 53: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 54: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 55: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 56: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 57: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 58: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 59: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 60: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 61: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 62: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 63: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 64: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 65: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 66: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 67: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 68: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 69: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 70: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 71: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 72: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 73: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 74: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 75: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 76: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 77: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 78: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 79: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 80: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 81: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 82: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 83: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 84: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 85: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 86: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 87: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 88: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 89: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 90: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 91: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 92: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 93: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 94: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 95: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 96: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 97: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 98: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 99: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 100: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 101: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 102: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 103: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 104: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 105: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 106: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 107: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 108: league='Bundesliga'
+[DEBUG] Agent 2: League 'Bundesliga' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 109: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 110: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 111: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 112: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 113: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 114: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 115: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 116: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 117: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 118: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 119: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 120: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 121: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 122: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 123: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 124: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 125: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 126: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 127: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 128: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 129: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 130: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 131: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 132: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 133: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 134: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 135: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 136: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 137: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 138: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 139: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 140: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 141: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 142: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 143: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 144: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 145: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 146: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 147: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 148: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 149: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 150: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 151: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 152: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 153: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 154: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 155: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 156: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 157: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 158: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 159: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 160: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 161: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 162: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 163: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 164: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 165: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 166: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 167: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 168: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 169: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 170: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 171: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 172: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 173: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 174: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 175: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 176: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 177: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 178: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 179: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 180: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 181: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 182: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 183: league='Championship'
+[DEBUG] Agent 2: League 'Championship' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 184: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 185: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 186: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 187: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 188: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 189: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 190: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 191: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 192: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 193: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 194: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 195: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 196: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 197: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 198: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 199: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 200: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 201: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 202: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 203: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 204: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 205: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 206: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 207: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 208: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 209: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 210: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 211: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 212: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 213: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 214: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 215: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 216: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 217: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 218: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 219: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 220: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 221: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 222: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 223: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 224: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 225: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 226: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 227: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 228: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 229: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 230: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 231: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 232: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 233: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 234: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 235: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 236: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 237: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 238: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 239: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 240: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 241: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 242: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 243: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 244: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 245: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 246: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 247: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 248: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 249: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 250: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 251: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 252: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 253: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 254: league='Ligue 1'
+[DEBUG] Agent 2: League 'Ligue 1' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 255: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 256: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 257: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 258: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 259: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 260: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 261: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 262: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 263: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 264: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 265: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 266: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 267: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 268: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 269: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 270: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 271: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 272: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 273: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 274: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 275: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 276: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 277: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 278: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 279: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 280: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 281: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 282: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 283: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 284: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 285: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 286: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 287: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 288: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 289: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 290: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 291: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 292: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 293: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 294: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 295: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 296: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 297: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 298: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 299: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 300: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 301: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 302: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 303: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 304: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 305: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 306: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 307: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 308: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 309: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 310: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 311: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 312: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 313: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 314: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 315: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 316: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 317: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 318: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 319: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 320: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 321: league='Premier League'
+[DEBUG] Agent 2: League 'Premier League' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 322: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 323: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 324: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 325: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 326: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 327: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 328: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 329: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 330: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 331: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 332: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 333: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 334: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 335: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 336: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 337: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 338: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 339: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 340: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 341: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 342: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 343: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 344: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 345: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 346: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 347: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 348: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 349: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 350: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 351: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 352: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 353: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 354: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 355: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 356: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 357: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 358: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 359: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 360: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 361: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 362: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 363: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 364: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 365: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 366: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 367: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 368: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 369: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 370: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 371: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 372: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 373: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 374: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 375: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 376: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 377: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 378: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 379: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 380: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 381: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 382: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 383: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 384: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 385: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 386: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 387: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 388: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 389: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 390: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 391: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Processing fixture 392: league='Serie A'
+[DEBUG] Agent 2: League 'Serie A' is in whitelist
+[DEBUG] Agent 2: League calendar check: valid=True, reason='OK'
+[DEBUG] Agent 2: Fixture date  != target date 2026-09-15, skipping
+[DEBUG] Agent 2: Filtered 393 to 18 fixtures
+SportyBet cache refreshed: 0 fixtures across 0 leagues
+Turkish Super Lig: no results available for grading
+Russian Premier League: no results available for grading
+Champions League: no results available for grading
+Swiss Super League: no results available for grading
+Automated CLV grading: 0 leg(s) settled
+calibration tracker: recorded 48 graded leg outcome(s)
+No Stage A artifact — running full pipeline
+Pipeline failed (attempted relative import with no known parent package)
+Run completed in 261.0s
