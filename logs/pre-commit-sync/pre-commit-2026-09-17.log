@@ -721,3 +721,28 @@
 [2026-09-17T10:18:01.839Z]    ✅ Sync complete
 [2026-09-17T10:18:01.841Z] 
 📥 Step 2: Git add -A (sweeps other sessions' staged files)
+[2026-09-17T10:18:03.432Z]    ✅ Staged all changes
+[2026-09-17T10:18:03.549Z] 
+✅ Ready to commit 3 file(s)
+[2026-09-17T10:18:03.550Z] 
+═══════════════════════════════════════════════════════════
+[2026-09-17T10:18:03.551Z] ✅ PRE-COMMIT AUTO-SYNC COMPLETE — Proceeding with commit
+[2026-09-17T10:18:03.552Z] ═══════════════════════════════════════════════════════════
+
+[2026-09-17T12:06:13.201Z] ═══════════════════════════════════════════════════════════
+[2026-09-17T12:06:13.208Z] 🔄 PRE-COMMIT AUTO-SYNC STARTED
+[2026-09-17T12:06:13.209Z] ═══════════════════════════════════════════════════════════
+[2026-09-17T12:06:13.210Z] 
+🔍 Checking for other sessions' pending work...
+[2026-09-17T12:06:15.193Z]    ⚠️  Working tree has uncommitted changes:
+[2026-09-17T12:06:15.194Z]       M logs/pre-commit-sync/pre-commit-2026-09-17.log
+[2026-09-17T12:06:15.195Z]        M olp_xdv_agent/olp_xdv
+[2026-09-17T12:06:15.195Z]        M ruflo
+[2026-09-17T12:06:15.405Z]    ⬆️  Local commits not pushed: 1
+[2026-09-17T12:06:15.451Z]    ⬇️  Remote commits not pulled: 1
+[2026-09-17T12:06:15.452Z]       Run: git pull --rebase
+[2026-09-17T12:06:15.453Z] 
+📦 Step 1: Vault <-> Memory sync (HR54)
+[2026-09-17T12:06:15.671Z]    ✅ Sync complete
+[2026-09-17T12:06:15.671Z] 
+📥 Step 2: Git add -A (sweeps other sessions' staged files)
