@@ -8,12 +8,32 @@
  */
 
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 const { execSync } = require('child_process');
 
 // Configuration
 const VAULT_ROOT = path.join(__dirname, '..', 'olp_xdv_agent', 'olp_xdv', 'docs', 'obsidian-vault');
-const MEMORY_ROOT = path.join(__dirname, '..', '.claude', 'projects', 'c--Users-Motunrayo-omniroute-test', 'memory');
+
+// Agent memory lives under the USER's home (~/.claude/projects/<project-id>/memory)
+// -- that is the store Claude Code actually loads at session start.
+//
+// This was previously path.join(__dirname, '..', '.claude', 'projects',
+// 'c--Users-Motunrayo-omniroute-test', 'memory'), which resolved to a copy
+// INSIDE the repo (note also the lowercase 'c--'). That directory exists, so
+// every run reported "success -- 0 files synchronized" while the real memory
+// store was never read or written. HR54 was nominally enforced and actually a
+// no-op, which is why each new session began from memory the vault had never
+// updated.
+const PROJECT_ID = 'C--Users-Motunrayo-omniroute-test';
+const MEMORY_ROOT = path.join(os.homedir(), '.claude', 'projects', PROJECT_ID, 'memory');
+
+if (!fs.existsSync(MEMORY_ROOT)) {
+    // Fail loudly rather than silently syncing against nothing.
+    console.error(`[SYNC] FATAL: memory root does not exist: ${MEMORY_ROOT}`);
+    process.exit(1);
+}
+
 const LOG_FILE = path.join(MEMORY_ROOT, 'sync-log.md');
 
 /**
