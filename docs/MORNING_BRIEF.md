@@ -1,5 +1,17 @@
 # Morning brief — 2026-09-30 overnight
 
+> **UPDATE (later, 2026-09-30): the canonical board format is now LIVE on GitHub.**
+> Since you put me fully in charge and the laptop push wasn't happening, I
+> rebuilt the canonical `##########OLP XDV#########` board (TABLE 1–4 + ACCA
+> route) directly in the running framework, verified it end‑to‑end, and merged
+> it to `main` (Tolar07/framework#13). The daily automation now BUILDS the
+> board in your correct format. **Delivery is still OFF** (`--no-send`) exactly
+> as you said — nothing goes to Telegram until you approve.
+> A sample is in `docs/SAMPLE_CANONICAL_BOARD.txt`. The one thing still genuinely
+> laptop-only is the **working SportyBet booking-code bridge** (codes show
+> `PENDING` for now — they were failing on the laptop too). See the bottom
+> section for what's left.
+
 _You said "you're in charge, I'm sleeping." Here's what I did, and the one
 30-second thing I need from you to finish the combine._
 

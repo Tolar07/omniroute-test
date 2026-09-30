@@ -1,0 +1,100 @@
+################## EMPTY DAY ##################
+##########OLP XDV#########
+==================================
+
+📅  Wed 30 Sep 2026   (PICK · win %  ·  alt markets)
+
+
+──────────────────────────────────
+TABLE 1 · LAYER 2 — FULL MARKET GRID + AI PICK
+──────────────────────────────────
+
+No fixtures scanned today.
+
+Board code: NO DATA — PENDING (booking-code bridge not wired into this framework yet — tracked, not blocking board output)
+
+──────────────────────────────────
+TABLE 2 · LAYER 1 — DEPLOY-ELIGIBLE SINGLES
+(fixtures that clear the deploy threshold, one row each, own code)
+──────────────────────────────────
+
+No deploy-eligible fixtures kicking off today.
+
+──────────────────────────────────
+TABLE 3 · ACCA ROUTE
+(capital-eligible grouped accumulators, own code per acca)
+──────────────────────────────────
+
+No capital-eligible accas generated.
+
+──────────────────────────────────
+TABLE 4 · THE PICK
+(primary single + Acca A recommendation)
+──────────────────────────────────
+
+No pick today — nothing cleared the deploy threshold.
+
+==================================
+Honest edge: not a demonstrated edge · Capital: Architect only.
+Calibration: 9 legs logged, mean CLV +1.66%.
+Booking codes: PENDING pipeline-wide — SportyBet booking-code bridge
+not yet wired into this framework (HR35: shown, never fabricated).
+==================================
+
+################## POPULATED DAY ##################
+##########OLP XDV#########
+==================================
+
+📅  Wed 30 Sep 2026   (PICK · win %  ·  alt markets)
+
+
+⚠ 1 data flag(s) — full detail in the saved board / VERIFY RESULTS
+
+──────────────────────────────────
+TABLE 1 · LAYER 2 — FULL MARKET GRID + AI PICK
+──────────────────────────────────
+
+```
+Fixture               AI PICK · win%              O1.5/O2.5  DC/BTTS     Src
+PSV Eindhoven v Ajax  PSV Eindhoven to win · 58%  O78/O55    1X80 / Y61  ○
+Feyenoord v Utrecht   Feyenoord to win · 64%      O78/O55    1X84 / Y55  ○
+Twente v AZ           Under 2.5 goals · 45%       O78/O55    1272 / Y60  ○
+Lech v Legia          NO DATA — PENDING           —          —           —
+```
+
+Board code: NO DATA — PENDING (booking-code bridge not wired into this framework yet — tracked, not blocking board output)
+
+──────────────────────────────────
+TABLE 2 · LAYER 1 — DEPLOY-ELIGIBLE SINGLES
+(fixtures that clear the deploy threshold, one row each, own code)
+──────────────────────────────────
+
+```
+Fixture               Pick                  Model%  Deploy at  Code
+PSV Eindhoven v Ajax  PSV Eindhoven to win  58%     1.72+      PENDING
+Feyenoord v Utrecht   Feyenoord to win      64%     1.55+      PENDING
+```
+
+──────────────────────────────────
+TABLE 3 · ACCA ROUTE
+(capital-eligible grouped accumulators, own code per acca)
+──────────────────────────────────
+
+Acca A  (2 legs · model 37% · code PENDING)
+   • Feyenoord v Utrecht — Feyenoord to win (64%)
+   • PSV Eindhoven v Ajax — PSV Eindhoven to win (58%)
+
+──────────────────────────────────
+TABLE 4 · THE PICK
+(primary single + Acca A recommendation)
+──────────────────────────────────
+
+Primary single: Feyenoord v Utrecht — Feyenoord to win (64%)
+Acca A: 2 legs, model 37% (code PENDING)
+
+==================================
+Honest edge: not a demonstrated edge · Capital: Architect only.
+Calibration: 11 legs logged, mean CLV +1.66%.
+Booking codes: PENDING pipeline-wide — SportyBet booking-code bridge
+not yet wired into this framework (HR35: shown, never fabricated).
+==================================
