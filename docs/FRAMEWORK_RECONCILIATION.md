@@ -75,3 +75,35 @@ on any of them — the `olp_xdv_agent/olp_xdv` submodule points back at
 `Tolar07/framework` and is pinned to a **dangling pre‑rewrite commit**. I cannot
 read the laptop directly. To merge the laptop's actual code (not a
 reconstruction), it has to be pushed somewhere I can reach.
+
+---
+
+## Investigation complete — 2026-09-30 (overnight, autonomous)
+
+Ran the full search for the canonical `#####`/ACCA/booking-code generator across
+everything reachable. Result: **it is only on the laptop.**
+
+| Source checked | Result |
+|----------------|--------|
+| `Tolar07/framework` `main` | One lineage, engine converged this session, but **older output layer** (`OLP XDV — DAILY BOARD` / PART 0–5). No `#####` TABLE generator. |
+| `Tolar07/omniroute-test` (`*.py`) | Only the `#####` **output artifacts** (`board_2026-09-*.txt`) — no generator code. The `olpxdv_framework/` package is a **parallel rewrite skeleton** (stubbed `# for now, we'll skip` booking logic), not the running generator. |
+| `Tolar07/clv-log-and-framework-docs.` | **Empty repository.** |
+| `Tolar07/closing_edge` | Separate CLV/backtest tool (`daily.py`, `backtest.py`, `engine/`, `model/`). No `#####` generator, no booking bridge. |
+| Laptop branch `laptop-canonical` push | Push reported **"Everything up-to-date"** → the folder pushed from was **already in sync with GitHub `main`**, i.e. NOT the canonical folder. |
+
+**Conclusion:** the canonical output layer lives in a *different* laptop folder
+than the one pushed — almost certainly `olp_xdv_agent\olp_xdv\` (per CLAUDE.md,
+"OLP XDV repo root"), which in the cloud is an empty submodule pinned to an
+orphaned commit. That folder must be located and pushed. See
+`MORNING_BRIEF.md` for the exact 30-second procedure.
+
+## Framework `main` health (verified this session)
+
+All converged and merged: #3 (CLV cache), #4 (API key wiring), #5 (football-data
+fallback), #7 (production-only delivery), #8 (SportyBet free odds), #9 (form
+context), #10 (form-calibration backtest — result: don't ship), #11 (delivery
+killed), #12 (softness expunged). Open: #6 (F2 quorum — **Architect-only**
+decision, parked); #1 (old cross-session PR against `elo-persistence`, not this
+work). Telegram delivery is **KILLED** (`--no-send`) and stays killed until the
+unified `#####` output is merged and you've eyeballed a board — no wrong-format
+board can reach Telegram in the meantime.
