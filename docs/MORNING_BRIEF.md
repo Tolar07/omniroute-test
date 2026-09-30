@@ -7,10 +7,17 @@
 > it to `main` (Tolar07/framework#13). The daily automation now BUILDS the
 > board in your correct format. **Delivery is still OFF** (`--no-send`) exactly
 > as you said — nothing goes to Telegram until you approve.
-> A sample is in `docs/SAMPLE_CANONICAL_BOARD.txt`. The one thing still genuinely
-> laptop-only is the **working SportyBet booking-code bridge** (codes show
-> `PENDING` for now — they were failing on the laptop too). See the bottom
-> section for what's left.
+> A sample is in `docs/SAMPLE_CANONICAL_BOARD.txt`.
+>
+> **UPDATE 2 (2026-09-30): booking codes are now REAL and live too.** I built a
+> SportyBet booking-code bridge from scratch (`/api/ng/orders/share`), verified
+> it against the live API, and merged it (Tolar07/framework#14). The daily board
+> now carries genuine SportyBet share codes — per single, a whole-board code, and
+> the Acca A code — verified green on live run #63. Load any code at
+> `www.sportybet.com/ng/?shareCode=<CODE>` (it's a shareable slip, not a placed
+> bet). Also fixed a price-attribution honesty line (#15). **The only thing left
+> is your go-ahead to switch Telegram delivery back on** — the framework itself is
+> fully working.
 
 _You said "you're in charge, I'm sleeping." Here's what I did, and the one
 30-second thing I need from you to finish the combine._
