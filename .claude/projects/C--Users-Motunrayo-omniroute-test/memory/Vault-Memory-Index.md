@@ -40,6 +40,8 @@
 - `[[sports-data-skills.md]]` — machina-sports skills (4 skills in .claude/skills/)
 - `[[claude-code-action.md]]` — anthropics/claude-code-action cloned at workspace root
 - `[[always-check-date.md]]` — Always verify the real current date at session start / before date-sensitive work
+- `[[session-sync-2026-09-13.md]]` — Ran vault-memory sync on 2026-09-13; observed uncommitted changes
+- `[[heartbeat-is-the-survivor.md]]` — The heartbeat lineage IS the AI Survivor; variant_selection.py is dead ("art bit" = heartbeat)
 
 ## Retired Mirror (Deprecated 2026-08-18)
 **Location:** `Documents/OLP_XDV_Vault/` — **NOT authoritative, non-git, READ-ONLY**

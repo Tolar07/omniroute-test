@@ -20,7 +20,7 @@
       "WebFetch(domain:www.forebet.com)",
       "WebFetch(domain:www.sportmonks.com)",
       "WebFetch(domain:www.api-football.com)",
-      "Bash(curl -s \"https://www.thesportsdb.com/api/v1/json/5558126822/all_leagues.php\")",
+      "Bash(curl -s \"https://www.thesportsdb.com/api/v1/json/<REDACTED>/all_leagues.php\")",
       "Bash(python -c \"import sys; exec\\(open\\('c:/Users/Motunrayo/omniroute test/olp_xdv_agent/olp_xdv/tests/api_football_plan_test.py', encoding='utf-8'\\).read\\(\\)\\)\")",
       "Bash(python3 -c \"import json; d=json.load\\(open\\('c:/Users/Motunrayo/omniroute test/olp_xdv_agent/olp_xdv/.claude/settings.local.json'\\)\\); print\\(list\\(d.keys\\(\\)\\)\\); print\\('permissions:', json.dumps\\(d.get\\('permissions',{}\\),indent=2\\)[:800]\\)\")",
       "Bash(node -e ' *)",
