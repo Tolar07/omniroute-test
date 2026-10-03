@@ -173,6 +173,14 @@ cd olp_xdv_agent/olp_xdv && pytest
 
 ---
 
+## Branch Policy (2026-10-03)
+
+- **`main` is the only live line** in this repo, and `Tolar07/framework` `main` is the only live OLP XDV framework. All live branches were merged on 2026-10-03 (omniroute-test PR #6; framework PR #47).
+- Every other branch is a **frozen backup**, kept on purpose and never deleted. Do not resume work on one, merge from one, or base new work on one without the Architect explicitly naming it. This includes `main-purged`, `claude/heartbeat-supervisor`, `claude/schedule-10pm`, `claude/omniroute-test-read-r9gga9` and the merged session branches.
+- New work starts from the latest `main`.
+
+---
+
 ## Submodules
 
 | Submodule | Path | Status |
