@@ -1,0 +1,77 @@
+This is the LIVE board the framework now builds daily (Tolar07/framework, main),
+in your canonical format WITH real SportyBet booking codes.
+Captured 2026-09-30 from GitHub Actions run #63 (green). Delivery is still OFF
+(--no-send) — nothing was sent to Telegram; this is the committed board file.
+The codes below are real SportyBet share codes (a shareable slip, not a bet):
+load one at www.sportybet.com/ng/?shareCode=<CODE>.
+
+##########OLP XDV#########
+==================================
+
+📅  Wed 30 Sep 2026   (PICK · win %  ·  alt markets)
+
+
+⚠ 25 data flag(s) — full detail in the saved board / VERIFY RESULTS
+
+──────────────────────────────────
+TABLE 1 · LAYER 2 — FULL MARKET GRID + AI PICK
+──────────────────────────────────
+
+```
+Fixture                          AI PICK · win%               O1.5/O2.5  DC/BTTS     Src
+Wieczysta Krakow v Wisla Plock   NO DATA — PENDING            —          —           ○
+Rakow v GKS Katowice             Rakow to win · 50%           O77/O52    1X76 / Y55  ○
+Cracovia v Zaglebie              Under 2.5 goals · 65%        O63/U65    1X69 / N57  ○
+Slask Wroclaw v Lech Poznan      NO DATA — PENDING            —          —           ○
+Jagiellonia v Gornik Zabrze      Under 2.5 goals · 50%        O75/U50    1X74 / Y54  ○
+Piast Gliwice v Widzew Lodz      Under 2.5 goals · 61%        O67/U61    1X72 / N54  ○
+Pogon Szczecin v Korona Kielce   Under 2.5 goals · 57%        O70/U57    1X73 / N51  ○
+Legia v Wisla                    NO DATA — PENDING            —          —           ○
+Radomiak Radom v Motor Lublin    Radomiak Radom to win · 53%  O86/O65    1277 / Y65  ○
+GKS Katowice v Wieczysta Krakow  NO DATA — PENDING            —          —           ○
+```
+
+Board code (all deploy singles): TPNGLK   load ↦ www.sportybet.com/ng/?shareCode=TPNGLK
+
+──────────────────────────────────
+TABLE 2 · LAYER 1 — DEPLOY-ELIGIBLE SINGLES
+(fixtures that clear the deploy threshold, one row each, own code)
+──────────────────────────────────
+
+```
+Fixture                         Pick                   Model%  Deploy at  Code
+Rakow v GKS Katowice            Rakow to win           50%     1.30+      JYV0AP
+Cracovia v Zaglebie             Under 2.5 goals        65%     1.59+      UFZ47J
+Jagiellonia v Gornik Zabrze     Under 2.5 goals        50%     1.33+      TMU2ED
+Piast Gliwice v Widzew Lodz     Under 2.5 goals        61%     1.50+      WC7Q3N
+Pogon Szczecin v Korona Kielce  Under 2.5 goals        57%     1.43+      W95P51
+Radomiak Radom v Motor Lublin   Radomiak Radom to win  53%     1.17+      UAFVQG
+```
+
+──────────────────────────────────
+TABLE 3 · ACCA ROUTE
+(capital-eligible grouped accumulators, own code per acca)
+──────────────────────────────────
+
+Acca A  (4 legs · model 12% · code N5T7XZ)
+   • Cracovia v Zaglebie — Under 2.5 goals (65%)
+   • Piast Gliwice v Widzew Lodz — Under 2.5 goals (61%)
+   • Pogon Szczecin v Korona Kielce — Under 2.5 goals (57%)
+   • Radomiak Radom v Motor Lublin — Radomiak Radom to win (53%)
+
+──────────────────────────────────
+TABLE 4 · THE PICK
+(primary single + Acca A recommendation)
+──────────────────────────────────
+
+Primary single: Cracovia v Zaglebie — Under 2.5 goals (65%) · code UFZ47J
+Acca A: 4 legs, model 12% · code N5T7XZ
+
+==================================
+Honest edge: not a demonstrated edge · Capital: Architect only.
+Calibration: 9 legs logged, mean CLV +1.66%.
+Booking codes: live SportyBet share codes — load a code on SportyBet to see the slip. Nothing is placed; the Architect deploys.
+==================================
+
+(The saved board file on GitHub also appends VERIFY RESULTS and the full HR53
+per-fixture audit — MES, Elo second opinion, divergence flags — below this.)
