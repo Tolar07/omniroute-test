@@ -18,12 +18,16 @@ sys.path.insert(0, str(Path(__file__).parent / "olp_xdv_agent" / "olp_xdv"))
 from brain.store import Brain
 from data.apifootball_client import APIFootballClient
 
-def normalize_team_name(name: str) -> str:
-    """Normalize team name for consistent matching."""
-    if not name:
-        return ""
-    # Basic normalization - in practice would use more sophisticated matching
-    return name.strip().lower()
+try:
+    # Shared normalizer used by the cross-source verifier, so odds fixture keys
+    # line up with verified fixtures (handles aliases, accents, club suffixes).
+    from verification.fixture_matcher import normalize_team_name
+except ImportError:
+    def normalize_team_name(name: str) -> str:
+        """Fallback normalizer if the verification module is unavailable."""
+        if not name:
+            return ""
+        return name.strip().lower()
 
 def main():
     """Main odds collection function."""
