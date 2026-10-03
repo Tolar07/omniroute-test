@@ -12,7 +12,7 @@
 - `[[Decisions Log.md]]` — Dated Architect directives (backfilled + 4× 11-Aug-2026)
 - `[[Protected Constants.md]]` — Off-limits: `ARCHITECT_SIGNOFF`, CLV gate, capital deployment
 - `[[Agents.md]]` — 16 project agents (7 chusri + 9 plugin) with model/tools
-- `[[Architecture.md]]` — Pipeline: SCAN → trigger production → publish, CLV loop, admin dash
+- `[[Architecture.md]]` — Pipeline: SCAN → trigger → publish, CLV loop, admin dash
 - `[[Open Questions.md]]` — Unresolved items needing explicit Architect answer
 - `[[Loops.md]]` — Recurring pipeline loops
 - `[[README.md]]` — Vault overview
@@ -40,7 +40,7 @@
 - `[[sports-data-skills.md]]` — machina-sports skills (4 skills in .claude/skills/)
 - `[[claude-code-action.md]]` — anthropics/claude-code-action cloned at workspace root
 - `[[always-check-date.md]]` — Always verify the real current date at session start / before date-sensitive work
-- `[[api-football-integration.md]]` — API-Football client integration for enhanced fixture discovery
+- `[[session-sync-2026-09-13.md]]` — Ran vault-memory sync on 2026-09-13; observed uncommitted changes
 
 ## Retired Mirror (Deprecated 2026-08-18)
 **Location:** `Documents/OLP_XDV_Vault/` — **NOT authoritative, non-git, READ-ONLY**

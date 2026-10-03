@@ -1,17 +1,7 @@
 #!/bin/bash
-# Script to automatically renew the 10PM OLP XDV automation
-
-# Check if the automation job exists
-if claude cron list | grep -q "11e49215"; then
-    echo "Automation job 11e49215 exists - checking age"
-    # Get job details to check age (this might need adjustment based on actual output format)
-    # For now, we'll just recreate it every time to be safe
-    echo "Recreating automation job..."
-else
-    echo "Automation job not found - creating new one"
-fi
-
-# Create/renew the automation job (10PM daily)
-claude cron create --cron "0 22 * * *" --prompt "cd olp_xdv_agent/olp_xdv && python run_daily.py" --durable true
-
-echo "Automation renewed successfully"
+# RETIRED 2026-10-03: the laptop nightly loop is retired. The OLP XDV board
+# runs only in GitHub Actions (Tolar07/framework .github/workflows/daily.yml).
+# This script used to run run_daily.py and (re)create the 10pm `claude cron`
+# job; doing either now would produce a duplicate board. See docs/STATE.md.
+echo "OLP XDV laptop scheduler is retired; the daily board runs in GitHub Actions (daily.yml). Nothing to do."
+exit 0

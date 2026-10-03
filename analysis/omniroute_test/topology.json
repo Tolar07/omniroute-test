@@ -1,0 +1,388 @@
+{
+  "system": "OLP XDV Agent",
+  "root": {
+    "id": "sys",
+    "name": "OLP XDV Agent",
+    "kind": "system",
+    "children": [
+      {
+        "id": "dom:data_ingestion",
+        "name": "Data Ingestion",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "module:fixtures_agent",
+            "name": "Fixtures Agent",
+            "kind": "module",
+            "language": "python",
+            "loc": 1234,
+            "file": "olp_xdv_agent/olp_xdv/fixtures_agent.py"
+          },
+          {
+            "id": "module:data_espn",
+            "name": "ESPN Data Source",
+            "kind": "module",
+            "language": "python",
+            "loc": 567,
+            "file": "olp_xdv_agent/olp_xdv/data/espn_source.py"
+          },
+          {
+            "id": "module:data_api_football",
+            "name": "API-Football Data Source",
+            "kind": "module",
+            "language": "python",
+            "loc": 345,
+            "file": "olp_xdv_agent/olp_xdv/data/api_football_*.py"
+          }
+        ]
+      },
+      {
+        "id": "dom:validation_whitelist",
+        "name": "Validation & Whitelist",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "module:config_leagues",
+            "name": "League Configuration",
+            "kind": "module",
+            "language": "json",
+            "loc": 120,
+            "file": "olp_xdv_agent/olp_xdv/config/leagues.json"
+          },
+          {
+            "id": "module:fixtures_validation",
+            "name": "Fixture Validation",
+            "kind": "module",
+            "language": "python",
+            "loc": 890,
+            "file": "olp_xdv_agent/olp_xdv/fixtures_agent.py"
+          }
+        ]
+      },
+      {
+        "id": "dom:verification_enrichment",
+        "name": "Verification & Enrichment",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "module:verification_core",
+            "name": "Verification Core",
+            "kind": "module",
+            "language": "python",
+            "loc": 456,
+            "file": "olp_xdv_agent/olp_xdv/fixtures_agent.py"
+          },
+          {
+            "id": "module:consensus_engine",
+            "name": "Consensus Engine",
+            "kind": "module",
+            "language": "python",
+            "loc": 789,
+            "file": "olp_xdv_agent/olp_xdv/engine/consensus.py"
+          }
+        ]
+      },
+      {
+        "id": "dom:logic_core",
+        "name": "Logic Core",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "module:logic_pipeline",
+            "name": "Pipeline",
+            "kind": "module",
+            "language": "python",
+            "loc": 2345,
+            "file": "olp_xdv_agent/olp_xdv/olp_xdv_pipeline.py"
+          },
+          {
+            "id": "module:dixon_coles",
+            "name": "Dixon-Coles Model",
+            "kind": "module",
+            "language": "python",
+            "loc": 456,
+            "file": "olp_xdv_agent/olp_xdv/engine/dixon_coles.py"
+          },
+          {
+            "id": "module:elo_model",
+            "name": "Elo Model",
+            "kind": "module",
+            "language": "python",
+            "loc": 345,
+            "file": "olp_xdv_agent/olp_xdv/engine/elo.py"
+          }
+        ]
+      },
+      {
+        "id": "dom:odds_compliance",
+        "name": "Odds & Compliance",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "module:closing_capture",
+            "name": "Closing Capture",
+            "kind": "module",
+            "language": "python",
+            "loc": 987,
+            "file": "olp_xdv_agent/olp_xdv/clv/closing_capture.py"
+          },
+          {
+            "id": "module:compliance_engine",
+            "name": "Compliance Engine",
+            "kind": "module",
+            "language": "python",
+            "loc": 678,
+            "file": "olp_xdv_agent/olp_xdv/engine/consensus.py"
+          }
+        ]
+      },
+      {
+        "id": "dom:execution_orchestration",
+        "name": "Execution & Orchestration",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "module:bet_generation",
+            "name": "Bet Generation",
+            "kind": "module",
+            "language": "python",
+            "loc": 1234,
+            "file": "olp_xdv_agent/olp_xdv/bets/produced_bet.py"
+          },
+          {
+            "id": "module:orchestrator",
+            "name": "Orchestrator",
+            "kind": "module",
+            "language": "python",
+            "loc": 1567,
+            "file": "olp_xdv_agent/olp_xdv/olp_xdv_pipeline.py"
+          },
+          {
+            "id": "module:agent_cli",
+            "name": "CLI Entry",
+            "kind": "module",
+            "language": "python",
+            "loc": 567,
+            "file": "olp_xdv_agent/olp_xdv/agent_cli.py"
+          },
+          {
+            "id": "module:output_services",
+            "name": "Output Services",
+            "kind": "module",
+            "language": "python",
+            "loc": 987,
+            "file": "olp_xdv_agent/olp_xdv/output/telegram_webhook.py"
+          }
+        ]
+      },
+      {
+        "id": "dom:data_stores",
+        "name": "Data Stores",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "ds:sqlite_brain",
+            "name": "SQLite Database",
+            "kind": "datastore",
+            "file": "olp_xdv_agent/olp_xdv/brain/store.py"
+          },
+          {
+            "id": "ds:csv_season_data",
+            "name": "Season CSV Data",
+            "kind": "datastore",
+            "file": "olp_xdv_agent/olp_xdv/data/*.csv"
+          },
+          {
+            "id": "ds:json_config",
+            "name": "JSON Configuration",
+            "kind": "datastore",
+            "file": "olp_xdv_agent/olp_xdv/config/*.json"
+          }
+        ]
+      },
+      {
+        "id": "dom:output_services",
+        "name": "Output Services",
+        "kind": "domain",
+        "children": [
+          {
+            "id": "module:telegram_output",
+            "name": "Telegram Output",
+            "kind": "module",
+            "language": "python",
+            "loc": 890,
+            "file": "olp_xdv_agent/olp_xdv/output/telegram_webhook.py"
+          },
+          {
+            "id": "module:email_output",
+            "name": "Email Output",
+            "kind": "module",
+            "language": "python",
+            "loc": 456,
+            "file": "olp_xdv_agent/olp_xdv/output/email_deliver.py"
+          },
+          {
+            "id": "module:whatsapp_output",
+            "name": "WhatsApp Output",
+            "kind": "module",
+            "language": "python",
+            "loc": 789,
+            "file": "olp_xdv_agent/olp_xdv/output/whatsapp_deliver.py"
+          }
+        ]
+      }
+    ]
+  },
+  "edges": [
+    {
+      "source": "dom:data_ingestion",
+      "target": "dom:data_stores",
+      "kind": "uses"
+    },
+    {
+      "source": "dom:validation_whitelist",
+      "target": "dom:data_ingestion",
+      "kind": "depends_on"
+    },
+    {
+      "source": "dom:verification_enrichment",
+      "target": "dom:data_ingestion",
+      "kind": "uses"
+    },
+    {
+      "source": "dom:logic_core",
+      "target": "dom:verification_enrichment",
+      "kind": "uses"
+    },
+    {
+      "source": "dom:odds_compliance",
+      "target": "dom:logic_core",
+      "kind": "uses"
+    },
+    {
+      "source": "dom:execution_orchestration",
+      "target": "dom:odds_compliance",
+      "kind": "uses"
+    },
+    {
+      "source": "dom:data_stores",
+      "target": "dom:logic_core",
+      "kind": "uses"
+    },
+    {
+      "source": "dom:execution_orchestration",
+      "target": "dom:data_stores",
+      "kind": "uses"
+    },
+    {
+      "source": "dom:data_ingestion",
+      "target": "dom:verification_enrichment",
+      "kind": "feeds"
+    },
+    {
+      "source": "dom:verification_enrichment",
+      "target": "dom:logic_core",
+      "kind": "feeds"
+    },
+    {
+      "source": "dom:logic_core",
+      "target": "dom:odds_compliance",
+      "kind": "feeds"
+    },
+    {
+      "source": "dom:odds_compliance",
+      "target": "dom:execution_orchestration",
+      "kind": "feeds"
+    }
+  ],
+  "entryPoints": [
+    "olp_xdv_pipeline.py (main runner)",
+    "agent_cli.py (CLI entry)"
+  ],
+  "deadEnds": [
+    "olp_xdv_agent/olp_xdv/backtest/results/report_2425_model_0b5b530d4a45.txt",
+    "olp_xdv_agent/olp_xdv/backtest/cache/models/Eredivisie_*.json"
+  ],
+  "observations": [
+    "The system shows clear separation of concerns across 6 domains",
+    "Data flows from ingestion through verification to logic core to compliance and finally to execution",
+    "The CLV gate in the closing_capture module represents a critical decision point",
+    "The system shows high coupling between the pipeline and the logic core modules",
+    "The backtest cache contains stale model versions that may be dead code"
+  ],
+  "flows": [
+    {
+      "name": "Daily Pipeline Execution",
+      "persona": "System Scheduler",
+      "description": "Daily automated execution of the betting pipeline",
+      "steps": [
+        {
+          "label": "Pipeline Initiation",
+          "nodes": ["olp_xdv_pipeline.py (main runner)"]
+        },
+        {
+          "label": "Data Ingestion",
+          "nodes": ["fixtures_agent.py", "data/cache/*.csv"]
+        },
+        {
+          "label": "Validation & Enrichment",
+          "nodes": ["fixtures_agent.py", "data/validation.py"]
+        },
+        {
+          "label": "Logic Core Processing",
+          "nodes": ["olp_xdv_pipeline.py", "engine/consensus.py", "engine/dixon_coles.py"]
+        },
+        {
+          "label": "Odds & Compliance",
+          "nodes": ["clv/closing_capture.py", "engine/consensus.py"]
+        },
+        {
+          "label": "Output Generation",
+          "nodes": ["olp_xdv_pipeline.py", "bets/produced_bet.py", "output/telegram_webhook.py"]
+        }
+      ]
+    },
+    {
+      "name": "Claimant Workflow",
+      "persona": "Claimant",
+      "description": "A customer files a sports betting prediction",
+      "steps": [
+        {
+          "label": "Claim Submission",
+          "nodes": ["webapp/render_v2.py"]
+        },
+        {
+          "label": "Data Processing",
+          "nodes": ["fixtures_agent.py", "data/espn_source.py"]
+        },
+        {
+          "label": "Odds Calculation",
+          "nodes": ["engine/consensus.py", "engine/elo.py"]
+        },
+        {
+          "label": "Bet Generation",
+          "nodes": ["olp_xdv_pipeline.py", "bets/produced_bet.py"]
+        },
+        {
+          "label": "Delivery",
+          "nodes": ["output/telegram_webhook.py"]
+        }
+      ]
+    },
+    {
+      "name": "Admin Dashboard Access",
+      "persona": "Administrator",
+      "description": "Administrator accesses the admin dashboard",
+      "steps": [
+        {
+          "label": "Login",
+          "nodes": ["olp_xdv_agent/olp_xdv/agent_cli.py"]
+        },
+        {
+          "label": "Dashboard Access",
+          "nodes": ["output/telegram_webhook.py", "output/email_deliver.py"]
+        }
+      ]
+    }
+  ]
+}

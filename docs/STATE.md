@@ -15,6 +15,12 @@
 - 2026-08-20 17:03: BUG-20260819-003 (Agent 3→4 latency) resolved — preload imports in `olp_xdv_pipeline.py`
 - 2026-08-20 17:03: Commit `fc97790` — fix: SPL referee PARTIAL acceptance + Agent 3→4 latency fix
 
+- 2026-10-03: **All OLP XDV copies merged into one line** — Tolar07/framework PR #47 (`claude/unify-lineages`): cloud `main` + laptop `elo-persistence` (incl. this workspace's old `93c9337`) + PR #1 + PR #6 + `olpxdv_framework/` (now `legacy/olpxdv_framework/` in the framework repo, removed from this root). Main's code wins every shared file; details in `docs/LINEAGE_MERGE_2026-10-03.md` in that repo.
+- 2026-10-03: Submodule `olp_xdv_agent/olp_xdv` → `d435f2d` (framework `main` after PR #47 merged 2026-10-03; laptop test suite red until laptop features are ported in follow-up PRs).
+- 2026-10-03: **Laptop nightly loop retired** — `run_daily.bat` now logs a line and exits 0; the board runs only in GitHub Actions `daily.yml`. Disable the "OLP XDV" Windows scheduled task when convenient.
+- 2026-10-03: **omniroute-test branches consolidated** onto `claude/eloquent-noether-8b69az`: `fix/pipeline-restore-and-fixture-verification`, `claude/charming-allen-fzjxwr`, `claude/zen-cerf-o0b7b7`, `ccr-51c326b5-vl6yc2` (submodule kept at framework `main` `d435f2d`); `claude/fix-scheduler-path` recorded as superseded. `.claude/scheduled_tasks.json` is empty, and `scripts/daily_olp_xdv_runner.sh` + `scripts/renew_automation.sh` now log and exit 0 so nothing re-creates the laptop 10pm job.
+- 2026-10-03: Windows task **"OLP XDV Daily Board"** (`run_daily.bat`, 22:00) **disabled** on the laptop. Other OLP XDV tasks (result verification, hourly fixture check, SportyBet cache refresh, closing-line capture, FlashScore scraper, live-safe monitor, auto-sync, team-name audit, match analysis, MCP watchdog) stay on: they maintain local data and do not build or send the board.
+
 ## Shared Notes & Alerts
 
 - Multi-session auto-synchronization enabled via CLAUDE.md.

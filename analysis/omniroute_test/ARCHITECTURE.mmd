@@ -1,0 +1,52 @@
+graph TD
+    subgraph Data_Ingestion [Domain1: Data Ingestion]
+        A1[fixtures_agent.py] --> A2[data/espn_source.py]
+        A1 --> A3[data/api_football_*.py]
+        A1 --> A4[data/live_odds/flashscore_odds_*.jsonl]
+        A1 --> A5[data/cache/*.csv]
+    end
+    subgraph Validation [Domain2: Validation & Whitelist]
+        B1[config/leagues.json] --> B2[fixtures_agent.py (load_whitelist, check_league_calendar, verify_league_fixture)]
+        B2 --> B3[engine/league_registry.py]
+    end
+    subgraph Verification [Domain3: Verification & Enrichment]
+        C1[fixtures_agent.py (_apply_verification)] --> C2[data/validation.py]
+        C1 --> C3[engine/consensus.py]
+        C1 --> C4[engine/elo.py]
+    end
+    subgraph Logic_Core [Domain4: Logic Core (Red/Blue & Leg Generation)]
+        D1[olp_xdv_pipeline.py (agent_5_ceo)] --> D2[engine/consensus.py]
+        D1 --> D3[engine/dixon_coles.py]
+        D1 --> D3b[engine/elo.py]
+        D1 --> D4[engine/league_registry.py]
+        D1 --> D5[engine/recalibration.py]
+    end
+    subgraph Odds_Compliance [Domain5: Odds & Compliance]
+        E1[clv/closing_capture.py] --> E2[engine/consensus.py]
+        E1 --> E3[engine/elo.py]
+        E1 --> E4[data/api_football_odds.py]
+        E1 --> E5[booking/bridge.py]
+        E1 --> E6[brain/gate.json (GATE_FILE)]
+    end
+    subgraph Execution_Orchestration [Domain 6: Execution & Orchestration]
+        F1[bets/produced_bet.py] --> F2[booking/bridge.py]
+        F1 --> F3[engine/elo.py]
+        F1 --> F4[engine/consensus.py]
+        F5[olp_xdv_pipeline.py (main runner)] --> F5a[agent_cli.py]
+        F5 --> F5b[output/telegram_webhook.py]
+        F5 --> F5c[output/email_deliver.py]
+        F5 --> F5d[output/whatsapp_deliver.py]
+        F5 --> F5e[output/render_board_from_pipeline]
+    end
+    %% Dependencies between domains
+    A1 --> B2
+    B2 --> C1
+    C1 --> D1
+    D1 --> E1
+    E1 --> F1
+    F5 --> A1
+    F5 --> B2
+    F5 --> C1
+    F5 --> D1
+    F5 --> E1
+    F5 --> F1
