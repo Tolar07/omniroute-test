@@ -19,12 +19,12 @@
 
 | Path | Purpose |
 |------|---------|
-| `olp_xdv_agent/olp_xdv/` | Main OLP XDV agent repo (submodule) |
+| `olp_xdv_agent/olp_xdv/` | **The framework** — Tolar07/framework `main` (submodule), the one live OLP XDV, run by GitHub Actions. Its own `CLAUDE.md` and `STANDING_ORDERS.md` govern it |
 | `olp_xdv_agent/olp_xdv/docs/obsidian-vault/` | Canonical vault — **git-tracked, authoritative** |
 | `.claude/` | Claude Code config, skills, agents, hooks |
 | `.claude/projects/.../memory/` | Persistent agent memory across sessions |
 | `scripts/` | Utility scripts (sync, retire, etc.) |
-| `data/` | Runtime data, databases |
+| `legacy/workspace/` | Parked laptop-era pipeline copies, outputs and reports (2026-10-03) — never run |
 | `closing_edge/` | Closing Edge module |
 | `sports-skills/` | Sports data skills |
 | `graphify/` | Graph visualization tool |
@@ -132,7 +132,7 @@ From `[[Protected Constants.md]]`:
 
 ### Session End
 1. Run vault-memory sync
-2. Commit all changes: `git add -A && git commit -m "..."`
+2. Commit with explicit paths: `git add <paths> && git commit -m "..."` (the commit guard blocks `git add -A`)
 3. Update `docs/STATE.md` with recent changes
 
 ### Making Changes
@@ -152,14 +152,14 @@ node scripts/vault-memory-sync.js
 # Check git status
 git status && git log --oneline -5
 
-# Commit (sweeps staged from other sessions)
-git add -A && git commit -m "descriptive message"
+# Commit explicit paths only (git add -A is blocked by the commit guard)
+git add <paths> && git commit -m "descriptive message"
 
-# Run OLP XDV agent
-cd olp_xdv_agent/olp_xdv && python -m olp_xdv
+# Build a board without sending it (the framework; live runs are GitHub Actions)
+cd olp_xdv_agent/olp_xdv && python run_daily.py --no-send --only-production --target-date <YYYY-MM-DD>
 
-# Run tests
-cd olp_xdv_agent/olp_xdv && pytest
+# Run the framework's tests
+cd olp_xdv_agent/olp_xdv && python tests/run_all.py
 ```
 
 ---
