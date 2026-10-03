@@ -16,7 +16,7 @@
 - 2026-08-20 17:03: Commit `fc97790` — fix: SPL referee PARTIAL acceptance + Agent 3→4 latency fix
 
 - 2026-10-03: **All OLP XDV copies merged into one line** — Tolar07/framework PR #47 (`claude/unify-lineages`): cloud `main` + laptop `elo-persistence` (incl. this workspace's old `93c9337`) + PR #1 + PR #6 + `olpxdv_framework/` (now `legacy/olpxdv_framework/` in the framework repo, removed from this root). Main's code wins every shared file; details in `docs/LINEAGE_MERGE_2026-10-03.md` in that repo.
-- 2026-10-03: Submodule `olp_xdv_agent/olp_xdv` → `4d76a7e` (PR #47 head, not yet merged to framework `main`).
+- 2026-10-03: Submodule `olp_xdv_agent/olp_xdv` → `d435f2d` (framework `main` after PR #47 merged 2026-10-03; laptop test suite red until laptop features are ported in follow-up PRs).
 - 2026-10-03: **Laptop nightly loop retired** — `run_daily.bat` now logs a line and exits 0; the board runs only in GitHub Actions `daily.yml`. Disable the "OLP XDV" Windows scheduled task when convenient.
 
 ## Shared Notes & Alerts
