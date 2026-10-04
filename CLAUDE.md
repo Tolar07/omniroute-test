@@ -34,11 +34,15 @@
 
 ## Read First — The Framework's Own Documents
 
-Every session starts with these three, all in `olp_xdv_agent/olp_xdv/`:
+Every session starts with these four, all in `olp_xdv_agent/olp_xdv/`:
 
 1. `CLAUDE.md` — the live loop, what each piece protects, the hard rules.
 2. `STANDING_ORDERS.md` — the Architect's standing rules (test-enforced).
 3. The CURRENT STATE block at the top of `docs/obsidian-vault/STATE.md`.
+4. `MAP.md` — where everything is kept: the framework, its git history,
+   THIS workspace (what in it matters and what is junk), the laptop,
+   secrets and Routines. Look things up there before asking the Architect
+   where something is; add anything you find that isn't listed.
 
 ## Canonical Vault — The Record
 
@@ -100,8 +104,10 @@ All unique content migrated to canonical vault. Remaining files are read-only re
 
 ## Two-Way Sync
 
-**Active:** `vault-memory-sync.js` (bidirectional sync between canonical vault ↔ agent memory)  
-**Enforced:** SessionStart/SessionEnd hooks enforce HR54 compliance on both stores
+Laptop only: `vault-memory-sync.js` syncs the vault with the laptop's agent
+memory through SessionStart/SessionEnd hooks. Nothing enforces it in the
+cloud: the framework's `sync-health.yml` is manual and points at a folder
+that isn't in that repo, and HR54 is not in the `Rules.md` register.
 
 ---
 
