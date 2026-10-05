@@ -1,0 +1,397 @@
+##########OLP XDV · BET365#########
+==================================
+
+📅  Mon 05 Oct 2026 — bet365 board (sent to you only)
+Run ID: OLPXDV-20261005-1314-5eac90 (same run as the SportyBet board)
+Times are kickoff, Lagos time (WAT)
+
+Same fixtures, model and checks as the SportyBet board; each pick is limited to bets bet365 offers.
+• No booking codes on bet365 — find each match by country → league → match.
+• DEPLOY AT = the lowest bet365 price worth taking (break-even for the chance, never below 1.20). Below it, skip the bet. SportyBet's price is shown for reference.
+• ≠ = not the SportyBet pick (bet365 doesn't offer that one).
+⚠ bet365 market NAMES are a DRAFT — check them against your bet365 app and tell Claude any that read differently there.
+
+──────────────────────────────────
+bet365 SINGLES
+──────────────────────────────────
+
+🇵🇱 Poland · Ekstraklasa
+ • 19:15 Legia v Wisla — Goals Over/Under: Under 4.5
+   82% · deploy at 1.22+ · SportyBet @1.20 · MEDIUM
+ • 16:30 Pogon Szczecin v Korona Kielce — Team Goals: Pogon Szczecin Under 2.5
+   82% · deploy at 1.23+ · SportyBet @1.21 · MEDIUM
+ • 17:00 Wieczysta Krakow v Wisla Plock — Goals Over/Under: Over 1.5
+   79% · deploy at 1.27+ · SportyBet @1.20 · HIGH
+ • 16:30 Slask Wroclaw v Lech Poznan — Double Chance: Slask Wroclaw or Lech Poznan
+   78% · deploy at 1.29+ · SportyBet @1.21 · MEDIUM
+ • 19:30 Rakow v GKS Katowice — Asian Handicap: GKS Katowice +1.5
+   78% · deploy at 1.29+ · SportyBet @1.25 · MEDIUM
+ • 17:00 Radomiak Radom v Motor Lublin — Team Goals: Motor Lublin Over 0.5
+   77% · deploy at 1.30+ · SportyBet @1.21 · HIGH
+ • 19:15 Jagiellonia v Gornik Zabrze — Goals Over/Under: Over 1.5
+   77% · deploy at 1.31+ · SportyBet @1.22 · HIGH
+ • 13:45 Piast Gliwice v Widzew Lodz — Team Goals: Piast Gliwice Over 0.5
+   76% · deploy at 1.33+ · SportyBet @1.26 · HIGH
+ • 13:45 Cracovia v Zaglebie — Team Goals: Zaglebie Under 1.5
+   72% · deploy at 1.40+ · SportyBet @1.33 · HIGH
+
+🇪🇸 Spain · La Liga 2 / Hypermotion
+ • 17:30 Eldense v Cordoba — Team Goals: Cordoba Under 2.5
+   82% · deploy at 1.22+ · SportyBet @1.20 · MEDIUM
+ • 17:30 Oviedo v Eibar — Goals Over/Under: Under 3.5
+   81% · deploy at 1.24+ · SportyBet @1.20 · MEDIUM
+ • 13:00 Andorra v Castellon — Goals Over/Under: Under 4.5
+   81% · deploy at 1.24+ · SportyBet @1.22 · HIGH
+ • 20:00 Celta B v Sociedad B — Goals Over/Under: Over 1.5
+   80% · deploy at 1.26+ · SportyBet @1.21 · MEDIUM
+ • 15:15 Ceuta v Sabadell — Asian Handicap: Ceuta +1.5
+   79% · deploy at 1.28+ · SportyBet @1.22 · HIGH
+ • 15:15 Almeria v Leganes — Double Chance: Almeria or Leganes
+   78% · deploy at 1.28+ · SportyBet @1.22 · HIGH
+ • 20:00 Tenerife v Girona — Goals Over/Under: Under 3.5
+   77% · deploy at 1.31+ · SportyBet @1.22 · MEDIUM
+ • 20:00 Cadiz v Sp Gijon — ≠ Goals Over/Under: Under 3.5
+   77% · deploy at 1.31+ · SportyBet @1.27 · HIGH
+   (SportyBet pick: Cadiz Win to Nil — no — not on bet365)
+ • 19:30 Cordoba v Tenerife — Goals Over/Under: Over 1.5
+   76% · deploy at 1.32+ · SportyBet @1.26 · HIGH
+ • 13:00 Valladolid v Albacete — Double Chance: Valladolid or Albacete
+   74% · deploy at 1.36+ · SportyBet @1.30 · MEDIUM
+ • 15:15 Burgos v Granada — Double Chance: Burgos or Granada
+   73% · deploy at 1.37+ · SportyBet @1.30 · HIGH
+ • 17:30 Mallorca v Las Palmas — Multigoals: 1-3
+   66% · deploy at 1.52+ · SportyBet @1.26 · MEDIUM
+
+🇮🇹 Italy · Serie B
+ • 18:30 Modena v Hellas Verona — Team Goals: Modena Over 0.5
+   79% · deploy at 1.28+ · SportyBet @1.22 · MEDIUM
+ • 14:00 Empoli v Palermo — Team Goals: Palermo Under 2.5
+   78% · deploy at 1.28+ · SportyBet @1.25 · MEDIUM
+ • 14:00 Sudtirol v Ascoli Calcio 1898 — ≠ Goals Over/Under: Under 3.5
+   78% · deploy at 1.28+ · SportyBet @1.29 · LOW
+   (SportyBet pick: Sudtirol Win to Nil — no — not on bet365)
+ • 16:15 Padova v Carrarese — Asian Handicap: Carrarese +1.5
+   76% · deploy at 1.32+ · SportyBet @1.29 · MEDIUM
+ • 16:15 L.R. Vicenza v SC Pisa — Double Chance: L.R. Vicenza or SC Pisa
+   75% · deploy at 1.33+ · SportyBet @1.30 · MEDIUM
+ • 14:00 Catanzaro v Mantova — Double Chance: Catanzaro or Mantova
+   75% · deploy at 1.33+ · SportyBet @1.29 · HIGH
+ • 14:00 Benevento Calcio v Cesena — Double Chance: Benevento Calcio or Cesena
+   75% · deploy at 1.33+ · SportyBet @1.28 · HIGH
+ • 18:30 SS Arezzo v Cremonese — Double Chance: SS Arezzo or Cremonese
+   74% · deploy at 1.36+ · SportyBet @1.33 · MEDIUM
+ • 14:00 Virtus Entella v Juve Stabia — Team Goals: Juve Stabia Under 1.5
+   73% · deploy at 1.37+ · SportyBet @1.31 · MEDIUM
+ • 19:30 Avellino v Sampdoria — Double Chance: Avellino or Sampdoria
+   72% · deploy at 1.39+ · SportyBet @1.31 · MEDIUM
+
+🇩🇪 Germany · 2. Bundesliga
+ • 17:30 Braunschweig v Holstein Kiel — Asian Handicap: Braunschweig +1.5
+   81% · deploy at 1.23+ · SportyBet @1.20 · MEDIUM
+ • 19:30 Nurnberg v Wolfsburg — Asian Handicap: Wolfsburg +1.5
+   81% · deploy at 1.24+ · SportyBet @1.20 · HIGH
+ • 12:00 Magdeburg v Hannover — Asian Handicap: Magdeburg +1.5
+   80% · deploy at 1.25+ · SportyBet @1.21 · HIGH
+ • 12:30 Hertha v Greuther Furth — Asian Handicap: Greuther Furth +2.5
+   80% · deploy at 1.26+ · SportyBet @1.21 · HIGH
+ • 12:00 VfL 1899 Osnabruck v Dresden — Team Goals: VfL 1899 Osnabruck Over 0.5
+   79% · deploy at 1.26+ · SportyBet @1.21 · MEDIUM
+ • 12:30 Bochum v Bielefeld — Asian Handicap: Bielefeld +1.5
+   79% · deploy at 1.28+ · SportyBet @1.21 · HIGH
+ • 12:30 FC St. Pauli v Karlsruhe — Double Chance: FC St. Pauli or Karlsruhe
+   78% · deploy at 1.28+ · SportyBet @1.22 · HIGH
+ • 12:00 Darmstadt v Energie Cottbus — Double Chance: Darmstadt or Energie Cottbus
+   78% · deploy at 1.28+ · SportyBet @1.25 · HIGH
+ • 17:30 Heidenheim v Kaiserslautern — Double Chance: Heidenheim or Kaiserslautern
+   77% · deploy at 1.30+ · SportyBet @1.27 · HIGH
+
+🇫🇷 France · Ligue 2
+ • 19:00 Dunkerque v Annecy — Asian Handicap: Annecy +1.5
+   80% · deploy at 1.25+ · SportyBet @1.21 · MEDIUM
+ • 13:00 Nantes v Reims — Asian Handicap: Reims +1.5
+   79% · deploy at 1.28+ · SportyBet @1.22 · LOW
+ • 13:00 Clermont v Red Star — Asian Handicap: Clermont +1.5
+   79% · deploy at 1.28+ · SportyBet @1.23 · MEDIUM
+ • 19:00 Pau FC v Laval — Team Goals: Pau FC Over 0.5
+   78% · deploy at 1.29+ · SportyBet @1.23 · MEDIUM
+ • 19:45 Dijon v Metz — Team Goals: Metz Over 0.5
+   77% · deploy at 1.30+ · SportyBet @1.22 · HIGH
+ • 19:00 Nancy v Guingamp — Goals Over/Under: Over 1.5
+   77% · deploy at 1.31+ · SportyBet @1.22 · HIGH
+ • 19:00 St Etienne v Rodez — Handicap Result: Rodez +3
+   76% · deploy at 1.32+ · SportyBet @1.33 · HIGH
+ • 19:00 Montpellier v Grenoble — Double Chance & Goals: Montpellier or Draw & Under 4.5
+   74% · deploy at 1.36+ · SportyBet @1.26 · MEDIUM
+ • 19:00 Sochaux-Montbeliard v Boulogne — Handicap Result: Sochaux-Montbeliard +1
+   73% · deploy at 1.38+ · SportyBet @1.31 · MEDIUM
+
+🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One
+ • 12:30 Plymouth v AFC Wimbledon — Asian Handicap: AFC Wimbledon +2.5
+   81% · deploy at 1.24+ · SportyBet @1.20 · HIGH
+ • 15:00 Milton Keynes Dons v Reading — Asian Handicap: Milton Keynes Dons +1.5
+   79% · deploy at 1.27+ · SportyBet @1.21 · HIGH
+ • 15:00 Stockport County FC v Barnsley — Team Goals: Stockport County FC Under 3.5
+   79% · deploy at 1.27+ · SportyBet @1.24 · HIGH
+ • 15:00 Leicester v Peterborough United — Double Chance: Leicester or Peterborough United
+   79% · deploy at 1.28+ · SportyBet @1.20 · MEDIUM
+ • 15:00 Cambridge United v Blackpool FC — Goals Over/Under: Over 1.5
+   79% · deploy at 1.28+ · SportyBet @1.22 · HIGH
+ • 15:00 Stevenage FC v Wigan — Asian Handicap: Wigan +1.5
+   78% · deploy at 1.28+ · SportyBet @1.22 · HIGH
+ • 15:00 Mansfield v Bromley FC — Double Chance: Mansfield or Bromley FC
+   78% · deploy at 1.29+ · SportyBet @1.24 · LOW
+ • 15:00 Huddersfield v Sheffield Wednesday — Double Chance: Huddersfield or Sheffield Wednesday
+   76% · deploy at 1.32+ · SportyBet @1.25 · MEDIUM
+ • 15:00 Doncaster Rovers v Burton — Double Chance: Doncaster Rovers or Burton
+   76% · deploy at 1.33+ · SportyBet @1.24 · MEDIUM
+ • 15:00 Wycombe Wanderers v Luton — Double Chance: Wycombe Wanderers or Luton
+   76% · deploy at 1.33+ · SportyBet @1.29 · HIGH
+ • 15:00 Bradford v Leyton Orient — Double Chance: Bradford or Leyton Orient
+   75% · deploy at 1.34+ · SportyBet @1.26 · HIGH
+ • 12:30 Notts County v Oxford United — Double Chance: Notts County or Oxford United
+   75% · deploy at 1.34+ · SportyBet @1.30 · HIGH
+
+🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two
+ • 15:00 Shrewsbury v Exeter — ≠ Goals Over/Under: Under 3.5
+   82% · deploy at 1.23+ · SportyBet @1.26 · LOW
+   (SportyBet pick: Shrewsbury Win to Nil — no — not on bet365)
+ • 15:00 Tranmere v Rochdale — Team Goals: Tranmere Under 2.5
+   81% · deploy at 1.23+ · SportyBet @1.20 · MEDIUM
+ • 15:00 Fleetwood Town v Walsall — Asian Handicap: Walsall +1.5
+   80% · deploy at 1.26+ · SportyBet @1.22 · MEDIUM
+ • 15:00 Rotherham v Gillingham — Team Goals: Rotherham Over 0.5
+   79% · deploy at 1.26+ · SportyBet @1.20 · HIGH
+ • 15:00 Bristol Rvs v Barnet FC — Handicap Result: Barnet FC +2
+   79% · deploy at 1.27+ · SportyBet @1.23 · MEDIUM
+ • 15:00 York City FC v Northampton — Double Chance: York City FC or Northampton
+   77% · deploy at 1.30+ · SportyBet @1.24 · HIGH
+ • 15:00 Crawley Town v Chesterfield — Double Chance: Crawley Town or Chesterfield
+   77% · deploy at 1.30+ · SportyBet @1.23 · HIGH
+ • 12:30 Oldham v Accrington — Double Chance: Oldham or Accrington
+   77% · deploy at 1.30+ · SportyBet @1.22 · MEDIUM
+ • 15:00 Cheltenham v Salford — Double Chance: Cheltenham or Salford
+   76% · deploy at 1.33+ · SportyBet @1.26 · HIGH
+ • 12:30 Swindon v Crewe — Double Chance: Swindon or Crewe
+   74% · deploy at 1.35+ · SportyBet @1.29 · HIGH
+ • 15:00 Newport County v Colchester United — Double Chance: Newport County or Colchester United
+   74% · deploy at 1.35+ · SportyBet @1.28 · HIGH
+ • 15:00 Port Vale v Grimsby — Double Chance: Port Vale or Grimsby
+   74% · deploy at 1.36+ · SportyBet @1.31 · HIGH
+
+🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League
+ • 15:00 Wealdstone v Yeovil — Goals Over/Under: Under 4.5
+   83% · deploy at 1.21+ · SportyBet @1.20 · HIGH
+ • 15:00 Tamworth v Barrow — Goals Over/Under: Under 4.5
+   80% · deploy at 1.25+ · SportyBet @1.21 · HIGH
+ • 15:00 Worthing v Solihull — Double Chance: Worthing or Solihull
+   79% · deploy at 1.27+ · SportyBet @1.22 · MEDIUM
+ • 19:45 Sutton v Boreham Wood — Double Chance: Sutton or Boreham Wood
+   79% · deploy at 1.27+ · SportyBet @1.23 · MEDIUM
+ • 15:00 Fylde v Scunthorpe United — Double Chance: Fylde or Scunthorpe United
+   78% · deploy at 1.28+ · SportyBet @1.22 · HIGH
+ • 17:30 Forest Green Rovers v Hartlepool — Double Chance: Forest Green Rovers or Hartlepool
+   78% · deploy at 1.28+ · SportyBet @1.21 · HIGH
+ • 15:00 Boston Utd v Southend — Double Chance: Boston Utd or Southend
+   78% · deploy at 1.29+ · SportyBet @1.22 · HIGH
+ • 15:00 Woking v Harrogate — Team Goals: Woking Over 0.5
+   78% · deploy at 1.29+ · SportyBet @1.23 · MEDIUM
+ • 15:00 Halifax v Gateshead — Asian Handicap: Gateshead +2.5
+   78% · deploy at 1.29+ · SportyBet @1.25 · HIGH
+ • 12:30 Carlisle v Kidderminster — Double Chance: Carlisle or Kidderminster
+   77% · deploy at 1.30+ · SportyBet @1.22 · MEDIUM
+ • 12:30 Altrincham v Aldershot — Double Chance: Altrincham or Aldershot
+   76% · deploy at 1.32+ · SportyBet @1.25 · HIGH
+ • 15:00 Hornchurch v Eastleigh — Goals Over/Under: Over 1.5
+   75% · deploy at 1.33+ · SportyBet @1.23 · MEDIUM
+
+🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · FA Cup
+ • 19:45 Atherton Collieries v Trafford FC — Goals Over/Under: Over 1.5
+   81% · deploy at 1.25+ · SportyBet @1.20 · LOW
+ • 19:45 Wingate & Finchley v Bedford Town Football Club — Asian Handicap: Wingate & Finchley +1.5
+   79% · deploy at 1.27+ · SportyBet @1.23 · LOW
+ • 19:45 Halesowen Town FC v Stafford Rangers — Double Chance: Halesowen Town FC or Stafford Rangers
+   78% · deploy at 1.29+ · SportyBet @1.22 · LOW
+ • 19:45 Spalding United v Bury Town FC — Goals Over/Under: Over 1.5
+   77% · deploy at 1.31+ · SportyBet @1.27 · LOW
+ • 19:45 Scarborough Athletic v Macclesfield FC — ≠ Team Goals: Macclesfield FC Over 0.5
+   74% · deploy at 1.36+ · SportyBet @1.31 · LOW
+   (SportyBet pick: Macclesfield FC Win to Nil — no — not on bet365)
+
+🏆 UEFA Nations League
+ • 15:00 Kazakhstan v Faroe Islands — Goals Over/Under: Under 3.5
+   83% · deploy at 1.21+ · SportyBet @1.21 · MEDIUM
+ • 19:45 Albania v San Marino — Handicap Result: San Marino +6
+   82% · deploy at 1.22+ · SportyBet @1.21 · LOW
+ • 19:45 Croatia v Spain — Team Goals: Croatia Under 1.5
+   80% · deploy at 1.25+ · SportyBet @1.20 · HIGH
+ • 19:45 Luxembourg v Bulgaria — Handicap Result: Bulgaria +2
+   80% · deploy at 1.26+ · SportyBet @1.22 · HIGH
+ • 19:45 France v Belgium — Goals Over/Under: Under 4.5
+   80% · deploy at 1.26+ · SportyBet @1.27 · LOW
+ • 19:45 Montenegro v Armenia — Goals Over/Under: Over 1.5
+   79% · deploy at 1.26+ · SportyBet @1.22 · HIGH
+ • 19:45 Scotland v Slovenia — Team Goals: Scotland Over 0.5
+   79% · deploy at 1.27+ · SportyBet @1.25 · MEDIUM
+ • 19:45 Moldova v Slovakia — Asian Handicap: Moldova +2.5
+   78% · deploy at 1.28+ · SportyBet @1.25 · HIGH
+ • 19:45 Italy v Turkey — Goals Over/Under: Under 4.5
+   78% · deploy at 1.28+ · SportyBet @1.25 · HIGH
+ • 19:45 Belarus v Finland — Goals Over/Under: Under 3.5
+   78% · deploy at 1.29+ · SportyBet @1.26 · HIGH
+ • 19:45 Romania v Sweden — Double Chance: Romania or Sweden
+   78% · deploy at 1.29+ · SportyBet @1.25 · HIGH
+ • 17:00 Cyprus v Latvia — Double Chance: Cyprus or Latvia
+   76% · deploy at 1.31+ · SportyBet @1.25 · HIGH
+ • 19:45 Estonia v Iceland — Goals Over/Under: Over 1.5
+   76% · deploy at 1.32+ · SportyBet @1.29 · MEDIUM
+ • 19:45 Bosnia and Herzegovina v Poland — ≠ Goals Over/Under: Over 1.5
+   74% · deploy at 1.35+ · SportyBet @1.28 · HIGH
+   (SportyBet pick: Poland Win to Nil — no — not on bet365)
+ • 19:45 Ukraine v Hungary — Double Chance: Ukraine or Hungary
+   73% · deploy at 1.38+ · SportyBet @1.38 · MEDIUM
+ • 19:45 Switzerland v North Macedonia — Multigoals: 2-5
+   72% · deploy at 1.39+ · SportyBet @1.20 · HIGH
+ • 19:45 England v Czech Republic — Multigoals: 2-5
+   72% · deploy at 1.40+ · SportyBet @1.21 · HIGH
+ • 19:45 Northern Ireland v Georgia — Multigoals: 1-3
+   71% · deploy at 1.42+ · SportyBet @1.22 · MEDIUM
+
+──────────────────────────────────
+bet365 ACCAS
+(build by hand on bet365, strongest legs first)
+──────────────────────────────────
+bet365 Acca A · 5 legs · chance 38% · deploy at 2.66+ combined
+   • Wealdstone v Yeovil (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Goals Over/Under: Under 4.5 (83%)
+   • Kazakhstan v Faroe Islands (🏆 UEFA Nations League) — Goals Over/Under: Under 3.5 (83%)
+   • Albania v San Marino (🏆 UEFA Nations League) — Handicap Result: San Marino +6 (82%)
+   • Legia v Wisla (🇵🇱 Poland · Ekstraklasa) — Goals Over/Under: Under 4.5 (82%)
+   • Eldense v Cordoba (🇪🇸 Spain · La Liga 2 / Hypermotion) — Team Goals: Cordoba Under 2.5 (82%)
+bet365 Acca B · 5 legs · chance 36% · deploy at 2.84+ combined
+   • Shrewsbury v Exeter (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Goals Over/Under: Under 3.5 (82%)
+   • Pogon Szczecin v Korona Kielce (🇵🇱 Poland · Ekstraklasa) — Team Goals: Pogon Szczecin Under 2.5 (82%)
+   • Tranmere v Rochdale (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Team Goals: Tranmere Under 2.5 (81%)
+   • Braunschweig v Holstein Kiel (🇩🇪 Germany · 2. Bundesliga) — Asian Handicap: Braunschweig +1.5 (81%)
+   • Oviedo v Eibar (🇪🇸 Spain · La Liga 2 / Hypermotion) — Goals Over/Under: Under 3.5 (81%)
+bet365 Acca C · 5 legs · chance 34% · deploy at 2.98+ combined
+   • Nurnberg v Wolfsburg (🇩🇪 Germany · 2. Bundesliga) — Asian Handicap: Wolfsburg +1.5 (81%)
+   • Andorra v Castellon (🇪🇸 Spain · La Liga 2 / Hypermotion) — Goals Over/Under: Under 4.5 (81%)
+   • Plymouth v AFC Wimbledon (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Asian Handicap: AFC Wimbledon +2.5 (81%)
+   • Atherton Collieries v Trafford FC (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · FA Cup) — Goals Over/Under: Over 1.5 (81%)
+   • Dunkerque v Annecy (🇫🇷 France · Ligue 2) — Asian Handicap: Annecy +1.5 (80%)
+bet365 Acca D · 5 legs · chance 33% · deploy at 3.10+ combined
+   • Magdeburg v Hannover (🇩🇪 Germany · 2. Bundesliga) — Asian Handicap: Magdeburg +1.5 (80%)
+   • Croatia v Spain (🏆 UEFA Nations League) — Team Goals: Croatia Under 1.5 (80%)
+   • Tamworth v Barrow (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Goals Over/Under: Under 4.5 (80%)
+   • Luxembourg v Bulgaria (🏆 UEFA Nations League) — Handicap Result: Bulgaria +2 (80%)
+   • Fleetwood Town v Walsall (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Asian Handicap: Walsall +1.5 (80%)
+bet365 Acca E · 5 legs · chance 32% · deploy at 3.18+ combined
+   • France v Belgium (🏆 UEFA Nations League) — Goals Over/Under: Under 4.5 (80%)
+   • Celta B v Sociedad B (🇪🇸 Spain · La Liga 2 / Hypermotion) — Goals Over/Under: Over 1.5 (80%)
+   • Hertha v Greuther Furth (🇩🇪 Germany · 2. Bundesliga) — Asian Handicap: Greuther Furth +2.5 (80%)
+   • Montenegro v Armenia (🏆 UEFA Nations League) — Goals Over/Under: Over 1.5 (79%)
+   • VfL 1899 Osnabruck v Dresden (🇩🇪 Germany · 2. Bundesliga) — Team Goals: VfL 1899 Osnabruck Over 0.5 (79%)
+bet365 Acca F · 5 legs · chance 31% · deploy at 3.28+ combined
+   • Rotherham v Gillingham (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Team Goals: Rotherham Over 0.5 (79%)
+   • Wieczysta Krakow v Wisla Plock (🇵🇱 Poland · Ekstraklasa) — Goals Over/Under: Over 1.5 (79%)
+   • Milton Keynes Dons v Reading (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Asian Handicap: Milton Keynes Dons +1.5 (79%)
+   • Stockport County FC v Barnsley (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Team Goals: Stockport County FC Under 3.5 (79%)
+   • Worthing v Solihull (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Double Chance: Worthing or Solihull (79%)
+bet365 Acca G · 5 legs · chance 31% · deploy at 3.33+ combined
+   • Scotland v Slovenia (🏆 UEFA Nations League) — Team Goals: Scotland Over 0.5 (79%)
+   • Bristol Rvs v Barnet FC (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Handicap Result: Barnet FC +2 (79%)
+   • Sutton v Boreham Wood (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Double Chance: Sutton or Boreham Wood (79%)
+   • Wingate & Finchley v Bedford Town Football Club (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · FA Cup) — Asian Handicap: Wingate & Finchley +1.5 (79%)
+   • Leicester v Peterborough United (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Double Chance: Leicester or Peterborough United (79%)
+bet365 Acca H · 5 legs · chance 30% · deploy at 3.44+ combined
+   • Modena v Hellas Verona (🇮🇹 Italy · Serie B) — Team Goals: Modena Over 0.5 (79%)
+   • Bochum v Bielefeld (🇩🇪 Germany · 2. Bundesliga) — Asian Handicap: Bielefeld +1.5 (79%)
+   • Nantes v Reims (🇫🇷 France · Ligue 2) — Asian Handicap: Reims +1.5 (79%)
+   • Ceuta v Sabadell (🇪🇸 Spain · La Liga 2 / Hypermotion) — Asian Handicap: Ceuta +1.5 (79%)
+   • Clermont v Red Star (🇫🇷 France · Ligue 2) — Asian Handicap: Clermont +1.5 (79%)
+bet365 Acca I · 5 legs · chance 30% · deploy at 3.44+ combined
+   • Cambridge United v Blackpool FC (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Goals Over/Under: Over 1.5 (79%)
+   • FC St. Pauli v Karlsruhe (🇩🇪 Germany · 2. Bundesliga) — Double Chance: FC St. Pauli or Karlsruhe (78%)
+   • Moldova v Slovakia (🏆 UEFA Nations League) — Asian Handicap: Moldova +2.5 (78%)
+   • Almeria v Leganes (🇪🇸 Spain · La Liga 2 / Hypermotion) — Double Chance: Almeria or Leganes (78%)
+   • Stevenage FC v Wigan (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Asian Handicap: Wigan +1.5 (78%)
+bet365 Acca J · 5 legs · chance 29% · deploy at 3.44+ combined
+   • Fylde v Scunthorpe United (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Double Chance: Fylde or Scunthorpe United (78%)
+   • Darmstadt v Energie Cottbus (🇩🇪 Germany · 2. Bundesliga) — Double Chance: Darmstadt or Energie Cottbus (78%)
+   • Italy v Turkey (🏆 UEFA Nations League) — Goals Over/Under: Under 4.5 (78%)
+   • Forest Green Rovers v Hartlepool (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Double Chance: Forest Green Rovers or Hartlepool (78%)
+   • Empoli v Palermo (🇮🇹 Italy · Serie B) — Team Goals: Palermo Under 2.5 (78%)
+bet365 Acca K · 5 legs · chance 29% · deploy at 3.54+ combined
+   • Sudtirol v Ascoli Calcio 1898 (🇮🇹 Italy · Serie B) — Goals Over/Under: Under 3.5 (78%)
+   • Pau FC v Laval (🇫🇷 France · Ligue 2) — Team Goals: Pau FC Over 0.5 (78%)
+   • Boston Utd v Southend (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Double Chance: Boston Utd or Southend (78%)
+   • Woking v Harrogate (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Team Goals: Woking Over 0.5 (78%)
+   • Halifax v Gateshead (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Asian Handicap: Gateshead +2.5 (78%)
+bet365 Acca L · 5 legs · chance 28% · deploy at 3.57+ combined
+   • Halesowen Town FC v Stafford Rangers (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · FA Cup) — Double Chance: Halesowen Town FC or Stafford Rangers (78%)
+   • Slask Wroclaw v Lech Poznan (🇵🇱 Poland · Ekstraklasa) — Double Chance: Slask Wroclaw or Lech Poznan (78%)
+   • Belarus v Finland (🏆 UEFA Nations League) — Goals Over/Under: Under 3.5 (78%)
+   • Rakow v GKS Katowice (🇵🇱 Poland · Ekstraklasa) — Asian Handicap: GKS Katowice +1.5 (78%)
+   • Romania v Sweden (🏆 UEFA Nations League) — Double Chance: Romania or Sweden (78%)
+bet365 Acca M · 5 legs · chance 28% · deploy at 3.68+ combined
+   • Mansfield v Bromley FC (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Double Chance: Mansfield or Bromley FC (78%)
+   • Radomiak Radom v Motor Lublin (🇵🇱 Poland · Ekstraklasa) — Team Goals: Motor Lublin Over 0.5 (77%)
+   • Dijon v Metz (🇫🇷 France · Ligue 2) — Team Goals: Metz Over 0.5 (77%)
+   • Heidenheim v Kaiserslautern (🇩🇪 Germany · 2. Bundesliga) — Double Chance: Heidenheim or Kaiserslautern (77%)
+   • York City FC v Northampton (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Double Chance: York City FC or Northampton (77%)
+bet365 Acca N · 5 legs · chance 27% · deploy at 3.77+ combined
+   • Carlisle v Kidderminster (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Double Chance: Carlisle or Kidderminster (77%)
+   • Crawley Town v Chesterfield (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Double Chance: Crawley Town or Chesterfield (77%)
+   • Oldham v Accrington (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Double Chance: Oldham or Accrington (77%)
+   • Jagiellonia v Gornik Zabrze (🇵🇱 Poland · Ekstraklasa) — Goals Over/Under: Over 1.5 (77%)
+   • Tenerife v Girona (🇪🇸 Spain · La Liga 2 / Hypermotion) — Goals Over/Under: Under 3.5 (77%)
+bet365 Acca O · 5 legs · chance 26% · deploy at 3.89+ combined
+   • Cadiz v Sp Gijon (🇪🇸 Spain · La Liga 2 / Hypermotion) — Goals Over/Under: Under 3.5 (77%)
+   • Spalding United v Bury Town FC (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · FA Cup) — Goals Over/Under: Over 1.5 (77%)
+   • Nancy v Guingamp (🇫🇷 France · Ligue 2) — Goals Over/Under: Over 1.5 (77%)
+   • Cyprus v Latvia (🏆 UEFA Nations League) — Double Chance: Cyprus or Latvia (76%)
+   • St Etienne v Rodez (🇫🇷 France · Ligue 2) — Handicap Result: Rodez +3 (76%)
+bet365 Acca P · 5 legs · chance 25% · deploy at 4.01+ combined
+   • Altrincham v Aldershot (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Double Chance: Altrincham or Aldershot (76%)
+   • Estonia v Iceland (🏆 UEFA Nations League) — Goals Over/Under: Over 1.5 (76%)
+   • Huddersfield v Sheffield Wednesday (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Double Chance: Huddersfield or Sheffield Wednesday (76%)
+   • Padova v Carrarese (🇮🇹 Italy · Serie B) — Asian Handicap: Carrarese +1.5 (76%)
+   • Cordoba v Tenerife (🇪🇸 Spain · La Liga 2 / Hypermotion) — Goals Over/Under: Over 1.5 (76%)
+bet365 Acca Q · 5 legs · chance 25% · deploy at 4.16+ combined
+   • Cheltenham v Salford (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Double Chance: Cheltenham or Salford (76%)
+   • Doncaster Rovers v Burton (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Double Chance: Doncaster Rovers or Burton (76%)
+   • Wycombe Wanderers v Luton (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Double Chance: Wycombe Wanderers or Luton (76%)
+   • Piast Gliwice v Widzew Lodz (🇵🇱 Poland · Ekstraklasa) — Team Goals: Piast Gliwice Over 0.5 (76%)
+   • Hornchurch v Eastleigh (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · National League) — Goals Over/Under: Over 1.5 (75%)
+bet365 Acca R · 5 legs · chance 24% · deploy at 4.22+ combined
+   • L.R. Vicenza v SC Pisa (🇮🇹 Italy · Serie B) — Double Chance: L.R. Vicenza or SC Pisa (75%)
+   • Catanzaro v Mantova (🇮🇹 Italy · Serie B) — Double Chance: Catanzaro or Mantova (75%)
+   • Benevento Calcio v Cesena (🇮🇹 Italy · Serie B) — Double Chance: Benevento Calcio or Cesena (75%)
+   • Bradford v Leyton Orient (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Double Chance: Bradford or Leyton Orient (75%)
+   • Notts County v Oxford United (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League One) — Double Chance: Notts County or Oxford United (75%)
+bet365 Acca S · 5 legs · chance 22% · deploy at 4.55+ combined
+   • Swindon v Crewe (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Double Chance: Swindon or Crewe (74%)
+   • Bosnia and Herzegovina v Poland (🏆 UEFA Nations League) — Goals Over/Under: Over 1.5 (74%)
+   • Newport County v Colchester United (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Double Chance: Newport County or Colchester United (74%)
+   • Port Vale v Grimsby (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · League Two) — Double Chance: Port Vale or Grimsby (74%)
+   • SS Arezzo v Cremonese (🇮🇹 Italy · Serie B) — Double Chance: SS Arezzo or Cremonese (74%)
+bet365 Acca T · 5 legs · chance 22% · deploy at 4.72+ combined
+   • Valladolid v Albacete (🇪🇸 Spain · La Liga 2 / Hypermotion) — Double Chance: Valladolid or Albacete (74%)
+   • Montpellier v Grenoble (🇫🇷 France · Ligue 2) — Double Chance & Goals: Montpellier or Draw & Under 4.5 (74%)
+   • Scarborough Athletic v Macclesfield FC (🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · FA Cup) — Team Goals: Macclesfield FC Over 0.5 (74%)
+   • Virtus Entella v Juve Stabia (🇮🇹 Italy · Serie B) — Team Goals: Juve Stabia Under 1.5 (73%)
+   • Burgos v Granada (🇪🇸 Spain · La Liga 2 / Hypermotion) — Double Chance: Burgos or Granada (73%)
+bet365 Acca U · 4 legs · chance 28% · deploy at 3.68+ combined
+   • Sochaux-Montbeliard v Boulogne (🇫🇷 France · Ligue 2) — Handicap Result: Sochaux-Montbeliard +1 (73%)
+   • Ukraine v Hungary (🏆 UEFA Nations League) — Double Chance: Ukraine or Hungary (73%)
+   • Avellino v Sampdoria (🇮🇹 Italy · Serie B) — Double Chance: Avellino or Sampdoria (72%)
+   • Switzerland v North Macedonia (🏆 UEFA Nations League) — Multigoals: 2-5 (72%)
+bet365 Acca V · 4 legs · chance 24% · deploy at 4.23+ combined
+   • Cracovia v Zaglebie (🇵🇱 Poland · Ekstraklasa) — Team Goals: Zaglebie Under 1.5 (72%)
+   • England v Czech Republic (🏆 UEFA Nations League) — Multigoals: 2-5 (72%)
+   • Northern Ireland v Georgia (🏆 UEFA Nations League) — Multigoals: 1-3 (71%)
+   • Mallorca v Las Palmas (🇪🇸 Spain · La Liga 2 / Hypermotion) — Multigoals: 1-3 (66%)
+
+==================================
+Honest edge: not a demonstrated edge · Capital: Architect only.
+Live capital test is SportyBet only (standing order 26) — this board is for reference.
+==================================

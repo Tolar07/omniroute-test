@@ -1,0 +1,447 @@
+diff --git a/output/picks/picks_2026-10-04.json b/output/picks/picks_2026-10-04.json
+index f7a1a85..354f617 100644
+--- a/output/picks/picks_2026-10-04.json
++++ b/output/picks/picks_2026-10-04.json
+@@ -40,8 +40,8 @@
+    "ev": -0.09612731139462682,
+    "first_price": 1.21,
+    "drift_since_board": null,
+-   "result": null,
+-   "ft": null
++   "result": "lost",
++   "ft": "1-1"
+   },
+   {
+    "fixture": "Sabadell v Andorra",
+@@ -81,8 +81,8 @@
+    "ev": -0.026328721646560527,
+    "first_price": 1.24,
+    "drift_since_board": null,
+-   "result": null,
+-   "ft": null
++   "result": "lost",
++   "ft": "0-0"
+   },
+   {
+    "fixture": "Sp Gijon v Celta B",
+@@ -119,8 +119,8 @@
+    "ev": -0.04509824007773777,
+    "first_price": 1.22,
+    "drift_since_board": 3.3,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "3-2"
+   },
+   {
+    "fixture": "Las Palmas v Valladolid",
+@@ -160,8 +160,8 @@
+    "ev": -0.019834340616403434,
+    "first_price": 1.33,
+    "drift_since_board": null,
+-   "result": null,
+-   "ft": null
++   "result": "lost",
++   "ft": "2-2"
+   },
+   {
+    "fixture": "Girona v Mallorca",
+@@ -201,8 +201,8 @@
+    "ev": 0.03894533019266744,
+    "first_price": 1.34,
+    "drift_since_board": 0.0,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "0-0"
+   },
+   {
+    "fixture": "Azerbaijan v Lithuania",
+@@ -242,8 +242,8 @@
+    "ev": -0.009778765273058987,
+    "first_price": 1.2,
+    "drift_since_board": 4.2,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "1-0"
+   },
+   {
+    "fixture": "Kosovo v Austria",
+@@ -283,8 +283,8 @@
+    "ev": -0.022263044469850723,
+    "first_price": 1.21,
+    "drift_since_board": 0.0,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "1-1"
+   },
+   {
+    "fixture": "Malta v Andorra",
+@@ -324,8 +324,8 @@
+    "ev": -0.05657981814733115,
+    "first_price": 1.31,
+    "drift_since_board": -0.8,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "1-0"
+   },
+   {
+    "fixture": "Greece v Germany",
+@@ -365,8 +365,8 @@
+    "ev": 0.01322249751803839,
+    "first_price": 1.25,
+    "drift_since_board": 0.0,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "0-0"
+   },
+   {
+    "fixture": "Republic of Ireland v Israel",
+@@ -406,8 +406,8 @@
+    "ev": -0.040126897099287184,
+    "first_price": 1.25,
+    "drift_since_board": 0.8,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "1-1"
+   },
+   {
+    "fixture": "Netherlands v Serbia",
+@@ -447,8 +447,8 @@
+    "ev": -0.13493307495165152,
+    "first_price": 1.21,
+    "drift_since_board": 0.8,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "2-1"
+   },
+   {
+    "fixture": "Portugal v Norway",
+@@ -488,8 +488,8 @@
+    "ev": -0.0163777724281835,
+    "first_price": 1.23,
+    "drift_since_board": 0.0,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "2-1"
+   },
+   {
+    "fixture": "Wales v Denmark",
+@@ -529,8 +529,8 @@
+    "ev": -0.01808970497543716,
+    "first_price": 1.25,
+    "drift_since_board": null,
+-   "result": null,
+-   "ft": null
++   "result": "won",
++   "ft": "0-1"
+   }
+  ],
+  "accas": [
+@@ -546,7 +546,7 @@
+     "Wales v Denmark",
+     "Sabadell v Andorra"
+    ],
+-   "result": null
++   "result": "lost"
+   },
+   {
+    "name": "Acca B",
+@@ -559,7 +559,7 @@
+     "Republic of Ireland v Israel",
+     "Sp Gijon v Celta B"
+    ],
+-   "result": null
++   "result": "won"
+   },
+   {
+    "name": "Acca C",
+@@ -572,7 +572,7 @@
+     "Malta v Andorra",
+     "Netherlands v Serbia"
+    ],
+-   "result": null
++   "result": "lost"
+   }
+  ],
+  "safe3": [],
+@@ -601,8 +601,8 @@
+      "pick": "Under 5.5 goals",
+      "price": 1.22,
+      "chance": 0.841,
+-     "result": null,
+-     "ft": null
++     "result": "won",
++     "ft": "2-1"
+     },
+     {
+      "fixture": "Malta v Andorra",
+@@ -614,8 +614,8 @@
+      "pick": "Malta Under 2.5 goals",
+      "price": 1.2,
+      "chance": 0.8275,
+-     "result": null,
+-     "ft": null
++     "result": "won",
++     "ft": "1-0"
+     },
+     {
+      "fixture": "Portugal v Norway",
+@@ -627,8 +627,8 @@
+      "pick": "Norway (+2.5) Asian handicap",
+      "price": 1.21,
+      "chance": 0.805,
+-     "result": null,
+-     "ft": null
++     "result": "won",
++     "ft": "2-1"
+     },
+     {
+      "fixture": "Sabadell v Andorra",
+@@ -640,8 +640,8 @@
+      "pick": "Andorra Clean Sheet \u2014 no",
+      "price": 1.22,
+      "chance": 0.7852,
+-     "result": null,
+-     "ft": null
++     "result": "lost",
++     "ft": "0-0"
+     },
+     {
+      "fixture": "Kosovo v Austria",
+@@ -653,11 +653,11 @@
+      "pick": "Kosovo Clean Sheet \u2014 no",
+      "price": 1.22,
+      "chance": 0.7773,
+-     "result": null,
+-     "ft": null
++     "result": "won",
++     "ft": "1-1"
+     }
+    ],
+-   "result": null
++   "result": "lost"
+   },
+   {
+    "name": "Alt B",
+@@ -681,8 +681,8 @@
+      "pick": "Greece or Germany",
+      "price": 1.27,
+      "chance": 0.7684,
+-     "result": null,
+-     "ft": null
++     "result": "lost",
++     "ft": "0-0"
+     },
+     {
+      "fixture": "Azerbaijan v Lithuania",
+@@ -694,8 +694,8 @@
+      "pick": "Lithuania Under 1.5 goals",
+      "price": 1.3,
+      "chance": 0.7673,
+-     "result": null,
+-     "ft": null
++     "result": "won",
++     "ft": "1-0"
+     },
+     {
+      "fixture": "Sp Gijon v Celta B",
+@@ -707,8 +707,8 @@
+      "pick": "Sp Gijon Under 2.5 goals",
+      "price": 1.28,
+      "chance": 0.7636,
+-     "result": null,
+-     "ft": null
++     "result": "lost",
++     "ft": "3-2"
+     },
+     {
+      "fixture": "Las Palmas v Valladolid",
+@@ -720,11 +720,11 @@
+      "pick": "Under 3.5 goals",
+      "price": 1.29,
+      "chance": 0.763,
+-     "result": null,
+-     "ft": null
++     "result": "lost",
++     "ft": "2-2"
+     }
+    ],
+-   "result": null
++   "result": "lost"
+   },
+   {
+    "name": "Alt C",
+@@ -748,8 +748,8 @@
+      "pick": "Israel Clean Sheet \u2014 no",
+      "price": 1.25,
+      "chance": 0.7618,
+-     "result": null,
+-     "ft": null
++     "result": "won",
++     "ft": "1-1"
+     },
+     {
+      "fixture": "Wales v Denmark",
+@@ -761,8 +761,8 @@
+      "pick": "Wales or Denmark",
+      "price": 1.29,
+      "chance": 0.75,
+-     "result": null,
+-     "ft": null
++     "result": "won",
++     "ft": "0-1"
+     },
+     {
+      "fixture": "Castellon v Ceuta",
+@@ -774,8 +774,8 @@
+      "pick": "Under 4.5 goals",
+      "price": 1.38,
+      "chance": 0.7196,
+-     "result": null,
+-     "ft": null
++     "result": "won",
++     "ft": "1-1"
+     },
+     {
+      "fixture": "Girona v Mallorca",
+@@ -787,11 +787,11 @@
+      "pick": "Girona or Mallorca",
+      "price": 1.32,
+      "chance": 0.7181,
+-     "result": null,
+-     "ft": null
++     "result": "lost",
++     "ft": "0-0"
+     }
+    ],
+-   "result": null
++   "result": "lost"
+   }
+  ],
+  "rated": [
+@@ -811,7 +811,7 @@
+     0.434,
+     0.504
+    ],
+-   "ft": null
++   "ft": "1-1"
+   },
+   {
+    "fixture": "Sabadell v Andorra",
+@@ -829,7 +829,7 @@
+     0.273,
+     0.481
+    ],
+-   "ft": null
++   "ft": "0-0"
+   },
+   {
+    "fixture": "Sp Gijon v Celta B",
+@@ -847,7 +847,7 @@
+     0.259,
+     0.492
+    ],
+-   "ft": null
++   "ft": "3-2"
+   },
+   {
+    "fixture": "Las Palmas v Valladolid",
+@@ -865,7 +865,7 @@
+     0.227,
+     0.441
+    ],
+-   "ft": null
++   "ft": "2-2"
+   },
+   {
+    "fixture": "Girona v Mallorca",
+@@ -883,7 +883,7 @@
+     0.088,
+     0.318
+    ],
+-   "ft": null
++   "ft": "0-0"
+   },
+   {
+    "fixture": "Azerbaijan v Lithuania",
+@@ -901,7 +901,7 @@
+     0.125,
+     0.35
+    ],
+-   "ft": null
++   "ft": "1-0"
+   },
+   {
+    "fixture": "Kosovo v Austria",
+@@ -919,7 +919,7 @@
+     0.215,
+     0.463
+    ],
+-   "ft": null
++   "ft": "1-1"
+   },
+   {
+    "fixture": "Malta v Andorra",
+@@ -937,7 +937,7 @@
+     0.07,
+     0.225
+    ],
+-   "ft": null
++   "ft": "1-0"
+   },
+   {
+    "fixture": "Greece v Germany",
+@@ -955,7 +955,7 @@
+     0.293,
+     0.552
+    ],
+-   "ft": null
++   "ft": "0-0"
+   },
+   {
+    "fixture": "Republic of Ireland v Israel",
+@@ -973,7 +973,7 @@
+     0.207,
+     0.459
+    ],
+-   "ft": null
++   "ft": "1-1"
+   },
+   {
+    "fixture": "Netherlands v Serbia",
+@@ -991,7 +991,7 @@
+     0.338,
+     0.51
+    ],
+-   "ft": null
++   "ft": "2-1"
+   },
+   {
+    "fixture": "Portugal v Norway",
+@@ -1009,7 +1009,7 @@
+     0.411,
+     0.583
+    ],
+-   "ft": null
++   "ft": "2-1"
+   },
+   {
+    "fixture": "Wales v Denmark",
+@@ -1027,7 +1027,7 @@
+     0.247,
+     0.499
+    ],
+-   "ft": null
++   "ft": "0-1"
+   }
+  ]
+ }
+\ No newline at end of file
