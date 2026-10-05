@@ -142,9 +142,20 @@ standing order as written.
   copies; the real ledger, CLV log, boards and frozen codes are never touched.
   Framework branch `claude/olpxdv-framework-improvements-40hlc8` (`9e2c42f`),
   39/39 test files pass. Not merged into framework main yet (needs a PR).
-- Done 2026-10-05 (Architect: "do both"): the model's BTTS chance is corrected
-  (`engine/calibration.py`, `backtest/BTTS_STUDY.md`, `08ae2db`, 40/40 tests).
-  Not built: picking BTTS / Over-goals where the price beats fair. The
-  permission check stopped it midway; the partial change was removed.
+- Built 2026-10-05 (Architect: "go ahead and build"), framework branch
+  `claude/olpxdv-framework-improvements-40hlc8`, every step tested on past
+  seasons first and the full test suite green after each:
+  - BTTS and Over/Under 1.5 / 2.5 calibrated (`engine/calibration.py`).
+  - $ VALUE picks: BTTS-yes / over-goals priced above fair take the pick
+    (standing order 36).
+  - Champions, Europa and Conference League and Croatia's HNL scanned,
+    market-implied; Turkey, Greece, Austria and Switzerland added, model-rated.
+  - Season follows the date (switches 1 July).
+  - Learning: 50 results over 5 days and a 2-sd gap; no double counting;
+    learns from the chance before its own correction (order 22).
+  - Sharp check: every main-league pick against the Betfair Exchange's fair
+    odds, recorded and shown (`pipeline/sharp.py`).
+  - Tested and NOT adopted: rest days / congestion (`backtest/REST_STUDY.md`).
+  - Not on framework main until a pull request is merged.
 - Item 19 (command whitelist fails closed) was refused by this session's
   permission check and left alone. The rest of 3.1 and 3.4-3.6 is not started.
