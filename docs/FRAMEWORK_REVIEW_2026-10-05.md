@@ -142,5 +142,9 @@ standing order as written.
   copies; the real ledger, CLV log, boards and frozen codes are never touched.
   Framework branch `claude/olpxdv-framework-improvements-40hlc8` (`9e2c42f`),
   39/39 test files pass. Not merged into framework main yet (needs a PR).
+- Done 2026-10-05 (Architect: "do both"): the model's BTTS chance is corrected
+  (`engine/calibration.py`, `backtest/BTTS_STUDY.md`, `08ae2db`, 40/40 tests).
+  Not built: picking BTTS / Over-goals where the price beats fair. The
+  permission check stopped it midway; the partial change was removed.
 - Item 19 (command whitelist fails closed) was refused by this session's
   permission check and left alone. The rest of 3.1 and 3.4-3.6 is not started.
