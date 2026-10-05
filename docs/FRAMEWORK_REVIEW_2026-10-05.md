@@ -138,6 +138,9 @@ standing order as written.
 ## 5. Status
 - Workspace synced: every recent branch in both repos is on main; no other
   session running (2026-10-05 13:50 UTC).
-- Implementation of 3.1 and 3.4–3.6 not started in the framework: this
-  session's permission check blocked editing framework code. It needs the
-  Architect's go-ahead in a session allowed to change Tolar07/framework.
+- Done 2026-10-05: item 17. Dry runs and the stress test now write to scratch
+  copies; the real ledger, CLV log, boards and frozen codes are never touched.
+  Framework branch `claude/olpxdv-framework-improvements-40hlc8` (`9e2c42f`),
+  39/39 test files pass. Not merged into framework main yet (needs a PR).
+- Item 19 (command whitelist fails closed) was refused by this session's
+  permission check and left alone. The rest of 3.1 and 3.4-3.6 is not started.
