@@ -35,6 +35,8 @@
 
 - 2026-10-05: **Framework review + sync check (session `OLPXDV framework improvement areas`).** Full review of the framework (data, model, selection, delivery, tests, evidence); findings and the improvement list are in `docs/FRAMEWORK_REVIEW_2026-10-05.md`. Every recent branch in both repos (framework PRs #64-#78; workspace `ccr-2832deda-i6h0w0`, `claude/eloquent-noether-8b69az`, `ccr-51c326b5-vl6yc2`) is already on main; no other session is running. A stress-test run in the review container wrote a second 5 Oct board (109 fixtures, never sent) - kept as a labelled record in `docs/local-runs/2026-10-05-stress-test/`; the real 5 Oct board stays on framework main.
 - 2026-10-05: Submodule `olp_xdv_agent/olp_xdv` -> `fa23da2` (framework `main`: #77 draw guard + team profiles + national-team Elo, #78 codes frozen at 10pm).
+- 2026-10-05: **Framework #79 merged (Architect-approved engine upgrade).** Order 37 positive-value bets (Table 3C, own codes + Value acca); order 36 BTTS/goals calibration and $ VALUE picks; Champions/Europa/Conference League + HNL (market-implied) and Turkey, Greece, Austria, Switzerland (model-rated); season follows the date; stricter learning (order 22); Betfair Exchange sharp check; rating shrinkage; dry runs on scratch copies. Studies in the framework's `backtest/` (BTTS, REST, SHRINK). First live board with all of it: tonight's 20:47 UTC run for 6 Oct.
+- 2026-10-05: Submodule `olp_xdv_agent/olp_xdv` -> framework `main` after #79.
 
 ## Shared Notes & Alerts
 
