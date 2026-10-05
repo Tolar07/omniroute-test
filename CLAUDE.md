@@ -66,7 +66,15 @@ All notes are interconnected via `[[wikilinks]]`. Where a note disagrees with th
 
 **Location:** `.claude/projects/C--Users-Motunrayo-omniroute-test/memory/`
 
-| Memory File | Purpose |
+> **Checked 2026-10-05:** the 12 notes below exist only on the laptop — they were never
+> pushed. The copy of that folder in this repo holds 23 copies of vault notes instead.
+> Push them from the laptop for cloud sessions to read them. The framework's own
+> memory, which every live run reads and writes, is in the framework: `memory/knowledge.json`
+> (what was learned from results), `memory/proposals.json` (losing-market proposals and
+> the Architect's decisions), `memory/runs.jsonl` (every board run) and
+> `memory/corrections.csv` (`/note`) — standing order 39.
+
+| Memory File (laptop only) | Purpose |
 |-------------|---------|
 | `MEMORY.md` | Master index (links to all memories below) |
 | `olp-xdv-agent.md` | OLP XDV agent: Telegram bot/daemon + web wiring, publish gate, commit conventions |
