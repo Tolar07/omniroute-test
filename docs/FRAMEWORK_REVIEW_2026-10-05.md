@@ -155,6 +155,8 @@ standing order as written.
     learns from the chance before its own correction (order 22).
   - Sharp check: every main-league pick against the Betfair Exchange's fair
     odds, recorded and shown (`pipeline/sharp.py`).
+  - Team ratings pulled toward the league average (ridge 3): better predictions,
+    most for promoted clubs (`backtest/SHRINK_STUDY.md`).
   - Tested and NOT adopted: rest days / congestion (`backtest/REST_STUDY.md`).
   - Not on framework main until a pull request is merged.
 - Item 19 (command whitelist fails closed) was refused by this session's
