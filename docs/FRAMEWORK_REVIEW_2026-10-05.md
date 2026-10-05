@@ -158,6 +158,8 @@ standing order as written.
   - Team ratings pulled toward the league average (ridge 3): better predictions,
     most for promoted clubs (`backtest/SHRINK_STUDY.md`).
   - Tested and NOT adopted: rest days / congestion (`backtest/REST_STUDY.md`).
-  - Not on framework main until a pull request is merged.
+  - Merged: framework #79 (first batch) and #80 (Norway/Sweden, shots-on-target
+    xG, first-half markets, learning from every fixture, European archive,
+    line-up data). Not buildable here: corners/cards, current-season European ratings.
 - Item 19 (command whitelist fails closed) was refused by this session's
   permission check and left alone. The rest of 3.1 and 3.4-3.6 is not started.
