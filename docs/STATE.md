@@ -39,6 +39,7 @@
 - 2026-10-07: **Framework: Turkish Cup results archived and studied (`9ed0d8f`).** Every daily run keeps the cup's ties from Flashscore with both clubs' divisions (`data/cups/results.json`; `backtest/TURKISH_CUP_STUDY.md`). First 27 qualification ties: 11% level after 90, 3.4 goals per 90, home won 59%. The cup is still not priced.
 - 2026-10-07: **Framework: Turkish Cup covered, £1 NBA stake, universe learning (`ffae860`).** Turkish Cup priced market-implied. NBA live test at £1 a pick. `universe.yml` every 3 h records every SportyBet football (~1,650) and basketball (~220) game, covered or not, grades it from Flashscore and studies how the market priced it (`backtest/UNIVERSE_STUDY.md`) — a study, never a selector. In-play tactical data: no free source, not built.
 - 2026-10-07: **Framework: order 38 covers the Turkish Cup; FotMob post-match stats (`51a4461`).** No underdog handicaps in the Turkish Cup either. Every rated fixture's post-match stats (possession, xG, shots, big chances, corners, cards) go to `data/match_stats/` with team profiles and `backtest/MATCH_STATS_STUDY.md` — a study, not a selector.
+- 2026-10-07: **Framework: NBA codes 11–17 h before tip-off (`886b9f3`).** The NBA board is now built and sent by the morning run (06:47 Lagos) for that night's games; the evening run is a backup only. The line watch re-prices every sent pick and says "VALUE GONE — skip it" when SportyBet falls below fair. Tonight's (8 Oct) board was sent from the desktop at 18:58 Lagos, 5–8 h before tip-off.
 
 ## Shared Notes & Alerts
 
