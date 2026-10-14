@@ -20,11 +20,11 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "once = one cycle; reseed = Architect lifts a halt / reseeds"
+        description: "once = one cycle; check = login + balance only; reseed = Architect lifts a halt / reseeds"
         required: true
         default: once
         type: choice
-        options: [once, reseed]
+        options: [once, check, reseed]
 
 concurrency:
   group: matchbook-agent          # never two cycles at once
@@ -57,6 +57,11 @@ jobs:
       - name: Offline tests (no order goes out if these fail)
         shell: cmd
         run: py -3 -m unittest matchbook_live.tests.test_live
+
+      - name: Check login and balance
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'check'
+        shell: cmd
+        run: py -3 -m matchbook_live.run --check
 
       - name: Reseed (Architect only)
         if: github.event_name == 'workflow_dispatch' && inputs.mode == 'reseed'

@@ -258,7 +258,15 @@ def main(argv=None) -> int:
     ap.add_argument("--max-oracle-calls", type=int, default=20)
     ap.add_argument("--no-oracle", action="store_true")
     ap.add_argument("--reseed", action="store_true", help="Architect only: lift a halt / reseed one lineage")
+    ap.add_argument("--check", action="store_true", help="log in and print the balance; no scan, no order")
     a = ap.parse_args(argv)
+    if a.check:
+        cl = Client(a.state_dir)
+        cl.login(force=True)
+        b = cl.balance()
+        print(f"LOGIN OK · balance £{float(b.get('balance') or 0):.2f} · exposure £{float(b.get('exposure') or 0):.2f}"
+              f" · free £{float(b.get('free-funds') or 0):.2f} · live switch {'ON' if C.LIVE else 'OFF'}")
+        return 0
     if a.reseed:
         reseed(a.state_dir)
         print("reseeded")
