@@ -36,7 +36,7 @@ permissions:
 jobs:
   cycle:
     runs-on: [self-hosted, Windows, matchbook-uk]
-    timeout-minutes: 20
+    timeout-minutes: 45
     env:
       PYTHONIOENCODING: utf-8
       MATCHBOOK_USERNAME: ${{ secrets.MATCHBOOK_USERNAME }}
@@ -66,4 +66,4 @@ jobs:
       - name: Cycle
         if: github.event_name == 'schedule' || inputs.mode == 'once'
         shell: cmd
-        run: py -3 -m matchbook_live.run --once
+        run: py -3 -m matchbook_live.run --once --max-oracle-calls 6   # free OmniRoute models take ~40-120 s an answer
