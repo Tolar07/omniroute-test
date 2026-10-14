@@ -261,6 +261,7 @@ def main(argv=None) -> int:
     ap.add_argument("--check", action="store_true", help="log in and print the balance; no scan, no order")
     a = ap.parse_args(argv)
     if a.check:
+        print(f"Credentials as received: {C.CREDENTIALS_NOTE}", flush=True)
         cl = Client(a.state_dir)
         cl.login(force=True)
         b = cl.balance()

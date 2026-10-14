@@ -19,8 +19,17 @@ API_URL = "https://api.matchbook.com"
 LOGIN_PATH = "/bpapi/rest/security/session"
 SESSION_MAX_AGE_H = 5.0        # Matchbook sessions last ~6 h; re-login before that
 
-USERNAME = os.getenv("MATCHBOOK_USERNAME", "")
-PASSWORD = os.getenv("MATCHBOOK_PASSWORD", "")
+# Pasting into `gh secret set` on Windows can carry a stray \r or space; Matchbook
+# then answers "Incorrect credentials". Strip them, and let --check say if it did.
+_RAW_USERNAME = os.getenv("MATCHBOOK_USERNAME", "")
+_RAW_PASSWORD = os.getenv("MATCHBOOK_PASSWORD", "")
+USERNAME = _RAW_USERNAME.strip()
+PASSWORD = _RAW_PASSWORD.strip()
+CREDENTIALS_NOTE = (f"username {len(USERNAME)} chars{' (an email address)' if '@' in USERNAME else ''}, "
+                    f"password {len(PASSWORD)} chars; stray whitespace stripped from "
+                    + (", ".join(n for n, raw, clean in (("username", _RAW_USERNAME, USERNAME),
+                                                        ("password", _RAW_PASSWORD, PASSWORD)) if raw != clean)
+                       or "neither"))
 LIVE = os.getenv("MATCHBOOK_LIVE", "") == "1"
 
 # --------------------------------------------------------------- scanner
