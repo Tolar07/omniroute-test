@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from dataclasses import dataclass
 from typing import Callable, Optional
 
@@ -51,13 +52,26 @@ def blind_brief(candidate: dict) -> str:
     return "\n".join(f"{k.replace('_', ' ').upper()}: {show(candidate.get(k))}" for k in BLIND_FIELDS)
 
 
-def _chat(system: str, user: str, post: Callable = requests.post) -> tuple[str, int]:
-    r = post(f"{C.ORACLE_BASE_URL}/chat/completions",
-             headers={"Authorization": f"Bearer {C.ORACLE_API_KEY}"} if C.ORACLE_API_KEY else {},
-             json={"model": C.ORACLE_MODEL, "temperature": 0.2, "stream": False,   # OmniRoute streams by default
-                   "messages": [{"role": "system", "content": system},
-                                {"role": "user", "content": user}]},
-             timeout=120)
+RETRY_WAITS_S = (20, 60, 120)      # back-off on 429 (free gateway models are rate-limited)
+CALL_GAP_S = 5                     # pause before every call, same reason
+
+
+def _chat(system: str, user: str, post: Callable = requests.post, sleep: Callable = time.sleep) -> tuple[str, int]:
+    for wait in (*RETRY_WAITS_S, None):
+        sleep(CALL_GAP_S)
+        r = post(f"{C.ORACLE_BASE_URL}/chat/completions",
+                 headers={"Authorization": f"Bearer {C.ORACLE_API_KEY}"} if C.ORACLE_API_KEY else {},
+                 json={"model": C.ORACLE_MODEL, "temperature": 0.2, "stream": False,  # OmniRoute streams by default
+                       "messages": [{"role": "system", "content": system},
+                                    {"role": "user", "content": user}]},
+                 timeout=180)
+        if r.status_code != 429 or wait is None:
+            break
+        try:
+            wait = max(wait, int(r.headers.get("Retry-After", 0)))
+        except ValueError:
+            pass
+        sleep(min(wait, 300))
     r.raise_for_status()
     d = r.json()
     return d["choices"][0]["message"]["content"], int((d.get("usage") or {}).get("total_tokens") or 0)

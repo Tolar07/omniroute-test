@@ -68,6 +68,7 @@ BURN_WINDOW_HOURS = 48
 ORACLE_BASE_URL = os.getenv("OPENAI_BASE_URL", "").rstrip("/")
 ORACLE_API_KEY = os.getenv("OPENAI_API_KEY", "")
 ORACLE_MODEL = os.getenv("OPENAI_MODEL", "")
+ORACLE_BUDGET_S = 25 * 60     # stop asking after this, so the run reaches allocate + save inside the job limit
 _cost = os.getenv("ORACLE_GBP_PER_1K_TOKENS", "").strip()
 ORACLE_GBP_PER_1K_TOKENS: float | None = float(_cost) if _cost else None
 

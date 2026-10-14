@@ -186,11 +186,12 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
                            f"{len(cands)} candidates not evaluated, nothing traded")
         else:
             failed = 0
+            started = time.monotonic()
             for c in cands:
                 e = cached(cache, c, now)
                 if e:
                     reused += 1
-                elif calls < max_oracle_calls:
+                elif calls < max_oracle_calls and time.monotonic() - started < C.ORACLE_BUDGET_S:
                     calls += 1
                     r = oracle.evaluate(c)
                     if r is None:
