@@ -51,19 +51,19 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Dependencies
-        shell: powershell
+        shell: cmd
         run: py -3 -m pip install --quiet --disable-pip-version-check requests
 
       - name: Offline tests (no order goes out if these fail)
-        shell: powershell
+        shell: cmd
         run: py -3 -m unittest matchbook_live.tests.test_live
 
       - name: Reseed (Architect only)
         if: github.event_name == 'workflow_dispatch' && inputs.mode == 'reseed'
-        shell: powershell
+        shell: cmd
         run: py -3 -m matchbook_live.run --reseed
 
       - name: Cycle
         if: github.event_name == 'schedule' || inputs.mode == 'once'
-        shell: powershell
+        shell: cmd
         run: py -3 -m matchbook_live.run --once
