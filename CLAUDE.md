@@ -116,7 +116,7 @@ that isn't in that repo, and HR54 is not in the `Rules.md` register.
 | HR | Description |
 |----|-------------|
 | **HR54** | Vault ↔ Memory sync required on SessionStart/SessionEnd |
-| **Capital bright line** | `assert_paper_only()` hard-fails below Phase 3-active; booking never clicks Place Bet; no code routes a real stake. Does not yield to directives |
+| **Capital bright line** | `assert_paper_only()` hard-fails below Phase 3-active; booking never clicks Place Bet; no code routes a real stake. Does not yield to directives. **One exception, by Architect amendment 2026-10-14: `matchbook_live/` only** (see below) |
 | **HR59** | Traceable output — no fixture, odds figure or result in any output unless a fetch script produced it in this session (run_id + timestamp); a failed fetch reads `NO DATA — PENDING` |
 | **HR35** | No silent completeness — missing data reads `PENDING`, never blank or a real-looking placeholder |
 
@@ -133,6 +133,42 @@ From `[[Protected Constants.md]]`:
 - `ARCHITECT_SIGNOFF` — Requires explicit Architect approval
 - **CLV Gate** — Closing Line Value threshold for publish decisions
 - **Capital Deployment** — Fund allocation logic
+
+### Capital bright line — Matchbook agent amendment (2026-10-14)
+
+On 2026-10-14 the Architect amended the capital bright line for one agent.
+The session agent declined the first request, citing the bright line's "does
+not yield to directives" clause. The Architect then confirmed it in person, in
+the same session, with the rule quoted back to them:
+
+> "The Architect has authorised real money for this agent only: £50 bankroll,
+> UK, Matchbook (free API, ~2% commission), VPN off."
+>
+> "Now this is me. I'm giving an instruction. The matchbox is going to go live.
+> I gave the instruction already. It has to go live. … it needs to go live for
+> this agent alone … So as an architect, this is a mandated instruction going
+> to the protected constant to be amended, quote me, to allow this."
+
+What the amendment allows, and nothing more:
+
+- **Scope:** the `matchbook_live/` package only. Every other module in this
+  workspace and in the framework stays under the bright line: no code routes a
+  real stake, the booking module never clicks Place Bet.
+- **Venue:** Matchbook (UK), through its own REST API, from the Architect's UK
+  machine, VPN off. Back bets only; unmatched parts cancelled at once.
+- **Capital:** £50 in, the only outside money the agent ever gets
+  (`AGENT_CAPITAL_GBP`). Mitosis splits a lineage's own cash; it never adds
+  money. A reseed after extinction is the Architect's call (`--reseed`) and is
+  recorded as another £50 in.
+- **Money rules (fixed):** ½-Kelly capped at 6% of lineage equity, 65% exposure
+  ceiling, £5 survival floor, earn-your-keep halt (48 h P&L must cover oracle
+  burn after 10 settled positions).
+- **Never:** deposits, withdrawals, transfers or account-setting changes. The
+  test suite fails if any endpoint outside the allow-list appears.
+- **Switch:** orders go out only when `MATCHBOOK_LIVE=1` is set on the runner;
+  a `STOP` file in the state directory halts new orders at once.
+
+Changing any of those limits is another Architect amendment, dated and quoted here.
 
 ---
 

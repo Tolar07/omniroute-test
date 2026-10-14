@@ -1,11 +1,12 @@
 """
-Blind oracle — Blue (YES) vs Red (NO) vs Judge through an OpenAI-compatible
-gateway (OmniRoute: OPENAI_BASE_URL / OPENAI_API_KEY / OPENAI_MODEL).
+Blind oracle — Blue (wins) vs Red (does not win) vs Judge through an
+OpenAI-compatible gateway (OPENAI_BASE_URL / OPENAI_API_KEY / OPENAI_MODEL).
+
+The question for every candidate: does this SELECTION win this Matchbook market?
 
 Information barrier: the brief is built from a WHITELIST of non-price fields
-(question, rules text, event title, end date). No bid, ask, outcome price,
-volume or liquidity ever reaches a prompt, so the model cannot anchor on the
-market.
+(event, kick-off, market, selection, the other selections). No odds, volume or
+liquidity ever reaches a prompt, so the model cannot anchor on the market.
 
 No gateway configured, a failed call, or a judge answer that is not valid JSON
 in range -> None (PENDING). Nothing trades on a missing probability (HR35).
@@ -19,33 +20,35 @@ from typing import Callable, Optional
 
 import requests
 
-from polymarket_paper import config as C
+from matchbook_live import config as C
 
-BLIND_FIELDS = ("question", "event_title", "end_date", "description")
+BLIND_FIELDS = ("event_name", "start", "market_name", "runner_name", "other_runners")
 
-BLUE = ("You are the BLUE team. Build the strongest evidence-based case that this "
-        "prediction market resolves YES. Read the resolution rules literally. End with "
-        "'BLUE ESTIMATE: <probability 0-1>'.")
-RED = ("You are the RED team. Attack the Blue case: weak assumptions, base rates, and "
-       "technical traps in the resolution rules. Argue the NO case. End with "
-       "'RED ESTIMATE: <probability of YES 0-1>'.")
-JUDGE = ("You are the JUDGE. Weigh both cases and the rules. Reply with ONLY a JSON "
-         'object: {"true_prob_yes": <0-1>, "confidence": <0-1>, "reasoning": "<two sentences>"}. '
-         "confidence is how sure you are the probability is right, not how likely YES is.")
+BLUE = ("You are the BLUE team. Build the strongest evidence-based case that the SELECTION "
+        "wins this betting-exchange market (90-minute result unless the market says otherwise). "
+        "End with 'BLUE ESTIMATE: <probability 0-1>'.")
+RED = ("You are the RED team. Attack the Blue case: weak assumptions, base rates, team news, "
+       "home advantage, draw likelihood. Argue that the SELECTION does not win. End with "
+       "'RED ESTIMATE: <probability the selection wins 0-1>'.")
+JUDGE = ("You are the JUDGE. Weigh both cases. Reply with ONLY a JSON object: "
+         '{"true_prob_yes": <0-1>, "confidence": <0-1>, "reasoning": "<two sentences>"}. '
+         "true_prob_yes is the chance the SELECTION wins. confidence is how sure you are the "
+         "probability is right, not how likely the selection is to win.")
 
 
 @dataclass
 class OracleResult:
-    true_prob_yes: float
+    true_prob: float
     confidence: float
     reasoning: str
     tokens: int
-    cost_usd: Optional[float]      # None = cost PENDING (no rate configured)
+    cost_gbp: Optional[float]      # None = cost PENDING (no rate configured)
 
 
 def blind_brief(candidate: dict) -> str:
-    lines = [f"{k.replace('_', ' ').upper()}: {str(candidate.get(k) or '').strip()}" for k in BLIND_FIELDS]
-    return "\n".join(lines)
+    def show(v):
+        return ", ".join(v) if isinstance(v, list) else str(v or "").strip()
+    return "\n".join(f"{k.replace('_', ' ').upper()}: {show(candidate.get(k))}" for k in BLIND_FIELDS)
 
 
 def _chat(system: str, user: str, post: Callable = requests.post) -> tuple[str, int]:
@@ -92,5 +95,5 @@ def evaluate(candidate: dict, chat: Callable = _chat) -> Optional[OracleResult]:
     if parsed is None:
         return None
     tokens = t1 + t2 + t3
-    cost = None if C.ORACLE_USD_PER_1K_TOKENS is None else round(tokens / 1000 * C.ORACLE_USD_PER_1K_TOKENS, 6)
+    cost = None if C.ORACLE_GBP_PER_1K_TOKENS is None else round(tokens / 1000 * C.ORACLE_GBP_PER_1K_TOKENS, 6)
     return OracleResult(parsed[0], parsed[1], parsed[2], tokens, cost)

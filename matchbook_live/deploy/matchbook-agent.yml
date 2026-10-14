@@ -1,0 +1,69 @@
+# Matchbook LIVE agent — runs on the Architect's UK machine (self-hosted runner).
+#
+# Copy to .github/workflows/matchbook-agent.yml in a PRIVATE repo. Never put a
+# self-hosted runner on a public repo: a stranger's pull request could run
+# code on the machine. This workflow has no pull_request trigger on purpose.
+#
+# Secrets (repo -> Settings -> Secrets and variables -> Actions -> Secrets):
+#   MATCHBOOK_USERNAME, MATCHBOOK_PASSWORD
+#   OPENAI_BASE_URL, OPENAI_MODEL, OPENAI_API_KEY (oracle gateway)
+# Variables (same page -> Variables):
+#   MATCHBOOK_LIVE            "1" to send real orders; anything else = dry
+#   ORACLE_GBP_PER_1K_TOKENS  e.g. "0.002"; unset -> burn PENDING
+#   MB_STATE_DIR              e.g. "C:\olp\matchbook_state" (kept between runs)
+
+name: matchbook-agent
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"        # GitHub may run scheduled jobs late; that is fine
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "once = one cycle; reseed = Architect lifts a halt / reseeds"
+        required: true
+        default: once
+        type: choice
+        options: [once, reseed]
+
+concurrency:
+  group: matchbook-agent          # never two cycles at once
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  cycle:
+    runs-on: [self-hosted, Windows, matchbook-uk]
+    timeout-minutes: 20
+    env:
+      PYTHONIOENCODING: utf-8
+      MATCHBOOK_USERNAME: ${{ secrets.MATCHBOOK_USERNAME }}
+      MATCHBOOK_PASSWORD: ${{ secrets.MATCHBOOK_PASSWORD }}
+      MATCHBOOK_LIVE: ${{ vars.MATCHBOOK_LIVE }}
+      OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+      OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ORACLE_GBP_PER_1K_TOKENS: ${{ vars.ORACLE_GBP_PER_1K_TOKENS }}
+      MB_STATE_DIR: ${{ vars.MB_STATE_DIR || 'C:\olp\matchbook_state' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Dependencies
+        shell: powershell
+        run: py -3 -m pip install --quiet --disable-pip-version-check requests
+
+      - name: Offline tests (no order goes out if these fail)
+        shell: powershell
+        run: py -3 -m unittest matchbook_live.tests.test_live
+
+      - name: Reseed (Architect only)
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'reseed'
+        shell: powershell
+        run: py -3 -m matchbook_live.run --reseed
+
+      - name: Cycle
+        if: github.event_name == 'schedule' || inputs.mode == 'once'
+        shell: powershell
+        run: py -3 -m matchbook_live.run --once
