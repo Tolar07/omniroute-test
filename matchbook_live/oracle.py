@@ -54,7 +54,7 @@ def blind_brief(candidate: dict) -> str:
 def _chat(system: str, user: str, post: Callable = requests.post) -> tuple[str, int]:
     r = post(f"{C.ORACLE_BASE_URL}/chat/completions",
              headers={"Authorization": f"Bearer {C.ORACLE_API_KEY}"} if C.ORACLE_API_KEY else {},
-             json={"model": C.ORACLE_MODEL, "temperature": 0.2,
+             json={"model": C.ORACLE_MODEL, "temperature": 0.2, "stream": False,   # OmniRoute streams by default
                    "messages": [{"role": "system", "content": system},
                                 {"role": "user", "content": user}]},
              timeout=120)
