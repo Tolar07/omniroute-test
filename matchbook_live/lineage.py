@@ -227,7 +227,8 @@ def allocate(pop: dict, hist: list[dict], opportunities: list[dict], run_id: str
             d = risk_gate.evaluate(true_prob=o["true_prob"], confidence=o["confidence"], book=c["book"],
                                    equity_gbp=equity(ln, hist), cash_gbp=ln["cash_gbp"],
                                    deployed_gbp=deployed(hist, ln["lineage_id"]),
-                                   event_held=c["event_id"] in held_events, free_funds_gbp=free_funds)
+                                   event_held=c["event_id"] in held_events, free_funds_gbp=free_funds,
+                                   min_edge=c.get("min_edge", C.MIN_EDGE))
             c.setdefault("decisions", []).append({"lineage_id": ln["lineage_id"], **d.to_dict()})
             if not d.execute:
                 if d.reason.startswith(("Event lock", "Confidence", "Oracle", "Edge", "Odds", "Back depth")):
@@ -254,6 +255,8 @@ def allocate(pop: dict, hist: list[dict], opportunities: list[dict], run_id: str
                    "oracle_p": o["true_prob"], "confidence": o["confidence"],
                    "edge": d.edge, "kelly_raw": d.kelly_raw, "stake_fraction": d.capped_fraction,
                    "stake_asked_gbp": d.stake_gbp, "offer_id": fill["offer_id"],
+                   "source": c.get("source", "oracle"), "fw_key": c.get("fw_key"),
+                   "fw_pick": c.get("fw_pick"), "fw_code": c.get("fw_code"), "fw_price": c.get("fw_price"),
                    "cost_gbp": fill["matched_gbp"], "avg_odds": fill["avg_odds"],
                    "cancel_pending": fill.get("cancel_pending", False), "status": "OPEN"}
             hist.append(rec)

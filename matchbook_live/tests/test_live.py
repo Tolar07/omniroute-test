@@ -12,7 +12,7 @@ from pathlib import Path
 from unittest import mock
 
 from matchbook_live import config as C
-from matchbook_live import executor
+from matchbook_live import executor, framework_feed
 from matchbook_live import lineage as L
 from matchbook_live import notify, oracle, risk_gate, run, scanner
 
@@ -237,10 +237,13 @@ class Telegram(unittest.TestCase):
 
 
 class Cycle(unittest.TestCase):
+    fw_files: list = []
+
     def _run(self, live: bool, stop=False):
         fx = FakeExchange()
         with tempfile.TemporaryDirectory() as d, \
                 mock.patch.object(notify, "send", lambda text: "test: not sent"), \
+                mock.patch.object(framework_feed, "fetch_picks", lambda dates: (self.fw_files, [])), \
                 mock.patch.object(C, "LIVE", live), mock.patch.object(C, "USERNAME", "u"), \
                 mock.patch.object(C, "PASSWORD", "p"), mock.patch.object(oracle, "available", lambda: True), \
                 mock.patch.object(oracle, "evaluate",
@@ -281,6 +284,107 @@ class AccountSafety(unittest.TestCase):
         self.assertEqual(C.MAX_STAKE_FRACTION, 0.06)
         self.assertEqual(C.KELLY_FRACTION, 0.5)
         self.assertEqual(C.MAX_PORTFOLIO_EXPOSURE, 0.65)
+
+
+def mb_event(start, home="Norwich", away="Southampton"):
+    def r(rid, name, back, lay, hcp=None):
+        return {"id": rid, "name": name, "status": "open", "handicap": hcp,
+                "prices": [{"side": "back", "odds": back, "available-amount": 30},
+                           {"side": "back", "odds": back - 0.01, "available-amount": 30},
+                           {"side": "lay", "odds": lay, "available-amount": 30}]}
+    return {"id": 501, "name": f"{home} vs {away}", "start": start.isoformat().replace("+00:00", "Z"),
+            "status": "open", "markets": [
+                {"id": 1, "name": "Match Odds", "market-type": "one_x_two", "status": "open",
+                 "runners": [r(11, home, 2.5, 2.54), r(12, away, 3.0, 3.05), r(13, "Draw", 3.4, 3.5)]},
+                {"id": 2, "name": "Total", "market-type": "total", "handicap": 2.5, "status": "open",
+                 "runners": [r(21, "OVER 2.5", 1.9, 1.94, 2.5), r(22, "UNDER 2.5", 2.0, 2.04, 2.5)]},
+                {"id": 3, "name": "Handicap", "market-type": "handicap", "handicap": -1.5, "status": "open",
+                 "runners": [r(31, f"{home} -1.5", 4.0, 4.1, -1.5), r(32, f"{away} +1.5", 1.30, 1.31, 1.5)]},
+                {"id": 4, "name": "Double Chance", "market-type": "other", "status": "open",
+                 "runners": [r(41, f"{home} or Draw", 1.45, 1.47), r(42, f"{home} or {away}", 1.35, 1.37),
+                             r(43, f"Draw or {away}", 1.6, 1.63)]}]}
+
+
+def fw_single(market, chance, ko, home="Norwich City", away="Southampton", fixture=None):
+    return {"fixture": fixture or f"{home} v {away}", "home": home, "away": away, "market": market,
+            "pick": market, "chance": chance, "kickoff_utc": ko.isoformat().replace("+00:00", "Z"),
+            "news_level": "OK", "code": "ABC123", "price": 1.3}
+
+
+class FrameworkFeed(unittest.TestCase):
+    def test_map_market(self):
+        m = framework_feed.map_market
+        self.assertEqual(m("SB:18|total=3.5|Under 3.5"), {"type": "total", "line": 3.5, "want": "under"})
+        self.assertEqual(m("OVER_2_5"), {"type": "total", "line": 2.5, "want": "over"})
+        self.assertEqual(m("SB:10||Home or Away")["want"], "home_or_away")
+        self.assertEqual(m("SB:16|hcp=-1.5|Away (+1.5)"), {"type": "handicap", "line": 1.5, "want": "away"})
+        self.assertIsNone(m("SB:16|hcp=-1|Away (+1)"))             # whole line: push rules, skipped
+        for unsupported in ("SB:19|total=2.5|Under 2.5", "SB:34||No", "SB:548||1-3", "SB:14|hcp=0:2|Away (0:2)",
+                            "SB:547|total=1.5|Home/Draw & Over 1.5"):
+            self.assertIsNone(m(unsupported), unsupported)
+
+    def test_team_names(self):
+        self.assertGreater(framework_feed.alike("Man City", "Manchester City"), 0.8)
+        self.assertGreater(framework_feed.alike("Bodoe/Glimt", "Bodø/Glimt"), 0.8)
+        self.assertGreater(framework_feed.alike("Feyenoord", "Feyenoord Rotterdam"), 0.8)
+        self.assertLess(framework_feed.alike("Norwich", "Southampton"), 0.5)
+
+    def test_match_event_needs_kickoff_and_both_teams(self):
+        ko = NOW + timedelta(hours=3)
+        evs = [mb_event(ko)]
+        self.assertIsNotNone(framework_feed.match_event("Norwich City", "Southampton", ko, evs))
+        self.assertIsNone(framework_feed.match_event("Norwich", "Southampton", ko + timedelta(hours=1), evs))
+        self.assertIsNone(framework_feed.match_event("Norwich", "Derby", ko, evs))
+
+    def test_candidates_find_the_right_runner(self):
+        ko = NOW + timedelta(hours=3)
+        files = [{"date": "d", "singles": [
+            fw_single("SB:18|total=2.5|Under 2.5", 0.60, ko),
+            fw_single("SB:16|hcp=-1.5|Away (+1.5)", 0.80, ko, fixture="x2"),
+            fw_single("SB:10||Home or Away", 0.75, ko, fixture="x3"),
+            fw_single("SB:19|total=2.5|Under 2.5", 0.70, ko, fixture="x4"),
+            fw_single("SB:10||Draw or Away", 0.70, ko + timedelta(hours=20), fixture="x5")]}]
+        got, skipped = framework_feed.candidates(files, [mb_event(ko)], NOW, set())
+        self.assertEqual(sorted(c["runner_name"] for c in got),
+                         ["Norwich or Southampton", "Southampton +1.5", "UNDER 2.5"])
+        self.assertTrue(all(c["source"] == "framework" and c["oracle"]["confidence"] == 1.0 for c in got))
+        self.assertEqual(len(skipped), 1)                       # team total; x5 (23 h away) waits quietly
+        self.assertIn("not on Matchbook", skipped[0])
+
+    def test_already_bet_leg_is_not_repeated(self):
+        ko = NOW + timedelta(hours=3)
+        files = [{"date": "d", "singles": [fw_single("SB:18|total=2.5|Under 2.5", 0.60, ko)]}]
+        key = "d|Norwich City v Southampton|SB:18|total=2.5|Under 2.5"
+        self.assertEqual(framework_feed.candidates(files, [mb_event(ko)], NOW, {key})[0], [])
+
+    def test_framework_edge_rule(self):
+        # UNDER 2.5 @ 2.0: break-even 1.02 / 2.0 = 0.51
+        ko = NOW + timedelta(hours=3)
+        files = [{"date": "d", "singles": [fw_single("SB:18|total=2.5|Under 2.5", 0.52, ko)]}]
+        (c,), _ = framework_feed.candidates(files, [mb_event(ko)], NOW, set())
+
+        def gate_at(p):
+            return risk_gate.evaluate(true_prob=p, confidence=1.0, book=c["book"], equity_gbp=50, cash_gbp=50,
+                                      deployed_gbp=0, event_held=False, min_edge=c["min_edge"])
+        self.assertFalse(gate_at(0.50).execute)                     # no edge at Matchbook's price
+        self.assertIn("minimum", gate_at(0.52).reason)              # 1 pt edge: ½-Kelly stake under £1
+        d = gate_at(0.58)
+        self.assertTrue(d.execute)                                  # 7 pts: bets (oracle would need 8+)
+        self.assertLessEqual(d.stake_gbp, 3.0)
+
+
+class FrameworkCycle(unittest.TestCase):
+    def test_framework_pick_goes_live(self):
+        ko = datetime.now(timezone.utc) + timedelta(hours=3)
+        cyc = Cycle()
+        cyc.fw_files = [{"date": "d", "singles": [fw_single("SB:18|total=2.5|Under 2.5", 0.70, ko)]}]
+        ev = mb_event(ko)
+        with mock.patch.object(FakeExchange, "events",
+                               lambda self, offset=0, per_page=50: {"events": [ev] if offset == 0 else [],
+                                                                    "total": 1}):
+            fx, text = cyc._run(live=True)
+        self.assertIn(("back", 22, 2.0), [c[:3] for c in fx.calls])  # UNDER 2.5 runner at the best back
+        self.assertIn("framework", text)
 
 
 if __name__ == "__main__":

@@ -27,7 +27,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from matchbook_live import config as C
-from matchbook_live import executor
+from matchbook_live import executor, framework_feed
 from matchbook_live import lineage as L
 from matchbook_live import notify, oracle, scanner
 from matchbook_live.client import Client
@@ -141,9 +141,11 @@ def heartbeat(rid: str, now: datetime, mode: str, pop: dict, hist: list[dict], e
     lines += ["", "THIS RUN", *(f"  {e}" for e in events or ["no settlements, orders, births or deaths"]),
               "", f"SCAN  events {stats.get('events_read', 'PENDING')} · page errors "
               f"{stats.get('page_errors', 0)} · candidates {stats.get('candidates', 'PENDING')}",
+              f"FRAMEWORK {stats.get('framework', 'PENDING')}",
+              *(f"  skipped: {x}" for x in (stats.get("framework_skipped") or [])[:12]),
               f"ORACLE {oracle_note}"]
     if picks:
-        lines += ["", "ORACLE PICKS THIS RUN (blind estimate vs market)", *(f"  {x}" for x in picks)]
+        lines += ["", "PICKS PRICED THIS RUN (estimate vs Matchbook)", *(f"  {x}" for x in picks)]
     return "\n".join(lines)
 
 
@@ -178,10 +180,40 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
     oracle_note = "not run (population halted)"
     if not pop.get("halted"):
         try:
-            cands, stats = scanner.scan(client, now, max_events)
+            cands, stats, mb_events = scanner.scan(client, now, max_events)
         except Exception as e:
-            cands, stats = [], {}
+            cands, stats, mb_events = [], {}, []
             events.append(f"SCAN FAILED: {type(e).__name__}: {e} — NO DATA — PENDING")
+
+        if live:
+            def place(runner_id, odds, stake):
+                return executor.back_fak(client, runner_id, odds, stake)
+            free_funds = float(balance.get("free-funds") or 0) if balance else 0.0
+        else:
+            def place(runner_id, odds, stake):
+                return None, mode
+            free_funds = None
+
+        # 1. the framework's own picks first: no oracle needed, prices fresh from this scan
+        files, fw_notes = framework_feed.fetch_picks(framework_feed.picks_dates(now))
+        held = {h.get("fw_key") for h in hist if h.get("fw_key")}
+        fw_opps, fw_skipped = framework_feed.candidates(files, mb_events, now, held)
+        stats["framework"] = (f"{len(files)} picks file(s) · {len(framework_feed.legs(files))} legs · "
+                              f"{len(fw_opps)} on Matchbook in the betting window · "
+                              f"{len(fw_skipped)} skipped" + (f" · {'; '.join(fw_notes)}" if fw_notes else ""))
+        for c in fw_opps:
+            o = c["oracle"]["true_prob"]
+            be = (1 + C.COMMISSION) / c["book"]["best_back"]
+            picks.append(f"FRAMEWORK {c['fw_pick']} — {c['event_name'][:45]} (KO {c['start'][5:16]}): "
+                         f"model {o:.0%} vs Matchbook {c['book']['best_back']:.2f} (break-even {be:.0%}, "
+                         f"edge {o - be:+.1%})")
+        stats["framework_skipped"] = fw_skipped
+        opened, notes = L.allocate(pop, hist, fw_opps, rid, place, free_funds, now)
+        events += notes
+        if free_funds is not None:
+            free_funds -= sum(r["cost_gbp"] for r in opened)
+
+        # 2. the blind oracle on Match Odds
         cache = _cache_load(state_dir)
         opps, calls, reused = [], 0, 0
         if not (use_oracle and oracle.available()):
@@ -217,19 +249,13 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
                            f"{len(cands) - calls - reused} left for the next run"
                            + (f" · last failure: {oracle.last_error}" if failed else ""))
 
-        if live:
-            def place(runner_id, odds, stake):
-                return executor.back_fak(client, runner_id, odds, stake)
-            free_funds = float(balance.get("free-funds") or 0) if balance else 0.0
-        else:
-            def place(runner_id, odds, stake):
-                return None, mode
-            free_funds = None
-        opened, notes = L.allocate(pop, hist, opps, rid, place, free_funds, now)
+        opened2, notes = L.allocate(pop, hist, opps, rid, place, free_funds, now)
         events += notes
-        for rec in opened:
-            events.append(f"OPEN BACK {rec['runner_name']} £{rec['cost_gbp']:.2f} @ {rec['avg_odds']:.2f} "
-                          f"(edge {rec['edge']:+.1%}, oracle {rec['oracle_p']:.2f}/{rec['confidence']:.2f}) "
+        for rec in opened + opened2:
+            who = (f"framework {rec['fw_pick']} (model {rec['oracle_p']:.0%})" if rec.get("source") == "framework"
+                   else f"oracle {rec['oracle_p']:.2f}/{rec['confidence']:.2f}")
+            events.append(f"OPEN BACK {rec['runner_name']} ({rec['market_name']}) £{rec['cost_gbp']:.2f} "
+                          f"@ {rec['avg_odds']:.2f} (edge {rec['edge']:+.1%}, {who}) "
                           f"{rec['event_name'][:50]} → {rec['lineage_id']}")
 
     reason = notify.due(pop, now, mode, events)

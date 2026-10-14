@@ -168,6 +168,21 @@ What the amendment allows, and nothing more:
 - **Switch:** orders go out only when `MATCHBOOK_LIVE=1` is set on the runner;
   a `STOP` file in the state directory halts new orders at once.
 
+**2026-10-15 — framework picks feed the agent.** The Architect, same session:
+
+> "Convert what you need to convert to make the framework feed Matchbook. All the
+> bets you've created and all the bets you'll be creating has to be feeding
+> Matchbook."
+
+`matchbook_live/framework_feed.py` reads the framework's public
+`output/picks/picks_<date>.json` and turns every single (which covers every
+acca leg) into a Matchbook back bet where Matchbook lists the same market,
+sized by the same gate with the framework's own probability against
+Matchbook's price. The framework is unchanged and still never stakes; only
+`matchbook_live/` places orders, inside the limits above. For framework legs
+the minimum edge is any edge over Matchbook's price net of commission
+(oracle picks keep the 8-point bar); ½-Kelly sizes it.
+
 Changing any of those limits is another Architect amendment, dated and quoted here.
 
 ---

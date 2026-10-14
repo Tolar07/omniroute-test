@@ -16,6 +16,7 @@ and sends nothing.
 |---|---|---|
 | Client | `client.py` | Matchbook REST: login (session reused ~5 h), events, balance, submit/get/cancel offer, settled-bets report. No deposit, withdrawal, transfer or settings endpoint: the tests fail on any endpoint off the allow-list |
 | Scanner | `scanner.py` | Soccer (sport 15) "Match Odds", kick-off 2 h–7 d away, read without login; per runner: back–lay spread ≤ 4 pts, implied 0.10–0.88, best-two back depth ≥ £15 |
+| Framework feed | `framework_feed.py` | Every single in the framework's daily `picks_<date>.json` (every acca leg is one): SportyBet market → Matchbook (Total, Double Chance, half-line Handicap, Match Odds, BTTS, Draw No Bet; team totals, win-to-nil, multigoals, combos skipped and logged), match found by kick-off ±20 min and both team names, bet 10 min–12 h before kick-off, framework probability vs Matchbook price net of commission, any edge → ½-Kelly. Runs before the oracle each cycle |
 | Oracle | `oracle.py` | Blue / Red / Judge through an OpenAI-compatible gateway. **Blind**: event, kick-off, market and selection names only, never a price. No gateway → PENDING, nothing trades |
 | Delta cache | `run.py` | An answer is reused for 4 h unless the implied price moved 3+ pts |
 | Risk gate | `risk_gate.py` | break-even = (1 + 2%) / odds; edge > 8 pts, confidence ≥ 0.70, ½-Kelly (commission-adjusted) capped at 6% of equity, ≤ cash − £1, ≤ 65% exposure, ≤ Matchbook free funds − £1, ≥ £1, one position per event |
