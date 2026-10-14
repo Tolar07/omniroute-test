@@ -207,7 +207,8 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
                 opps.append(c)
             _cache_save(state_dir, cache)
             oracle_note = (f"{calls} evaluated ({failed} failed → PENDING), {reused} from cache, "
-                           f"{len(cands) - calls - reused} left for the next run")
+                           f"{len(cands) - calls - reused} left for the next run"
+                           + (f" · last failure: {oracle.last_error}" if failed else ""))
 
         if live:
             def place(runner_id, odds, stake):

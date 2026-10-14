@@ -59,7 +59,7 @@ class Client:
         r = self.http.post(C.API_URL + C.LOGIN_PATH, headers=HEADERS, timeout=30,
                            json={"username": self.username, "password": self.password})
         if r.status_code != 200:
-            raise MatchbookError(f"login failed: HTTP {r.status_code}")
+            raise MatchbookError(f"login failed: HTTP {r.status_code} {r.text[:300]}")   # body never echoes the password
         self.token = r.json()["session-token"]
         self.state_dir.mkdir(parents=True, exist_ok=True)
         f.write_text(json.dumps({"token": self.token,

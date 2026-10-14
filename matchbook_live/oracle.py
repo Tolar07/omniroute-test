@@ -81,18 +81,25 @@ def available() -> bool:
     return bool(C.ORACLE_BASE_URL and C.ORACLE_MODEL)
 
 
+last_error = ""                    # why the last evaluate() returned None, for the heartbeat
+
+
 def evaluate(candidate: dict, chat: Callable = _chat) -> Optional[OracleResult]:
+    global last_error
     if not available() and chat is _chat:
+        last_error = "no gateway"
         return None
     brief = blind_brief(candidate)
     try:
         blue, t1 = chat(BLUE, brief)
         red, t2 = chat(RED, f"{brief}\n\nBLUE CASE:\n{blue}")
         judge, t3 = chat(JUDGE, f"{brief}\n\nBLUE CASE:\n{blue}\n\nRED CASE:\n{red}")
-    except (requests.RequestException, KeyError, IndexError, ValueError):
+    except (requests.RequestException, KeyError, IndexError, ValueError, TypeError) as e:
+        last_error = f"{type(e).__name__}: {str(e)[:120]}"
         return None
     parsed = parse_judge(judge)
     if parsed is None:
+        last_error = f"judge reply not valid JSON: {str(judge)[:120]!r}"
         return None
     tokens = t1 + t2 + t3
     cost = None if C.ORACLE_GBP_PER_1K_TOKENS is None else round(tokens / 1000 * C.ORACLE_GBP_PER_1K_TOKENS, 6)
