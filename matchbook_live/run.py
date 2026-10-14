@@ -29,7 +29,7 @@ from pathlib import Path
 from matchbook_live import config as C
 from matchbook_live import executor
 from matchbook_live import lineage as L
-from matchbook_live import oracle, scanner
+from matchbook_live import notify, oracle, scanner
 from matchbook_live.client import Client
 
 
@@ -100,7 +100,7 @@ def sweep(client, pop: dict, hist: list[dict]) -> list[str]:
 
 # ---------------------------------------------------------------- heartbeat
 def heartbeat(rid: str, now: datetime, mode: str, pop: dict, hist: list[dict], events: list[str],
-              stats: dict, oracle_note: str, balance: dict | None) -> str:
+              stats: dict, oracle_note: str, balance: dict | None, picks: list[str] | None = None) -> str:
     alive = L.living(pop)
     burn, known = L.burn_total(pop)
     total = 0.0
@@ -142,6 +142,8 @@ def heartbeat(rid: str, now: datetime, mode: str, pop: dict, hist: list[dict], e
               "", f"SCAN  events {stats.get('events_read', 'PENDING')} · page errors "
               f"{stats.get('page_errors', 0)} · candidates {stats.get('candidates', 'PENDING')}",
               f"ORACLE {oracle_note}"]
+    if picks:
+        lines += ["", "ORACLE PICKS THIS RUN (blind estimate vs market)", *(f"  {x}" for x in picks)]
     return "\n".join(lines)
 
 
@@ -172,6 +174,7 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
     events += L.life_cycle(pop, hist, now)
 
     stats: dict = {}
+    picks: list[str] = []
     oracle_note = "not run (population halted)"
     if not pop.get("halted"):
         try:
@@ -202,6 +205,9 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
                          "true_prob": r.true_prob, "confidence": r.confidence,
                          "reasoning": r.reasoning, "run_id": rid}
                     cache[_key(c)] = e
+                    picks.append(f"{c['runner_name']} — {c['event_name'][:45]} (KO {c['start'][5:16]}): "
+                                 f"oracle {r.true_prob:.0%} (conf {r.confidence:.2f}) vs market "
+                                 f"{c['book']['implied']:.0%} @ {c['book']['best_back']:.2f}")
                 else:
                     continue
                 c["oracle"] = e
@@ -226,11 +232,14 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
                           f"(edge {rec['edge']:+.1%}, oracle {rec['oracle_p']:.2f}/{rec['confidence']:.2f}) "
                           f"{rec['event_name'][:50]} → {rec['lineage_id']}")
 
+    reason = notify.due(pop, now, mode, events)
     L.save(pop, hist, state_dir)
     if pop.get("halted") and not was_halted:
         with open(state_dir / "post_mortem.log", "a", encoding="utf-8") as f:
             f.write(f"{rid} {pop['halted']}\n" + "\n".join(events) + "\n\n")
-    text = heartbeat(rid, now, mode, pop, hist, events, stats, oracle_note, balance)
+    text = heartbeat(rid, now, mode, pop, hist, events, stats, oracle_note, balance, picks)
+    if reason:
+        print(notify.send(f"[{reason}]\n{text}"), flush=True)
     (state_dir / "heartbeat_latest.txt").write_text(text + "\n", encoding="utf-8")
     with open(state_dir / "heartbeats.log", "a", encoding="utf-8") as f:
         f.write(text + "\n\n")

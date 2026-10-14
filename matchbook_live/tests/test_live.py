@@ -14,7 +14,7 @@ from unittest import mock
 from matchbook_live import config as C
 from matchbook_live import executor
 from matchbook_live import lineage as L
-from matchbook_live import oracle, risk_gate, run, scanner
+from matchbook_live import notify, oracle, risk_gate, run, scanner
 
 NOW = datetime(2026, 10, 14, 21, 0, tzinfo=timezone.utc)
 PKG = Path(__file__).resolve().parents[1]
@@ -215,10 +215,32 @@ class Lineage(unittest.TestCase):
         self.assertIn("did not cover", pop["halted"])
 
 
+class Telegram(unittest.TestCase):
+    def test_due_rules(self):
+        pop = {}
+        night = NOW.replace(hour=2)
+        self.assertEqual(notify.due(pop, night, "LIVE — x", []), "mode now LIVE")        # first run
+        self.assertIsNone(notify.due(pop, night, "LIVE — x", ["no news"]))                # quiet run
+        self.assertEqual(notify.due(pop, night, "LIVE — x", ["OPEN BACK A £2"]), "news")
+        self.assertEqual(notify.due(pop, NOW.replace(hour=8), "LIVE — x", []), "daily debrief")
+        self.assertIsNone(notify.due(pop, NOW.replace(hour=9), "LIVE — x", []))           # once a day
+        self.assertEqual(notify.due(pop, NOW.replace(hour=9), "DRY — y", []), "mode now DRY")
+
+    def test_send_needs_config_and_cuts_long_text(self):
+        sent = []
+        with mock.patch.object(notify, "TOKEN", ""):
+            self.assertIn("not configured", notify.send("x", post=lambda *a, **k: sent.append(1)))
+        with mock.patch.object(notify, "TOKEN", "t"), mock.patch.object(notify, "CHAT_ID", "c"):
+            notify.send("y" * 5000, post=lambda url, json, timeout: sent.append(json) or
+                        mock.Mock(status_code=200))
+        self.assertLessEqual(len(sent[-1]["text"]), 4000)
+
+
 class Cycle(unittest.TestCase):
     def _run(self, live: bool, stop=False):
         fx = FakeExchange()
         with tempfile.TemporaryDirectory() as d, \
+                mock.patch.object(notify, "send", lambda text: "test: not sent"), \
                 mock.patch.object(C, "LIVE", live), mock.patch.object(C, "USERNAME", "u"), \
                 mock.patch.object(C, "PASSWORD", "p"), mock.patch.object(oracle, "available", lambda: True), \
                 mock.patch.object(oracle, "evaluate",
@@ -248,7 +270,8 @@ class AccountSafety(unittest.TestCase):
         paths = re.findall(r"[\"'](/[a-z0-9/{}_-]+)", src, re.I)
         self.assertTrue(paths)
         allowed = ("/bpapi/rest/security/session", "/edge/rest/events", "/edge/rest/account/balance",
-                   "/edge/rest/v2/offers", "/edge/rest/reports/v2/bets/settled", "/chat/completions")
+                   "/edge/rest/v2/offers", "/edge/rest/reports/v2/bets/settled", "/chat/completions",
+                   "/sendMessage")
         for p in paths:
             self.assertTrue(p.startswith(allowed), f"endpoint not on the allow-list: {p}")
 

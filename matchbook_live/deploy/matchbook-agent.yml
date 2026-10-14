@@ -7,6 +7,7 @@
 # Secrets (repo -> Settings -> Secrets and variables -> Actions -> Secrets):
 #   MATCHBOOK_USERNAME, MATCHBOOK_PASSWORD
 #   OPENAI_BASE_URL, OPENAI_MODEL, OPENAI_API_KEY (oracle gateway)
+#   TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID (debriefs)
 # Variables (same page -> Variables):
 #   MATCHBOOK_LIVE            "1" to send real orders; anything else = dry
 #   ORACLE_GBP_PER_1K_TOKENS  e.g. "0.002"; unset -> burn PENDING
@@ -71,4 +72,7 @@ jobs:
       - name: Cycle
         if: github.event_name == 'schedule' || inputs.mode == 'once'
         shell: cmd
+        env:                                   # Telegram only here: the test step must never message
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: py -3 -m matchbook_live.run --once --max-oracle-calls 6   # free OmniRoute models take ~40-120 s an answer
