@@ -70,3 +70,4 @@
 - `olp_xdv_agent/olp_xdv`: Modified (staged + unstaged changes)
   - Recent commits include HR57/HR58/HR59 hard rules, mirror retirement, vault sync hardening
   - Submodule points to rewritten history with secrets purged
+- 2026-10-14: **Polymarket paper engine** (`polymarket_paper/`, branch `ccr-8337175b-znydr8`). The heartbeat lineage (framework order 23, AI Survivor) carried onto Polymarket with the "earn your keep" spec money rules: live Gamma/CLOB scan, blind Blue/Red/Judge oracle via OmniRoute (PENDING without a gateway), deterministic ½-Kelly gate (>8 pts edge, 6% cap, 65% exposure, event lock), paper FAK fills against the live book, mitosis at 2× genesis, death under $6.50, earn-your-keep halt. PAPER ONLY: no key, no wallet, no order (capital bright line; `PaperOnly` tests enforce it). 27 offline tests green; one live scan 14 Oct 21:15 UTC read 2,000 markets → 16 candidates. Not in the framework repo yet; not run by any workflow.
