@@ -337,20 +337,33 @@ class FrameworkFeed(unittest.TestCase):
         self.assertIsNone(framework_feed.match_event("Norwich", "Southampton", ko + timedelta(hours=1), evs))
         self.assertIsNone(framework_feed.match_event("Norwich", "Derby", ko, evs))
 
+    def test_certainty_bands(self):
+        cert = framework_feed.certainty
+        self.assertEqual([cert(g) for g in (0.0, 0.03, 0.031, 0.07, 0.071, -0.05)],
+                         ["HIGH", "HIGH", "MEDIUM", "MEDIUM", "LOW", "MEDIUM"])
+
     def test_candidates_find_the_right_runner(self):
+        # break-even net of 2%: Southampton +1.5 @1.30 = 78.5%, Norwich or Southampton @1.35 = 75.6%,
+        # UNDER 2.5 @2.0 = 51%
         ko = NOW + timedelta(hours=3)
         files = [{"date": "d", "singles": [
-            fw_single("SB:18|total=2.5|Under 2.5", 0.60, ko),
-            fw_single("SB:16|hcp=-1.5|Away (+1.5)", 0.80, ko, fixture="x2"),
-            fw_single("SB:10||Home or Away", 0.75, ko, fixture="x3"),
-            fw_single("SB:19|total=2.5|Under 2.5", 0.70, ko, fixture="x4"),
-            fw_single("SB:10||Draw or Away", 0.70, ko + timedelta(hours=20), fixture="x5")]}]
+            fw_single("SB:18|total=2.5|Under 2.5", 0.85, ko),                    # +34 pts: LOW
+            fw_single("SB:16|hcp=-1.5|Away (+1.5)", 0.83, ko, fixture="x2"),     # +4.5: MEDIUM
+            fw_single("SB:10||Home or Away", 0.80, ko, fixture="x3"),            # +4.4: MEDIUM
+            fw_single("SB:19|total=2.5|Under 2.5", 0.90, ko, fixture="x4"),      # team total
+            fw_single("SB:10||Draw or Away", 0.90, ko + timedelta(hours=20), fixture="x5"),
+            fw_single("SB:16|hcp=-1.5|Away (+1.5)", 0.80, ko, fixture="x6"),     # +1.5: HIGH
+            fw_single("SB:10||Home or Draw", 0.75, ko, fixture="x7")]}]          # under the 80% bar
         got, skipped = framework_feed.candidates(files, [mb_event(ko)], NOW, set())
         self.assertEqual(sorted(c["runner_name"] for c in got),
-                         ["Norwich or Southampton", "Southampton +1.5", "UNDER 2.5"])
+                         ["Norwich or Southampton", "Southampton +1.5"])
         self.assertTrue(all(c["source"] == "framework" and c["oracle"]["confidence"] == 1.0 for c in got))
-        self.assertEqual(len(skipped), 1)                       # team total; x5 (23 h away) waits quietly
-        self.assertIn("not on Matchbook", skipped[0])
+        self.assertTrue(all("MEDIUM on Matchbook" in c["oracle"]["reasoning"] for c in got))
+        # x5 (23 h away) waits and x7 (75%) is under the bar: both quiet
+        self.assertEqual(len(skipped), 3, skipped)
+        self.assertTrue(any("not on Matchbook" in s for s in skipped))
+        self.assertTrue(any("LOW certainty" in s for s in skipped))
+        self.assertTrue(any("HIGH certainty" in s for s in skipped))
 
     def test_already_bet_leg_is_not_repeated(self):
         ko = NOW + timedelta(hours=3)
@@ -359,18 +372,19 @@ class FrameworkFeed(unittest.TestCase):
         self.assertEqual(framework_feed.candidates(files, [mb_event(ko)], NOW, {key})[0], [])
 
     def test_framework_edge_rule(self):
-        # UNDER 2.5 @ 2.0: break-even 1.02 / 2.0 = 0.51
+        # Norwich or Southampton @ 1.35: break-even 1.02 / 1.35 = 0.7556
         ko = NOW + timedelta(hours=3)
-        files = [{"date": "d", "singles": [fw_single("SB:18|total=2.5|Under 2.5", 0.52, ko)]}]
+        files = [{"date": "d", "singles": [fw_single("SB:10||Home or Away", 0.80, ko)]}]
         (c,), _ = framework_feed.candidates(files, [mb_event(ko)], NOW, set())
+        self.assertEqual(c["min_edge"], 0.03)
 
         def gate_at(p):
             return risk_gate.evaluate(true_prob=p, confidence=1.0, book=c["book"], equity_gbp=50, cash_gbp=50,
                                       deployed_gbp=0, event_held=False, min_edge=c["min_edge"])
-        self.assertFalse(gate_at(0.50).execute)                     # no edge at Matchbook's price
-        self.assertIn("minimum", gate_at(0.52).reason)              # 1 pt edge: ½-Kelly stake under £1
-        d = gate_at(0.58)
-        self.assertTrue(d.execute)                                  # 7 pts: bets (oracle would need 8+)
+        self.assertFalse(gate_at(0.75).execute)                     # no edge at Matchbook's price
+        self.assertIn("not greater than 3%", gate_at(0.77).reason)  # 1.4 pts: HIGH, too thin
+        d = gate_at(0.80)
+        self.assertTrue(d.execute)                                  # 4.4 pts: MEDIUM, bets (oracle needed 8+)
         self.assertLessEqual(d.stake_gbp, 3.0)
 
 
@@ -451,13 +465,13 @@ class FrameworkCycle(unittest.TestCase):
     def test_framework_pick_goes_live(self):
         ko = datetime.now(timezone.utc) + timedelta(hours=3)
         cyc = Cycle()
-        cyc.fw_files = [{"date": "d", "singles": [fw_single("SB:18|total=2.5|Under 2.5", 0.60, ko)]}]   # 9 pts edge
+        cyc.fw_files = [{"date": "d", "singles": [fw_single("SB:10||Home or Away", 0.80, ko)]}]   # 4.4 pts: MEDIUM
         ev = mb_event(ko)
         with mock.patch.object(FakeExchange, "events",
                                lambda self, offset=0, per_page=50: {"events": [ev] if offset == 0 else [],
                                                                     "total": 1}):
             fx, text = cyc._run(live=True)
-        self.assertIn(("back", 22, 2.0), [c[:3] for c in fx.calls])  # UNDER 2.5 runner at the best back
+        self.assertIn(("back", 42, 1.35), [c[:3] for c in fx.calls])  # Norwich or Southampton at the best back
         self.assertIn("framework", text)
 
 

@@ -22,7 +22,9 @@ For each single:
      handicap) has no Matchbook twin and is skipped, with the reason.
   2. find the match on Matchbook: kick-off within 20 minutes, both team names
      alike. No confident match -> skipped, never guessed (HR35).
-  3. hand it to the same risk gate as everything else, with the framework's
+  3. keep it only at the AI Survivor bar (chance 80%+) with MEDIUM certainty on
+     Matchbook (model 3-7 pts over break-even, see certainty()), then hand it to
+     the same risk gate as everything else, with the framework's
      own probability (`chance`) against Matchbook's best back price, net of
      commission. ½-Kelly sizes it; no edge at Matchbook's price -> no stake.
 
@@ -49,9 +51,23 @@ MAX_TO_KICKOFF = timedelta(hours=12)       # bet late, after the framework's new
 BAD_NEWS = ("RED", "BLOCK", "DROP", "AVOID", "OUT")
 # Matchbook only: the framework's 1.50 cap is lifted (Architect, 2026-10-15), with
 # guards so the bets stay reasonable:
-MIN_CHANCE = 0.50              # the model must make the outcome more likely than not
 MAX_ODDS = float(os.getenv("MB_FRAMEWORK_MAX_ODDS", "2.50"))   # Matchbook back price ceiling
-MAX_EDGE = 0.15                # model > exchange by 15+ pts: distrust the model, skip
+# AI Survivor rules with MEDIUM certainty measured on Matchbook (Architect, 2026-10-15).
+# The survivor's quality bar is a model chance of 80%+. Certainty is the framework's
+# own rule (engine/slate.py: HIGH gap <= 3 pts, MEDIUM <= 7, else LOW), but the market
+# side is Matchbook's break-even instead of SportyBet's margin-heavy price. Only MEDIUM
+# with the model ABOVE Matchbook trades: 3-7 pts of edge. Under 3 is too thin to clear
+# the model's measured overconfidence (survivor: 53 won vs 56.7 expected); over 7 the
+# model is more likely wrong than the exchange.
+MIN_CHANCE = float(os.getenv("MB_FRAMEWORK_MIN_CHANCE", "0.80"))
+CERTAINTY_HIGH_PP = 0.03
+CERTAINTY_MEDIUM_PP = 0.07
+
+
+def certainty(gap: float) -> str:
+    """The framework's certainty bands on |model - Matchbook break-even|."""
+    g = abs(gap)
+    return "HIGH" if g <= CERTAINTY_HIGH_PP else "MEDIUM" if g <= CERTAINTY_MEDIUM_PP else "LOW"
 
 _NOISE = {"fc", "cf", "sc", "ac", "afc", "fk", "sk", "if", "bk", "cd", "ud", "sd", "rc", "sv", "vfb",
           "vfl", "tsg", "us", "as", "ss", "club", "de", "the", "calcio", "1907", "1909", "1913"}
@@ -282,9 +298,14 @@ def candidates(picks_files: list[dict], events: list[dict], now: datetime,
         why = scanner.tradable(c["book"])
         if not why and c["book"]["best_back"] > MAX_ODDS:
             why = f"odds {c['book']['best_back']:.2f} above the {MAX_ODDS:.2f} cap"
-        if not why and p - (1 + C.COMMISSION) / c["book"]["best_back"] > MAX_EDGE:
-            why = (f"model {p:.0%} vs Matchbook {1 / c['book']['best_back']:.0%}: too far apart, "
-                   "more likely the model is wrong than the exchange")
+        gap = p - (1 + C.COMMISSION) / c["book"]["best_back"]
+        cert = certainty(gap)
+        if not why and gap <= 0:
+            why = f"model {p:.0%} below Matchbook's break-even (edge {gap:+.1%})"
+        elif not why and cert != "MEDIUM":
+            why = (f"{cert} certainty on Matchbook (model {p:.0%}, edge {gap:+.1%}): "
+                   + ("too thin to back" if cert == "HIGH" else
+                      "too far apart, more likely the model is wrong than the exchange"))
         if why:
             skipped.append(f"{label}: {why}")
             continue
@@ -293,6 +314,7 @@ def candidates(picks_files: list[dict], events: list[dict], now: datetime,
                  min_edge=C.MIN_EDGE_FRAMEWORK,
                  oracle={"true_prob": p, "confidence": 1.0,
                          "reasoning": ("framework rated pool" if pool else
-                                       f"framework pick {s.get('tier') or ''} {s.get('certainty') or ''}".strip())})
+                                       f"framework pick {s.get('tier') or ''}".strip())
+                                      + f", MEDIUM on Matchbook (edge {gap:+.1%})"})
         out.append(c)
     return out, skipped

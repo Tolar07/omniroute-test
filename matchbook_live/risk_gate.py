@@ -7,7 +7,7 @@ Matchbook charges commission on matched stake whether the bet wins or loses
 
   break-even = (1 + c) / o
   edge       = p - break-even
-  pass       = edge > min_edge (8 pts oracle, 0 framework) AND confidence >= 0.70 AND implied 1/o in [0.10, 0.88]
+  pass       = edge > min_edge (8 pts oracle, 3 framework) AND confidence >= 0.70 AND implied 1/o in [0.10, 0.88]
                AND best-two back depth >= £15 AND no open position on the event
   kelly      = (p*b - (1-p)*(1+c)) / (b*(1+c)),  b = o - 1 - c
   stake      = equity x min(6%, 0.5 x kelly), capped by cash - £1, by the room

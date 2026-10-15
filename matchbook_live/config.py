@@ -49,9 +49,10 @@ MAX_IMPLIED = 0.88             # back odds 1.14 and longer
 # --------------------------------------------------------------- risk gate
 COMMISSION = float(os.getenv("MB_COMMISSION", "0.02"))   # charged on matched stake, win or lose
 MIN_EDGE = 0.08                # oracle picks: strictly greater than 8 points over break-even
-# Framework picks carry the framework's own model probability; any edge over Matchbook's
-# price net of commission is enough, and ½-Kelly sizes it (small edge -> small stake).
-MIN_EDGE_FRAMEWORK = float(os.getenv("MB_MIN_EDGE_FRAMEWORK", "0.0"))
+# Framework picks carry the framework's own model probability. They must be MEDIUM
+# certainty on Matchbook (framework_feed.certainty): more than 3 pts over Matchbook's
+# break-even net of commission (Architect 2026-10-15). ½-Kelly sizes it.
+MIN_EDGE_FRAMEWORK = float(os.getenv("MB_MIN_EDGE_FRAMEWORK", "0.03"))
 MIN_CONFIDENCE = 0.70
 KELLY_FRACTION = 0.50
 MAX_STAKE_FRACTION = 0.06
