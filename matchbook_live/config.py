@@ -59,6 +59,10 @@ MAX_STAKE_FRACTION = 0.06
 MAX_PORTFOLIO_EXPOSURE = 0.65
 MIN_ORDER_GBP = 1.00
 CASH_BUFFER_GBP = 1.00
+# Loss stop (Architect 2026-10-15): Matchbook balance under this -> halt new bets and
+# message him; he decides whether to resume (lower repo variable MB_LOSS_STOP_GBP, then
+# reseed). 0 turns it off; unset or blank = 35.
+LOSS_STOP_GBP = float(os.getenv("MB_LOSS_STOP_GBP") or "35")
 
 # --------------------------------------------------------------- delta cache
 CACHE_HOURS = 4

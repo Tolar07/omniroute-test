@@ -461,6 +461,21 @@ class Loan(unittest.TestCase):
         self.assertEqual(pop["loan_gbp"], 50.0)
 
 
+class LossStop(unittest.TestCase):
+    def test_halts_under_35_while_the_loan_is_out(self):
+        pop = {"loan_gbp": 50.0}
+        self.assertEqual(run.loss_stop(pop, {"balance": 35.0}), [])          # at the line: carries on
+        self.assertIsNone(pop.get("halted"))
+        ev = run.loss_stop(pop, {"balance": 34.99})
+        self.assertIn("LOSS STOP", pop["halted"])
+        self.assertTrue(notify.news(ev))                                     # Telegram goes out at once
+        self.assertEqual(run.loss_stop(pop, {"balance": 20.0}), [])          # already halted: once only
+
+    def test_off_after_repayment_or_without_a_balance(self):
+        self.assertEqual(run.loss_stop({"loan_gbp": 0.0}, {"balance": 10.0}), [])
+        self.assertEqual(run.loss_stop({"loan_gbp": 50.0}, None), [])
+
+
 class FrameworkCycle(unittest.TestCase):
     def test_framework_pick_goes_live(self):
         ko = datetime.now(timezone.utc) + timedelta(hours=3)

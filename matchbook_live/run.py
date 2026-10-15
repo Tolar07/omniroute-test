@@ -98,6 +98,22 @@ def sweep(client, pop: dict, hist: list[dict]) -> list[str]:
     return out
 
 
+# ---------------------------------------------------------------- loss stop
+def loss_stop(pop: dict, balance: dict | None) -> list[str]:
+    """Halt new positions once Matchbook's balance (cash + money in open bets, at
+    cost) is under C.LOSS_STOP_GBP. Settling continues; only --reseed lifts it.
+    Guards the Architect's £50 loan only: once repaid, the £50 he withdraws would
+    otherwise trip it."""
+    if pop.get("halted") or not balance or C.LOSS_STOP_GBP <= 0 or pop.get("loan_gbp", 0) <= 0:
+        return []
+    bal = float(balance.get("balance") or 0)
+    if bal >= C.LOSS_STOP_GBP:
+        return []
+    pop["halted"] = (f"LOSS STOP: Matchbook balance £{bal:.2f} under £{C.LOSS_STOP_GBP:.2f} — "
+                     "no new bets; the Architect decides (--reseed resumes)")
+    return [f"HALTED — {pop['halted']}"]
+
+
 # ---------------------------------------------------------------- heartbeat
 def heartbeat(rid: str, now: datetime, mode: str, pop: dict, hist: list[dict], events: list[str],
               stats: dict, oracle_note: str, balance: dict | None, picks: list[str] | None = None) -> str:
@@ -181,6 +197,7 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
         events.append("settle: Matchbook login not set — open positions stay OPEN (PENDING)")
     events += L.life_cycle(pop, hist, now)
     events += scorecard.update_pauses(pop, hist, now)
+    events += loss_stop(pop, balance)
 
     stats: dict = {}
     picks: list[str] = []

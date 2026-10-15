@@ -53,6 +53,7 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       ORACLE_GBP_PER_1K_TOKENS: ${{ vars.ORACLE_GBP_PER_1K_TOKENS }}
       MB_STATE_DIR: ${{ vars.MB_STATE_DIR || 'C:\olp\matchbook_state' }}
+      MB_LOSS_STOP_GBP: ${{ vars.MB_LOSS_STOP_GBP }}   # blank = £35; 0 = off
     steps:
       - uses: actions/checkout@v4
 
