@@ -225,7 +225,9 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
         # 2. the blind oracle on Match Odds
         cache = _cache_load(state_dir)
         opps, calls, reused = [], 0, 0
-        if not (use_oracle and oracle.available()):
+        if not use_oracle:
+            oracle_note = "OFF — framework-only (--no-oracle); only framework picks trade"
+        elif not oracle.available():
             oracle_note = ("PENDING — no gateway (set OPENAI_BASE_URL + OPENAI_MODEL); "
                            f"{len(cands)} candidates not evaluated, nothing traded")
         else:

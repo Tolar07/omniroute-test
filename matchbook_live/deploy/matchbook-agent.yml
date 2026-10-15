@@ -88,7 +88,10 @@ jobs:
         env:                                   # Telegram only here: the test step must never message
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: py -3 -m matchbook_live.run --once --max-oracle-calls 6   # free OmniRoute models take ~40-120 s an answer
+        # Framework-only (Architect, 2026-10-15): the blind oracle backed a 5.5 longshot on
+        # invented team news, so only the framework's published picks trade. To bring the
+        # oracle back: replace --no-oracle with --max-oracle-calls 6.
+        run: py -3 -m matchbook_live.run --once --no-oracle
 
       - name: Publish ledger (the framework learns from it)
         if: always() && (github.event_name == 'schedule' || inputs.mode == 'once')
