@@ -72,6 +72,13 @@ AGENT_CAPITAL_GBP = 50.00
 GENESIS_BANKROLL_GBP = AGENT_CAPITAL_GBP
 SURVIVAL_FLOOR_GBP = 5.00
 MITOSIS_MULTIPLE = 2.0         # equity >= 2x genesis and cash >= genesis -> split off a child
+# The £50 is a LOAN from the Architect (2026-10-15: "I'm borrowing the bot fifty pounds ... I'm going
+# to withdraw my fifty pounds and it's going to carry on trading with whatever money it makes").
+# While it is outstanding there is no mitosis: growth repays the lender first. Once the population
+# holds LOAN + its own GENESIS (£100) with £50 cash, the bot tells the Architect to withdraw £50 by
+# hand (it never withdraws), and `--repaid` takes it off the books. From then it trades its own money.
+LOAN_GBP = AGENT_CAPITAL_GBP
+REPAY_AT_EQUITY_GBP = LOAN_GBP + GENESIS_BANKROLL_GBP
 MAX_LINEAGES = 16
 MIN_SETTLED_FOR_BURN_RULE = 10
 BURN_WINDOW_HOURS = 48

@@ -183,6 +183,15 @@ Matchbook's price. The framework is unchanged and still never stakes; only
 the minimum edge is any edge over Matchbook's price net of commission
 (oracle picks keep the 8-point bar); ½-Kelly sizes it.
 
+**2026-10-15 — the £50 is a loan.** The Architect: "I'm borrowing the bot fifty
+pounds. So the bot needs to make profit from that money. I'm going to withdraw my
+fifty pounds and it's going to [carry on] trading with ... whatever money it makes."
+While the loan is outstanding no lineage splits; at £100 agent equity (loan + £50 of
+its own) the bot tells the Architect to withdraw £50 by hand (it never withdraws),
+and the workflow's `repaid` mode takes it off the books. After that it trades only
+money it made. Framework order 44 (same day) lets the agent's closing-price record
+steer the framework's picks.
+
 Changing any of those limits is another Architect amendment, dated and quoted here.
 
 ---

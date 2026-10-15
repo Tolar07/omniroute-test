@@ -25,11 +25,11 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "once = one cycle; check = login + balance only; reseed = Architect lifts a halt / reseeds"
+        description: "once = one cycle; check = login + balance; repaid = you withdrew the £50 loan; reseed = lift a halt"
         required: true
         default: once
         type: choice
-        options: [once, check, reseed]
+        options: [once, check, repaid, reseed]
 
 concurrency:
   group: matchbook-agent          # never two cycles at once
@@ -68,6 +68,14 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && inputs.mode == 'check'
         shell: cmd
         run: py -3 -m matchbook_live.run --check
+
+      - name: Loan repaid (Architect only — after you withdrew £50 on matchbook.com)
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'repaid'
+        shell: cmd
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: py -3 -m matchbook_live.run --repaid
 
       - name: Reseed (Architect only)
         if: github.event_name == 'workflow_dispatch' && inputs.mode == 'reseed'

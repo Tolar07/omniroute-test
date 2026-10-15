@@ -410,6 +410,43 @@ class Learning(unittest.TestCase):
         self.assertEqual(scorecard.update_pauses({}, hist, NOW), [])
 
 
+class Loan(unittest.TestCase):
+    def _pop(self, cash):
+        pop = {"lineages": [L.new_lineage()], "burn": [], "halted": None, "loan_gbp": 50.0,
+               "capital_in_gbp": 50.0}
+        pop["lineages"][0]["cash_gbp"] = cash
+        return pop
+
+    def test_no_mitosis_and_no_message_before_repayable(self):
+        pop = self._pop(99.0)
+        self.assertEqual(L.life_cycle(pop, [], NOW), [])
+        self.assertEqual(len(L.living(pop)), 1)
+        self.assertIsNone(pop.get("repay_ready"))
+
+    def test_repayable_once_then_no_split_until_repaid(self):
+        pop = self._pop(100.0)
+        out = L.life_cycle(pop, [], NOW)
+        self.assertTrue(out[0].startswith("LOAN REPAYABLE"))
+        self.assertEqual(len(L.living(pop)), 1)                      # the lender comes first
+        self.assertEqual(L.life_cycle(pop, [], NOW), [])             # said once
+        self.assertIn("REPAID", L.repaid(pop, []))
+        self.assertEqual((pop["loan_gbp"], pop["lineages"][0]["cash_gbp"], pop["capital_in_gbp"]), (0.0, 50.0, 0.0))
+        pop["lineages"][0]["cash_gbp"] = 100.0                       # its own money grows: mitosis is back
+        L.life_cycle(pop, [], NOW)
+        self.assertEqual(len(L.living(pop)), 2)
+
+    def test_repaid_refused_without_the_cash(self):
+        pop = self._pop(30.0)
+        self.assertIn("NOT recorded", L.repaid(pop, []))
+        self.assertEqual(pop["loan_gbp"], 50.0)
+
+    def test_old_state_gets_the_loan(self):
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "lineage.json").write_text('{"lineages": [], "burn": [], "halted": null}', encoding="utf-8")
+            pop, _ = L.load(Path(d))
+        self.assertEqual(pop["loan_gbp"], 50.0)
+
+
 class FrameworkCycle(unittest.TestCase):
     def test_framework_pick_goes_live(self):
         ko = datetime.now(timezone.utc) + timedelta(hours=3)

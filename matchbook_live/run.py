@@ -125,6 +125,9 @@ def heartbeat(rid: str, now: datetime, mode: str, pop: dict, hist: list[dict], e
         f"Agent equity £{total:.2f} (capital in £{pop.get('capital_in_gbp', C.GENESIS_BANKROLL_GBP):.2f}) · "
         "oracle burn " + (f"£{burn:.4f}" if known else f"£{burn:.4f} + PENDING (set ORACLE_GBP_PER_1K_TOKENS)"),
         f"Status: {'HALTED — ' + pop['halted'] if pop.get('halted') else 'ALIVE'}",
+        ("Loan: £{:.2f} from the Architect outstanding — repaid at £{:.0f} agent equity{}".format(
+            pop["loan_gbp"], C.REPAY_AT_EQUITY_GBP, " · REPAYABLE NOW, withdraw it" if pop.get("repay_ready") else "")
+         if pop.get("loan_gbp", 0) > 0 else f"Loan: repaid {pop.get('repaid_at', '')[:10]} — trading its own money"),
         "",
         "LINEAGES",
         *(rows or ["  none alive"]),
@@ -308,6 +311,8 @@ def main(argv=None) -> int:
     ap.add_argument("--no-oracle", action="store_true")
     ap.add_argument("--reseed", action="store_true", help="Architect only: lift a halt / reseed one lineage")
     ap.add_argument("--check", action="store_true", help="log in and print the balance; no scan, no order")
+    ap.add_argument("--repaid", action="store_true",
+                    help="Architect only: you withdrew the £50 loan on Matchbook — take it off the books")
     a = ap.parse_args(argv)
     if a.check:
         print(f"Credentials as received: {C.CREDENTIALS_NOTE}", flush=True)
@@ -316,6 +321,13 @@ def main(argv=None) -> int:
         b = cl.balance()
         print(f"LOGIN OK · balance £{float(b.get('balance') or 0):.2f} · exposure £{float(b.get('exposure') or 0):.2f}"
               f" · free £{float(b.get('free-funds') or 0):.2f} · live switch {'ON' if C.LIVE else 'OFF'}")
+        return 0
+    if a.repaid:
+        pop, hist = L.load(a.state_dir)
+        msg = L.repaid(pop, hist)
+        L.save(pop, hist, a.state_dir)
+        print(msg)
+        print(notify.send(msg))
         return 0
     if a.reseed:
         reseed(a.state_dir)

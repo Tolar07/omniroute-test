@@ -58,7 +58,8 @@ def load(state_dir: Path = C.STATE_DIR) -> tuple[dict, list[dict]]:
     lf, hf = state_dir / "lineage.json", state_dir / "history.jsonl"
     pop = (json.loads(lf.read_text(encoding="utf-8")) if lf.exists() else
            {"lineages": [new_lineage()], "burn": [], "halted": None,
-            "capital_in_gbp": C.GENESIS_BANKROLL_GBP})
+            "capital_in_gbp": C.GENESIS_BANKROLL_GBP, "loan_gbp": C.LOAN_GBP})
+    pop.setdefault("loan_gbp", C.LOAN_GBP)          # state written before the loan existed
     hist = ([json.loads(x) for x in hf.read_text(encoding="utf-8").splitlines() if x.strip()]
             if hf.exists() else [])
     return pop, hist
@@ -157,6 +158,42 @@ def void(pop: dict, h: dict, now: Optional[datetime] = None) -> None:
     _close(pop, h, "VOID", 0.0, now or _now())
 
 
+# ---------------------------------------------------------------- the loan
+def loan_check(pop: dict, hist: list[dict], now: datetime) -> list[str]:
+    """Tell the Architect, once, when the £50 loan can be repaid."""
+    loan = pop.get("loan_gbp", 0)
+    if loan <= 0 or pop.get("repay_ready"):
+        return []
+    eq = sum(equity(ln, hist) for ln in living(pop))
+    cash = sum(ln["cash_gbp"] for ln in living(pop))
+    if eq >= C.REPAY_AT_EQUITY_GBP and cash >= loan:
+        pop["repay_ready"] = _iso(now)
+        return [f"LOAN REPAYABLE: agent equity £{eq:.2f} (cash £{cash:.2f}) covers your £{loan:.2f} loan and leaves "
+                f"it £{eq - loan:.2f} of its own. Withdraw £{loan:.2f} on matchbook.com, then run the workflow "
+                "with mode 'repaid'. Until then it keeps trading; no lineage splits before you are repaid."]
+    return []
+
+
+def repaid(pop: dict, hist: list[dict], now: Optional[datetime] = None) -> str:
+    """Architect withdrew the loan: take it off the books, strongest lineages' cash first."""
+    loan = pop.get("loan_gbp", 0)
+    if loan <= 0:
+        return "no loan outstanding"
+    cash = sum(ln["cash_gbp"] for ln in living(pop))
+    if cash < loan:
+        return f"NOT recorded: lineage cash £{cash:.2f} is under the £{loan:.2f} loan — wait for the REPAYABLE message"
+    left = loan
+    for ln in sorted(living(pop), key=lambda x: -x["cash_gbp"]):
+        take = min(left, ln["cash_gbp"])
+        ln["cash_gbp"] = round(ln["cash_gbp"] - take, 2)
+        left = round(left - take, 2)
+        if left <= 0:
+            break
+    pop["loan_gbp"], pop["repaid_at"], pop["repay_ready"] = 0.0, _iso(now or _now()), None
+    pop["capital_in_gbp"] = round(pop.get("capital_in_gbp", C.GENESIS_BANKROLL_GBP) - loan, 2)
+    return f"LOAN REPAID: £{loan:.2f} back to the Architect; the agent now trades only money it made"
+
+
 # ---------------------------------------------------------------- life cycle
 def life_cycle(pop: dict, hist: list[dict], now: Optional[datetime] = None) -> list[str]:
     """Deaths, mitosis, and the population's earn-your-keep check."""
@@ -168,9 +205,10 @@ def life_cycle(pop: dict, hist: list[dict], now: Optional[datetime] = None) -> l
             ln["alive"], ln["died"] = False, _iso(now)
             ln["death_reason"] = f"equity £{eq:.2f} under the £{C.SURVIVAL_FLOOR_GBP:.2f} floor"
             out.append(f"EXTINCT {ln['lineage_id']} gen {ln['generation']}: {ln['death_reason']}")
+    out += loan_check(pop, hist, now)
     for ln in sorted(living(pop), key=lambda x: -equity(x, hist)):
-        if len(living(pop)) >= C.MAX_LINEAGES:
-            break
+        if pop.get("loan_gbp", 0) > 0 or len(living(pop)) >= C.MAX_LINEAGES:
+            break                                   # the lender is repaid before any lineage splits
         if equity(ln, hist) >= C.GENESIS_BANKROLL_GBP * C.MITOSIS_MULTIPLE \
                 and ln["cash_gbp"] >= C.GENESIS_BANKROLL_GBP:
             ln["cash_gbp"] = round(ln["cash_gbp"] - C.GENESIS_BANKROLL_GBP, 2)
