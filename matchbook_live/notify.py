@@ -20,7 +20,7 @@ CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 DIGEST_HOUR_UTC = 7            # 08:00 BST / 07:00 GMT
 NEWS = ("OPEN ", "WON", "LOST", "VOID", "PUSH", "MITOSIS", "EXTINCT", "HALTED", "ORDER ERROR",
         "ACCOUNT PENDING", "SCAN FAILED", "SWEEP", "LEARNING",
-        "LOAN", "PAPER RESULT")
+        "LOAN", "PAPER RESULT", "ACCA")
 LIMIT = 4000                   # Telegram caps a message at 4096 characters
 
 

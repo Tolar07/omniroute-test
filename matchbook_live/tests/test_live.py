@@ -13,7 +13,7 @@ from pathlib import Path
 from unittest import mock
 
 from matchbook_live import config as C
-from matchbook_live import executor, framework_feed
+from matchbook_live import executor, framework_feed, multiples
 from matchbook_live import lineage as L
 from matchbook_live import notify, oracle, paper, risk_gate, run, scanner, scorecard
 
@@ -277,7 +277,7 @@ class AccountSafety(unittest.TestCase):
         self.assertTrue(paths)
         allowed = ("/bpapi/rest/security/session", "/edge/rest/events", "/edge/rest/account/balance",
                    "/edge/rest/v2/offers", "/edge/rest/reports/v2/bets/settled", "/chat/completions",
-                   "/sendMessage")
+                   "/sendMessage", "/multiples/rest/v2/odds", "/multiples/rest/v3/multiples")
         for p in paths:
             self.assertTrue(p.startswith(allowed), f"endpoint not on the allow-list: {p}")
 
@@ -366,6 +366,16 @@ class FrameworkFeed(unittest.TestCase):
         self.assertTrue(any("not on Matchbook" in s for s in skipped))
         self.assertTrue(any("LOW certainty" in s for s in skipped))
         self.assertTrue(any("HIGH certainty" in s for s in skipped))
+
+    def test_total_never_matches_a_half_or_team_total(self):
+        ko = NOW + timedelta(hours=3)
+        ev = mb_event(ko)
+        decoy = {"id": 9, "name": "1st Half Total", "market-type": "total", "handicap": 2.5, "status": "open",
+                 "runners": [{"id": 91, "name": "OVER 2.5", "status": "open", "handicap": 2.5,
+                              "prices": [{"side": "back", "odds": 5.0, "available-amount": 30}]}]}
+        ev["markets"].insert(0, decoy)
+        _, r, _ = framework_feed.find_runner(ev, {"type": "total", "line": 2.5, "want": "over"})
+        self.assertEqual(r["id"], 21)                               # the full-match Total, not the 1st half
 
     def test_already_bet_leg_is_not_repeated(self):
         ko = NOW + timedelta(hours=3)
@@ -530,6 +540,39 @@ class Paper(unittest.TestCase):
         paper.refresh_results(st, NOW + timedelta(hours=2), get)
         self.assertEqual(len(st["results"]), 1)                                            # file not re-read
         self.assertEqual(sum("raw.githubusercontent" in u for u in calls), 1)
+
+
+class Acca(unittest.TestCase):
+    def _files(self, ko):
+        return [{"date": "d", "singles": [
+            fw_single("SB:10||Home or Away", 0.90, ko),                              # double chance: refused
+            fw_single("SB:16|hcp=-1.5|Away (+1.5)", 0.83, ko, fixture="x2"),
+            fw_single("SB:18|total=2.5|Under 2.5", 0.70, ko, fixture="x3"),         # same match: one leg only
+            fw_single("SB:1||Home", 0.60, ko, home="Leeds", away="Hull", fixture="x4")]}]
+
+    def _events(self, ko):
+        return [mb_event(ko), {**mb_event(ko, "Leeds", "Hull"), "id": 502}]
+
+    def test_strongest_skips_refused_markets_and_repeats(self):
+        ko = NOW + timedelta(hours=3)
+        legs = multiples.strongest(self._files(ko), self._events(ko), NOW)
+        self.assertEqual([x["runner_name"] for x in legs], ["Southampton +1.5", "Leeds"])
+
+    def test_place_caps_stake_and_dry_never_submits(self):
+        ko = NOW + timedelta(hours=3)
+        legs = multiples.strongest(self._files(ko), self._events(ko), NOW)
+        cl = mock.Mock()
+        cl.multiple_quote.return_value = {"odds": 3.1, "min-stake": 0.08, "max-stake": 900}
+        with tempfile.TemporaryDirectory() as d:
+            with self.assertRaises(ValueError):
+                multiples.place(cl, legs, 5.0, Path(d), NOW, live=True)              # over the £2 cap
+            msg = multiples.place(cl, legs, 1.0, Path(d), NOW, live=False)
+            cl.multiple_submit.assert_not_called()
+            self.assertIn("ACCA DRY", msg)
+            cl.multiple_submit.return_value = {"id": "m1", "status": "OPEN"}
+            self.assertIn("ACCA PLACED", multiples.place(cl, legs, 1.0, Path(d), NOW, live=True))
+            self.assertEqual(len((Path(d) / multiples.LOG_FILE).read_text().splitlines()), 2)
+        self.assertTrue(notify.news(["ACCA PLACED: ..."]))
 
 
 class LossStop(unittest.TestCase):

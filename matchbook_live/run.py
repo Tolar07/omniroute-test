@@ -29,7 +29,7 @@ from pathlib import Path
 from matchbook_live import config as C
 from matchbook_live import executor, framework_feed
 from matchbook_live import lineage as L
-from matchbook_live import notify, oracle, paper, scanner, scorecard
+from matchbook_live import multiples, notify, oracle, paper, scanner, scorecard
 from matchbook_live.client import Client
 
 
@@ -341,7 +341,20 @@ def main(argv=None) -> int:
     ap.add_argument("--check", action="store_true", help="log in and print the balance; no scan, no order")
     ap.add_argument("--repaid", action="store_true",
                     help="Architect only: you withdrew the £50 loan on Matchbook — take it off the books")
+    ap.add_argument("--acca", type=float, metavar="STAKE",
+                    help="one-off: place the framework's strongest Matchbook-eligible accumulator at this stake")
     a = ap.parse_args(argv)
+    if a.acca is not None:
+        now = datetime.now(timezone.utc)
+        live, mode = live_enabled(a.state_dir)
+        cl = Client(a.state_dir)
+        evs, _ = scanner.fetch_events(cl, a.max_events)
+        files, _ = framework_feed.fetch_picks(framework_feed.picks_dates(now))
+        msg = multiples.place(cl, multiples.strongest(files, evs, now), a.acca, a.state_dir, now, live)
+        msg = f"{msg}\n  mode: {mode}"
+        print(msg, flush=True)
+        print(notify.send(msg), flush=True)
+        return 0
     if a.check:
         print(f"Credentials as received: {C.CREDENTIALS_NOTE}", flush=True)
         cl = Client(a.state_dir)

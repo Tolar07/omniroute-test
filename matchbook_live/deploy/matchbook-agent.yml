@@ -25,14 +25,21 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "once = one cycle; check = login + balance; repaid = you withdrew the £50 loan; reseed = lift a halt"
+        description: "once = one cycle; check = login + balance; repaid = you withdrew the £50 loan; reseed = lift a halt; acca = place the strongest framework accumulator"
         required: true
         default: once
         type: choice
-        options: [once, check, repaid, reseed]
+        options: [once, check, repaid, reseed, acca]
+      acca_stake:
+        description: "acca only: stake in £ (at most £2)"
+        required: false
+        default: "1"
 
 concurrency:
-  group: matchbook-agent          # never two cycles at once
+  # never two cycles at once. An acca run gets its own group: a second pending run in one
+  # group cancels the first, and it must never knock out the chain's next cycle (or be
+  # knocked out by it). The one runner still runs them one after the other.
+  group: matchbook-agent${{ inputs.mode == 'acca' && '-acca' || '' }}
   cancel-in-progress: false
 
 permissions:
@@ -82,6 +89,15 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && inputs.mode == 'reseed'
         shell: cmd
         run: py -3 -m matchbook_live.run --reseed
+
+      - name: Accumulator (Architect only — the framework's strongest, at most £2)
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'acca'
+        shell: cmd
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ACCA_STAKE: ${{ inputs.acca_stake }}
+        run: py -3 -m matchbook_live.run --acca %ACCA_STAKE%
 
       - name: Cycle
         if: github.event_name == 'schedule' || inputs.mode == 'once'

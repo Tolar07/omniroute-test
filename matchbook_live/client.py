@@ -9,6 +9,8 @@ Endpoints used (developers.matchbook.com, checked 2026-10-14):
   GET    /edge/rest/v2/offers/{id}             one unsettled offer
   DELETE /edge/rest/v2/offers/{id}             cancel what is unmatched
   GET    /edge/rest/reports/v2/bets/settled    settled bets, net of commission
+  POST   /multiples/rest/v2/odds               price an accumulator (website endpoint, no login)
+  POST   /multiples/rest/v3/multiples          place an accumulator (website endpoint, 2026-10-15)
 
 No deposit, withdrawal, transfer or account-settings endpoint is called, and
 tests/test_live.py fails if one is added.
@@ -116,3 +118,14 @@ class Client:
 
     def cancel(self, offer_id) -> dict:
         return self._call("DELETE", f"/edge/rest/v2/offers/{offer_id}")
+
+    # ------------------------------------------------------------ multiples (website endpoints)
+    def multiple_quote(self, runner_ids: list) -> dict:
+        return self._call("POST", "/multiples/rest/v2/odds", auth=False, body={
+            "selections": [{"runner-id": i} for i in runner_ids], "permutation-type": "ACCUMULATOR"})
+
+    def multiple_submit(self, legs: list[dict], stake: float, odds: float) -> dict:
+        return self._call("POST", "/multiples/rest/v3/multiples", body={
+            "selections": [{"side": "back", "odds": x["odds"], "runner-id": x["runner_id"]} for x in legs],
+            "stake": round(stake, 2), "permutation-type": "ACCUMULATOR", "odds": odds,
+            "odds-type": "DECIMAL"})
