@@ -30,6 +30,7 @@ The framework itself is untouched and still never stakes.
 """
 from __future__ import annotations
 
+import os
 import re
 import unicodedata
 from datetime import datetime, timedelta
@@ -46,6 +47,11 @@ KICKOFF_TOLERANCE = timedelta(minutes=20)
 MIN_TO_KICKOFF = timedelta(minutes=10)     # never bet a leg about to go in-play
 MAX_TO_KICKOFF = timedelta(hours=12)       # bet late, after the framework's news/lineup checks
 BAD_NEWS = ("RED", "BLOCK", "DROP", "AVOID", "OUT")
+# Matchbook only: the framework's 1.50 cap is lifted (Architect, 2026-10-15), with
+# guards so the bets stay reasonable:
+MIN_CHANCE = 0.50              # the model must make the outcome more likely than not
+MAX_ODDS = float(os.getenv("MB_FRAMEWORK_MAX_ODDS", "2.50"))   # Matchbook back price ceiling
+MAX_EDGE = 0.15                # model > exchange by 15+ pts: distrust the model, skip
 
 _NOISE = {"fc", "cf", "sc", "ac", "afc", "fk", "sk", "if", "bk", "cd", "ud", "sd", "rc", "sv", "vfb",
           "vfl", "tsg", "us", "as", "ss", "club", "de", "the", "calcio", "1907", "1909", "1913"}
@@ -142,15 +148,27 @@ def split_event(name: str) -> tuple[str, str]:
     return name, ""
 
 
-def match_event(home: str, away: str, kickoff: datetime, events: list[dict]) -> Optional[dict]:
+def match_event(home: str, away: str, kickoff: Optional[datetime], events: list[dict],
+                day: Optional[str] = None) -> Optional[dict]:
+    """By kick-off time (±20 min) when known; a rated fixture carries only its date,
+    so then the date must match and the team names must be close."""
     best, best_score = None, 0.0
     for e in events:
         start = scanner._dt(e.get("start"))
-        if start is None or abs(start - kickoff) > KICKOFF_TOLERANCE:
+        if start is None:
             continue
+        if kickoff is not None:
+            if abs(start - kickoff) > KICKOFF_TOLERANCE:
+                continue
+            floor, total = 0.5, 1.3
+        else:
+            # the framework's date is local; a late kick-off can fall on the next UTC day
+            if day not in {start.date().isoformat(), (start - timedelta(hours=6)).date().isoformat()}:
+                continue
+            floor, total = 0.7, 1.6
         eh, ea = split_event(e.get("name") or "")
         sh, sa = alike(home, eh), alike(away, ea)
-        if min(sh, sa) < 0.5 or sh + sa < 1.3:
+        if min(sh, sa) < floor or sh + sa < total:
             continue
         if sh + sa > best_score:
             best, best_score = e, sh + sa
@@ -200,29 +218,39 @@ def _f(x) -> Optional[float]:
 
 # ---------------------------------------------------------------- the feed
 def legs(picks_files: list[dict]) -> list[dict]:
-    """Every single in the picks files, newest file wins for a fixture+market."""
+    """Every single, plus every market in each fixture's rated pool (the framework's
+    best market of each kind, model chance >= 50%, before its 1.50 price cap).
+    Newest file wins for a fixture+market; a single keeps its pick text and code."""
     out: dict = {}
     for f in picks_files:
+        ko_by_fixture = {s.get("fixture"): s.get("kickoff_utc") for s in f.get("singles") or []}
+        for r in f.get("rated") or []:
+            for mk, ch in r.get("pool") or []:
+                out[(r.get("fixture"), mk)] = {
+                    "fixture": r.get("fixture"), "home": r.get("home"), "away": r.get("away"),
+                    "kickoff": r.get("kickoff"), "kickoff_utc": ko_by_fixture.get(r.get("fixture")),
+                    "market": mk, "chance": ch, "pick": None, "pool": True, "picks_date": f.get("date")}
         for s in f.get("singles") or []:
-            out[(s.get("fixture"), s.get("market"))] = {**s, "picks_date": f.get("date")}
+            out[(s.get("fixture"), s.get("market"))] = {**s, "pool": False, "picks_date": f.get("date")}
     return list(out.values())
 
 
 def candidates(picks_files: list[dict], events: list[dict], now: datetime,
                held_keys: set) -> tuple[list[dict], list[str]]:
-    """Framework legs ready for the risk gate, and a line per leg that was not."""
+    """Framework legs ready for the risk gate, and a line per single that was not.
+    Pool markets Matchbook does not list are passed over quietly (most of the pool)."""
     out, skipped = [], []
     for s in legs(picks_files):
+        pool = s.get("pool")
         label = f"{s.get('pick') or s.get('market')} — {s.get('fixture')}"
         key = f"{s.get('picks_date')}|{s.get('fixture')}|{s.get('market')}"
         if key in held_keys:
             continue
-        ko = scanner._dt(s.get("kickoff_utc"))
-        if ko is None:
-            skipped.append(f"{label}: no kick-off time — PENDING")
+        mk = map_market(s.get("market") or "")
+        if mk is None:
+            if not pool:
+                skipped.append(f"{label}: market not on Matchbook ({s.get('market')})")
             continue
-        if not (MIN_TO_KICKOFF <= ko - now <= MAX_TO_KICKOFF):
-            continue                                          # too early or too late: quietly wait / pass
         if str(s.get("news_level") or "").upper() in BAD_NEWS:
             skipped.append(f"{label}: framework news flag {s.get('news_level')}")
             continue
@@ -231,27 +259,40 @@ def candidates(picks_files: list[dict], events: list[dict], now: datetime,
         except (TypeError, ValueError):
             skipped.append(f"{label}: no framework probability — PENDING")
             continue
-        mk = map_market(s.get("market") or "")
-        if mk is None:
-            skipped.append(f"{label}: market not on Matchbook ({s.get('market')})")
+        if p < MIN_CHANCE:
             continue
-        e = match_event(s.get("home") or "", s.get("away") or "", ko, events)
+        ko = scanner._dt(s.get("kickoff_utc"))
+        if ko is not None and not (MIN_TO_KICKOFF <= ko - now <= MAX_TO_KICKOFF):
+            continue                                          # too early or too late: quietly wait / pass
+        e = match_event(s.get("home") or "", s.get("away") or "", ko, events, s.get("kickoff"))
         if e is None:
-            skipped.append(f"{label}: match not found on Matchbook")
+            if not pool:
+                skipped.append(f"{label}: match not found on Matchbook")
             continue
+        ko = ko or scanner._dt(e.get("start"))
+        if ko is None or not (MIN_TO_KICKOFF <= ko - now <= MAX_TO_KICKOFF):
+            continue                                          # too early or too late: quietly wait / pass
         m, r, note = find_runner(e, mk)
         if r is None:
-            skipped.append(f"{label}: {note}")
+            if not pool:
+                skipped.append(f"{label}: {note}")
             continue
         runners = [x for x in m.get("runners") or [] if x.get("status") == "open"]
         c = scanner.candidate(e, m, r, runners)
         why = scanner.tradable(c["book"])
+        if not why and c["book"]["best_back"] > MAX_ODDS:
+            why = f"odds {c['book']['best_back']:.2f} above the {MAX_ODDS:.2f} cap"
+        if not why and p - (1 + C.COMMISSION) / c["book"]["best_back"] > MAX_EDGE:
+            why = (f"model {p:.0%} vs Matchbook {1 / c['book']['best_back']:.0%}: too far apart, "
+                   "more likely the model is wrong than the exchange")
         if why:
             skipped.append(f"{label}: {why}")
             continue
-        c.update(source="framework", fw_key=key, fw_pick=s.get("pick"), fw_code=s.get("code"),
-                 fw_price=s.get("price"), min_edge=C.MIN_EDGE_FRAMEWORK,
+        c.update(source="framework", fw_key=key, fw_pick=s.get("pick") or f"{c['market_name']}: {c['runner_name']}",
+                 fw_code=s.get("code"), fw_price=s.get("price"), fw_pool=bool(pool),
+                 min_edge=C.MIN_EDGE_FRAMEWORK,
                  oracle={"true_prob": p, "confidence": 1.0,
-                         "reasoning": f"framework {s.get('tier') or ''} {s.get('certainty') or ''}".strip()})
+                         "reasoning": ("framework rated pool" if pool else
+                                       f"framework pick {s.get('tier') or ''} {s.get('certainty') or ''}".strip())})
         out.append(c)
     return out, skipped

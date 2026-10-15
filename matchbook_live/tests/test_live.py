@@ -105,7 +105,8 @@ class FakeExchange:
         self.settled_rows, self.free, self.offers = settled or [], free, {}
 
     def events(self, offset=0, per_page=50):
-        return {"events": [event(NOW + timedelta(hours=5))] if offset == 0 else [], "total": 1}
+        return {"events": [event(datetime.now(timezone.utc) + timedelta(hours=5))] if offset == 0 else [],
+                "total": 1}
 
     def back(self, runner_id, odds, stake):
         self.calls.append(("back", runner_id, odds, stake))
@@ -377,7 +378,7 @@ class FrameworkCycle(unittest.TestCase):
     def test_framework_pick_goes_live(self):
         ko = datetime.now(timezone.utc) + timedelta(hours=3)
         cyc = Cycle()
-        cyc.fw_files = [{"date": "d", "singles": [fw_single("SB:18|total=2.5|Under 2.5", 0.70, ko)]}]
+        cyc.fw_files = [{"date": "d", "singles": [fw_single("SB:18|total=2.5|Under 2.5", 0.60, ko)]}]   # 9 pts edge
         ev = mb_event(ko)
         with mock.patch.object(FakeExchange, "events",
                                lambda self, offset=0, per_page=50: {"events": [ev] if offset == 0 else [],
