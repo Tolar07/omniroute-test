@@ -99,7 +99,7 @@ jobs:
         shell: cmd
         run: |
           if not exist ledger mkdir ledger
-          for %%f in (ledger.jsonl scorecard.json) do if exist "%MB_STATE_DIR%\%%f" copy /Y "%MB_STATE_DIR%\%%f" ledger\ >nul
+          for %%f in (ledger.jsonl scorecard.json paper.jsonl) do if exist "%MB_STATE_DIR%\%%f" copy /Y "%MB_STATE_DIR%\%%f" ledger\ >nul
           git config user.name "matchbook-agent"
           git config user.email "matchbook-agent@users.noreply.github.com"
           git add ledger

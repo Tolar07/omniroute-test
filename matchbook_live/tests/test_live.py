@@ -4,6 +4,7 @@
 """
 from __future__ import annotations
 
+import json
 import re
 import tempfile
 import unittest
@@ -14,7 +15,7 @@ from unittest import mock
 from matchbook_live import config as C
 from matchbook_live import executor, framework_feed
 from matchbook_live import lineage as L
-from matchbook_live import notify, oracle, risk_gate, run, scanner, scorecard
+from matchbook_live import notify, oracle, paper, risk_gate, run, scanner, scorecard
 
 NOW = datetime(2026, 10, 14, 21, 0, tzinfo=timezone.utc)
 PKG = Path(__file__).resolve().parents[1]
@@ -245,6 +246,7 @@ class Cycle(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d, \
                 mock.patch.object(notify, "send", lambda text: "test: not sent"), \
                 mock.patch.object(framework_feed, "fetch_picks", lambda dates: (self.fw_files, [])), \
+                mock.patch.object(paper, "refresh_results", lambda st, now, get=None: ""), \
                 mock.patch.object(C, "LIVE", live), mock.patch.object(C, "USERNAME", "u"), \
                 mock.patch.object(C, "PASSWORD", "p"), mock.patch.object(oracle, "available", lambda: True), \
                 mock.patch.object(oracle, "evaluate",
@@ -459,6 +461,75 @@ class Loan(unittest.TestCase):
             (Path(d) / "lineage.json").write_text('{"lineages": [], "burn": [], "halted": null}', encoding="utf-8")
             pop, _ = L.load(Path(d))
         self.assertEqual(pop["loan_gbp"], 50.0)
+
+
+class Paper(unittest.TestCase):
+    def test_outcomes(self):
+        o = paper.outcome
+        self.assertEqual(o({"type": "match_odds", "want": "home"}, 2, 1), "WIN")
+        self.assertEqual(o({"type": "match_odds", "want": "away"}, 1, 1), "LOSS")
+        self.assertEqual(o({"type": "double_chance", "want": "home_or_away"}, 0, 0), "LOSS")
+        self.assertEqual(o({"type": "double_chance", "want": "draw_or_away"}, 1, 1), "WIN")
+        self.assertEqual(o({"type": "total", "line": 2.5, "want": "under"}, 1, 1), "WIN")
+        self.assertEqual(o({"type": "handicap", "line": 1.5, "want": "away"}, 2, 1), "WIN")    # +1.5 loses by 1
+        self.assertEqual(o({"type": "handicap", "line": -1.5, "want": "home"}, 2, 1), "LOSS")
+        self.assertEqual(o({"type": "btts", "want": "yes"}, 1, 0), "LOSS")
+        self.assertEqual(o({"type": "dnb", "want": "home"}, 1, 1), "VOID")
+
+    def test_market_rules_and_window(self):
+        ev = mb_event(NOW + timedelta(hours=3))                    # home 2.50, away 3.00, dc 12 @1.35
+        got = {r["rule"]: r for r in paper.market_rules(ev, NOW)}
+        self.assertEqual(sorted(got), ["F10", "F9"])                # favourite 2.50: outside F2's band
+        self.assertEqual(got["F9"]["runner_name"], "Norwich or Southampton")
+        self.assertEqual(paper.market_rules(mb_event(NOW + timedelta(hours=20)), NOW), [])   # too early
+
+    def test_framework_rules_band_and_medium(self):
+        ko = NOW + timedelta(hours=3)
+        files = [{"date": "d", "singles": [
+            fw_single("SB:18|total=2.5|Over 2.5", 0.58, ko),                 # @1.90: be 53.7%, +4.3 MEDIUM
+            fw_single("SB:18|total=2.5|Under 2.5", 0.70, ko, fixture="x2"),  # @2.00: +19 pts, LOW
+            fw_single("SB:10||Home or Away", 0.85, ko, fixture="x3")]}]      # @1.35: outside the band
+        got = sorted((r["rule"], r["runner_name"]) for r in paper.framework_rules(files, [mb_event(ko)], NOW))
+        self.assertEqual(got, [("FW-ALL", "OVER 2.5"), ("FW-ALL", "UNDER 2.5"), ("FW-MED", "OVER 2.5")])
+
+    def test_cycle_takes_once_grades_and_posts_the_decision(self):
+        ko = NOW + timedelta(hours=3)
+        ev = mb_event(ko)
+        with tempfile.TemporaryDirectory() as d, \
+                mock.patch.object(paper, "refresh_results", lambda st, now, get=None: ""):
+            lines, evs = paper.cycle(Path(d), [], [ev], NOW)
+            self.assertIn("2 new", lines[0])
+            paper.cycle(Path(d), [], [ev], NOW + timedelta(minutes=6))          # same runners: not retaken
+            recs, st = paper._load(Path(d))
+            self.assertEqual(len(recs), 2)
+            st["results"] = [[ko.isoformat().replace("+00:00", "Z"), "Norwich City", "Southampton FC", 2, 0]]
+            paper._save(Path(d), recs, st)
+            lines, _ = paper.cycle(Path(d), [], [], ko + timedelta(hours=3))
+            recs, _ = paper._load(Path(d))
+        self.assertEqual({r["rule"]: r["status"] for r in recs}, {"F10": "WIN", "F9": "WIN"})
+        self.assertIn("2 graded", lines[0])
+        # the decision post fires once FW-MED has 50 graded bets
+        rec = {"rule": "FW-MED", "status": "WIN", "odds": 1.8, "close": 1.7, "p": 0.6}
+        s = paper.summary([dict(rec) for _ in range(50)])
+        self.assertAlmostEqual(s["FW-MED"]["ret"], 0.78)
+        self.assertGreater(s["FW-MED"]["clv"], 0)
+
+    def test_archive_read_once(self):
+        import gzip
+        row = {"sport": "football", "ko": "2026-10-14T20:00Z", "home": "A", "away": "B", "result": {"h": 1, "a": 0}}
+        blob = gzip.compress((json.dumps(row) + "\n").encode())
+        calls = []
+
+        def get(url, timeout=0, headers=None):
+            calls.append(url)
+            body = [{"name": "graded_x.jsonl.gz"}] if "api.github" in url else None
+            return mock.Mock(raise_for_status=lambda: None, json=lambda: body, content=blob)
+        st: dict = {}
+        self.assertIn("1 new", paper.refresh_results(st, NOW, get))
+        self.assertEqual(paper.refresh_results(st, NOW + timedelta(minutes=5), get), "")    # index once an hour
+        paper.refresh_results(st, NOW + timedelta(hours=2), get)
+        self.assertEqual(len(st["results"]), 1)                                            # file not re-read
+        self.assertEqual(sum("raw.githubusercontent" in u for u in calls), 1)
 
 
 class LossStop(unittest.TestCase):

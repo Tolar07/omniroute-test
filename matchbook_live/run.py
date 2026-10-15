@@ -29,7 +29,7 @@ from pathlib import Path
 from matchbook_live import config as C
 from matchbook_live import executor, framework_feed
 from matchbook_live import lineage as L
-from matchbook_live import notify, oracle, scanner, scorecard
+from matchbook_live import notify, oracle, paper, scanner, scorecard
 from matchbook_live.client import Client
 
 
@@ -166,6 +166,8 @@ def heartbeat(rid: str, now: datetime, mode: str, pop: dict, hist: list[dict], e
               f"FRAMEWORK {stats.get('framework', 'PENDING')}",
               *(f"  skipped: {x}" for x in (stats.get("framework_skipped") or [])[:12]),
               f"ORACLE {oracle_note}"]
+    if stats.get("paper"):
+        lines += ["", *stats["paper"]]
     if picks:
         lines += ["", "PICKS PRICED THIS RUN (estimate vs Matchbook)", *(f"  {x}" for x in picks)]
     return "\n".join(lines)
@@ -238,6 +240,13 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
         events += notes
         if free_funds is not None:
             free_funds -= sum(r["cost_gbp"] for r in opened)
+
+        # paper study: no orders, and a failure never stops the live cycle
+        try:
+            stats["paper"], paper_events = paper.cycle(state_dir, files, mb_events, now)
+            events += paper_events
+        except Exception as e:
+            stats["paper"] = [f"PAPER STUDY PENDING: {type(e).__name__}: {str(e)[:120]}"]
 
         # 2. the blind oracle on Match Odds
         cache = _cache_load(state_dir)
