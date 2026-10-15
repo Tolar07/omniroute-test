@@ -14,7 +14,7 @@ from unittest import mock
 from matchbook_live import config as C
 from matchbook_live import executor, framework_feed
 from matchbook_live import lineage as L
-from matchbook_live import notify, oracle, risk_gate, run, scanner
+from matchbook_live import notify, oracle, risk_gate, run, scanner, scorecard
 
 NOW = datetime(2026, 10, 14, 21, 0, tzinfo=timezone.utc)
 PKG = Path(__file__).resolve().parents[1]
@@ -372,6 +372,42 @@ class FrameworkFeed(unittest.TestCase):
         d = gate_at(0.58)
         self.assertTrue(d.execute)                                  # 7 pts: bets (oracle would need 8+)
         self.assertLessEqual(d.stake_gbp, 3.0)
+
+
+class Learning(unittest.TestCase):
+    def test_closing_price_recorded_until_kickoff(self):
+        ko = NOW + timedelta(hours=1)
+        h = {"status": "OPEN", "runner_id": 22, "avg_odds": 2.1}
+        self.assertEqual(scorecard.record_closing([h], [mb_event(ko)], NOW), 1)
+        self.assertEqual(h["close_back"], 2.0)
+        self.assertAlmostEqual(scorecard.clv(h), 0.05)               # took 2.10, closed 2.00: beat the close
+        scorecard.record_closing([h], [mb_event(ko)], ko + timedelta(minutes=1))   # kicked off: frozen
+        self.assertEqual(h["close_back"], 2.0)
+
+    def _hist(self, n, taken, close, market="Total", source="framework"):
+        return [{"status": "LOST", "pnl_gbp": -1.0, "avg_odds": taken, "close_back": close,
+                 "source": source, "fw_pool": True, "market_name": market}] * n
+
+    def test_pause_after_20_bets_losing_to_the_close_then_release(self):
+        pop = {}
+        out = scorecard.update_pauses(pop, self._hist(19, 1.9, 2.0), NOW)
+        self.assertEqual(out, [])                                    # 19: not enough evidence
+        out = scorecard.update_pauses(pop, self._hist(20, 1.9, 2.0), NOW)
+        self.assertIn("PAUSED", out[0])
+        self.assertFalse(scorecard.allowed(pop, {"source": "framework", "fw_pool": True, "market_name": "Total"}))
+        self.assertTrue(scorecard.allowed(pop, {"source": "framework", "fw_pool": False, "market_name": "Total"}))
+        out = scorecard.update_pauses(pop, [], NOW + timedelta(days=8))
+        self.assertIn("back in", out[0])
+        self.assertTrue(scorecard.allowed(pop, {"source": "framework", "fw_pool": True, "market_name": "Total"}))
+
+    def test_beating_the_close_is_never_paused(self):
+        pop = {}
+        self.assertEqual(scorecard.update_pauses(pop, self._hist(30, 2.1, 2.0), NOW), [])
+
+    def test_open_bets_do_not_count_until_settled(self):
+        hist = [{"status": "OPEN", "avg_odds": 1.9, "close_back": 2.0, "source": "oracle",
+                 "market_name": "Match Odds"}] * 25
+        self.assertEqual(scorecard.update_pauses({}, hist, NOW), [])
 
 
 class FrameworkCycle(unittest.TestCase):

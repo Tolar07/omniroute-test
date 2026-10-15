@@ -29,7 +29,7 @@ from pathlib import Path
 from matchbook_live import config as C
 from matchbook_live import executor, framework_feed
 from matchbook_live import lineage as L
-from matchbook_live import notify, oracle, scanner
+from matchbook_live import notify, oracle, scanner, scorecard
 from matchbook_live.client import Client
 
 
@@ -129,6 +129,9 @@ def heartbeat(rid: str, now: datetime, mode: str, pop: dict, hist: list[dict], e
         "LINEAGES",
         *(rows or ["  none alive"]),
         "",
+        "SCORECARD (source / market: CLV = price taken vs Matchbook closing price)",
+        *scorecard.render(hist, pop),
+        "",
         "OPEN POSITIONS (at cost)",
     ]
     opens = L.open_positions(hist)
@@ -174,6 +177,7 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
     elif L.open_positions(hist):
         events.append("settle: Matchbook login not set — open positions stay OPEN (PENDING)")
     events += L.life_cycle(pop, hist, now)
+    events += scorecard.update_pauses(pop, hist, now)
 
     stats: dict = {}
     picks: list[str] = []
@@ -197,7 +201,9 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
         # 1. the framework's own picks first: no oracle needed, prices fresh from this scan
         files, fw_notes = framework_feed.fetch_picks(framework_feed.picks_dates(now))
         held = {h.get("fw_key") for h in hist if h.get("fw_key")}
+        stats["closing"] = scorecard.record_closing(hist, mb_events, now)
         fw_opps, fw_skipped = framework_feed.candidates(files, mb_events, now, held)
+        fw_opps = [c for c in fw_opps if scorecard.allowed(pop, c)]
         stats["framework"] = (f"{len(files)} picks file(s) · {len(framework_feed.legs(files))} legs · "
                               f"{len(fw_opps)} on Matchbook in the betting window · "
                               f"{len(fw_skipped)} skipped" + (f" · {'; '.join(fw_notes)}" if fw_notes else ""))
@@ -249,6 +255,7 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
                            f"{len(cands) - calls - reused} left for the next run"
                            + (f" · last failure: {oracle.last_error}" if failed else ""))
 
+        opps = [c for c in opps if scorecard.allowed(pop, c)]
         opened2, notes = L.allocate(pop, hist, opps, rid, place, free_funds, now)
         events += notes
         for rec in opened + opened2:
@@ -266,6 +273,13 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
     text = heartbeat(rid, now, mode, pop, hist, events, stats, oracle_note, balance, picks)
     if reason:
         print(notify.send(f"[{reason}]\n{text}"), flush=True)
+    # the graded ledger + scorecard, published for the framework to learn from
+    (state_dir / "ledger.jsonl").write_text("".join(json.dumps({**h, "clv": scorecard.clv(h)}, ensure_ascii=False)
+                                                   + "\n" for h in hist), encoding="utf-8")
+    (state_dir / "scorecard.json").write_text(json.dumps({
+                                                          "buckets": scorecard.card(hist),
+                                                          "paused": pop.get("paused_buckets", {})}, indent=1),
+                                              encoding="utf-8")
     (state_dir / "heartbeat_latest.txt").write_text(text + "\n", encoding="utf-8")
     with open(state_dir / "heartbeats.log", "a", encoding="utf-8") as f:
         f.write(text + "\n\n")

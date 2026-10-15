@@ -32,7 +32,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write                # the ledger step commits ledger/ back to this private repo
 
 jobs:
   cycle:
@@ -76,3 +76,16 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: py -3 -m matchbook_live.run --once --max-oracle-calls 6   # free OmniRoute models take ~40-120 s an answer
+
+      - name: Publish ledger (the framework learns from it)
+        if: always() && (github.event_name == 'schedule' || inputs.mode == 'once')
+        shell: cmd
+        run: |
+          if not exist ledger mkdir ledger
+          for %%f in (ledger.jsonl scorecard.json) do if exist "%MB_STATE_DIR%\%%f" copy /Y "%MB_STATE_DIR%\%%f" ledger\ >nul
+          git config user.name "matchbook-agent"
+          git config user.email "matchbook-agent@users.noreply.github.com"
+          git add ledger
+          git diff --cached --quiet && exit /b 0
+          git commit -q -m "ledger: graded Matchbook bets + scorecard"
+          git pull -q --rebase && git push -q

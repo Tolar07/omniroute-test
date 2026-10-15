@@ -257,6 +257,7 @@ def allocate(pop: dict, hist: list[dict], opportunities: list[dict], run_id: str
                    "stake_asked_gbp": d.stake_gbp, "offer_id": fill["offer_id"],
                    "source": c.get("source", "oracle"), "fw_key": c.get("fw_key"),
                    "fw_pick": c.get("fw_pick"), "fw_code": c.get("fw_code"), "fw_price": c.get("fw_price"),
+                   "fw_pool": c.get("fw_pool", False),
                    "cost_gbp": fill["matched_gbp"], "avg_odds": fill["avg_odds"],
                    "cancel_pending": fill.get("cancel_pending", False), "status": "OPEN"}
             hist.append(rec)
