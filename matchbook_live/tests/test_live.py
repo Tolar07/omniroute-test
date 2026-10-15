@@ -548,7 +548,8 @@ class Acca(unittest.TestCase):
             fw_single("SB:10||Home or Away", 0.90, ko),                              # double chance: refused
             fw_single("SB:16|hcp=-1.5|Away (+1.5)", 0.83, ko, fixture="x2"),
             fw_single("SB:18|total=2.5|Under 2.5", 0.70, ko, fixture="x3"),         # same match: one leg only
-            fw_single("SB:1||Home", 0.60, ko, home="Leeds", away="Hull", fixture="x4")]}]
+            fw_single("SB:1||Home", 0.78, ko, home="Leeds", away="Hull", fixture="x4"),
+            fw_single("SB:1||Away", 0.70, ko, home="Leeds", away="Hull", fixture="x5")]}]   # under 75%
 
     def _events(self, ko):
         return [mb_event(ko), {**mb_event(ko, "Leeds", "Hull"), "id": 502}]
@@ -573,6 +574,29 @@ class Acca(unittest.TestCase):
             self.assertIn("ACCA PLACED", multiples.place(cl, legs, 1.0, Path(d), NOW, live=True))
             self.assertEqual(len((Path(d) / multiples.LOG_FILE).read_text().splitlines()), 2)
         self.assertTrue(notify.news(["ACCA PLACED: ..."]))
+
+    def test_batch_disjoint_and_inside_the_budget(self):
+        ko = NOW + timedelta(hours=3)
+        teams = [(f"Home{i}", f"Away{i}") for i in range(8)]
+        evs = [{**mb_event(ko, h, a), "id": 600 + i} for i, (h, a) in enumerate(teams)]
+        files = [{"date": "d", "singles": [fw_single("SB:1||Home", 0.90 - i / 100, ko, home=h, away=a,
+                                                     fixture=f"f{i}") for i, (h, a) in enumerate(teams)]}]
+        cl = mock.Mock()
+        cl.multiple_quote.return_value = {"odds": 15.6, "min-stake": 0.08, "max-stake": 900}
+        cl.multiple_submit.return_value = {"id": "m", "status": "ACTIVE"}
+        with tempfile.TemporaryDirectory() as d:
+            msg = multiples.batch(cl, files, evs, 2.0, 5, Path(d), NOW, live=True)
+            self.assertEqual(msg.count("ACCA PLACED"), 2)                        # 8 matches: two trebles
+            self.assertIn("only 2 more eligible", msg)
+            placed = [json.loads(x) for x in (Path(d) / multiples.LOG_FILE).read_text().splitlines()]
+            ids = [x["event_id"] for r in placed for x in r["legs"]]
+            self.assertEqual(len(ids), len(set(ids)))                            # no match in two accas
+            self.assertEqual(placed[0]["legs"][0]["runner_name"], "Home0")      # strongest first
+            # £4 spent of £10: room for three more £2 accas, but no unused matches left
+            self.assertIn("only 2 more", multiples.batch(cl, files, evs, 2.0, 5, Path(d), NOW, live=True))
+            with open(Path(d) / multiples.LOG_FILE, "a") as f:                  # pretend £10 is spent
+                f.write(json.dumps({**placed[0], "stake": 6.0}) + "\n")
+            self.assertIn("ACCA BUDGET", multiples.batch(cl, files, evs, 2.0, 5, Path(d), NOW, live=True))
 
 
 class LossStop(unittest.TestCase):

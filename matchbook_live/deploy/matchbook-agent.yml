@@ -31,9 +31,13 @@ on:
         type: choice
         options: [once, check, repaid, reseed, acca]
       acca_stake:
-        description: "acca only: stake in £ (at most £2)"
+        description: "acca only: stake in £ per acca (at most £2)"
         required: false
-        default: "1"
+        default: "2"
+      acca_count:
+        description: "acca only: how many accas (no match in two; £10 a day in all; 0 = one, outside the budget)"
+        required: false
+        default: "5"
 
 concurrency:
   # never two cycles at once. An acca run gets its own group: a second pending run in one
@@ -97,7 +101,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           ACCA_STAKE: ${{ inputs.acca_stake }}
-        run: py -3 -m matchbook_live.run --acca %ACCA_STAKE%
+          ACCA_COUNT: ${{ inputs.acca_count }}
+        run: py -3 -m matchbook_live.run --acca %ACCA_STAKE% --acca-count %ACCA_COUNT%
 
       - name: Cycle
         if: github.event_name == 'schedule' || inputs.mode == 'once'

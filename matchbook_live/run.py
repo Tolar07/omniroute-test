@@ -342,7 +342,9 @@ def main(argv=None) -> int:
     ap.add_argument("--repaid", action="store_true",
                     help="Architect only: you withdrew the £50 loan on Matchbook — take it off the books")
     ap.add_argument("--acca", type=float, metavar="STAKE",
-                    help="one-off: place the framework's strongest Matchbook-eligible accumulator at this stake")
+                    help="place the framework's strongest Matchbook-eligible accumulator(s) at this stake")
+    ap.add_argument("--acca-count", type=int, default=0, metavar="N",
+                    help="with --acca: N accas, no match in two, inside the £10 daily acca budget")
     a = ap.parse_args(argv)
     if a.acca is not None:
         now = datetime.now(timezone.utc)
@@ -350,7 +352,10 @@ def main(argv=None) -> int:
         cl = Client(a.state_dir)
         evs, _ = scanner.fetch_events(cl, a.max_events)
         files, _ = framework_feed.fetch_picks(framework_feed.picks_dates(now))
-        msg = multiples.place(cl, multiples.strongest(files, evs, now), a.acca, a.state_dir, now, live)
+        if a.acca_count:
+            msg = multiples.batch(cl, files, evs, a.acca, a.acca_count, a.state_dir, now, live)
+        else:
+            msg = multiples.place(cl, multiples.strongest(files, evs, now), a.acca, a.state_dir, now, live)
         msg = f"{msg}\n  mode: {mode}"
         print(msg, flush=True)
         print(notify.send(msg), flush=True)
