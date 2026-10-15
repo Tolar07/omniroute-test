@@ -17,7 +17,11 @@ name: matchbook-agent
 
 on:
   schedule:
-    - cron: "*/15 * * * *"        # GitHub may run scheduled jobs late; that is fine
+    # BACKUP STARTER only. GitHub's cron never fired on this repo on its first night
+    # (and the framework measured its crons 3-7 h late): each cycle starts the next
+    # one itself (last step). This hourly tick restarts the chain if it ever breaks;
+    # the concurrency group keeps it to one cycle at a time. Off the hour: :00 drops.
+    - cron: "7 * * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -33,6 +37,7 @@ concurrency:
 
 permissions:
   contents: write                # the ledger step commits ledger/ back to this private repo
+  actions: write                 # the last step starts the next cycle
 
 jobs:
   cycle:
@@ -89,3 +94,11 @@ jobs:
           git diff --cached --quiet && exit /b 0
           git commit -q -m "ledger: graded Matchbook bets + scorecard"
           git pull -q --rebase && git push -q
+
+      - name: Start the next cycle (the chain; stop it by disabling this workflow)
+        if: always() && (github.event_name == 'schedule' || inputs.mode == 'once')
+        shell: cmd
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: py -3 -m matchbook_live.chain
