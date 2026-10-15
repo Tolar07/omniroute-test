@@ -13,7 +13,7 @@ from pathlib import Path
 from unittest import mock
 
 from matchbook_live import config as C
-from matchbook_live import executor, framework_feed, multiples
+from matchbook_live import board, executor, framework_feed, multiples
 from matchbook_live import lineage as L
 from matchbook_live import notify, oracle, paper, risk_gate, run, scanner, scorecard
 
@@ -597,6 +597,73 @@ class Acca(unittest.TestCase):
             with open(Path(d) / multiples.LOG_FILE, "a") as f:                  # pretend £10 is spent
                 f.write(json.dumps({**placed[0], "stake": 6.0}) + "\n")
             self.assertIn("ACCA BUDGET", multiples.batch(cl, files, evs, 2.0, 5, Path(d), NOW, live=True))
+
+
+class MatchbookBoard(unittest.TestCase):
+    def test_verdicts(self):
+        book = lambda o: {"best_back": o, "best_lay": o + 0.01, "implied": 1 / o, "spread": 0.005,   # noqa: E731
+                          "back_depth_gbp": 60}
+        self.assertEqual(board.verdict(0.80, book(1.35))[0], "BET")          # 80%, +4.4: MEDIUM
+        self.assertEqual(board.verdict(0.79, book(1.35))[0], "SKIP")         # under the 80% bar
+        self.assertEqual(board.verdict(0.58, book(1.90))[0], "PAPER")        # in the 1.50-2.00 band
+        self.assertIn("break-even", board.verdict(0.80, book(1.25))[1])      # 80% vs 81.6% needed
+
+    def test_render_groups_and_send_once(self):
+        ko = NOW + timedelta(hours=3)
+        f = {"date": "d", "singles": [fw_single("SB:10||Home or Away", 0.80, ko),
+                                      fw_single("SB:19|total=2.5|Under 2.5", 0.9, ko, fixture="x2")]}
+        text = board.render(f, [mb_event(ko)], NOW)
+        self.assertIn("BET (1)", text)
+        self.assertIn("market not on Matchbook", text)
+        pop: dict = {}
+        self.assertEqual(len(board.due(pop, [f])), 1)
+        board.mark_sent(pop, "d")
+        self.assertEqual(board.due(pop, [f]), [])
+
+    def test_send_long_splits(self):
+        sent = []
+        with mock.patch.object(notify, "TOKEN", "t"), mock.patch.object(notify, "CHAT_ID", "c"):
+            notify.send_long("\n".join("x" * 100 for _ in range(100)),
+                             post=lambda url, json, timeout: sent.append(json) or mock.Mock(status_code=200))
+        self.assertGreaterEqual(len(sent), 3)
+        self.assertTrue(all(len(s["text"]) <= notify.LIMIT for s in sent))
+
+
+class AccaAuto(unittest.TestCase):
+    def _setup(self, d):
+        ko = NOW + timedelta(hours=3)
+        teams = [(f"Home{i}", f"Away{i}") for i in range(6)]
+        evs = [{**mb_event(ko, h, a), "id": 700 + i} for i, (h, a) in enumerate(teams)]
+        files = [{"date": "d", "singles": [fw_single("SB:1||Home", 0.85, ko, home=h, away=a, fixture=f"f{i}")
+                                           for i, (h, a) in enumerate(teams)]}]
+        cl = mock.Mock()
+        cl.multiple_quote.return_value = {"odds": 15.6, "min-stake": 0.08, "max-stake": 900}
+        cl.multiple_submit.return_value = {"id": "m", "status": "ACTIVE"}
+        return cl, files, evs
+
+    def test_waits_for_the_hour_and_free_funds_then_places_once(self):
+        with tempfile.TemporaryDirectory() as d:
+            cl, files, evs = self._setup(d)
+            early = NOW.replace(hour=6)
+            self.assertEqual(multiples.auto(cl, files, evs, Path(d), early, 40.0), ([], 0.0))
+            ev, spent = multiples.auto(cl, files, evs, Path(d), NOW, 10.0)
+            self.assertIn("waiting", ev[0])
+            self.assertEqual(spent, 0.0)
+            ev, spent = multiples.auto(cl, files, evs, Path(d), NOW, 40.0)
+            self.assertEqual(spent, 4.0)                                         # 6 matches: two trebles
+            self.assertTrue(notify.news(ev))
+            ev, spent = multiples.auto(cl, files, evs, Path(d), NOW, 40.0)       # no unused matches left
+            self.assertEqual(spent, 0.0)
+            self.assertFalse(notify.news(ev))                                    # quiet, not news
+
+    def test_an_order_error_stops_it_for_the_day(self):
+        with tempfile.TemporaryDirectory() as d:
+            cl, files, evs = self._setup(d)
+            cl.multiple_submit.side_effect = RuntimeError("boom")
+            ev, _ = multiples.auto(cl, files, evs, Path(d), NOW, 40.0)
+            self.assertTrue(any("ACCA ERROR" in x for x in ev))
+            ev, _ = multiples.auto(cl, files, evs, Path(d), NOW, 40.0)
+            self.assertIn("order error today", ev[0])
 
 
 class LossStop(unittest.TestCase):

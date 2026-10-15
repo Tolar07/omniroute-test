@@ -44,6 +44,23 @@ def due(pop: dict, now: datetime, mode: str, events: list[str]) -> str | None:
     return reason
 
 
+def send_long(text: str, post: Callable = requests.post) -> str:
+    """Send in as many messages as it takes, split on line breaks. Returns the last result."""
+    chunks, cur = [], ""
+    for ln in text.split("\n"):
+        if cur and len(cur) + len(ln) + 1 > LIMIT:
+            chunks.append(cur)
+            cur = ""
+        cur = f"{cur}\n{ln}" if cur else ln[:LIMIT]
+    chunks.append(cur)
+    result = ""
+    for c in chunks:
+        result = send(c) if post is requests.post else send(c, post)
+        if result != "Telegram sent":
+            break
+    return result
+
+
 def send(text: str, post: Callable = requests.post) -> str:
     if not (TOKEN and CHAT_ID):
         return "Telegram not configured"

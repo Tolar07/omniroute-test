@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -76,6 +77,35 @@ def strongest(picks_files: list[dict], events: list[dict], now: datetime, n: int
         if len(out) == n:
             break
     return out
+
+
+AUTO = (os.getenv("MB_ACCA_AUTO") or "1") == "1"   # Architect 2026-10-15: bet365's accas move to Matchbook
+AUTO_STAKE, AUTO_COUNT = 2.00, 5
+AUTO_FROM_HOUR_UTC = 8               # after the framework's morning refresh
+AUTO_MIN_FREE_GBP = 15.00            # leave the singles room
+
+
+def auto(client, picks_files: list[dict], events: list[dict], state_dir: Path, now: datetime,
+         free_funds: float | None) -> tuple[list[str], float]:
+    """The cycle's daily accas: once the budget has room and legs are in the window.
+    Returns (event lines, stake placed). Only placed accas and errors are news."""
+    if not AUTO or now.hour < AUTO_FROM_HOUR_UTC:
+        return [], 0.0
+    today = [r for r in _log(state_dir) if r.get("at", "").startswith(now.date().isoformat())
+             and r.get("budget")]
+    if any(r.get("status") == "ERROR" for r in today):
+        return ["acca: an order error today — no more automatic accas until tomorrow"], 0.0
+    if sum(r["stake"] for r in today if r.get("status") == "PLACED") >= DAILY_BUDGET_GBP - 1e-9:
+        return [], 0.0
+    if free_funds is not None and free_funds < AUTO_MIN_FREE_GBP:
+        return [f"acca: waiting, Matchbook free funds £{free_funds:.2f} under £{AUTO_MIN_FREE_GBP:.0f}"], 0.0
+    before = len(_log(state_dir))
+    msg = batch(client, picks_files, events, AUTO_STAKE, AUTO_COUNT, state_dir, now, live=True)
+    new = _log(state_dir)[before:]
+    placed = sum(r["stake"] for r in new if r.get("status") == "PLACED")
+    if not new:                                       # no legs yet: say so quietly
+        return [f"acca: {msg.splitlines()[0][6:]}"], 0.0
+    return msg.splitlines(), placed
 
 
 def _log(state_dir: Path) -> list[dict]:

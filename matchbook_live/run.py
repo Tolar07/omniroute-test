@@ -29,7 +29,7 @@ from pathlib import Path
 from matchbook_live import config as C
 from matchbook_live import executor, framework_feed
 from matchbook_live import lineage as L
-from matchbook_live import multiples, notify, oracle, paper, scanner, scorecard
+from matchbook_live import board, multiples, notify, oracle, paper, scanner, scorecard
 from matchbook_live.client import Client
 
 
@@ -165,7 +165,7 @@ def heartbeat(rid: str, now: datetime, mode: str, pop: dict, hist: list[dict], e
               f"{stats.get('page_errors', 0)} · candidates {stats.get('candidates', 'PENDING')}",
               f"FRAMEWORK {stats.get('framework', 'PENDING')}",
               *(f"  skipped: {x}" for x in (stats.get("framework_skipped") or [])[:12]),
-              f"ORACLE {oracle_note}"]
+              f"ORACLE {oracle_note}", *stats.get("board", [])]
     if stats.get("paper"):
         lines += ["", *stats["paper"]]
     if picks:
@@ -240,6 +240,26 @@ def cycle(state_dir: Path = C.STATE_DIR, max_events: int = C.MAX_EVENTS, use_ora
         events += notes
         if free_funds is not None:
             free_funds -= sum(r["cost_gbp"] for r in opened)
+
+        # the day's accumulators (£10 budget, bet365's accas moved to Matchbook) — live only
+        if live:
+            try:
+                acca_events, acca_spent = multiples.auto(client, files, mb_events, state_dir, now, free_funds)
+                events += acca_events
+                if free_funds is not None:
+                    free_funds -= acca_spent
+            except Exception as e:
+                events.append(f"acca: PENDING ({type(e).__name__}: {str(e)[:120]})")
+
+        # the Matchbook board, once per picks date (replaces the bet365 board, framework order 29)
+        for f in board.due(pop, files):
+            try:
+                sent = notify.send_long(board.render(f, mb_events, now))
+            except Exception as e:
+                sent = f"failed: {type(e).__name__}"
+            if sent in ("Telegram sent", "Telegram not configured"):
+                board.mark_sent(pop, f["date"])
+            stats.setdefault("board", []).append(f"MATCHBOOK BOARD {f['date']}: {sent}")
 
         # paper study: no orders, and a failure never stops the live cycle
         try:
