@@ -200,9 +200,11 @@ def find_runner(e: dict, mk: dict) -> tuple[Optional[dict], Optional[dict], str]
             continue
         name, mtype = (m.get("name") or "").strip().lower(), m.get("market-type")
         runners = [r for r in m.get("runners") or [] if r.get("status") == "open"]
-        if mk["type"] == "total" and mtype == "total" and _f(m.get("handicap")) == mk["line"]:
+        # the full-match markets only: "1st Half Total" and "Home/Away Team Total Goals"
+        # share market-type "total" (Mjällby "Over 1.5 goals" was priced on the 1st half)
+        if mk["type"] == "total" and mtype == "total" and name == "total" and _f(m.get("handicap")) == mk["line"]:
             hit = [r for r in runners if (r.get("name") or "").lower().startswith(mk["want"])]
-        elif mk["type"] == "handicap" and mtype == "handicap":
+        elif mk["type"] == "handicap" and mtype == "handicap" and name == "handicap":
             team = eh if mk["want"] == "home" else ea
             hit = [r for r in runners if _f(r.get("handicap")) == mk["line"]
                    and alike((r.get("name") or "").rsplit(" ", 1)[0], team) >= 0.8]
